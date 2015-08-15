@@ -1,0 +1,190 @@
+% Created 2015-07-29 Wed 19:34
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{Albin Severinson}
+\date{\today}
+\title{GCDC16 Communication Architecture}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.3.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{center}
+\begin{tabular}{lr}
+Version: & 1.0\\
+ & \\
+ & \\
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Introduction}
+\label{sec-1}
+This document will provide an overview of the communication stack that
+will be used for GCDC16. It will also provide an introduction to the
+message sets used, and to how the sensor fusion system and the
+scenario-specific Simulink models will communicate with other
+vehicles. This document will be updated during the project.
+
+\section{Message Sets}
+\label{sec-2}
+This section breifly explains the message sets used for GCDC. Another
+document will be released to cover the messages in more detail.
+
+\subsection{CAM}
+\label{sec-2-1}
+Cooperative awareness messages (CAM) is the "hello" message. It is
+broadcasted at a rate of up to 10Hz and contains detailed information
+about the vehicle broadcasting it. There are methods for preventing
+traffic congestion by, for example, lowering the message rate when the
+vehicle is moving slowly. However, GCDC16 may require a non-standard
+CAM transmission interval and may or may not use the methods for
+preventing traffic congestion. A CAM message consists of a
+header and up to four containers.
+
+\begin{itemize}
+\item The basic container includes basic information related to the
+originating ITS station (ITS-S).
+\item The high frequency container contains highly dynamic information
+about the originating ITS-S, such as heading and speed.
+\item The low frequency container contains static and not highly dynamic
+information of the originating ITS-S.
+\item The special vehicle container contains information specific to the
+vehicle role of the originating ITS-S. This container is not needed
+within i-GAME.
+\end{itemize}
+
+\emph{Source: Deliverable 3.2}
+
+\subsection{DENM}
+\label{sec-2-2}
+Decentralized environmental notification message (DENM) is the message
+used for event-based communication. It is sent to communicate with or
+to notify other vehicles about some event and is sent to a all
+vehicles withing a specific geographical area. A DENM message consists
+of a header and up to four containers.
+
+\begin{itemize}
+\item The management container contains information related to the DENM
+management and the DENM protocol.
+\item The situation container contains information related to the type of
+detected event. For example road work.
+\item The location container contains information about the event location.
+\item The à la carte container contains information specific to the event.
+This container is used for cases where specific information not
+included in the other containers needs to be transmitted.
+\end{itemize}
+
+\emph{Source: Deliverable 3.2}
+
+\subsection{iGAME}
+\label{sec-2-3}
+The CAM and DENM message sets are developed primarily with platooning
+in mind. To enable the complex automated driving required for GCDC,
+the CEM and DENM message sets will be extended with a message set
+specific for iGAME. This set is not yet defined, but it will include
+messages for coordinating lane changes and such.
+
+\emph{Source: Deliverable 3.2}
+
+\section{Architecture}
+\label{sec-3}
+\includegraphics[width=.9\linewidth]{./img/com_arch_1.jpg}
+
+\subsection{Antennae (OSI 1)}
+\label{sec-3-1}
+Not decided as of writing this, but must follow the ITS-G5 spec for
+wireless transmission.
+
+\subsection{Driver (OSI 2)}
+\label{sec-3-2}
+The network driver used. Not decided as of writing this.
+
+\subsection{Network layer (OSI 3)}
+\label{sec-3-3}
+Will be part of the C-ITS stack or will run as a separate program.
+Note that C-ITS in general does very little tunelling. Messages are
+sent as datagrams that doesn't guarantee arrival and message order.
+Instead the ITS stack is made to be resilient against message loss.
+
+\subsection{C-ITS Stack}
+\label{sec-3-4}
+Cooperative intelligent transportation system software stack handles
+creation of CAM and DENM messages. It will add header information and
+package the data to follow specification.
+
+\subsection{CAM service}
+\label{sec-3-5}
+The CAM service handles sending CAM messages at proper intervals. The
+CAM service will listen for UDP message from the sensor fusion system
+and will forward them to the C-ITS stack, which will transmit them. If
+methods for preventing traffic congestion are used, the CAM service
+will make a decision on whether or not to forward every time a message
+is received.
+
+The CAM service will expect UDP messages from the sensor fusion system
+containing all information required for CAM messages at whatever rate
+that is decided on. Currently, the highest rate of any message is
+25Hz.
+
+
+\subsection{DENM/iGAME Router}
+\label{sec-3-6}
+The DENM/iGAME router listens for messages coming to and from the
+Simulink models controlling the car and is completely stateless as it
+only forwards messages.
+
+The router will expect UDP packets from the Simulink models
+controlling the car, containing the message ID as defined in
+deliverable 3.2 and additional information required to create the
+specified DENM/iGAME message. Incoming messages will be forwarded to
+the Simulink models that use that message.
+
+
+\section{Internal communication}
+\label{sec-4}
+Communication between systems in the car will be performed using UDP
+packets sent on the local LAN.
+
+\subsection{Sensor Fusion}
+\label{sec-4-1}
+The CAM service will expect UDP messages from the sensor fusion system
+containing all information required to create any CAM message. This
+packet will be sent to the CAM service at the rate of the most
+frequent CAM message. Currently, the highest rate of any message is
+25Hz.
+
+\subsection{Scenario-specific models}
+\label{sec-4-2}
+The scenario-specific models will communicate with the DENM router to
+send and receive DENM/iGAME messages required for the scenario. For
+example, pairing with other vehicles during the platoon merge
+scenario.
+
+The messages will include the message ID as specified in deliverable
+3.2 and an alacarte container that is defined on a per-message basis.
+For example, sending a message to pair with another vehicle during the
+platoon marging scenario requires sending a UDP packet containing the
+message ID for the pairing message and the vehicle ID of the vehicle
+to pair with.
+% Emacs 24.3.1 (Org mode 8.2.10)
+\end{document}

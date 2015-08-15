@@ -1,0 +1,284 @@
+% Created 2015-08-15 Sat 17:30
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Albin Severinson}
+\date{\today}
+\title{GCDC16 Local Message Set}
+\hypersetup{
+ pdfauthor={Albin Severinson},
+ pdftitle={GCDC16 Local Message Set},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.4.1 (Org mode 8.3.1)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{center}
+\begin{tabular}{lrl}
+Version: & 0.1 & First draft\\
+ &  & \\
+ &  & \\
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Introduction}
+\label{sec:orgheadline1}
+This document presents the local message set (LMS) to be used for
+GCDC16. LMS will be used by the sensor fusion system to generate CAM
+messages, and by the scenario control models to generate DENM/iGAME
+messages.
+
+The communication stack includes a vehicle adapter that will receive
+these messages and use them to create proper CAM/DENM/iGAME messages
+that will be forwarded to other vehicles. The LMS follows the ETSI
+specification as closely as possible, but makes some changes to make
+is possible to create the messages in Simulink.
+
+Different network ports will be used for CAM/DENM/iGAME messages in
+order to distinguish them.
+
+All data is in network byte order, which is identical to big endian.
+
+\section{CAM}
+\label{sec:orgheadline10}
+\begin{itemize}
+\item How is time measured? How is an Instant defined?
+\item Define:
+\begin{itemize}
+\item Time, Instant
+\item curvature
+\item yawRate
+\item headingDegreesFromNorth
+\end{itemize}
+\end{itemize}
+
+CAM consists of a single large message that is sent to the
+communication stack periodically. The communication stack will pick up
+the message and make a decision on what parts of the message to forward
+to other vehicles. The message should contain the specified data, in
+the specified order. Data marked as N/A should be all zeroes.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Datatype: & Data: & Notes:\\
+\hline
+int & curvature & How is this defined?\\
+byte & curvatureConfidence & \\
+byte & accelerationControlStatus & Details below\\
+byte & exteriorLightsStatus & Details below\\
+byte & driveDirection & forward=0, backward=1, unavailable=2\\
+int & yawRate & How is this defined?\\
+byte & yawRateConfidence & \\
+byte & stationType & 5 for passenger cars\\
+byte & vehicleRole, & specialTransport=2, default=0\\
+boolean & embarkationStatus & N/A\\
+byte & dangerousGoods & N/A\\
+byte & dangerousGoodExt & N/A\\
+byte & lightBarSiren & N/A\\
+byte & ptActivationType & N/A\\
+byte[] & ptActivationData & N/A, How many bytes?\\
+byte[] & longPositionVector & Details below\\
+ &  & \\
+\end{tabular}
+\end{center}
+
+Listed as unavailable in GeoNetworking stack:
+\begin{itemize}
+\item SemiAxisLength
+\item HeadingValue
+\item AltitudeValue
+\item AltitudeConfidence
+\item HeadingConfidence
+\item SpeedConfidence
+\end{itemize}
+
+Spec. according to D3.2
+\begin{itemize}
+\item What happened to curvature?
+\end{itemize}
+\begin{center}
+\begin{tabular}{rll}
+Bytes: & Data: & Notes\\
+\hline
+1 & header & \\
+4 & GenerationDeltaTime & \\
+4 & Station ID & \\
+1 & Station Type & \\
+1 & Vehicle Role & \\
+2 & Vehicle Length & \\
+2 & Vehicle Width & \\
+0 & Reference position & \\
+4 & Latitude & \\
+4 & Longitude & \\
+? & Position Confidence Ellipse 95\% & Need more details\\
+? & Altitude & Not in D3.2?\\
+2 & Heading & \\
+1 & Heading confidence 95\% & \\
+2 & Speed & \\
+1 & Speed Confidence 95\% & \\
+2 & Yaw Rate & \\
+1 & Yaw Rate Confidence 95\% & \\
+2 & Longitudinal vehicle acceleration & \\
+1 & Longitudinal vehicle acceleration confidence 95\% & \\
+\end{tabular}
+\end{center}
+
+
+
+\subsection{accelerationControlStatus}
+\label{sec:orgheadline2}
+\begin{center}
+\begin{tabular}{rl}
+\hline
+Bit: & Data:\\
+\hline
+0 & brakePedalEngaged\\
+1 & gasPedalEngaged\\
+2 & emergencyBrakeEngaged\\
+3 & collisionWarningEngaged\\
+4 & accEngaged\\
+5 & cruiseControlEngaged\\
+6 & speedLimiterEngaged\\
+\end{tabular}
+\end{center}
+
+\subsection{exteriorLightsStatus}
+\label{sec:orgheadline3}
+\begin{center}
+\begin{tabular}{rl}
+\hline
+Bit: & Data:\\
+\hline
+0 & lowBeamHeadlightsOn\\
+1 & highBeamHeadlightsOn\\
+2 & leftTurnSignalOn\\
+3 & rightTurnSignalOn\\
+4 & daytimeRunningLightsOn\\
+5 & reverseLightOn\\
+6 & fogLightOn\\
+7 & parkingLightsOn\\
+\end{tabular}
+\end{center}
+
+\subsection{longPositionVector}
+\label{sec:orgheadline9}
+\begin{center}
+\begin{tabular}{rlll}
+\hline
+Byte: & Datatype: & Data: & Notes:\\
+\hline
+0-8 & Address & address & Details below\\
+9-12 & Instant & timestamp & Details below\\
+13-20 & Position & position & Details below\\
+21-22 & short & confidenceAndSpeed & Details below\\
+23-24 & short & headingDegreesFromNorth & Details below\\
+ &  &  & \\
+\end{tabular}
+\end{center}
+
+
+\subsubsection{address}
+\label{sec:orgheadline4}
+\begin{center}
+\begin{tabular}{rll}
+\hline
+Bit: & Data: & Notes:\\
+\hline
+63 & isManual & Should be 1\\
+62-58 & stationType & 5 for passenger cars\\
+57-48 & countryCode & Haven't found Sweden\\
+47-0 & lowLevelAddress & Unique station address\\
+ &  & \\
+\end{tabular}
+\end{center}
+
+\subsubsection{timestamp}
+\label{sec:orgheadline5}
+Time according to the TAI spec. From
+\url{http://stjarnhimlen.se/comp/time.html}:
+TAI = International Atomic Time (Temps Atomique International = TAI) is
+     defined as the weighted average of the time kept by about 200
+     atomic clocks in over 50 national laboratories worldwide.
+     TAI-UT1 was approximately 0 on 1958 Jan 1.
+
+GPS time = TAI - 19 seconds
+
+This is to account for leap seconds, which are not added to GPS time.
+The time is sent as an unsigned 32-bit integer.
+
+\subsubsection{position}
+\label{sec:orgheadline6}
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Type: & Data:\\
+\hline
+int & latitudeDegrees\\
+int & longitudeDegrees\\
+\end{tabular}
+\end{center}
+
+\subsubsection{confidenceAndSpeed}
+\label{sec:orgheadline7}
+\begin{center}
+\begin{tabular}{rll}
+\hline
+Bit: & Data: & Notes:\\
+\hline
+0-14 & speed & Signed units of speed, in 0.01 meters per second\\
+15 & position accuracy indicator & 1 if position is confident and 0 otherwise. When is it confident?\\
+ &  & \\
+\end{tabular}
+\end{center}
+
+\subsubsection{headingDegreesFromNorth}
+\label{sec:orgheadline8}
+Heading is sent as an unsigned units of 0.1 degrees from North.
+
+\section{DENM}
+\label{sec:orgheadline11}
+
+\begin{center}
+\begin{tabular}{rlrl}
+ID: & Message: & Bytes: & Data:\\
+\hline
+38 & Event Type & 1 & ID\\
+ &  & 8 & Timestamp\\
+ &  & 1 & Cause Code\\
+ &  & 1 & Sub Cause Code\\
+\hline
+39 & Closed Lanes & 1 & ID\\
+ &  & 8 & Timestamp\\
+ &  & 1 & Driving Lane Status\\
+\hline
+40 & Lane Position & 1 & ID\\
+ &  & 8 & Timestamp\\
+ &  & 1 & Lane Position\\
+ &  &  & \\
+\end{tabular}
+\end{center}
+
+
+\section{iGAME}
+\label{sec:orgheadline12}
+The iGAME message set is still under proposal. Details on this set
+will be presented in a future release of this document.
+\end{document}
