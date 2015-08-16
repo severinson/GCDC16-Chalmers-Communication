@@ -23,6 +23,8 @@ order to distinguish them.
 
 All data is in network byte order, which is identical to big endian.
 
+
+\newpage
 * CAM
 CAM consists of a single large message that is sent to the
 communication stack periodically. The communication stack will pick up
@@ -33,7 +35,7 @@ the specified order. Data marked as N/A should be all zeroes.
 |--------+--------------------------------------------------+-----------------------------|
 | Bytes: | Data:                                            | Notes                       |
 |--------+--------------------------------------------------+-----------------------------|
-|      1 | header                                           | More details?               |
+|      1 | header                                           | $=2$ for CAM                |
 |      4 | GenerationDeltaTime                              | See D3.2                    |
 |      0 | Station ID                                       | Handled by communication SW |
 |      1 | Station Type                                     | See D3.2                    |
@@ -56,7 +58,7 @@ the specified order. Data marked as N/A should be all zeroes.
 |        |                                                  |                             |
 
 
-
+\newpage
 * DENM
 DENM messages are sent on-demand. D3.2 describes four different DENM
 messages, but due to how DENM messages are structured with several
@@ -76,32 +78,31 @@ distinct messages are used.
 The fields marked "dummy field" are presented in the spec but doesn't
 contain any data, and as such are 0 bytes long.
 
-|-------------------+---------------------+--------+-------------|
-| DENM Message:     | Data:               | Bytes: | Notes::     |
-|-------------------+---------------------+--------+-------------|
-| Roadworks         | Message ID          |      1 | $=38$       |
-|                   | Reference Time      |      8 | See D3.2    |
-|                   | Event Type          |      0 | Dummy field |
-|                   | Cause Code          |      1 | See D3.2    |
-|                   | Sub Cause Code      |      1 | See D3.2    |
-|                   | Closed Lanes        |      0 | See D3.2    |
-|                   | Driving Lane Status |      1 | See D3.2    |
-|-------------------+---------------------+--------+-------------|
-| Emergency Vehicle | Message ID          |      1 | $=40$       |
-|                   | Reference Time      |      8 | See D3.2    |
-|                   | Event Type          |      0 | Dummy field |
-|                   | Cause Code          |      1 | See D3.2    |
-|                   | Sub Cause Code      |      1 | See D3.2    |
-|                   | Lane Position       |      1 | See D3.2    |
-|                   |                     |        |             |
+|-------------------+--------+---------------------+-------------|
+| DENM Message:     | Bytes: | Data:               | Notes::     |
+|-------------------+--------+---------------------+-------------|
+| Roadworks         |      1 | Message ID          | $=38$       |
+|                   |      8 | Reference Time      | See D3.2    |
+|                   |      0 | Event Type          | Dummy field |
+|                   |      1 | Cause Code          | See D3.2    |
+|                   |      1 | Sub Cause Code      | See D3.2    |
+|                   |      0 | Closed Lanes        | Dummy field |
+|                   |      1 | Driving Lane Status | See D3.2    |
+|-------------------+--------+---------------------+-------------|
+| Emergency Vehicle |      1 | Message ID          | $=40$       |
+|                   |      8 | Reference Time      | See D3.2    |
+|                   |      0 | Event Type          | Dummy field |
+|                   |      1 | Cause Code          | See D3.2    |
+|                   |      1 | Sub Cause Code      | See D3.2    |
+|                   |      1 | Lane Position       | See D3.2    |
+|                   |        |                     |             |
 
 
-
+\newpage
 * iGAME
 The iGAME message set is still under proposal. Details on this set
 will be presented in a future release of this document. As it looks
-now the structure is very similar to DENM, but the details on how
-these are to be transmitted are still unclear.
+now the structure is very similar to DENM.
 
 
 

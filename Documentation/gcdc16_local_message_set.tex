@@ -1,4 +1,4 @@
-% Created 2015-08-16 Sun 11:06
+% Created 2015-08-16 Sun 11:21
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -56,6 +56,8 @@ order to distinguish them.
 
 All data is in network byte order, which is identical to big endian.
 
+
+\newpage
 \section{CAM}
 \label{sec:orgheadline2}
 CAM consists of a single large message that is sent to the
@@ -69,7 +71,7 @@ the specified order. Data marked as N/A should be all zeroes.
 \hline
 Bytes: & Data: & Notes\\
 \hline
-1 & header & More details?\\
+1 & header & \(=2\) for CAM\\
 4 & GenerationDeltaTime & See D3.2\\
 0 & Station ID & Handled by communication SW\\
 1 & Station Type & See D3.2\\
@@ -94,61 +96,56 @@ Bytes: & Data: & Notes\\
 \end{center}
 
 
-
+\newpage
 \section{DENM}
 \label{sec:orgheadline3}
 DENM messages are sent on-demand. D3.2 describes four different DENM
 messages, but due to how DENM messages are structured with several
 data containers in every message, it turns out that there are only two
-distinct messages.
+distinct messages used for GCDC16.
+
+The roadworks message is used to notify the vehicles in scenario one that
+there are roadworks ahead, and what lane is blocked because of that.
+The emergency vehicle message is used to notify the vehicles in scenario three
+that there's an emergency vehicle approaching, and what lane it is
+requesting.
 
 The LMS for DENM messages follows the specification very loosely as
 it's not worth the time to implement the full standard when only two
 distinct messages are used. 
 
-The first message is used to notify the vehicles in scenario one that
-there are roadworks ahead, and what lanes is blocked because of that.
-The second message is used to notify the vehicles in scenario three
-that there's en emergency vehicle coming, and what lane it is
-requesting.
+The fields marked "dummy field" are presented in the spec but doesn't
+contain any data, and as such are 0 bytes long.
 
-
-DENM messages.
-\begin{itemize}
-\item Should station ID be added to messages?
-\begin{itemize}
-\item Maybe better for the communication box to handle this?
-\end{itemize}
-\end{itemize}
 \begin{center}
-\begin{tabular}{llrl}
+\begin{tabular}{lrll}
 \hline
-DENM Message: & Data: & Bytes: & Notes::\\
+DENM Message: & Bytes: & Data: & Notes::\\
 \hline
-Roadworks & Message ID & 1 & \(=38\)\\
- & Reference Time & 8 & \\
- & Event Type & 0 & \\
- & Cause Code & 1 & \\
- & Sub Cause Code & 1 & \\
- & Closed Lanes & 0 & \\
- & Driving Lane Status & 1 & \\
+Roadworks & 1 & Message ID & \(=38\)\\
+ & 8 & Reference Time & See D3.2\\
+ & 0 & Event Type & Dummy field\\
+ & 1 & Cause Code & See D3.2\\
+ & 1 & Sub Cause Code & See D3.2\\
+ & 0 & Closed Lanes & Dummy field\\
+ & 1 & Driving Lane Status & See D3.2\\
 \hline
-Emergency Vehicle & Message ID & 1 & \(=40\)\\
- & Reference Time & 8 & \\
- & Event Type & 1 & \\
- & Cause Code & 1 & \\
- & Sub Cause Code & 1 & \\
- & Lane Position & 1 & \\
+Emergency Vehicle & 1 & Message ID & \(=40\)\\
+ & 8 & Reference Time & See D3.2\\
+ & 0 & Event Type & Dummy field\\
+ & 1 & Cause Code & See D3.2\\
+ & 1 & Sub Cause Code & See D3.2\\
+ & 1 & Lane Position & See D3.2\\
  &  &  & \\
 \end{tabular}
 \end{center}
 
 
-
+\newpage
 \section{iGAME}
 \label{sec:orgheadline4}
 The iGAME message set is still under proposal. Details on this set
 will be presented in a future release of this document. As it looks
 now the structure is very similar to DENM, but the details on how
-these are to be transmitted is unclear.
+these are to be transmitted are still unclear.
 \end{document}
