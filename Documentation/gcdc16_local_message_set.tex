@@ -1,4 +1,4 @@
-% Created 2015-08-16 Sun 11:21
+% Created 2015-08-18 Tue 15:03
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -81,8 +81,11 @@ Bytes: & Data: & Notes\\
 0 & Reference position & See D3.2\\
 4 & Latitude & See D3.2\\
 4 & Longitude & See D3.2\\
-? & Position Confidence Ellipse 95\% & Need more details\\
-? & Altitude & Not in D3.2?\\
+0 & Position Confidence Ellipse 95\% & Dummy field\\
+4 & Semi Major Confidence & See D3.2\\
+4 & Semi Minor Confidence & See D3.2\\
+4 & Semi Major Orientation & See D3.2\\
+4 & Altitude & Not in D3.2?\\
 2 & Heading & See D3.2\\
 1 & Heading confidence 95\% & See D3.2\\
 2 & Speed & See D3.2\\
@@ -146,6 +149,5 @@ Emergency Vehicle & 1 & Message ID & \(=40\)\\
 \label{sec:orgheadline4}
 The iGAME message set is still under proposal. Details on this set
 will be presented in a future release of this document. As it looks
-now the structure is very similar to DENM, but the details on how
-these are to be transmitted are still unclear.
+now the structure is very similar to DENM.
 \end{document}

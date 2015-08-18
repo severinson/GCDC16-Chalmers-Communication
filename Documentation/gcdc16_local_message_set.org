@@ -45,8 +45,11 @@ the specified order. Data marked as N/A should be all zeroes.
 |      0 | Reference position                               | See D3.2                    |
 |      4 | Latitude                                         | See D3.2                    |
 |      4 | Longitude                                        | See D3.2                    |
-|      ? | Position Confidence Ellipse 95%                  | Need more details           |
-|      ? | Altitude                                         | Not in D3.2?                |
+|      0 | Position Confidence Ellipse 95%                  | Dummy field                 |
+|      4 | Semi Major Confidence                            | See D3.2                    |
+|      4 | Semi Minor Confidence                            | See D3.2                    |
+|      4 | Semi Major Orientation                           | See D3.2                    |
+|      4 | Altitude                                         | Not in D3.2?                |
 |      2 | Heading                                          | See D3.2                    |
 |      1 | Heading confidence 95%                           | See D3.2                    |
 |      2 | Speed                                            | See D3.2                    |
