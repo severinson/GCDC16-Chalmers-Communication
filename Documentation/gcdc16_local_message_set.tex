@@ -1,4 +1,4 @@
-% Created 2015-08-18 Tue 15:03
+% Created 2015-08-27 Thu 09:28
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -102,6 +102,67 @@ Bytes: & Data: & Notes\\
 \newpage
 \section{DENM}
 \label{sec:orgheadline3}
+New proposal for DENM local message set. This implementation is more
+standards compliant. Most of the DENM specification is implemented in
+the LMS, however the LMS is structured such that it's easy to
+implement only a subset of the functionality in Simulink. This is done
+by setting the respective bit masks to indicate that those values
+aren't used and then fill the data fields with arbitrary data.
+
+The first part of the message, after the header, is a bit mask that
+indicates which of the optional containers that are present. The
+containers also start with a bit mask to indicate which of the
+optional data fields inside that container are used. Data fields
+marked as unused by the bit mask can have arbitrary values as they are
+ignored by the communication stack. This also means that every local
+DENM message has the same size, making it easier to use in Simulink.
+
+\begin{center}
+\begin{tabular}{lrll}
+Message part: & Bytes: & Data: & Notes:\\
+\hline
+Header & 1 & Message ID & \(=1\) for DENM\\
+\hline
+Container Mask & 1 & ContainerMask & \\
+\hline
+Management Container & 1 & ManagementMask & \\
+ & 8 & DetectionTime & \\
+ & 8 & ReferenceTime & \\
+ & 4 & (opt) Termination & \\
+ & 24 & EventPosition & \\
+ & 4 & (opt) RelevanceDistance & \\
+ & 4 & (opt) RelevanceTrafficDirection & \\
+ & 4 & (opt) ValidityDuration & \\
+ & 4 & (opt) TransmissionIntervall & \\
+ & 4 & StationType & \\
+\hline
+(opt)Situation Container & 1 & SituationMask & \\
+ & 4 & InformationQuality & \\
+ & 8 & CauseCode & \\
+ & 8 & (opt) LinkedCauseCode & \\
+ & 0 & (opt) EventHistory & Not implemented\\
+\hline
+(opt) Location Container & 0 & LocationMask & Not implemented\\
+ & 0 & (opt) EventSpeed & Not implemented\\
+ & 0 & (opt) EventPositionheading & Not implemented\\
+ & 0 & Traces & Not implemented\\
+ & 0 & (opt) RoadType & Not implemented\\
+\hline
+(opt) Alacarte Container & 1 & AlacarteMask & \\
+ & 4 & (opt) LanePosition & See D3.2\\
+ & 0 & (opt) ImpactReducationContainer & Not implemented\\
+ & 4 & (opt) ExternalTemperature & \\
+ & 0 & (opt) RoadWorksContainerExtended & Not implemented\\
+ & 4 & (opt) PositioningSolution & \\
+ & 0 & (opt) StationaryVehicleContainer & Not implemented\\
+ &  &  & \\
+\end{tabular}
+\end{center}
+\section{DENM (deprecated)}
+\label{sec:orgheadline4}
+\textbf{These messages are deprecated. See the section above for the local}
+\textbf{DENM messages.}
+
 DENM messages are sent on-demand. D3.2 describes four different DENM
 messages, but due to how DENM messages are structured with several
 data containers in every message, it turns out that there are only two
@@ -145,8 +206,9 @@ Emergency Vehicle & 1 & Message ID & \(=40\)\\
 
 
 \newpage
+
 \section{iGAME}
-\label{sec:orgheadline4}
+\label{sec:orgheadline5}
 The iGAME message set is still under proposal. Details on this set
 will be presented in a future release of this document. As it looks
 now the structure is very similar to DENM.
