@@ -26,39 +26,40 @@ All data is in network byte order, which is identical to big endian.
 
 \newpage
 * CAM
-CAM consists of a single large message that is sent to the
-communication stack periodically. The communication stack will pick up
-the message and make a decision on what parts of the message to forward
-to other vehicles. The message should contain the specified data, in
-the specified order. Data marked as N/A should be all zeroes.
+CAM messages are created by the vehicle adapter using the data fields
+present in a local CAM message as detailed below. CAM messages have
+both mandatory and optional data fields, where the optional data
+fields are contained in the low frequency container. The container
+mask is a bit mask that indicates whether this container is present.
+Note that the optional fields in the local CAM message always are
+present. However their values are undefined if they are not indicated
+as present.
 
-|--------+--------------------------------------------------+-----------------------------|
-| Bytes: | Data:                                            | Notes                       |
-|--------+--------------------------------------------------+-----------------------------|
-|      1 | header                                           | $=2$ for CAM                |
-|      4 | GenerationDeltaTime                              | See D3.2                    |
-|      0 | Station ID                                       | Handled by communication SW |
-|      1 | Station Type                                     | See D3.2                    |
-|      1 | Vehicle Role                                     | See D3.2                    |
-|      2 | Vehicle Length                                   | See D3.2                    |
-|      2 | Vehicle Width                                    | See D3.2                    |
-|      0 | Reference position                               | See D3.2                    |
-|      4 | Latitude                                         | See D3.2                    |
-|      4 | Longitude                                        | See D3.2                    |
-|      0 | Position Confidence Ellipse 95%                  | Dummy field                 |
-|      4 | Semi Major Confidence                            | See D3.2                    |
-|      4 | Semi Minor Confidence                            | See D3.2                    |
-|      4 | Semi Major Orientation                           | See D3.2                    |
-|      4 | Altitude                                         | Not in D3.2?                |
-|      2 | Heading                                          | See D3.2                    |
-|      1 | Heading confidence 95%                           | See D3.2                    |
-|      2 | Speed                                            | See D3.2                    |
-|      1 | Speed Confidence 95%                             | See D3.2                    |
-|      2 | Yaw Rate                                         | See D3.2                    |
-|      1 | Yaw Rate Confidence 95%                          | See D3.2                    |
-|      2 | Longitudinal vehicle acceleration                | See D3.2                    |
-|      1 | Longitudinal vehicle acceleration confidence 95% | See D3.2                    |
-|        |                                                  |                             |
+|--------+--------------------------------------------------+--------------|
+| Bytes: | Data:                                            | Notes        |
+|--------+--------------------------------------------------+--------------|
+|      1 | Header                                           | $=2$ for CAM |
+|      1 | Container Mask                                   |              |
+|      4 | GenerationDeltaTime                              | See D3.2     |
+|      4 | Station Type                                     | See D3.2     |
+|      4 | (opt) Vehicle Role                               | See D3.2     |
+|      4 | Vehicle Length                                   | See D3.2     |
+|      4 | Vehicle Width                                    | See D3.2     |
+|      4 | Latitude                                         | See D3.2     |
+|      4 | Longitude                                        | See D3.2     |
+|      4 | Semi Major Confidence                            | See D3.2     |
+|      4 | Semi Minor Confidence                            | See D3.2     |
+|      4 | Semi Major Orientation                           | See D3.2     |
+|      4 | Heading                                          | See D3.2     |
+|      4 | Heading confidence 95%                           | See D3.2     |
+|      4 | Altitude                                         | Not in D3.2? |
+|      4 | Speed                                            | See D3.2     |
+|      4 | Speed Confidence 95%                             | See D3.2     |
+|      4 | Yaw Rate                                         | See D3.2     |
+|      4 | Yaw Rate Confidence 95%                          | See D3.2     |
+|      4 | Longitudinal vehicle acceleration                | See D3.2     |
+|      4 | Longitudinal vehicle acceleration confidence 95% | See D3.2     |
+|        |                                                  |              |
 
 
 \newpage
@@ -162,7 +163,51 @@ contain any data, and as such are 0 bytes long.
 * iGAME
 The iGAME message set is still under proposal. Details on this set
 will be presented in a future release of this document. As it looks
-now the structure is very similar to DENM.
+now the structure is very similar to CAM.
+
+
+| Message part:                 | Bytes: | Data:                            | Notes:          |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Header                        |      1 | Message ID                       | $=10$ for iGAME |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Container Mask                |      1 | Container mask                   |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| High frequency container      |        | Rear axle location               |                 |
+|                               |        | Controller type                  |                 |
+|                               |        | Response time constant           |                 |
+|                               |        | Response time delay              |                 |
+|                               |        | Target longitudinal acceleration |                 |
+|                               |        | Time headway                     |                 |
+|                               |        | Cruise speed                     |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| (opt) Low frequency container |        | Low frequency mask               |                 |
+|                               |        | (opt) Participants ready         |                 |
+|                               |        | (opt) Start platoon              |                 |
+|                               |        | (opt) End-of-scenario            |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| MIO                           |        | Mio ID                           |                 |
+|                               |        | Mio Range                        |                 |
+|                               |        | Mio Bearing                      |                 |
+|                               |        | Mio Range rate                   |                 |
+|                               |        |                                  |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Lane                          |        | Lane                             |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Pair ID                       |        | Forward ID                       |                 |
+|                               |        | Backward ID                      |                 |
+|                               |        | Acknowledgement flag             |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Merge                         |        | Merge request                    |                 |
+|                               |        | Safe-to-merge                    |                 |
+|                               |        | Flag                             |                 |
+|                               |        | Flag tail                        |                 |
+|                               |        | Flag head                        |                 |
+|-------------------------------+--------+----------------------------------+-----------------|
+| Intersection                  |        | Platoon ID                       |                 |
+|                               |        | Distance travelled in CZ         |                 |
+|                               |        | Intention                        |                 |
+|                               |        | Counter                          |                 |
+
 
 
 
