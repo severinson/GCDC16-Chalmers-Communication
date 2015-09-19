@@ -1,10 +1,13 @@
 #+author: Albin Severinson
 #+title: GCDC16 Local Message Set
 
-| Version: | 0.1 | First draft                |
-|          | 0.2 | Revised CAM and added DENM |
-|          | 0.3 | Added iCLCM                |
-|          | 0.4 | Rewrote introduction       |
+| Version: | 0.1 | First draft                     |
+|          | 0.2 | Revised CAM and added DENM      |
+|          | 0.3 | Added iCLCM                     |
+|          | 0.4 | Rewrote introduction            |
+|          | 0.5 | Revised CAM                     |
+|          | 0.6 | Added stationID to all messages |
+|          |     |                                 |
 
 \newpage
 * Introduction
@@ -39,6 +42,38 @@ Note that the optional fields in the local CAM message always are
 present. However their values are undefined if they are not indicated
 as present.
 
+| Message part:                 | Bytes: | Data:                      | Notes:            |
+|-------------------------------+--------+----------------------------+-------------------|
+| Header                        |      1 | Message ID                 | $=2$ for CAM      |
+|                               |      4 | Station ID                 | Unique station ID |
+|                               |      4 | GenerationDeltaTime        | See D3.2          |
+|-------------------------------+--------+----------------------------+-------------------|
+| Container Mask                |      1 | ContainerMask              | See D3.2          |
+|-------------------------------+--------+----------------------------+-------------------|
+| Basic Container               |      4 | StationType                | See D3.2          |
+|                               |      4 | Latitude                   | See D3.2          |
+|                               |      4 | Longitude                  | See D3.2          |
+|                               |      4 | SemiMajorConfidence        | See D3.2          |
+|                               |      4 | SemiMinorConfidence        | See D3.2          |
+|                               |      4 | SemiMajorOrientation       | See D3.2          |
+|                               |      4 | Altitude                   | Not in D3.2?      |
+|-------------------------------+--------+----------------------------+-------------------|
+| High Frequency Container      |      4 | Heading                    | See D3.2          |
+|                               |      4 | HeadingConfidence          | See D3.2          |
+|                               |      4 | Speed                      | See D3.2          |
+|                               |      4 | SpeedConfidence            | See D3.2          |
+|                               |      4 | VehicleLength              | See D3.2          |
+|                               |      4 | VehicleWidth               | See D3.2          |
+|                               |      4 | LongAcceleration           | See D3.2          |
+|                               |      4 | LongAccelerationConfidence | See D3.2          |
+|                               |      4 | YawRate                    | See D3.2          |
+|                               |      4 | YawRateConfidence          | See D3.2          |
+|-------------------------------+--------+----------------------------+-------------------|
+| (opt) Low Frequency Container |      4 | VehicleRole                | See D3.2          |
+|                               |        |                            |                   |
+
+* CAM (deprecated)
+Old version of LMS for CAM.
 |--------+--------------------------------------------------+--------------|
 | Bytes: | Data:                                            | Notes        |
 |--------+--------------------------------------------------+--------------|
@@ -76,43 +111,51 @@ marked as unused by the bit mask can have arbitrary values as they are
 ignored by the communication stack. This also means that every local
 DENM message has the same size, making it easier to use in Simulink.
 
-| Message part:            | Bytes: | Data:                            | Notes:          |
-|--------------------------+--------+----------------------------------+-----------------|
-| Header                   |      1 | Message ID                       | $=1$ for DENM   |
-|--------------------------+--------+----------------------------------+-----------------|
-| Container Mask           |      1 | ContainerMask                    |                 |
-|--------------------------+--------+----------------------------------+-----------------|
-| Management Container     |      1 | ManagementMask                   |                 |
-|                          |      8 | DetectionTime                    |                 |
-|                          |      8 | ReferenceTime                    |                 |
-|                          |      4 | (opt) Termination                |                 |
-|                          |     24 | EventPosition                    |                 |
-|                          |      4 | (opt) RelevanceDistance          |                 |
-|                          |      4 | (opt) RelevanceTrafficDirection  |                 |
-|                          |      4 | (opt) ValidityDuration           |                 |
-|                          |      4 | (opt) TransmissionIntervall      |                 |
-|                          |      4 | StationType                      |                 |
-|--------------------------+--------+----------------------------------+-----------------|
-| (opt)Situation Container |      1 | SituationMask                    |                 |
-|                          |      4 | InformationQuality               |                 |
-|                          |      8 | CauseCode                        |                 |
-|                          |      8 | (opt) LinkedCauseCode            |                 |
-|                          |      0 | (opt) EventHistory               | Not implemented |
-|--------------------------+--------+----------------------------------+-----------------|
-| (opt) Location Container |      0 | LocationMask                     | Not implemented |
-|                          |      0 | (opt) EventSpeed                 | Not implemented |
-|                          |      0 | (opt) EventPositionheading       | Not implemented |
-|                          |      0 | Traces                           | Not implemented |
-|                          |      0 | (opt) RoadType                   | Not implemented |
-|--------------------------+--------+----------------------------------+-----------------|
-| (opt) Alacarte Container |      1 | AlacarteMask                     |                 |
-|                          |      4 | (opt) LanePosition               | See D3.2        |
-|                          |      0 | (opt) ImpactReducationContainer  | Not implemented |
-|                          |      4 | (opt) ExternalTemperature        |                 |
-|                          |      0 | (opt) RoadWorksContainerExtended | Not implemented |
-|                          |      4 | (opt) PositioningSolution        |                 |
-|                          |      0 | (opt) StationaryVehicleContainer | Not implemented |
-|                          |        |                                  |                 |
+The fields marked as not implemented should be ignored.
+
+| Message part:            | Bytes: | Data:                            | Notes:            |
+|--------------------------+--------+----------------------------------+-------------------|
+| Header                   |      1 | MessageID                        | $=1$ for DENM     |
+|                          |      4 | StationID                        | Unique station ID |
+|--------------------------+--------+----------------------------------+-------------------|
+| Container Mask           |      1 | ContainerMask                    |                   |
+|--------------------------+--------+----------------------------------+-------------------|
+| Management Container     |      1 | ManagementMask                   |                   |
+|                          |      8 | DetectionTime                    |                   |
+|                          |      8 | ReferenceTime                    |                   |
+|                          |      4 | (opt) Termination                |                   |
+|                          |      4 | SemiMajorConfidence              | See D3.2          |
+|                          |      4 | SemiMinorConfidence              | See D3.2          |
+|                          |      4 | SemiMajorOrientation             | See D3.2          |
+|                          |      4 | Altitude                         | Not in D3.2?      |
+|                          |      4 | (opt) RelevanceDistance          |                   |
+|                          |      4 | (opt) RelevanceTrafficDirection  |                   |
+|                          |      4 | (opt) ValidityDuration           |                   |
+|                          |      4 | (opt) TransmissionIntervall      |                   |
+|                          |      4 | StationType                      |                   |
+|--------------------------+--------+----------------------------------+-------------------|
+| (opt)Situation Container |      1 | SituationMask                    |                   |
+|                          |      4 | InformationQuality               |                   |
+|                          |      4 | CauseCode                        |                   |
+|                          |      4 | SubCauseCode                     |                   |
+|                          |      8 | (opt) LinkedCauseCode            |                   |
+|                          |      8 | (opt) LinkedSubCauseCode         |                   |
+|                          |      0 | (opt) EventHistory               | Not implemented   |
+|--------------------------+--------+----------------------------------+-------------------|
+| (opt) Location Container |      0 | LocationMask                     | Not implemented   |
+|                          |      0 | (opt) EventSpeed                 | Not implemented   |
+|                          |      0 | (opt) EventPositionheading       | Not implemented   |
+|                          |      0 | Traces                           | Not implemented   |
+|                          |      0 | (opt) RoadType                   | Not implemented   |
+|--------------------------+--------+----------------------------------+-------------------|
+| (opt) Alacarte Container |      1 | AlacarteMask                     |                   |
+|                          |      4 | (opt) LanePosition               | See D3.2          |
+|                          |      0 | (opt) ImpactReducationContainer  | Not implemented   |
+|                          |      4 | (opt) ExternalTemperature        |                   |
+|                          |      0 | (opt) RoadWorksContainerExtended | Not implemented   |
+|                          |      4 | (opt) PositioningSolution        |                   |
+|                          |      0 | (opt) StationaryVehicleContainer | Not implemented   |
+|                          |        |                                  |                   |
 \newpage
 
 * iCLCM
@@ -125,47 +168,48 @@ message to the vehicle adapter.
 Please note that the iCLCM set is still under proposal and may change.
 
 
-| Message part:                 | Bytes: | Data:                            | Notes:          |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Header                        |      1 | Message ID                       | $=10$ for iGAME |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Container Mask                |      1 | Container mask                   |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| High frequency container      |      4 | Rear axle location               |                 |
-|                               |      4 | Controller type                  |                 |
-|                               |      4 | Response time constant           |                 |
-|                               |      4 | Response time delay              |                 |
-|                               |      4 | Target longitudinal acceleration |                 |
-|                               |      4 | Time headway                     |                 |
-|                               |      4 | Cruise speed                     |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| (opt) Low frequency container |      1 | Low frequency mask               |                 |
-|                               |      4 | (opt) Participants ready         |                 |
-|                               |      4 | (opt) Start platoon              |                 |
-|                               |      4 | (opt) End-of-scenario            |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| MIO                           |      4 | Mio ID                           |                 |
-|                               |      4 | Mio Range                        |                 |
-|                               |      4 | Mio Bearing                      |                 |
-|                               |      4 | Mio Range rate                   |                 |
-|                               |        |                                  |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Lane                          |      4 | Lane                             |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Pair ID                       |      4 | Forward ID                       |                 |
-|                               |      4 | Backward ID                      |                 |
-|                               |      4 | Acknowledgement flag             |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Merge                         |      4 | Merge request                    |                 |
-|                               |      4 | Safe-to-merge                    |                 |
-|                               |      4 | Flag                             |                 |
-|                               |      4 | Flag tail                        |                 |
-|                               |      4 | Flag head                        |                 |
-|-------------------------------+--------+----------------------------------+-----------------|
-| Intersection                  |      4 | Platoon ID                       |                 |
-|                               |      4 | Distance travelled in CZ         |                 |
-|                               |      4 | Intention                        |                 |
-|                               |      4 | Counter                          |                 |
+| Message part:                 | Bytes: | Data:                            | Notes:            |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Header                        |      1 | MessageID                        | $=10$ for iCLCM   |
+|                               |      4 | StationID                        | Unique station ID |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Container Mask                |      1 | Container mask                   |                   |
+|-------------------------------+--------+----------------------------------+-------------------|
+| High frequency container      |      4 | Rear axle location               | See D3.2          |
+|                               |      4 | Controller type                  | See D3.2          |
+|                               |      4 | Response time constant           | See D3.2          |
+|                               |      4 | Response time delay              | See D3.2          |
+|                               |      4 | Target longitudinal acceleration | See D3.2          |
+|                               |      4 | Time headway                     | See D3.2          |
+|                               |      4 | Cruise speed                     | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| (opt) Low frequency container |      1 | Low frequency mask               | See D3.2          |
+|                               |      4 | (opt) Participants ready         | See D3.2          |
+|                               |      4 | (opt) Start platoon              | See D3.2          |
+|                               |      4 | (opt) End-of-scenario            | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| MIO                           |      4 | Mio ID                           | See D3.2          |
+|                               |      4 | Mio Range                        | See D3.2          |
+|                               |      4 | Mio Bearing                      | See D3.2          |
+|                               |      4 | Mio Range rate                   | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Lane                          |      4 | Lane                             | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Pair ID                       |      4 | Forward ID                       | See D3.2          |
+|                               |      4 | Backward ID                      | See D3.2          |
+|                               |      4 | Acknowledgement flag             | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Merge                         |      4 | Merge request                    | See D3.2          |
+|                               |      4 | Safe-to-merge                    | See D3.2          |
+|                               |      4 | Flag                             | See D3.2          |
+|                               |      4 | Flag tail                        | See D3.2          |
+|                               |      4 | Flag head                        | See D3.2          |
+|-------------------------------+--------+----------------------------------+-------------------|
+| Intersection                  |      4 | Platoon ID                       | See D3.2          |
+|                               |      4 | Distance travelled in CZ         | See D3.2          |
+|                               |      4 | Intention                        | See D3.2          |
+|                               |      4 | Counter                          | See D3.2          |
+|                               |        |                                  |                   |
 
 
 

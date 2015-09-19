@@ -1,4 +1,4 @@
-% Created 2015-09-13 Sun 20:01
+% Created 2015-09-19 Sat 15:27
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -72,6 +72,38 @@ mask is a bit mask that indicates whether this container is present.
 Note that the optional fields in the local CAM message always are
 present. However their values are undefined if they are not indicated
 as present.
+
+\begin{center}
+\begin{tabular}{lrll}
+Message part: & Bytes: & Data: & Notes:\\
+\hline
+Header & 1 & Message ID & \(=2\) for CAM\\
+ & 4 & Station ID & Given by organisers\\
+\hline
+Container Mask & 1 & ContainerMask & \\
+\hline
+Basic Container & 4 & StationType & \\
+ & 4 & Latitude & \\
+ & 4 & Longitude & \\
+ & 4 & SemiMajorConfidence & \\
+ & 4 & SemiMinorConfidence & \\
+ & 4 & SemiMajorOrientation & \\
+ & 4 & Altitude & \\
+\hline
+High Frequency Container & 4 & Heading & \\
+ & 4 & HeadingConfidence & \\
+ & 4 & Speed & \\
+ & 4 & SpeedConfidence & \\
+ & 4 & VehicleLength & \\
+ & 4 & VehicleWidth & \\
+ & 4 & LongAcceleration & \\
+ & 4 & LongAccelerationConfidence & \\
+ & 4 & YawRate & \\
+ & 4 & YawRateConfidence & \\
+\hline
+(opt) Low Frequency Container & 4 & VehicleRole & \\
+\end{tabular}
+\end{center}
 
 \begin{center}
 \begin{tabular}{rll}
@@ -173,7 +205,7 @@ Please note that the iCLCM set is still under proposal and may change.
 \begin{tabular}{lrll}
 Message part: & Bytes: & Data: & Notes:\\
 \hline
-Header & 1 & Message ID & \(=10\) for iGAME\\
+Header & 1 & Message ID & \(=10\) for iCLCM\\
 \hline
 Container Mask & 1 & Container mask & \\
 \hline
@@ -194,7 +226,6 @@ MIO & 4 & Mio ID & \\
  & 4 & Mio Range & \\
  & 4 & Mio Bearing & \\
  & 4 & Mio Range rate & \\
- &  &  & \\
 \hline
 Lane & 4 & Lane & \\
 \hline
