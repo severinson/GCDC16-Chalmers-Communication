@@ -72,34 +72,6 @@ as present.
 | (opt) Low Frequency Container |      4 | VehicleRole                | See D3.2          |
 |                               |        |                            |                   |
 
-* CAM (deprecated)
-Old version of LMS for CAM.
-|--------+--------------------------------------------------+--------------|
-| Bytes: | Data:                                            | Notes        |
-|--------+--------------------------------------------------+--------------|
-|      1 | Header                                           | $=2$ for CAM |
-|      1 | Container Mask                                   |              |
-|      4 | GenerationDeltaTime                              | See D3.2     |
-|      4 | Station Type                                     | See D3.2     |
-|      4 | (opt) Vehicle Role                               | See D3.2     |
-|      4 | Vehicle Length                                   | See D3.2     |
-|      4 | Vehicle Width                                    | See D3.2     |
-|      4 | Latitude                                         | See D3.2     |
-|      4 | Longitude                                        | See D3.2     |
-|      4 | Semi Major Confidence                            | See D3.2     |
-|      4 | Semi Minor Confidence                            | See D3.2     |
-|      4 | Semi Major Orientation                           | See D3.2     |
-|      4 | Heading                                          | See D3.2     |
-|      4 | Heading confidence 95%                           | See D3.2     |
-|      4 | Altitude                                         | Not in D3.2? |
-|      4 | Speed                                            | See D3.2     |
-|      4 | Speed Confidence 95%                             | See D3.2     |
-|      4 | Yaw Rate                                         | See D3.2     |
-|      4 | Yaw Rate Confidence 95%                          | See D3.2     |
-|      4 | Longitudinal vehicle acceleration                | See D3.2     |
-|      4 | Longitudinal vehicle acceleration confidence 95% | See D3.2     |
-|        |                                                  |              |
-
 
 \newpage
 * DENM
@@ -124,6 +96,8 @@ The fields marked as not implemented should be ignored.
 |                          |      8 | DetectionTime                    |                   |
 |                          |      8 | ReferenceTime                    |                   |
 |                          |      4 | (opt) Termination                |                   |
+|                          |      4 | Latitude                         | See D3.2          |
+|                          |      4 | Longitude                        | See D3.2          |
 |                          |      4 | SemiMajorConfidence              | See D3.2          |
 |                          |      4 | SemiMinorConfidence              | See D3.2          |
 |                          |      4 | SemiMajorOrientation             | See D3.2          |

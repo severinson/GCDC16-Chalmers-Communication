@@ -1,4 +1,4 @@
-% Created 2015-09-19 Sat 15:27
+% Created 2015-09-20 Sun 22:43
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -35,6 +35,9 @@ Version: & 0.1 & First draft\\
  & 0.2 & Revised CAM and added DENM\\
  & 0.3 & Added iCLCM\\
  & 0.4 & Rewrote introduction\\
+ & 0.5 & Revised CAM\\
+ & 0.6 & Added stationID to all messages\\
+ &  & \\
 \end{tabular}
 \end{center}
 
@@ -78,60 +81,32 @@ as present.
 Message part: & Bytes: & Data: & Notes:\\
 \hline
 Header & 1 & Message ID & \(=2\) for CAM\\
- & 4 & Station ID & Given by organisers\\
+ & 4 & Station ID & Unique station ID\\
+ & 4 & GenerationDeltaTime & See D3.2\\
 \hline
-Container Mask & 1 & ContainerMask & \\
+Container Mask & 1 & ContainerMask & See D3.2\\
 \hline
-Basic Container & 4 & StationType & \\
- & 4 & Latitude & \\
- & 4 & Longitude & \\
- & 4 & SemiMajorConfidence & \\
- & 4 & SemiMinorConfidence & \\
- & 4 & SemiMajorOrientation & \\
- & 4 & Altitude & \\
+Basic Container & 4 & StationType & See D3.2\\
+ & 4 & Latitude & See D3.2\\
+ & 4 & Longitude & See D3.2\\
+ & 4 & SemiMajorConfidence & See D3.2\\
+ & 4 & SemiMinorConfidence & See D3.2\\
+ & 4 & SemiMajorOrientation & See D3.2\\
+ & 4 & Altitude & Not in D3.2?\\
 \hline
-High Frequency Container & 4 & Heading & \\
- & 4 & HeadingConfidence & \\
- & 4 & Speed & \\
- & 4 & SpeedConfidence & \\
- & 4 & VehicleLength & \\
- & 4 & VehicleWidth & \\
- & 4 & LongAcceleration & \\
- & 4 & LongAccelerationConfidence & \\
- & 4 & YawRate & \\
- & 4 & YawRateConfidence & \\
+High Frequency Container & 4 & Heading & See D3.2\\
+ & 4 & HeadingConfidence & See D3.2\\
+ & 4 & Speed & See D3.2\\
+ & 4 & SpeedConfidence & See D3.2\\
+ & 4 & VehicleLength & See D3.2\\
+ & 4 & VehicleWidth & See D3.2\\
+ & 4 & LongAcceleration & See D3.2\\
+ & 4 & LongAccelerationConfidence & See D3.2\\
+ & 4 & YawRate & See D3.2\\
+ & 4 & YawRateConfidence & See D3.2\\
 \hline
-(opt) Low Frequency Container & 4 & VehicleRole & \\
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{rll}
-\hline
-Bytes: & Data: & Notes\\
-\hline
-1 & Header & \(=2\) for CAM\\
-1 & Container Mask & \\
-4 & GenerationDeltaTime & See D3.2\\
-4 & Station Type & See D3.2\\
-4 & (opt) Vehicle Role & See D3.2\\
-4 & Vehicle Length & See D3.2\\
-4 & Vehicle Width & See D3.2\\
-4 & Latitude & See D3.2\\
-4 & Longitude & See D3.2\\
-4 & Semi Major Confidence & See D3.2\\
-4 & Semi Minor Confidence & See D3.2\\
-4 & Semi Major Orientation & See D3.2\\
-4 & Heading & See D3.2\\
-4 & Heading confidence 95\% & See D3.2\\
-4 & Altitude & Not in D3.2?\\
-4 & Speed & See D3.2\\
-4 & Speed Confidence 95\% & See D3.2\\
-4 & Yaw Rate & See D3.2\\
-4 & Yaw Rate Confidence 95\% & See D3.2\\
-4 & Longitudinal vehicle acceleration & See D3.2\\
-4 & Longitudinal vehicle acceleration confidence 95\% & See D3.2\\
- &  & \\
+(opt) Low Frequency Container & 4 & VehicleRole & See D3.2\\
+ &  &  & \\
 \end{tabular}
 \end{center}
 
@@ -147,11 +122,14 @@ marked as unused by the bit mask can have arbitrary values as they are
 ignored by the communication stack. This also means that every local
 DENM message has the same size, making it easier to use in Simulink.
 
+The fields marked as not implemented should be ignored.
+
 \begin{center}
 \begin{tabular}{lrll}
 Message part: & Bytes: & Data: & Notes:\\
 \hline
-Header & 1 & Message ID & \(=1\) for DENM\\
+Header & 1 & MessageID & \(=1\) for DENM\\
+ & 4 & StationID & Unique station ID\\
 \hline
 Container Mask & 1 & ContainerMask & \\
 \hline
@@ -159,7 +137,12 @@ Management Container & 1 & ManagementMask & \\
  & 8 & DetectionTime & \\
  & 8 & ReferenceTime & \\
  & 4 & (opt) Termination & \\
- & 24 & EventPosition & \\
+ & 4 & Latitude & See D3.2\\
+ & 4 & Longitude & See D3.2\\
+ & 4 & SemiMajorConfidence & See D3.2\\
+ & 4 & SemiMinorConfidence & See D3.2\\
+ & 4 & SemiMajorOrientation & See D3.2\\
+ & 4 & Altitude & Not in D3.2?\\
  & 4 & (opt) RelevanceDistance & \\
  & 4 & (opt) RelevanceTrafficDirection & \\
  & 4 & (opt) ValidityDuration & \\
@@ -168,8 +151,10 @@ Management Container & 1 & ManagementMask & \\
 \hline
 (opt)Situation Container & 1 & SituationMask & \\
  & 4 & InformationQuality & \\
- & 8 & CauseCode & \\
+ & 4 & CauseCode & \\
+ & 4 & SubCauseCode & \\
  & 8 & (opt) LinkedCauseCode & \\
+ & 8 & (opt) LinkedSubCauseCode & \\
  & 0 & (opt) EventHistory & Not implemented\\
 \hline
 (opt) Location Container & 0 & LocationMask & Not implemented\\
@@ -205,44 +190,46 @@ Please note that the iCLCM set is still under proposal and may change.
 \begin{tabular}{lrll}
 Message part: & Bytes: & Data: & Notes:\\
 \hline
-Header & 1 & Message ID & \(=10\) for iCLCM\\
+Header & 1 & MessageID & \(=10\) for iCLCM\\
+ & 4 & StationID & Unique station ID\\
 \hline
 Container Mask & 1 & Container mask & \\
 \hline
-High frequency container & 4 & Rear axle location & \\
- & 4 & Controller type & \\
- & 4 & Response time constant & \\
- & 4 & Response time delay & \\
- & 4 & Target longitudinal acceleration & \\
- & 4 & Time headway & \\
- & 4 & Cruise speed & \\
+High frequency container & 4 & Rear axle location & See D3.2\\
+ & 4 & Controller type & See D3.2\\
+ & 4 & Response time constant & See D3.2\\
+ & 4 & Response time delay & See D3.2\\
+ & 4 & Target longitudinal acceleration & See D3.2\\
+ & 4 & Time headway & See D3.2\\
+ & 4 & Cruise speed & See D3.2\\
 \hline
-(opt) Low frequency container & 1 & Low frequency mask & \\
- & 4 & (opt) Participants ready & \\
- & 4 & (opt) Start platoon & \\
- & 4 & (opt) End-of-scenario & \\
+(opt) Low frequency container & 1 & Low frequency mask & See D3.2\\
+ & 4 & (opt) Participants ready & See D3.2\\
+ & 4 & (opt) Start platoon & See D3.2\\
+ & 4 & (opt) End-of-scenario & See D3.2\\
 \hline
-MIO & 4 & Mio ID & \\
- & 4 & Mio Range & \\
- & 4 & Mio Bearing & \\
- & 4 & Mio Range rate & \\
+MIO & 4 & Mio ID & See D3.2\\
+ & 4 & Mio Range & See D3.2\\
+ & 4 & Mio Bearing & See D3.2\\
+ & 4 & Mio Range rate & See D3.2\\
 \hline
-Lane & 4 & Lane & \\
+Lane & 4 & Lane & See D3.2\\
 \hline
-Pair ID & 4 & Forward ID & \\
- & 4 & Backward ID & \\
- & 4 & Acknowledgement flag & \\
+Pair ID & 4 & Forward ID & See D3.2\\
+ & 4 & Backward ID & See D3.2\\
+ & 4 & Acknowledgement flag & See D3.2\\
 \hline
-Merge & 4 & Merge request & \\
- & 4 & Safe-to-merge & \\
- & 4 & Flag & \\
- & 4 & Flag tail & \\
- & 4 & Flag head & \\
+Merge & 4 & Merge request & See D3.2\\
+ & 4 & Safe-to-merge & See D3.2\\
+ & 4 & Flag & See D3.2\\
+ & 4 & Flag tail & See D3.2\\
+ & 4 & Flag head & See D3.2\\
 \hline
-Intersection & 4 & Platoon ID & \\
- & 4 & Distance travelled in CZ & \\
- & 4 & Intention & \\
- & 4 & Counter & \\
+Intersection & 4 & Platoon ID & See D3.2\\
+ & 4 & Distance travelled in CZ & See D3.2\\
+ & 4 & Intention & See D3.2\\
+ & 4 & Counter & See D3.2\\
+ &  &  & \\
 \end{tabular}
 \end{center}
 \end{document}
