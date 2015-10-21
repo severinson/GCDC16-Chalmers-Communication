@@ -1,0 +1,73 @@
+% Created 2015-10-17 Sat 23:58
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{zev}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={zev},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.4.1 (Org mode 8.3.1)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Operating System}
+\label{sec:orgheadline1}
+The pcengines APU boards run Debian. To create the Debian live
+installation USB, follow these instructions:
+\url{https://github.com/ssinyagin/pcengines-apu-debian-cd}
+
+Note that you need a DB9 cable to connect to the serial port present
+on the board for installation. More details on the serial connector
+are provided here: \url{http://www.pcengines.ch/pdf/apu1.pdf}
+
+\section{Services}
+\label{sec:orgheadline2}
+The services running on the board:
+\begin{itemize}
+\item \href{https://github.com/alexvoronov/geonetworking}{Geonetworking}
+\item \href{https://github.com/alexvoronov/utoepy}{utoepy}
+\item SSH
+\end{itemize}
+
+\section{Connectivity}
+\label{sec:orgheadline3}
+Description on what the ports are used for. eth0 is the port furthest
+away from the power connector.
+
+\begin{center}
+\begin{tabular}{ll}
+NIC: & Use:\\
+\hline
+eth0 & Service\\
+eth1 & Simulink\\
+eth2 & Unused\\
+\end{tabular}
+\end{center}
+
+\section{IP}
+\label{sec:orgheadline4}
+Details on static IP addresses not yet added.
+
+\section{Users}
+\label{sec:orgheadline5}
+Service is performed through the root account, and the root password
+is "pcengines".
+\end{document}

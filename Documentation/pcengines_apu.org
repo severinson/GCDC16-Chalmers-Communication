@@ -1,0 +1,33 @@
+* Operating System
+The pcengines APU boards run Debian. To create the Debian live
+installation USB, follow these instructions:
+https://github.com/ssinyagin/pcengines-apu-debian-cd
+
+Note that you need a DB9 cable to connect to the serial port present
+on the board for installation. More details on the serial connector
+are provided here: http://www.pcengines.ch/pdf/apu1.pdf
+
+* Services
+The services running on the board:
+- [[https://github.com/alexvoronov/geonetworking][Geonetworking]]
+- [[https://github.com/alexvoronov/utoepy][utoepy]]
+- SSH
+
+#+TODO: Add ports
+
+* Connectivity
+Description on what the ports are used for. eth0 is the port furthest
+away from the power connector.
+
+| NIC: | Use:     |
+|------+----------|
+| eth0 | Service  |
+| eth1 | Simulink |
+| eth2 | Unused   |
+
+* IP
+Details on static IP addresses not yet added.
+
+* Users
+Service is performed through the root account, and the root password
+is "pcengines".
