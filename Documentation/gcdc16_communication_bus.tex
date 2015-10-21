@@ -1,0 +1,141 @@
+% Created 2015-10-21 Wed 20:27
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Albin Severinson}
+\date{\today}
+\title{GCDC16 Local Message Set}
+\hypersetup{
+ pdfauthor={Albin Severinson},
+ pdftitle={GCDC16 Local Message Set},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.4.1 (Org mode 8.3.1)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{center}
+\begin{tabular}{lrl}
+Version & 0.1 & First draft\\
+ & 0.2 & \\
+\end{tabular}
+\end{center}
+
+\section{Introduction}
+\label{sec:orgheadline1}
+This document specifies the busses that connect to the communication
+subsystem in the Simulink model. 4 bytes correspond to a Java integer,
+and 8 bytes to a Java long.
+
+
+\section{Sensor Fusion Bus}
+\label{sec:orgheadline2}
+This bus contains all data related to the sensor fusion subsystem.
+There will be two identical buses, one from the sensor fusion system
+to the communication, and one in the other direction. 
+
+\begin{center}
+\begin{tabular}{lrl}
+Data: & Bytes: & Notes:\\
+\hline
+Station ID & 4 & Unique station ID, given by organisers\\
+GenerationDeltaTime & 4 & See D3.2\\
+StationType & 4 & \(=5\)\\
+Latitude & 4 & See D3.2\\
+Longitude & 4 & See D3.2\\
+SemiMajorConfidence & 4 & See D3.2\\
+SemiMinorConfidence & 4 & See D3.2\\
+SemiMajorOrientation & 4 & See D3.2\\
+Altitude & 4 & Not in D3.2?\\
+Heading & 4 & See D3.2\\
+HeadingConfidence & 4 & See D3.2\\
+Speed & 4 & See D3.2\\
+SpeedConfidence & 4 & See D3.2\\
+VehicleLength & 4 & See D3.2\\
+VehicleWidth & 4 & See D3.2\\
+LongAcceleration & 4 & See D3.2\\
+LongAccelerationConfidence & 4 & See D3.2\\
+YawRate & 4 & See D3.2\\
+YawRateConfidence & 4 & See D3.2\\
+VehicleRole & 4 & \(=0\)\\
+ReferenceTime & 8 & See D3.2\\
+RearAxleLocation & 4 & See D3.2\\
+ResponseTimeConstant & 4 & See D3.2, use "unavailable" value\\
+ResponseTimeDelay & 4 & See D3.2, use "unavailable" value\\
+ &  & \\
+\end{tabular}
+\end{center}
+
+
+
+\section{Application Bus}
+\label{sec:orgheadline3}
+There are two busses connecting the communication system to the
+application running the current scenario:
+\begin{itemize}
+\item Application Data Bus
+\item Application Control Bus
+\end{itemize}
+
+The application data bus contains all data needed for communication.
+The application control bus is used to instruct the communication
+system to create a specific message.
+
+In order to send a specific message, the following steps
+must be performed:
+\begin{enumerate}
+\item Make sure all required data for the message is present on the
+application data bus.
+\item Set the correct value on the application control bus for the
+desired message.
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{llrl}
+Data: & Scenario: & Bytes: & Notes:\\
+\hline
+DetectionTime &  & 8 & See D3.2\\
+CauseCode &  & 4 & See D3.2\\
+SubCauseCode &  & 4 & See D3.2\\
+Controller type &  & 4 & See D3.2\\
+Target longitudinal acceleration &  & 4 & See D3.2\\
+Time headway &  & 4 & See D3.2\\
+Cruise speed &  & 4 & See D3.2\\
+(opt) Participants ready &  & 4 & See D3.2\\
+(opt) Start platoon &  & 4 & See D3.2\\
+(opt) End-of-scenario &  & 4 & See D3.2\\
+Mio ID &  & 4 & See D3.2\\
+Mio Range &  & 4 & See D3.2\\
+Mio Bearing &  & 4 & See D3.2\\
+Mio Range rate &  & 4 & See D3.2\\
+Lane &  & 4 & See D3.2\\
+Forward ID &  & 4 & See D3.2\\
+Backward ID &  & 4 & See D3.2\\
+Merge request &  & 4 & See D3.2\\
+Safe-to-merge &  & 4 & See D3.2\\
+Flag &  & 4 & See D3.2\\
+Flag tail &  & 4 & See D3.2\\
+Flag head &  & 4 & See D3.2\\
+Platoon ID &  & 4 & See D3.2\\
+Distance travelled in CZ &  & 4 & See D3.2\\
+Intention &  & 4 & See D3.2\\
+Counter &  & 4 & See D3.2\\
+ &  &  & \\
+\end{tabular}
+\end{center}
+\end{document}
