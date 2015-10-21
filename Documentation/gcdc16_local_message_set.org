@@ -56,7 +56,7 @@ as present.
 |                               |      4 | SemiMajorConfidence        | See D3.2          |
 |                               |      4 | SemiMinorConfidence        | See D3.2          |
 |                               |      4 | SemiMajorOrientation       | See D3.2          |
-|                               |      4 | Altitude                   | Not in D3.2?      |
+|                               |      4 | Altitude                   | $=800 001$        |
 |-------------------------------+--------+----------------------------+-------------------|
 | High Frequency Container      |      4 | Heading                    | See D3.2          |
 |                               |      4 | HeadingConfidence          | See D3.2          |
@@ -112,8 +112,8 @@ The fields marked as not implemented should be ignored.
 |                          |      4 | InformationQuality               |                   |
 |                          |      4 | CauseCode                        |                   |
 |                          |      4 | SubCauseCode                     |                   |
-|                          |      8 | (opt) LinkedCauseCode            |                   |
-|                          |      8 | (opt) LinkedSubCauseCode         |                   |
+|                          |      4 | (opt) LinkedCauseCode            |                   |
+|                          |      4 | (opt) LinkedSubCauseCode         |                   |
 |                          |      0 | (opt) EventHistory               | Not implemented   |
 |--------------------------+--------+----------------------------------+-------------------|
 | (opt) Location Container |      0 | LocationMask                     | Not implemented   |
