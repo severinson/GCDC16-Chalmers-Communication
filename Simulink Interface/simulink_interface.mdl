@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.123"
+    ComputedModelVersion    "1.229"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -27,9 +27,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "zev"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Oct 30 14:13:47 2015"
+  LastModifiedDate	  "Fri Oct 30 16:50:36 2015"
   RTWModifiedTimeStamp	  368112542
-  ModelVersionFormat	  "1.%<AutoIncrement:123>"
+  ModelVersionFormat	  "1.%<AutoIncrement:229>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1159,7 +1159,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"DataConverter"
-	Location		[0, 53, 1598, 874]
+	Location		[1, 78, 1599, 899]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1219,12 +1219,12 @@ Model {
 	  Position		  [240, 15, 245, 285]
 	  ZOrder		  -3
 	  ShowName		  off
-	  OutputSignals		  "StationId,GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinorConfide"
+	  OutputSignals		  "StationID,GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinorConfide"
 	  "nce,SemiMajorOrientation,Altitude,Heading,HeadingConfidence,Speed,SpeedConfidence,VehicleLength,VehicleWidth,LongAc"
 	  "c,LongAccConf,YawRate,YawRateConf,VehicleRole,ReferenceTime,RearAxleLocation,ResponseTimeConstant,ResponseTimeDelay"
 	  Port {
 	    PortNumber		    1
-	    Name		    "<StationId>"
+	    Name		    "<StationID>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1543,9 +1543,9 @@ Model {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "MATLAB Function"
+	  Name			  "FormatMessage"
 	  SID			  "383"
-	  Ports			  [51, 50]
+	  Ports			  [52, 54]
 	  Position		  [370, 13, 665, 557]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.32"
@@ -1571,7 +1571,7 @@ Model {
 	  MaskPortRotate	  "default"
 	  MaskIconUnits		  "normalized"
 	  System {
-	    Name		    "MATLAB Function"
+	    Name		    "FormatMessage"
 	    Location		    [257, 457, 812, 717]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -1585,412 +1585,420 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "217"
+	    SIDHighWatermark	    "222"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "StationID1"
-	      SID		      "383::116"
+	      Name		      "SensorBus"
+	      SID		      "383::222"
 	      Position		      [20, 101, 40, 119]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "GenerationDeltaTime1"
-	      SID		      "383::117"
+	      Name		      "StationID1"
+	      SID		      "383::116"
 	      Position		      [20, 136, 40, 154]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "StationType1"
-	      SID		      "383::118"
+	      Name		      "GenerationDeltaTime1"
+	      SID		      "383::117"
 	      Position		      [20, 171, 40, 189]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Latitude1"
-	      SID		      "383::119"
+	      Name		      "StationType1"
+	      SID		      "383::118"
 	      Position		      [20, 206, 40, 224]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Longitude1"
-	      SID		      "383::120"
+	      Name		      "Latitude1"
+	      SID		      "383::119"
 	      Position		      [20, 246, 40, 264]
 	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SemiMajorConfidence1"
-	      SID		      "383::121"
+	      Name		      "Longitude1"
+	      SID		      "383::120"
 	      Position		      [20, 281, 40, 299]
 	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SemiMinorConfidence1"
-	      SID		      "383::122"
+	      Name		      "SemiMajorConfidence1"
+	      SID		      "383::121"
 	      Position		      [20, 316, 40, 334]
 	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SemiMajorOrientation1"
-	      SID		      "383::123"
+	      Name		      "SemiMinorConfidence1"
+	      SID		      "383::122"
 	      Position		      [20, 351, 40, 369]
 	      Port		      "8"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Altitude1"
-	      SID		      "383::124"
+	      Name		      "SemiMajorOrientation1"
+	      SID		      "383::123"
 	      Position		      [20, 386, 40, 404]
 	      Port		      "9"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Heading1"
-	      SID		      "383::125"
+	      Name		      "Altitude1"
+	      SID		      "383::124"
 	      Position		      [20, 426, 40, 444]
 	      Port		      "10"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "HeadingConfidence1"
-	      SID		      "383::126"
+	      Name		      "Heading1"
+	      SID		      "383::125"
 	      Position		      [20, 461, 40, 479]
 	      Port		      "11"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Speed1"
-	      SID		      "383::127"
+	      Name		      "HeadingConfidence1"
+	      SID		      "383::126"
 	      Position		      [20, 496, 40, 514]
 	      Port		      "12"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SpeedConfidence1"
-	      SID		      "383::128"
+	      Name		      "Speed1"
+	      SID		      "383::127"
 	      Position		      [20, 531, 40, 549]
 	      Port		      "13"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "VehicleLength1"
-	      SID		      "383::129"
+	      Name		      "SpeedConfidence1"
+	      SID		      "383::128"
 	      Position		      [20, 566, 40, 584]
 	      Port		      "14"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "VehicleWidth1"
-	      SID		      "383::130"
+	      Name		      "VehicleLength1"
+	      SID		      "383::129"
 	      Position		      [20, 606, 40, 624]
 	      Port		      "15"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "LongAcc1"
-	      SID		      "383::131"
+	      Name		      "VehicleWidth1"
+	      SID		      "383::130"
 	      Position		      [20, 641, 40, 659]
 	      Port		      "16"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "LongAccConfidence1"
-	      SID		      "383::132"
+	      Name		      "LongAcc1"
+	      SID		      "383::131"
 	      Position		      [20, 676, 40, 694]
 	      Port		      "17"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "YawRate1"
-	      SID		      "383::133"
+	      Name		      "LongAccConfidence1"
+	      SID		      "383::132"
 	      Position		      [20, 711, 40, 729]
 	      Port		      "18"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "YawRateConfidence1"
-	      SID		      "383::134"
+	      Name		      "YawRate1"
+	      SID		      "383::133"
 	      Position		      [20, 746, 40, 764]
 	      Port		      "19"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "VehicleRole1"
-	      SID		      "383::135"
+	      Name		      "YawRateConfidence1"
+	      SID		      "383::134"
 	      Position		      [20, 786, 40, 804]
 	      Port		      "20"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ReferenceTime1"
-	      SID		      "383::136"
+	      Name		      "VehicleRole1"
+	      SID		      "383::135"
 	      Position		      [20, 821, 40, 839]
 	      Port		      "21"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "RearAxleLocation1"
-	      SID		      "383::137"
+	      Name		      "ReferenceTime1"
+	      SID		      "383::136"
 	      Position		      [20, 856, 40, 874]
 	      Port		      "22"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ResponseTimeConstant1"
-	      SID		      "383::138"
+	      Name		      "RearAxleLocation1"
+	      SID		      "383::137"
 	      Position		      [20, 891, 40, 909]
 	      Port		      "23"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ResponseTimeDelay1"
-	      SID		      "383::139"
+	      Name		      "ResponseTimeConstant1"
+	      SID		      "383::138"
 	      Position		      [20, 926, 40, 944]
 	      Port		      "24"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "DetectionTime1"
-	      SID		      "383::140"
+	      Name		      "ResponseTimeDelay1"
+	      SID		      "383::139"
 	      Position		      [20, 966, 40, 984]
 	      Port		      "25"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "CauseCode1"
-	      SID		      "383::141"
+	      Name		      "DetectionTime1"
+	      SID		      "383::140"
 	      Position		      [20, 1001, 40, 1019]
 	      Port		      "26"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SubCauseCode1"
-	      SID		      "383::142"
+	      Name		      "CauseCode1"
+	      SID		      "383::141"
 	      Position		      [20, 1036, 40, 1054]
 	      Port		      "27"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ControllerType1"
-	      SID		      "383::143"
+	      Name		      "SubCauseCode1"
+	      SID		      "383::142"
 	      Position		      [20, 1071, 40, 1089]
 	      Port		      "28"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "TargetLongAcc1"
-	      SID		      "383::144"
+	      Name		      "ControllerType1"
+	      SID		      "383::143"
 	      Position		      [20, 1106, 40, 1124]
 	      Port		      "29"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "TimeHeadway1"
-	      SID		      "383::145"
+	      Name		      "TargetLongAcc1"
+	      SID		      "383::144"
 	      Position		      [20, 1146, 40, 1164]
 	      Port		      "30"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "CruiseSpeed1"
-	      SID		      "383::146"
+	      Name		      "TimeHeadway1"
+	      SID		      "383::145"
 	      Position		      [20, 1181, 40, 1199]
 	      Port		      "31"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ParticipantsReady1"
-	      SID		      "383::147"
+	      Name		      "CruiseSpeed1"
+	      SID		      "383::146"
 	      Position		      [20, 1216, 40, 1234]
 	      Port		      "32"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "StartPlatoon1"
-	      SID		      "383::148"
+	      Name		      "ParticipantsReady1"
+	      SID		      "383::147"
 	      Position		      [20, 1251, 40, 1269]
 	      Port		      "33"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "EndOfScenario1"
-	      SID		      "383::149"
+	      Name		      "StartPlatoon1"
+	      SID		      "383::148"
 	      Position		      [20, 1286, 40, 1304]
 	      Port		      "34"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MioID1"
-	      SID		      "383::150"
+	      Name		      "EndOfScenario1"
+	      SID		      "383::149"
 	      Position		      [20, 1326, 40, 1344]
 	      Port		      "35"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MioRange1"
-	      SID		      "383::151"
+	      Name		      "MioID1"
+	      SID		      "383::150"
 	      Position		      [20, 1361, 40, 1379]
 	      Port		      "36"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MioBearing1"
-	      SID		      "383::152"
+	      Name		      "MioRange1"
+	      SID		      "383::151"
 	      Position		      [20, 1396, 40, 1414]
 	      Port		      "37"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MioRangeRate1"
-	      SID		      "383::153"
+	      Name		      "MioBearing1"
+	      SID		      "383::152"
 	      Position		      [20, 1431, 40, 1449]
 	      Port		      "38"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Lane1"
-	      SID		      "383::154"
+	      Name		      "MioRangeRate1"
+	      SID		      "383::153"
 	      Position		      [20, 1466, 40, 1484]
 	      Port		      "39"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "ForwardID1"
-	      SID		      "383::155"
+	      Name		      "Lane1"
+	      SID		      "383::154"
 	      Position		      [20, 1506, 40, 1524]
 	      Port		      "40"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "BackwardID1"
-	      SID		      "383::156"
+	      Name		      "ForwardID1"
+	      SID		      "383::155"
 	      Position		      [20, 1541, 40, 1559]
 	      Port		      "41"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MergeRequest1"
-	      SID		      "383::157"
+	      Name		      "BackwardID1"
+	      SID		      "383::156"
 	      Position		      [20, 1576, 40, 1594]
 	      Port		      "42"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "SafeToMerge1"
-	      SID		      "383::158"
+	      Name		      "MergeRequest1"
+	      SID		      "383::157"
 	      Position		      [20, 1611, 40, 1629]
 	      Port		      "43"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Flag1"
-	      SID		      "383::159"
+	      Name		      "SafeToMerge1"
+	      SID		      "383::158"
 	      Position		      [20, 1646, 40, 1664]
 	      Port		      "44"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "FlagTail1"
-	      SID		      "383::160"
+	      Name		      "Flag1"
+	      SID		      "383::159"
 	      Position		      [20, 1686, 40, 1704]
 	      Port		      "45"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "FlagHead1"
-	      SID		      "383::161"
+	      Name		      "FlagTail1"
+	      SID		      "383::160"
 	      Position		      [20, 1721, 40, 1739]
 	      Port		      "46"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "PlatoonID1"
-	      SID		      "383::162"
+	      Name		      "FlagHead1"
+	      SID		      "383::161"
 	      Position		      [20, 1756, 40, 1774]
 	      Port		      "47"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "DistanceTravelledCZ1"
-	      SID		      "383::163"
+	      Name		      "PlatoonID1"
+	      SID		      "383::162"
 	      Position		      [20, 1791, 40, 1809]
 	      Port		      "48"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Intention1"
-	      SID		      "383::164"
+	      Name		      "DistanceTravelledCZ1"
+	      SID		      "383::163"
 	      Position		      [20, 1826, 40, 1844]
 	      Port		      "49"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Counter1"
-	      SID		      "383::165"
+	      Name		      "Intention1"
+	      SID		      "383::164"
 	      Position		      [20, 1866, 40, 1884]
 	      Port		      "50"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "MessageControl"
-	      SID		      "383::217"
+	      Name		      "Counter1"
+	      SID		      "383::165"
 	      Position		      [20, 1901, 40, 1919]
 	      Port		      "51"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "MessageControl"
+	      SID		      "383::217"
+	      Position		      [20, 1936, 40, 1954]
+	      Port		      "52"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -1998,7 +2006,7 @@ Model {
 	      Name		      " Demux "
 	      SID		      "383::15"
 	      Ports		      [1, 1]
-	      Position		      [270, 2200, 320, 2240]
+	      Position		      [270, 2205, 320, 2245]
 	      Outputs		      "1"
 	    }
 	    Block {
@@ -2006,11 +2014,11 @@ Model {
 	      Name		      " SFunction "
 	      SID		      "383::14"
 	      Tag		      "Stateflow S-Function simulink_interface 4"
-	      Ports		      [51, 51]
-	      Position		      [180, 160, 230, 2200]
+	      Ports		      [52, 55]
+	      Position		      [180, 164, 230, 2206]
 	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[51 51]"
-	      EnableBusSupport	      off
+	      PortCounts	      "[52 55]"
+	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
 		Name			"StationID"
@@ -2025,288 +2033,312 @@ Model {
 	      }
 	      Port {
 		PortNumber		4
-		Name			"StationType"
+		Name			"ContainerMask"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		5
-		Name			"Latitude"
+		Name			"ManagementMask"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		6
-		Name			"Longitude"
+		Name			"SituationMask"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		7
-		Name			"SemiMajorConfidence"
+		Name			"AlacarteMask"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		8
-		Name			"SemiMinorConfidence"
+		Name			"StationType"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		9
-		Name			"SemiMajorOrientation"
+		Name			"Latitude"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		10
-		Name			"Altitude"
+		Name			"Longitude"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		11
-		Name			"Heading"
+		Name			"SemiMajorConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		12
-		Name			"HeadingConfidence"
+		Name			"SemiMinorConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		13
-		Name			"Speed"
+		Name			"SemiMajorOrientation"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		14
-		Name			"SpeedConfidence"
+		Name			"Altitude"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		15
-		Name			"VehicleLength"
+		Name			"Heading"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		16
-		Name			"VehicleWidth"
+		Name			"HeadingConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		17
-		Name			"LongAcc"
+		Name			"Speed"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		18
-		Name			"LongAccConfidence"
+		Name			"SpeedConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		19
-		Name			"YawRate"
+		Name			"VehicleLength"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		20
-		Name			"YawRateConfidence"
+		Name			"VehicleWidth"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		21
-		Name			"VehicleRole"
+		Name			"LongAcc"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		22
-		Name			"ReferenceTime"
+		Name			"LongAccConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		23
-		Name			"RearAxleLocation"
+		Name			"YawRate"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		24
-		Name			"ResponseTimeConstant"
+		Name			"YawRateConfidence"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		25
-		Name			"ResponseTimeDelay"
+		Name			"VehicleRole"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		26
-		Name			"DetectionTime"
+		Name			"ReferenceTime"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		27
-		Name			"CauseCode"
+		Name			"RearAxleLocation"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		28
-		Name			"SubCauseCode"
+		Name			"ResponseTimeConstant"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		29
-		Name			"ControllerType"
+		Name			"ResponseTimeDelay"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		30
-		Name			"TargetLongAcc"
+		Name			"DetectionTime"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		31
-		Name			"TimeHeadway"
+		Name			"CauseCode"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		32
-		Name			"CruiseSpeed"
+		Name			"SubCauseCode"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		33
-		Name			"ParticipantsReady"
+		Name			"ControllerType"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		34
-		Name			"StartPlatoon"
+		Name			"TargetLongAcc"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		35
-		Name			"EndOfScenario"
+		Name			"TimeHeadway"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		36
-		Name			"MioID"
+		Name			"CruiseSpeed"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		37
-		Name			"MioRange"
+		Name			"ParticipantsReady"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		38
-		Name			"MioBearing"
+		Name			"StartPlatoon"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		39
-		Name			"MioRangeRate"
+		Name			"EndOfScenario"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		40
-		Name			"Lane"
+		Name			"MioID"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		41
-		Name			"ForwardID"
+		Name			"MioRange"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		42
-		Name			"BackwardID"
+		Name			"MioBearing"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		43
-		Name			"MergeRequest"
+		Name			"MioRangeRate"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		44
-		Name			"SafeToMerge"
+		Name			"Lane"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		45
-		Name			"Flag"
+		Name			"ForwardID"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		46
-		Name			"FlagTail"
+		Name			"BackwardID"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		47
-		Name			"FlagHead"
+		Name			"MergeRequest"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		48
-		Name			"PlatoonID"
+		Name			"SafeToMerge"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		49
-		Name			"DistanceTravelledCZ"
+		Name			"Flag"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		50
-		Name			"Intention"
+		Name			"FlagTail"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		51
+		Name			"FlagHead"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		52
+		Name			"PlatoonID"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		53
+		Name			"DistanceTravelledCZ"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		54
+		Name			"Intention"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		55
 		Name			"Counter"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
@@ -2316,7 +2348,7 @@ Model {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
 	      SID		      "383::17"
-	      Position		      [460, 2211, 480, 2229]
+	      Position		      [460, 2216, 480, 2234]
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -2335,693 +2367,731 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "StationType"
-	      SID		      "383::168"
+	      Name		      "ContainerMask"
+	      SID		      "383::218"
 	      Position		      [460, 171, 480, 189]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Latitude"
-	      SID		      "383::169"
+	      Name		      "ManagementMask"
+	      SID		      "383::219"
 	      Position		      [460, 206, 480, 224]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Longitude"
-	      SID		      "383::170"
+	      Name		      "SituationMask"
+	      SID		      "383::220"
 	      Position		      [460, 246, 480, 264]
 	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SemiMajorConfidence"
-	      SID		      "383::171"
+	      Name		      "AlacarteMask"
+	      SID		      "383::221"
 	      Position		      [460, 281, 480, 299]
 	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SemiMinorConfidence"
-	      SID		      "383::172"
+	      Name		      "StationType"
+	      SID		      "383::168"
 	      Position		      [460, 316, 480, 334]
 	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SemiMajorOrientation"
-	      SID		      "383::173"
+	      Name		      "Latitude"
+	      SID		      "383::169"
 	      Position		      [460, 351, 480, 369]
 	      Port		      "8"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Altitude"
-	      SID		      "383::174"
+	      Name		      "Longitude"
+	      SID		      "383::170"
 	      Position		      [460, 386, 480, 404]
 	      Port		      "9"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Heading"
-	      SID		      "383::175"
+	      Name		      "SemiMajorConfidence"
+	      SID		      "383::171"
 	      Position		      [460, 426, 480, 444]
 	      Port		      "10"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "HeadingConfidence"
-	      SID		      "383::176"
+	      Name		      "SemiMinorConfidence"
+	      SID		      "383::172"
 	      Position		      [460, 461, 480, 479]
 	      Port		      "11"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Speed"
-	      SID		      "383::177"
+	      Name		      "SemiMajorOrientation"
+	      SID		      "383::173"
 	      Position		      [460, 496, 480, 514]
 	      Port		      "12"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SpeedConfidence"
-	      SID		      "383::178"
+	      Name		      "Altitude"
+	      SID		      "383::174"
 	      Position		      [460, 531, 480, 549]
 	      Port		      "13"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "VehicleLength"
-	      SID		      "383::179"
+	      Name		      "Heading"
+	      SID		      "383::175"
 	      Position		      [460, 566, 480, 584]
 	      Port		      "14"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "VehicleWidth"
-	      SID		      "383::180"
+	      Name		      "HeadingConfidence"
+	      SID		      "383::176"
 	      Position		      [460, 606, 480, 624]
 	      Port		      "15"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "LongAcc"
-	      SID		      "383::181"
+	      Name		      "Speed"
+	      SID		      "383::177"
 	      Position		      [460, 641, 480, 659]
 	      Port		      "16"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "LongAccConfidence"
-	      SID		      "383::182"
+	      Name		      "SpeedConfidence"
+	      SID		      "383::178"
 	      Position		      [460, 676, 480, 694]
 	      Port		      "17"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "YawRate"
-	      SID		      "383::183"
+	      Name		      "VehicleLength"
+	      SID		      "383::179"
 	      Position		      [460, 711, 480, 729]
 	      Port		      "18"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "YawRateConfidence"
-	      SID		      "383::184"
+	      Name		      "VehicleWidth"
+	      SID		      "383::180"
 	      Position		      [460, 746, 480, 764]
 	      Port		      "19"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "VehicleRole"
-	      SID		      "383::185"
+	      Name		      "LongAcc"
+	      SID		      "383::181"
 	      Position		      [460, 786, 480, 804]
 	      Port		      "20"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ReferenceTime"
-	      SID		      "383::186"
+	      Name		      "LongAccConfidence"
+	      SID		      "383::182"
 	      Position		      [460, 821, 480, 839]
 	      Port		      "21"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "RearAxleLocation"
-	      SID		      "383::187"
+	      Name		      "YawRate"
+	      SID		      "383::183"
 	      Position		      [460, 856, 480, 874]
 	      Port		      "22"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ResponseTimeConstant"
-	      SID		      "383::188"
+	      Name		      "YawRateConfidence"
+	      SID		      "383::184"
 	      Position		      [460, 891, 480, 909]
 	      Port		      "23"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ResponseTimeDelay"
-	      SID		      "383::189"
+	      Name		      "VehicleRole"
+	      SID		      "383::185"
 	      Position		      [460, 926, 480, 944]
 	      Port		      "24"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "DetectionTime"
-	      SID		      "383::190"
+	      Name		      "ReferenceTime"
+	      SID		      "383::186"
 	      Position		      [460, 966, 480, 984]
 	      Port		      "25"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "CauseCode"
-	      SID		      "383::191"
+	      Name		      "RearAxleLocation"
+	      SID		      "383::187"
 	      Position		      [460, 1001, 480, 1019]
 	      Port		      "26"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SubCauseCode"
-	      SID		      "383::192"
+	      Name		      "ResponseTimeConstant"
+	      SID		      "383::188"
 	      Position		      [460, 1036, 480, 1054]
 	      Port		      "27"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ControllerType"
-	      SID		      "383::193"
+	      Name		      "ResponseTimeDelay"
+	      SID		      "383::189"
 	      Position		      [460, 1071, 480, 1089]
 	      Port		      "28"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "TargetLongAcc"
-	      SID		      "383::194"
+	      Name		      "DetectionTime"
+	      SID		      "383::190"
 	      Position		      [460, 1106, 480, 1124]
 	      Port		      "29"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "TimeHeadway"
-	      SID		      "383::195"
+	      Name		      "CauseCode"
+	      SID		      "383::191"
 	      Position		      [460, 1146, 480, 1164]
 	      Port		      "30"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "CruiseSpeed"
-	      SID		      "383::196"
+	      Name		      "SubCauseCode"
+	      SID		      "383::192"
 	      Position		      [460, 1181, 480, 1199]
 	      Port		      "31"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ParticipantsReady"
-	      SID		      "383::197"
+	      Name		      "ControllerType"
+	      SID		      "383::193"
 	      Position		      [460, 1216, 480, 1234]
 	      Port		      "32"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "StartPlatoon"
-	      SID		      "383::198"
+	      Name		      "TargetLongAcc"
+	      SID		      "383::194"
 	      Position		      [460, 1251, 480, 1269]
 	      Port		      "33"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "EndOfScenario"
-	      SID		      "383::199"
+	      Name		      "TimeHeadway"
+	      SID		      "383::195"
 	      Position		      [460, 1286, 480, 1304]
 	      Port		      "34"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "MioID"
-	      SID		      "383::200"
+	      Name		      "CruiseSpeed"
+	      SID		      "383::196"
 	      Position		      [460, 1326, 480, 1344]
 	      Port		      "35"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "MioRange"
-	      SID		      "383::201"
+	      Name		      "ParticipantsReady"
+	      SID		      "383::197"
 	      Position		      [460, 1361, 480, 1379]
 	      Port		      "36"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "MioBearing"
-	      SID		      "383::202"
+	      Name		      "StartPlatoon"
+	      SID		      "383::198"
 	      Position		      [460, 1396, 480, 1414]
 	      Port		      "37"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "MioRangeRate"
-	      SID		      "383::203"
+	      Name		      "EndOfScenario"
+	      SID		      "383::199"
 	      Position		      [460, 1431, 480, 1449]
 	      Port		      "38"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Lane"
-	      SID		      "383::204"
+	      Name		      "MioID"
+	      SID		      "383::200"
 	      Position		      [460, 1466, 480, 1484]
 	      Port		      "39"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ForwardID"
-	      SID		      "383::205"
+	      Name		      "MioRange"
+	      SID		      "383::201"
 	      Position		      [460, 1506, 480, 1524]
 	      Port		      "40"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "BackwardID"
-	      SID		      "383::206"
+	      Name		      "MioBearing"
+	      SID		      "383::202"
 	      Position		      [460, 1541, 480, 1559]
 	      Port		      "41"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "MergeRequest"
-	      SID		      "383::207"
+	      Name		      "MioRangeRate"
+	      SID		      "383::203"
 	      Position		      [460, 1576, 480, 1594]
 	      Port		      "42"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "SafeToMerge"
-	      SID		      "383::208"
+	      Name		      "Lane"
+	      SID		      "383::204"
 	      Position		      [460, 1611, 480, 1629]
 	      Port		      "43"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Flag"
-	      SID		      "383::209"
+	      Name		      "ForwardID"
+	      SID		      "383::205"
 	      Position		      [460, 1646, 480, 1664]
 	      Port		      "44"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "FlagTail"
-	      SID		      "383::210"
+	      Name		      "BackwardID"
+	      SID		      "383::206"
 	      Position		      [460, 1686, 480, 1704]
 	      Port		      "45"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "FlagHead"
-	      SID		      "383::211"
+	      Name		      "MergeRequest"
+	      SID		      "383::207"
 	      Position		      [460, 1721, 480, 1739]
 	      Port		      "46"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "PlatoonID"
-	      SID		      "383::212"
+	      Name		      "SafeToMerge"
+	      SID		      "383::208"
 	      Position		      [460, 1756, 480, 1774]
 	      Port		      "47"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "DistanceTravelledCZ"
-	      SID		      "383::213"
+	      Name		      "Flag"
+	      SID		      "383::209"
 	      Position		      [460, 1791, 480, 1809]
 	      Port		      "48"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Intention"
-	      SID		      "383::214"
+	      Name		      "FlagTail"
+	      SID		      "383::210"
 	      Position		      [460, 1826, 480, 1844]
 	      Port		      "49"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Counter"
-	      SID		      "383::215"
+	      Name		      "FlagHead"
+	      SID		      "383::211"
 	      Position		      [460, 1866, 480, 1884]
 	      Port		      "50"
 	      IconDisplay	      "Port number"
 	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PlatoonID"
+	      SID		      "383::212"
+	      Position		      [460, 1901, 480, 1919]
+	      Port		      "51"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DistanceTravelledCZ"
+	      SID		      "383::213"
+	      Position		      [460, 1936, 480, 1954]
+	      Port		      "52"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Intention"
+	      SID		      "383::214"
+	      Position		      [460, 1971, 480, 1989]
+	      Port		      "53"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Counter"
+	      SID		      "383::215"
+	      Position		      [460, 2006, 480, 2024]
+	      Port		      "54"
+	      IconDisplay	      "Port number"
+	    }
 	    Line {
-	      SrcBlock		      "StationID1"
+	      SrcBlock		      "SensorBus"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "GenerationDeltaTime1"
+	      SrcBlock		      "StationID1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "StationType1"
+	      SrcBlock		      "GenerationDeltaTime1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      3
 	    }
 	    Line {
-	      SrcBlock		      "Latitude1"
+	      SrcBlock		      "StationType1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      4
 	    }
 	    Line {
-	      SrcBlock		      "Longitude1"
+	      SrcBlock		      "Latitude1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      5
 	    }
 	    Line {
-	      SrcBlock		      "SemiMajorConfidence1"
+	      SrcBlock		      "Longitude1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      6
 	    }
 	    Line {
-	      SrcBlock		      "SemiMinorConfidence1"
+	      SrcBlock		      "SemiMajorConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      7
 	    }
 	    Line {
-	      SrcBlock		      "SemiMajorOrientation1"
+	      SrcBlock		      "SemiMinorConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      8
 	    }
 	    Line {
-	      SrcBlock		      "Altitude1"
+	      SrcBlock		      "SemiMajorOrientation1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      9
 	    }
 	    Line {
-	      SrcBlock		      "Heading1"
+	      SrcBlock		      "Altitude1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      10
 	    }
 	    Line {
-	      SrcBlock		      "HeadingConfidence1"
+	      SrcBlock		      "Heading1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      11
 	    }
 	    Line {
-	      SrcBlock		      "Speed1"
+	      SrcBlock		      "HeadingConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      12
 	    }
 	    Line {
-	      SrcBlock		      "SpeedConfidence1"
+	      SrcBlock		      "Speed1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      13
 	    }
 	    Line {
-	      SrcBlock		      "VehicleLength1"
+	      SrcBlock		      "SpeedConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      14
 	    }
 	    Line {
-	      SrcBlock		      "VehicleWidth1"
+	      SrcBlock		      "VehicleLength1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      15
 	    }
 	    Line {
-	      SrcBlock		      "LongAcc1"
+	      SrcBlock		      "VehicleWidth1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      16
 	    }
 	    Line {
-	      SrcBlock		      "LongAccConfidence1"
+	      SrcBlock		      "LongAcc1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      17
 	    }
 	    Line {
-	      SrcBlock		      "YawRate1"
+	      SrcBlock		      "LongAccConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      18
 	    }
 	    Line {
-	      SrcBlock		      "YawRateConfidence1"
+	      SrcBlock		      "YawRate1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      19
 	    }
 	    Line {
-	      SrcBlock		      "VehicleRole1"
+	      SrcBlock		      "YawRateConfidence1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      20
 	    }
 	    Line {
-	      SrcBlock		      "ReferenceTime1"
+	      SrcBlock		      "VehicleRole1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      21
 	    }
 	    Line {
-	      SrcBlock		      "RearAxleLocation1"
+	      SrcBlock		      "ReferenceTime1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      22
 	    }
 	    Line {
-	      SrcBlock		      "ResponseTimeConstant1"
+	      SrcBlock		      "RearAxleLocation1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      23
 	    }
 	    Line {
-	      SrcBlock		      "ResponseTimeDelay1"
+	      SrcBlock		      "ResponseTimeConstant1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      24
 	    }
 	    Line {
-	      SrcBlock		      "DetectionTime1"
+	      SrcBlock		      "ResponseTimeDelay1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      25
 	    }
 	    Line {
-	      SrcBlock		      "CauseCode1"
+	      SrcBlock		      "DetectionTime1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      26
 	    }
 	    Line {
-	      SrcBlock		      "SubCauseCode1"
+	      SrcBlock		      "CauseCode1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      27
 	    }
 	    Line {
-	      SrcBlock		      "ControllerType1"
+	      SrcBlock		      "SubCauseCode1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      28
 	    }
 	    Line {
-	      SrcBlock		      "TargetLongAcc1"
+	      SrcBlock		      "ControllerType1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      29
 	    }
 	    Line {
-	      SrcBlock		      "TimeHeadway1"
+	      SrcBlock		      "TargetLongAcc1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      30
 	    }
 	    Line {
-	      SrcBlock		      "CruiseSpeed1"
+	      SrcBlock		      "TimeHeadway1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      31
 	    }
 	    Line {
-	      SrcBlock		      "ParticipantsReady1"
+	      SrcBlock		      "CruiseSpeed1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      32
 	    }
 	    Line {
-	      SrcBlock		      "StartPlatoon1"
+	      SrcBlock		      "ParticipantsReady1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      33
 	    }
 	    Line {
-	      SrcBlock		      "EndOfScenario1"
+	      SrcBlock		      "StartPlatoon1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      34
 	    }
 	    Line {
-	      SrcBlock		      "MioID1"
+	      SrcBlock		      "EndOfScenario1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      35
 	    }
 	    Line {
-	      SrcBlock		      "MioRange1"
+	      SrcBlock		      "MioID1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      36
 	    }
 	    Line {
-	      SrcBlock		      "MioBearing1"
+	      SrcBlock		      "MioRange1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      37
 	    }
 	    Line {
-	      SrcBlock		      "MioRangeRate1"
+	      SrcBlock		      "MioBearing1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      38
 	    }
 	    Line {
-	      SrcBlock		      "Lane1"
+	      SrcBlock		      "MioRangeRate1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      39
 	    }
 	    Line {
-	      SrcBlock		      "ForwardID1"
+	      SrcBlock		      "Lane1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      40
 	    }
 	    Line {
-	      SrcBlock		      "BackwardID1"
+	      SrcBlock		      "ForwardID1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      41
 	    }
 	    Line {
-	      SrcBlock		      "MergeRequest1"
+	      SrcBlock		      "BackwardID1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      42
 	    }
 	    Line {
-	      SrcBlock		      "SafeToMerge1"
+	      SrcBlock		      "MergeRequest1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      43
 	    }
 	    Line {
-	      SrcBlock		      "Flag1"
+	      SrcBlock		      "SafeToMerge1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      44
 	    }
 	    Line {
-	      SrcBlock		      "FlagTail1"
+	      SrcBlock		      "Flag1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      45
 	    }
 	    Line {
-	      SrcBlock		      "FlagHead1"
+	      SrcBlock		      "FlagTail1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      46
 	    }
 	    Line {
-	      SrcBlock		      "PlatoonID1"
+	      SrcBlock		      "FlagHead1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      47
 	    }
 	    Line {
-	      SrcBlock		      "DistanceTravelledCZ1"
+	      SrcBlock		      "PlatoonID1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      48
 	    }
 	    Line {
-	      SrcBlock		      "Intention1"
+	      SrcBlock		      "DistanceTravelledCZ1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      49
 	    }
 	    Line {
-	      SrcBlock		      "Counter1"
+	      SrcBlock		      "Intention1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      50
 	    }
 	    Line {
-	      SrcBlock		      "MessageControl"
+	      SrcBlock		      "Counter1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      51
+	    }
+	    Line {
+	      SrcBlock		      "MessageControl"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      52
 	    }
 	    Line {
 	      Name		      "StationID"
@@ -3040,10 +3110,42 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "StationType"
+	      Name		      "ContainerMask"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
+	      DstBlock		      "ContainerMask"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ManagementMask"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      5
+	      DstBlock		      "ManagementMask"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SituationMask"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      6
+	      DstBlock		      "SituationMask"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "AlacarteMask"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      7
+	      DstBlock		      "AlacarteMask"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "StationType"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      8
 	      DstBlock		      "StationType"
 	      DstPort		      1
 	    }
@@ -3051,7 +3153,7 @@ Model {
 	      Name		      "Latitude"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      5
+	      SrcPort		      9
 	      DstBlock		      "Latitude"
 	      DstPort		      1
 	    }
@@ -3059,7 +3161,7 @@ Model {
 	      Name		      "Longitude"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      6
+	      SrcPort		      10
 	      DstBlock		      "Longitude"
 	      DstPort		      1
 	    }
@@ -3067,7 +3169,7 @@ Model {
 	      Name		      "SemiMajorConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      7
+	      SrcPort		      11
 	      DstBlock		      "SemiMajorConfidence"
 	      DstPort		      1
 	    }
@@ -3075,7 +3177,7 @@ Model {
 	      Name		      "SemiMinorConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      8
+	      SrcPort		      12
 	      DstBlock		      "SemiMinorConfidence"
 	      DstPort		      1
 	    }
@@ -3083,7 +3185,7 @@ Model {
 	      Name		      "SemiMajorOrientation"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      9
+	      SrcPort		      13
 	      DstBlock		      "SemiMajorOrientation"
 	      DstPort		      1
 	    }
@@ -3091,7 +3193,7 @@ Model {
 	      Name		      "Altitude"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      10
+	      SrcPort		      14
 	      DstBlock		      "Altitude"
 	      DstPort		      1
 	    }
@@ -3099,7 +3201,7 @@ Model {
 	      Name		      "Heading"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      11
+	      SrcPort		      15
 	      DstBlock		      "Heading"
 	      DstPort		      1
 	    }
@@ -3107,7 +3209,7 @@ Model {
 	      Name		      "HeadingConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      12
+	      SrcPort		      16
 	      DstBlock		      "HeadingConfidence"
 	      DstPort		      1
 	    }
@@ -3115,7 +3217,7 @@ Model {
 	      Name		      "Speed"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      13
+	      SrcPort		      17
 	      DstBlock		      "Speed"
 	      DstPort		      1
 	    }
@@ -3123,7 +3225,7 @@ Model {
 	      Name		      "SpeedConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      14
+	      SrcPort		      18
 	      DstBlock		      "SpeedConfidence"
 	      DstPort		      1
 	    }
@@ -3131,7 +3233,7 @@ Model {
 	      Name		      "VehicleLength"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      15
+	      SrcPort		      19
 	      DstBlock		      "VehicleLength"
 	      DstPort		      1
 	    }
@@ -3139,7 +3241,7 @@ Model {
 	      Name		      "VehicleWidth"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      16
+	      SrcPort		      20
 	      DstBlock		      "VehicleWidth"
 	      DstPort		      1
 	    }
@@ -3147,7 +3249,7 @@ Model {
 	      Name		      "LongAcc"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      17
+	      SrcPort		      21
 	      DstBlock		      "LongAcc"
 	      DstPort		      1
 	    }
@@ -3155,7 +3257,7 @@ Model {
 	      Name		      "LongAccConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      18
+	      SrcPort		      22
 	      DstBlock		      "LongAccConfidence"
 	      DstPort		      1
 	    }
@@ -3163,7 +3265,7 @@ Model {
 	      Name		      "YawRate"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      19
+	      SrcPort		      23
 	      DstBlock		      "YawRate"
 	      DstPort		      1
 	    }
@@ -3171,7 +3273,7 @@ Model {
 	      Name		      "YawRateConfidence"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      20
+	      SrcPort		      24
 	      DstBlock		      "YawRateConfidence"
 	      DstPort		      1
 	    }
@@ -3179,7 +3281,7 @@ Model {
 	      Name		      "VehicleRole"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      21
+	      SrcPort		      25
 	      DstBlock		      "VehicleRole"
 	      DstPort		      1
 	    }
@@ -3187,7 +3289,7 @@ Model {
 	      Name		      "ReferenceTime"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      22
+	      SrcPort		      26
 	      DstBlock		      "ReferenceTime"
 	      DstPort		      1
 	    }
@@ -3195,7 +3297,7 @@ Model {
 	      Name		      "RearAxleLocation"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      23
+	      SrcPort		      27
 	      DstBlock		      "RearAxleLocation"
 	      DstPort		      1
 	    }
@@ -3203,7 +3305,7 @@ Model {
 	      Name		      "ResponseTimeConstant"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      24
+	      SrcPort		      28
 	      DstBlock		      "ResponseTimeConstant"
 	      DstPort		      1
 	    }
@@ -3211,7 +3313,7 @@ Model {
 	      Name		      "ResponseTimeDelay"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      25
+	      SrcPort		      29
 	      DstBlock		      "ResponseTimeDelay"
 	      DstPort		      1
 	    }
@@ -3219,7 +3321,7 @@ Model {
 	      Name		      "DetectionTime"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      26
+	      SrcPort		      30
 	      DstBlock		      "DetectionTime"
 	      DstPort		      1
 	    }
@@ -3227,7 +3329,7 @@ Model {
 	      Name		      "CauseCode"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      27
+	      SrcPort		      31
 	      DstBlock		      "CauseCode"
 	      DstPort		      1
 	    }
@@ -3235,7 +3337,7 @@ Model {
 	      Name		      "SubCauseCode"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      28
+	      SrcPort		      32
 	      DstBlock		      "SubCauseCode"
 	      DstPort		      1
 	    }
@@ -3243,7 +3345,7 @@ Model {
 	      Name		      "ControllerType"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      29
+	      SrcPort		      33
 	      DstBlock		      "ControllerType"
 	      DstPort		      1
 	    }
@@ -3251,7 +3353,7 @@ Model {
 	      Name		      "TargetLongAcc"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      30
+	      SrcPort		      34
 	      DstBlock		      "TargetLongAcc"
 	      DstPort		      1
 	    }
@@ -3259,7 +3361,7 @@ Model {
 	      Name		      "TimeHeadway"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      31
+	      SrcPort		      35
 	      DstBlock		      "TimeHeadway"
 	      DstPort		      1
 	    }
@@ -3267,7 +3369,7 @@ Model {
 	      Name		      "CruiseSpeed"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      32
+	      SrcPort		      36
 	      DstBlock		      "CruiseSpeed"
 	      DstPort		      1
 	    }
@@ -3275,7 +3377,7 @@ Model {
 	      Name		      "ParticipantsReady"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      33
+	      SrcPort		      37
 	      DstBlock		      "ParticipantsReady"
 	      DstPort		      1
 	    }
@@ -3283,7 +3385,7 @@ Model {
 	      Name		      "StartPlatoon"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      34
+	      SrcPort		      38
 	      DstBlock		      "StartPlatoon"
 	      DstPort		      1
 	    }
@@ -3291,7 +3393,7 @@ Model {
 	      Name		      "EndOfScenario"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      35
+	      SrcPort		      39
 	      DstBlock		      "EndOfScenario"
 	      DstPort		      1
 	    }
@@ -3299,7 +3401,7 @@ Model {
 	      Name		      "MioID"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      36
+	      SrcPort		      40
 	      DstBlock		      "MioID"
 	      DstPort		      1
 	    }
@@ -3307,7 +3409,7 @@ Model {
 	      Name		      "MioRange"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      37
+	      SrcPort		      41
 	      DstBlock		      "MioRange"
 	      DstPort		      1
 	    }
@@ -3315,7 +3417,7 @@ Model {
 	      Name		      "MioBearing"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      38
+	      SrcPort		      42
 	      DstBlock		      "MioBearing"
 	      DstPort		      1
 	    }
@@ -3323,7 +3425,7 @@ Model {
 	      Name		      "MioRangeRate"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      39
+	      SrcPort		      43
 	      DstBlock		      "MioRangeRate"
 	      DstPort		      1
 	    }
@@ -3331,7 +3433,7 @@ Model {
 	      Name		      "Lane"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      40
+	      SrcPort		      44
 	      DstBlock		      "Lane"
 	      DstPort		      1
 	    }
@@ -3339,7 +3441,7 @@ Model {
 	      Name		      "ForwardID"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      41
+	      SrcPort		      45
 	      DstBlock		      "ForwardID"
 	      DstPort		      1
 	    }
@@ -3347,7 +3449,7 @@ Model {
 	      Name		      "BackwardID"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      42
+	      SrcPort		      46
 	      DstBlock		      "BackwardID"
 	      DstPort		      1
 	    }
@@ -3355,7 +3457,7 @@ Model {
 	      Name		      "MergeRequest"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      43
+	      SrcPort		      47
 	      DstBlock		      "MergeRequest"
 	      DstPort		      1
 	    }
@@ -3363,7 +3465,7 @@ Model {
 	      Name		      "SafeToMerge"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      44
+	      SrcPort		      48
 	      DstBlock		      "SafeToMerge"
 	      DstPort		      1
 	    }
@@ -3371,7 +3473,7 @@ Model {
 	      Name		      "Flag"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      45
+	      SrcPort		      49
 	      DstBlock		      "Flag"
 	      DstPort		      1
 	    }
@@ -3379,7 +3481,7 @@ Model {
 	      Name		      "FlagTail"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      46
+	      SrcPort		      50
 	      DstBlock		      "FlagTail"
 	      DstPort		      1
 	    }
@@ -3387,7 +3489,7 @@ Model {
 	      Name		      "FlagHead"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      47
+	      SrcPort		      51
 	      DstBlock		      "FlagHead"
 	      DstPort		      1
 	    }
@@ -3395,7 +3497,7 @@ Model {
 	      Name		      "PlatoonID"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      48
+	      SrcPort		      52
 	      DstBlock		      "PlatoonID"
 	      DstPort		      1
 	    }
@@ -3403,7 +3505,7 @@ Model {
 	      Name		      "DistanceTravelledCZ"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      49
+	      SrcPort		      53
 	      DstBlock		      "DistanceTravelledCZ"
 	      DstPort		      1
 	    }
@@ -3411,7 +3513,7 @@ Model {
 	      Name		      "Intention"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      50
+	      SrcPort		      54
 	      DstBlock		      "Intention"
 	      DstPort		      1
 	    }
@@ -3419,7 +3521,7 @@ Model {
 	      Name		      "Counter"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      51
+	      SrcPort		      55
 	      DstBlock		      "Counter"
 	      DstPort		      1
 	    }
@@ -3476,416 +3578,475 @@ Model {
 	Line {
 	  SrcBlock		  "SensorData"
 	  SrcPort		  1
-	  DstBlock		  "Bus\nSelector"
-	  DstPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    DstBlock		    "Bus\nSelector"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -120]
+	    DstBlock		    "FormatMessage"
+	    DstPort		    1
+	  }
 	}
 	Line {
-	  Name			  "<StationId>"
+	  Name			  "<StationID>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  1
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  2
 	}
 	Line {
 	  Name			  "<GenerationDeltaTime>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  2
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  2
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  3
 	}
 	Line {
 	  Name			  "<StationType>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  3
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  3
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  4
 	}
 	Line {
 	  Name			  "<Latitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  4
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  4
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  5
 	}
 	Line {
 	  Name			  "<Longitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  5
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  5
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  6
 	}
 	Line {
 	  Name			  "<SemiMajorConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  6
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  6
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  7
 	}
 	Line {
 	  Name			  "<SemiMinorConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  7
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  7
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  8
 	}
 	Line {
 	  Name			  "<SemiMajorOrientation>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  8
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  8
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  9
 	}
 	Line {
 	  Name			  "<Altitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  9
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  9
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  10
 	}
 	Line {
 	  Name			  "<Heading>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  10
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  10
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  11
 	}
 	Line {
 	  Name			  "<HeadingConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  11
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  11
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  12
 	}
 	Line {
 	  Name			  "<Speed>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  12
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  12
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  13
 	}
 	Line {
 	  Name			  "<SpeedConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  13
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  13
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  14
 	}
 	Line {
 	  Name			  "<VehicleLength>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  14
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  14
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  15
 	}
 	Line {
 	  Name			  "<VehicleWidth>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  15
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  15
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  16
 	}
 	Line {
 	  Name			  "<LongAcc>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  16
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  16
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  17
 	}
 	Line {
 	  Name			  "<LongAccConf>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  17
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  17
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  18
 	}
 	Line {
 	  Name			  "<YawRate>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  18
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  18
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  19
 	}
 	Line {
 	  Name			  "<YawRateConf>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  19
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  19
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  20
 	}
 	Line {
 	  Name			  "<VehicleRole>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  20
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  20
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  21
 	}
 	Line {
 	  Name			  "<ReferenceTime>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  21
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  21
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  22
 	}
 	Line {
 	  Name			  "<RearAxleLocation>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  22
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  22
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  23
 	}
 	Line {
 	  Name			  "<ResponseTimeConstant>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  23
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  23
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  24
 	}
 	Line {
 	  Name			  "<ResponseTimeDelay>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  24
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  24
+	  Points		  [105, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  25
 	}
 	Line {
 	  Name			  "<DetectionTime>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  25
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  26
 	}
 	Line {
 	  Name			  "<CauseCode>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  2
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  26
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  27
 	}
 	Line {
 	  Name			  "<SubCauseCode>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  3
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  27
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  28
 	}
 	Line {
 	  Name			  "<ControllerType>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  4
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  28
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  29
 	}
 	Line {
 	  Name			  "<TargetLongAcc>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  5
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  29
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  30
 	}
 	Line {
 	  Name			  "<TimeHeadway>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  6
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  30
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  31
 	}
 	Line {
 	  Name			  "<CruiseSpeed>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  7
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  31
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  32
 	}
 	Line {
 	  Name			  "<ParticipantsReady>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  8
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  32
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  33
 	}
 	Line {
 	  Name			  "<StartPlatoon>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  9
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  33
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  34
 	}
 	Line {
 	  Name			  "<EndOfScenario>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  10
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  34
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  35
 	}
 	Line {
 	  Name			  "<MioId>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  11
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  35
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  36
 	}
 	Line {
 	  Name			  "<MioRange>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  12
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  36
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  37
 	}
 	Line {
 	  Name			  "<MioBearing>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  13
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  37
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  38
 	}
 	Line {
 	  Name			  "<MioRangeRate>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  14
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  38
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  39
 	}
 	Line {
 	  Name			  "<Lane>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  15
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  39
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  40
 	}
 	Line {
 	  Name			  "<ForwardId>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  16
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  40
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  41
 	}
 	Line {
 	  Name			  "<BackwardId>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  17
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  41
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  42
 	}
 	Line {
 	  Name			  "<MergeRequest>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  18
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  42
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  43
 	}
 	Line {
 	  Name			  "<SafeToMerge>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  19
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  43
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  44
 	}
 	Line {
 	  Name			  "<Flag>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  20
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  44
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  45
 	}
 	Line {
 	  Name			  "<FlagTail>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  21
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  45
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  46
 	}
 	Line {
 	  Name			  "<FlagHead>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  22
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  46
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  47
 	}
 	Line {
 	  Name			  "<PlatoonId>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  23
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  47
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  48
 	}
 	Line {
 	  Name			  "<DistanceTravelledCz>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  24
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  48
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  49
 	}
 	Line {
 	  Name			  "<Intention>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  25
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  49
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  50
 	}
 	Line {
 	  Name			  "<Counter>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  26
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  50
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  51
 	}
 	Line {
 	  Name			  "<MessageControl>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  27
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  51
+	  Points		  [135, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  52
 	}
       }
     }
@@ -3905,7 +4066,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"MessageConstructor"
-	Location		[-2, 0, 2558, 1389]
+	Location		[0, 53, 1598, 874]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3917,7 +4078,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"300"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "SensorDataConverted"
@@ -4072,174 +4233,6 @@ Model {
 	  Port {
 	    PortNumber		    20
 	    Name		    "<VehicleRole>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  BusSelector
-	  Name			  "Bus\nSelector1"
-	  SID			  "297"
-	  Ports			  [1, 26]
-	  Position		  [235, 320, 240, 445]
-	  ZOrder		  101
-	  ShowName		  off
-	  OutputSignals		  "DetectionTime,CauseCode,SubCauseCode,ControllerType,TargetLongAcc,TimeHeadway,CruiseSpeed,Partici"
-	  "pantsReady,StartPlatoon,EndOfScenario,MioId,MioRange,MioBearing,MioRangeRate,Lane,ForwardId,BackwardId,MergeRequest"
-	  ",SafeToMerge,Flag,FlagTail,FlagHead,PlatoonId,DistanceTravelledCz,Intention,Counter"
-	  Port {
-	    PortNumber		    1
-	    Name		    "<DetectionTime>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "<CauseCode>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "<SubCauseCode>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "<ControllerType>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    5
-	    Name		    "<TargetLongAcc>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    6
-	    Name		    "<TimeHeadway>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    7
-	    Name		    "<CruiseSpeed>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    8
-	    Name		    "<ParticipantsReady>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    9
-	    Name		    "<StartPlatoon>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    10
-	    Name		    "<EndOfScenario>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    11
-	    Name		    "<MioId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    12
-	    Name		    "<MioRange>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    13
-	    Name		    "<MioBearing>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    14
-	    Name		    "<MioRangeRate>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    15
-	    Name		    "<Lane>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    16
-	    Name		    "<ForwardId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    17
-	    Name		    "<BackwardId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    18
-	    Name		    "<MergeRequest>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    19
-	    Name		    "<SafeToMerge>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    20
-	    Name		    "<Flag>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    21
-	    Name		    "<FlagTail>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    22
-	    Name		    "<FlagHead>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    23
-	    Name		    "<PlatoonId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    24
-	    Name		    "<DistanceTravelledCz>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    25
-	    Name		    "<Intention>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    26
-	    Name		    "<Counter>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -4609,12 +4602,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "AppDataConverted"
-	  SrcPort		  1
-	  DstBlock		  "Bus\nSelector1"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "PackICLCM"
 	  SrcPort		  1
 	  Points		  [325, 0]
@@ -4976,8 +4963,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"MessageUnpack"
-	Location		[-2, 3, 2538, 1364]
-	Open			off
+	Location		[-470, -230, 2070, 1131]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8545,7 +8532,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "UnpackedCAM"
 	  SID			  "356"
-	  Position		  [20, 208, 50, 222]
+	  Position		  [20, 213, 50, 227]
 	  ZOrder		  105
 	  BlockMirror		  on
 	  IconDisplay		  "Port number"
@@ -9980,7 +9967,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"195"
 	Block {
 	  BlockType		  Inport
 	  Name			  "MessageData"
@@ -10039,7 +10026,7 @@ Model {
 	  numInp		  "24"
 	  Port {
 	    PortNumber		    1
-	    Name		    "StationId"
+	    Name		    "StationID"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -10958,7 +10945,7 @@ Model {
 	  DstPort		  24
 	}
 	Line {
-	  Name			  "StationId"
+	  Name			  "StationID"
 	  Labels		  [1, 1]
 	  SrcBlock		  "Byte Reversal"
 	  SrcPort		  1
@@ -11640,7 +11627,7 @@ Model {
       "\n</style></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;\">\n"
       "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-b"
       "lock-indent:0; text-indent:0px;\"><br /></p></body></html>"
-      Position		      [657, 410]
+      Position		      [607, 325]
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
     }
@@ -11659,7 +11646,7 @@ Stateflow {
     name		    "simulink_interface"
     created		    "29-Oct-2015 11:53:54"
     isLibrary		    0
-    firstTarget		    285
+    firstTarget		    290
     sfVersion		    76014001.0002
   }
   chart {
@@ -11707,16 +11694,26 @@ Stateflow {
       "orOrientation1, Altitude1, RelevanceDistance1, RelevanceTrafficDirection1, ValidityDuration1, TransmissionInterv"
       "all1, StationType1, SituationMask1, InformationQuality1, CauseCode1, SubCauseCode1, LinkedCauseCode1, LinkedSubC"
       "auseCode1, AlacarteMask1, LanePosition1, ExternalTemperature1, PositioningSolution1)\n%parseDENM - Parses a loca"
-      "l DENM message.\n\n\n\nMessageID = MessageID1;\nStationID = StationID1;\nContainerMask = ContainerMask1;\nManage"
-      "mentMask = ManagementMask1;\nDetectionTime = DetectionTime1;\nReferenceTime = ReferenceTime1;\nTermination = Ter"
-      "mination1;\nLatitude = Latitude1;\nLongitude = Longitude1; \nSemiMajorConfidence = SemiMajorConfidence1;\nSemiMi"
-      "norConfidence = SemiMinorConfidence1; \nSemiMajorOrientation = SemiMajorOrientation1;\nAltitude = Altitude1; \nR"
-      "elevanceDistance = RelevanceDistance1;\nRelevanceTrafficDirection = RelevanceTrafficDirection1; \nValidityDurati"
-      "on = ValidityDuration1; \nTransmissionIntervall = TransmissionIntervall1; \nStationType = StationType1; \nSituat"
-      "ionMask = SituationMask1; \nInformationQuality = InformationQuality1; \nCauseCode = CauseCode1; \nSubCauseCode ="
-      " SubCauseCode1; \nLinkedCauseCode = LinkedCauseCode1; \nLinkedSubCauseCode = LinkedSubCauseCode1; \nAlacarteMask"
-      " = AlacarteMask1;\nLanePosition = LanePosition1;\nExternalTemperature = ExternalTemperature1; \nPositioningSolut"
-      "ion = PositioningSolution1;"
+      "l DENM message.\n\n\n% TODO: We want to do input validation, and set everything to NaN if\n% there's an error.\n"
+      "\nMessageID = MessageID1;\nStationID = double(StationID1);\nContainerMask = ContainerMask1;\nManagementMask = Ma"
+      "nagementMask1;\nDetectionTime = double(DetectionTime1);\nReferenceTime = double(ReferenceTime1);\nTermination = "
+      "double(Termination1);\nLatitude = double(Latitude1);\nLongitude = double(Longitude1); \nSemiMajorConfidence = do"
+      "uble(SemiMajorConfidence1) / 100; % From cm to m\nSemiMinorConfidence = double(SemiMinorConfidence1) / 100; % Fr"
+      "om cm to m\nSemiMajorOrientation = double(SemiMajorOrientation1) / 100; % From cm to m\nAltitude = double(Altitu"
+      "de1); \nRelevanceDistance = double(RelevanceDistance1);\nRelevanceTrafficDirection = double(RelevanceTrafficDire"
+      "ction1); \nValidityDuration = double(ValidityDuration1); \nTransmissionIntervall = double(TransmissionIntervall1"
+      "); \nStationType = double(StationType1); \n\nSituationMask = double(SituationMask1);\nInformationQuality = doubl"
+      "e(InformationQuality1); \nCauseCode = double(CauseCode1); \nSubCauseCode = double(SubCauseCode1); \nLinkedCauseC"
+      "ode = double(LinkedCauseCode1); \nLinkedSubCauseCode = double(LinkedSubCauseCode1); \n\n% Use ContainerMask and "
+      "SituationMask to insert NaNs\nif bitget(ContainerMask, 8) == 0\n    InformationQuality = NaN;\n    CauseCode = N"
+      "aN;\n    SubCauseCode = NaN;\n    LinkedCauseCode = NaN;\n    LinkedSubCauseCode = NaN;\nelse\n    if bitget(Sit"
+      "uationMask, 8) == 0\n        LinkedCauseCode = NaN;\n    end\n    if bitget(SituationMask, 7) == 0\n        Link"
+      "edSubCauseCode = NaN;\n    end\nend\n\nAlacarteMask = AlacarteMask1;\nLanePosition = double(LanePosition1);\nExt"
+      "ernalTemperature = double(ExternalTemperature1);\nPositioningSolution = double(PositioningSolution1);\n\n% Use C"
+      "ontainerMask and AlacarteMask to insert NaNs\nif bitget(ContainerMask, 6) == 0\n    LanePosition = NaN;\n    Ext"
+      "ernalTemperature = NaN;\n    PositioningSolution = NaN;\nelse\n    if bitget(AlacarteMask, 8) == 0\n        Lane"
+      "Position = NaN;\n    end\n    if bitget(AlacarteMask, 6) == 0\n       ExternalTemperature = NaN; \n    end\n    "
+      "if bitget(AlacarteMask, 4) == 0\n       PositioningSolution = NaN; \n    end\nend"
       editorLayout	      "100 M4x1[205 227 1080 733]"
     }
   }
@@ -13027,14 +13024,21 @@ Stateflow {
       "dingConfidence1, Speed1, SpeedConfidence1, VehicleLength1, VehicleWidth1, LongAcceleration1, LongAccelerationCon"
       "fidence1, YawRate1, YawRateConfidence1, VehicleRole1)\n%parseCAM - Parses a local CAM message. Used to do some c"
       "onversion in order\n%to make the values compatible with the Simulink model.\n\nMessageID = MessageID1;\nStationI"
-      "D = StationID1;\nGenerationDeltaTime = GenerationDeltaTime1;\nContainerMask = ContainerMask1;\nStationType = Sta"
-      "tionType1;\nLatitude = Latitude1;\nLongitude = Longitude1;\nSemiMajorConfidence = SemiMajorConfidence1;\nSemiMin"
-      "orConfidence = SemiMinorConfidence1;\nSemiMajorOrientation = SemiMajorOrientation1;\nAltitude = Altitude1;\nHead"
-      "ing = Heading1;\nHeadingConfidence = HeadingConfidence1;\nSpeed = Speed1;\nSpeedConfidence = SpeedConfidence1;\n"
-      "VehicleLength = VehicleLength1;\nVehicleWidth = VehicleWidth1;\nLongAcceleration = LongAcceleration1;\nLongAccel"
-      "erationConfidence = LongAccelerationConfidence1;\nYawRate = YawRate1;\nYawRateConfidence = YawRateConfidence1;\n"
-      "VehicleRole = double(VehicleRole1);\n\n% Insert a NaN if the bit mask indicates that the VehicleRole is not\n% p"
-      "resent\nif bitget(ContainerMask1, 8) == 1\n   VehicleRole = NaN;\nend\n\n\n\n"
+      "D = double(StationID1);\nGenerationDeltaTime = double(GenerationDeltaTime1);\nContainerMask = ContainerMask1;\nS"
+      "tationType = StationType1;\nLatitude = double(Latitude1);\nLongitude = double(Longitude1);\nSemiMajorConfidence "
+      "= double(SemiMajorConfidence1) / 100; % From cm to m\nSemiMinorConfidence = double(SemiMinorConfidence1) / 100; "
+      "% From cm to m\nSemiMajorOrientation = double(SemiMajorOrientation1) / 100; % From cm to m\nAltitude = double(Al"
+      "titude1);\nHeading = double(Heading1);\nHeadingConfidence = double(HeadingConfidence1) / 10; % From 0.1m to m\nS"
+      "peed = double(Speed1) / 100; % From cm to m\nSpeedConfidence = double(SpeedConfidence1) / 100;  % From cm to m\n"
+      "VehicleLength = double(VehicleLength1) / 100; % From cm to m\nVehicleWidth = double(VehicleWidth1) / 100; % From"
+      " cm to m\nLongAcceleration = double(LongAcceleration1) / 10; % From 0.1m to m\nLongAccelerationConfidence = doub"
+      "le(LongAccelerationConfidence1) / 10;  % From 0.1m to m\nYawRate = double(YawRate1) / 100;\nYawRateConfidence = "
+      "0;\nswitch YawRateConfidence1\n    case 0\n        YawRateConfidence = 0.01;\n    case 1\n        YawRateConfide"
+      "nce = 0.05;\n    case 2\n        YawRateConfidence = 0.1;\n    case 3\n        YawRateConfidence = 1;\n    case "
+      "4\n        YawRateConfidence = 5;\n    case 5\n        YawRateConfidence = 10;\n    case 6\n        YawRateConfi"
+      "dence = 100;\n    otherwise\n        YawRateConfidence = 200; % TODO: Is this correct?\nend\n\nVehicleRole = dou"
+      "ble(VehicleRole1);\n\n% Use ContainerMask to insert NaNs for unused values\nif bitget(ContainerMask1, 8) == 1\n "
+      "  VehicleRole = NaN;\nend\n\n\n\n"
       editorLayout	      "100 M4x1[205 227 1080 733]"
     }
   }
@@ -14082,16 +14086,22 @@ Stateflow {
       "t1, ResponseTimeDelay1, TargetLongAcceleration1, TimeHeadway1, CruiseSpeed1, LowFrequencyMask1, ParticipantsRead"
       "y1, StartPlatoon1, EndOfScenario1, MioID1, MioRange1, MioBearing1, MioRangeRate1, Lane1, ForwardID1, BackwardID1"
       ", AcknowledgmentFlag1, MergeRequest1, SafeToMerge1, Flag1, FlagTail1, FlagHead1, PlatoonID1, DistanceTravelledIn"
-      "Cz1, Intention1, Counter1)\n%parseICLCM - Parses a local ICLCM.\nMessageID = MessageID1;\nStationID = StationID1"
-      ";\nContainerMask = ContainerMask1;\nRearAxleLocation = RearAxleLocation1;\nControllerType = ControllerType1;\nRe"
-      "sponseTimeConstant = ResponseTimeConstant1;\nResponseTimeDelay = ResponseTimeDelay1;\nTargetLongAcceleration = T"
-      "argetLongAcceleration1;\nTimeHeadway = TimeHeadway1;\nCruiseSpeed = CruiseSpeed1;\nLowFrequencyMask = LowFrequen"
-      "cyMask1;\nParticipantsReady = ParticipantsReady1;\nStartPlatoon = StartPlatoon1;\nEndOfScenario = EndOfScenario1"
-      ";\nMioID = MioID1;\nMioRange = MioRange1;\nMioBearing = MioBearing1;\nMioRangeRate = MioRangeRate1;\nLane = Lane"
-      "1;\nForwardID = ForwardID1;\nBackwardID = BackwardID1;\nAcknowledgmentFlag = AcknowledgmentFlag1;\nMergeRequest "
-      "= MergeRequest1;\nSafeToMerge = SafeToMerge1;\nFlag = Flag1;\nFlagTail = FlagTail1;\nFlagHead = FlagHead1;\nPlat"
-      "oonID = PlatoonID1;\nDistanceTravelledInCz = DistanceTravelledInCz1;\nIntention = Intention1;\nCounter = Counter"
-      "1;\n\n\n"
+      "Cz1, Intention1, Counter1)\n%parseICLCM - Parses a local ICLCM.\nMessageID = MessageID1;\nStationID = double(Sta"
+      "tionID1);\nContainerMask = ContainerMask1;\nRearAxleLocation = double(RearAxleLocation1) / 100; % From cm to m\n"
+      "ControllerType = double(ControllerType1);\nResponseTimeConstant = double(ResponseTimeConstant1);\nResponseTimeDe"
+      "lay = double(ResponseTimeDelay1);\nTargetLongAcceleration = double(TargetLongAcceleration1);\nTimeHeadway = doub"
+      "le(TimeHeadway1);\nCruiseSpeed = double(CruiseSpeed1);\n\nLowFrequencyMask = LowFrequencyMask1;\nParticipantsRea"
+      "dy = double(ParticipantsReady1);\nStartPlatoon = double(StartPlatoon1);\nEndOfScenario = double(EndOfScenario1);"
+      "\n\n% Use ContainerMask and LowFrequencyMask to insert NaNs for unused values\nif bitget(ContainerMask, 8) == 0\n"
+      "    ParticipantsReady = NaN;\n    StartPlatoon = NaN;\n    EndOfScenario = NaN;\nelse\n    if bitget(LowFrequenc"
+      "yMask, 8) == 0\n        ParticipantsReady = Nan;\n    end\n    if bitget(LowFrequencyMask, 7) == 0\n        Star"
+      "tPlatoon = Nan;\n    end\n    if bitget(LowFrequencyMask, 6) == 0\n        EndOfScenario = Nan;\n    end\nend\n\n"
+      "MioID = double(MioID1);\nMioRange = double(MioRange1);\nMioBearing = double(MioBearing1);\nMioRangeRate = double"
+      "(MioRangeRate1);\nLane = double(Lane1);\nForwardID = double(ForwardID1);\nBackwardID = double(BackwardID1);\nAck"
+      "nowledgmentFlag = double(AcknowledgmentFlag1);\nMergeRequest = double(MergeRequest1);\nSafeToMerge = double(Safe"
+      "ToMerge1);\nFlag = double(Flag1);\nFlagTail = double(FlagTail1);\nFlagHead = double(FlagHead1);\nPlatoonID = dou"
+      "ble(PlatoonID1);\nDistanceTravelledInCz = double(DistanceTravelledInCz1);\nIntention = double(Intention1);\nCoun"
+      "ter = double(Counter1);\n\n\n"
       editorLayout	      "100 M4x1[205 227 1080 733]"
     }
   }
@@ -15493,7 +15503,7 @@ Stateflow {
   }
   chart {
     id			    179
-    name		    "DataConverter/MATLAB Function"
+    name		    "DataConverter/FormatMessage"
     windowPosition	    [375.75 203.25 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 2560 1440 1.25]
@@ -15503,7 +15513,7 @@ Stateflow {
     viewObj		    179
     machine		    1
     toolbarMode		    LIBRARY_TOOLBAR
-    ssIdHighWaterMark	    105
+    ssIdHighWaterMark	    110
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    183
@@ -15527,34 +15537,53 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [StationID, GenerationDeltaTime, StationType, Latitude, Longitude, SemiMajorConfidence, "
-      "SemiMinorConfidence, SemiMajorOrientation, Altitude, Heading, HeadingConfidence, Speed, SpeedConfidence, Vehicle"
-      "Length, VehicleWidth, LongAcc, LongAccConfidence, YawRate, YawRateConfidence, VehicleRole, ReferenceTime, RearAx"
-      "leLocation, ResponseTimeConstant, ResponseTimeDelay, DetectionTime, CauseCode, SubCauseCode, ControllerType, Tar"
-      "getLongAcc, TimeHeadway, CruiseSpeed, ParticipantsReady, StartPlatoon, EndOfScenario, MioID, MioRange, MioBearin"
-      "g, MioRangeRate, Lane, ForwardID, BackwardID, MergeRequest, SafeToMerge, Flag, FlagTail, FlagHead, PlatoonID, Di"
-      "stanceTravelledCZ, Intention, Counter] = formatMessage(StationID1, GenerationDeltaTime1, StationType1, Latitude1"
-      ", Longitude1, SemiMajorConfidence1, SemiMinorConfidence1, SemiMajorOrientation1, Altitude1, Heading1, HeadingCon"
-      "fidence1, Speed1, SpeedConfidence1, VehicleLength1, VehicleWidth1, LongAcc1, LongAccConfidence1, YawRate1, YawRa"
-      "teConfidence1, VehicleRole1, ReferenceTime1, RearAxleLocation1, ResponseTimeConstant1, ResponseTimeDelay1, Detec"
-      "tionTime1, CauseCode1, SubCauseCode1, ControllerType1, TargetLongAcc1, TimeHeadway1, CruiseSpeed1, ParticipantsR"
-      "eady1, StartPlatoon1, EndOfScenario1, MioID1, MioRange1, MioBearing1, MioRangeRate1, Lane1, ForwardID1, Backward"
-      "ID1, MergeRequest1, SafeToMerge1, Flag1, FlagTail1, FlagHead1, PlatoonID1, DistanceTravelledCZ1, Intention1, Cou"
-      "nter1, MessageControl)\n%formatMessage - Take values from sensor fusion and the running app, and\n%convert into "
-      "data compliant with the communication.\n\nStationID = StationID1;\nGenerationDeltaTime = GenerationDeltaTime1;\n"
-      "StationType = StationType1;\nLatitude = Latitude1;\nLongitude = Longitude1;\nSemiMajorConfidence = SemiMajorConf"
-      "idence1;\nSemiMinorConfidence = SemiMinorConfidence1;\nSemiMajorOrientation = SemiMajorOrientation1;\nAltitude ="
-      " Altitude1;\nHeading = Heading1;\nHeadingConfidence = HeadingConfidence1;\nSpeed = Speed1;\nSpeedConfidence = Sp"
-      "eedConfidence1;\nVehicleLength = VehicleLength1;\nVehicleWidth = VehicleWidth1;\nLongAcc = LongAcc1;\nLongAccCon"
-      "fidence = LongAccConfidence1;\nYawRate = YawRate1;\nYawRateConfidence = YawRateConfidence1;\nVehicleRole = Vehic"
-      "leRole1;\nReferenceTime = ReferenceTime1;\nRearAxleLocation = RearAxleLocation1;\nResponseTimeConstant = Respons"
-      "eTimeConstant1;\nResponseTimeDelay = ResponseTimeDelay1;\nDetectionTime = DetectionTime1;\nCauseCode = CauseCode"
-      "1;\nSubCauseCode = SubCauseCode1;\nControllerType = ControllerType1;\nTargetLongAcc = TargetLongAcc1;\nTimeHeadw"
-      "ay = TimeHeadway1;\nCruiseSpeed = CruiseSpeed1;\nParticipantsReady = ParticipantsReady1;\nStartPlatoon = StartPl"
-      "atoon1;\nEndOfScenario = EndOfScenario1;\nMioID = MioID1;\nMioRange = MioRange1;\nMioBearing = MioBearing1;\nMio"
-      "RangeRate = MioRangeRate1;\nLane = Lane1;\nForwardID = ForwardID1;\nBackwardID = BackwardID1;\nMergeRequest = Me"
-      "rgeRequest1;\nSafeToMerge = SafeToMerge1;\nFlag = Flag1;\nFlagTail = FlagTail1;\nFlagHead = FlagHead1;\nPlatoonI"
-      "D = PlatoonID1;\nDistanceTravelledCZ = DistanceTravelledCZ1;\nIntention = Intention1;\nCounter = Counter1;\n\n\n"
+      script		      "function [StationID, GenerationDeltaTime, ContainerMask, ManagementMask, SituationMask, AlacarteM"
+      "ask, StationType, Latitude, Longitude, SemiMajorConfidence, SemiMinorConfidence, SemiMajorOrientation, Altitude,"
+      " Heading, HeadingConfidence, Speed, SpeedConfidence, VehicleLength, VehicleWidth, LongAcc, LongAccConfidence, Ya"
+      "wRate, YawRateConfidence, VehicleRole, ReferenceTime, RearAxleLocation, ResponseTimeConstant, ResponseTimeDelay,"
+      " DetectionTime, CauseCode, SubCauseCode, ControllerType, TargetLongAcc, TimeHeadway, CruiseSpeed, ParticipantsRe"
+      "ady, StartPlatoon, EndOfScenario, MioID, MioRange, MioBearing, MioRangeRate, Lane, ForwardID, BackwardID, MergeR"
+      "equest, SafeToMerge, Flag, FlagTail, FlagHead, PlatoonID, DistanceTravelledCZ, Intention, Counter] = formatMessa"
+      "ge(SensorBus, StationID1, GenerationDeltaTime1, StationType1, Latitude1, Longitude1, SemiMajorConfidence1, SemiM"
+      "inorConfidence1, SemiMajorOrientation1, Altitude1, Heading1, HeadingConfidence1, Speed1, SpeedConfidence1, Vehic"
+      "leLength1, VehicleWidth1, LongAcc1, LongAccConfidence1, YawRate1, YawRateConfidence1, VehicleRole1, ReferenceTim"
+      "e1, RearAxleLocation1, ResponseTimeConstant1, ResponseTimeDelay1, DetectionTime1, CauseCode1, SubCauseCode1, Con"
+      "trollerType1, TargetLongAcc1, TimeHeadway1, CruiseSpeed1, ParticipantsReady1, StartPlatoon1, EndOfScenario1, Mio"
+      "ID1, MioRange1, MioBearing1, MioRangeRate1, Lane1, ForwardID1, BackwardID1, MergeRequest1, SafeToMerge1, Flag1, "
+      "FlagTail1, FlagHead1, PlatoonID1, DistanceTravelledCZ1, Intention1, Counter1, MessageControl)\n%formatMessage - "
+      "Take values from sensor fusion and the running app, and\n%convert into data compliant with the communication.\n\n"
+      "\n%CommunicationBus.StationID = SensorBus.StationID;\n\n%%%% Sensor Fusion Values\nStationID = SensorBus.Station"
+      "ID; %Constant\nGenerationDeltaTime = GenerationDeltaTime1; %SF Value OK\nStationType = StationType1; %Constant\n"
+      "Latitude = int32(round(Latitude1)); %SF value OK\nLongitude = int32(round(Longitude1)); %SF value OK\nSemiMajorC"
+      "onfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\nSemiMinorConfidence = int32(ceil"
+      "(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation = int32(ceil(SemiMajorOrientation"
+      "1 * 100)); % Conversion from m to cm\nAltitude = Altitude1; %Using unknown value in spec.\nHeading = int32(round"
+      "(Heading1)); %SF value OK\n\nif Speed1 < 0 % If speed is negative we need to rotate the heading 180 degrees\n   "
+      "Heading = Heading + 1800;\n   if Heading > 3600\n      Heading = Heading - 3600;\n   end\nend\n\nHeadingConfiden"
+      "ce = int32(ceil(min(HeadingConfidence1 * 10, 126))); %Values above 126 need to be rounded down to 126\nSpeed = i"
+      "nt32(round(abs(Speed1 * 100))); %Need to multiply by 100, and take absolute value since SF speed can be negative"
+      ". Compensate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfidence1 * 100), 126)); % Multiply "
+      "by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 100); % Convert from m to cm\nVehicleWidth = "
+      "int32(VehicleWidth1 * 100); % Convert from m to cm\nLongAcc = int32(max(min(round(LongAcc1 * 10), 160), -160)); "
+      "% Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(min(ceil(LongAccConfidence1 * 10), 1"
+      "01)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(YawRate1 * 100, 32767), -32767)); % "
+      "Need to multiply by 100 and truncate to +/- 32767\n\nYawRateConfidence = 7;\nswitch YawRateConfidence1 % SF valu"
+      "e is in degrees. Need to use a switch to determine closest standard value.\n    case  YawRateConfidence <= 0.01\n"
+      "        YawRateConfidence = 0;\n    case YawRateConfidence <= 0.05\n        YawRateConfidence = 1;        \n    "
+      "case YawRateConfidence <= 0.1\n        YawRateConfidence = 2;        \n    case YawRateConfidence <= 1\n        "
+      "YawRateConfidence = 3;        \n    case YawRateConfidence <= 5\n        YawRateConfidence = 4;        \n    cas"
+      "e YawRateConfidence <= 10\n        YawRateConfidence = 5;\n    case YawRateConfidence <= 100\n        YawRateCon"
+      "fidence = 6;        \n    otherwise\n        YawRateConfidence = 7;\nend\n\nVehicleRole = VehicleRole1; % Consta"
+      "nt\nReferenceTime = int32(round(ReferenceTime1)); % SF value OK\nRearAxleLocation = int32(min(round(RearAxleLoca"
+      "tion1 * 100), 4095)); % Convert from m to cm and truncate to 4095\nResponseTimeConstant = ResponseTimeConstant1;"
+      " % Use unknown value\nResponseTimeDelay = ResponseTimeDelay1; % Use unknown value\n\n%%%% Application Values\nDe"
+      "tectionTime = DetectionTime1;\nCauseCode = CauseCode1;\nSubCauseCode = SubCauseCode1;\nControllerType = Controll"
+      "erType1;\nTargetLongAcc = TargetLongAcc1;\nTimeHeadway = TimeHeadway1;\nCruiseSpeed = CruiseSpeed1;\nParticipant"
+      "sReady = ParticipantsReady1;\nStartPlatoon = StartPlatoon1;\nEndOfScenario = EndOfScenario1;\nMioID = MioID1;\nM"
+      "ioRange = MioRange1;\nMioBearing = MioBearing1;\nMioRangeRate = MioRangeRate1;\nLane = Lane1;\nForwardID = Forwa"
+      "rdID1;\nBackwardID = BackwardID1;\nMergeRequest = MergeRequest1;\nSafeToMerge = SafeToMerge1;\nFlag = Flag1;\nFl"
+      "agTail = FlagTail1;\nFlagHead = FlagHead1;\nPlatoonID = PlatoonID1;\nDistanceTravelledCZ = DistanceTravelledCZ1;"
+      "\nIntention = Intention1;\nCounter = Counter1;\n\n%%%% Use the MessageControl value to set the bit masks\n\n"
       editorLayout	      "100 M4x1[205 227 1080 733]"
     }
   }
@@ -15590,10 +15619,10 @@ Stateflow {
   }
   data {
     id			    183
-    ssIdNumber		    4
-    name		    "StationID"
+    ssIdNumber		    110
+    name		    "SensorBus"
     linkNode		    [179 0 184]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -15602,18 +15631,20 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    184
-    ssIdNumber		    5
-    name		    "StationID1"
+    ssIdNumber		    4
+    name		    "StationID"
     linkNode		    [179 183 185]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -15630,10 +15661,10 @@ Stateflow {
   }
   data {
     id			    185
-    ssIdNumber		    6
-    name		    "GenerationDeltaTime"
+    ssIdNumber		    5
+    name		    "StationID1"
     linkNode		    [179 184 186]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -15642,8 +15673,6 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
@@ -15652,8 +15681,8 @@ Stateflow {
   }
   data {
     id			    186
-    ssIdNumber		    7
-    name		    "StationType"
+    ssIdNumber		    6
+    name		    "GenerationDeltaTime"
     linkNode		    [179 185 187]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15674,8 +15703,8 @@ Stateflow {
   }
   data {
     id			    187
-    ssIdNumber		    8
-    name		    "Latitude"
+    ssIdNumber		    106
+    name		    "ContainerMask"
     linkNode		    [179 186 188]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15696,8 +15725,8 @@ Stateflow {
   }
   data {
     id			    188
-    ssIdNumber		    9
-    name		    "Longitude"
+    ssIdNumber		    107
+    name		    "ManagementMask"
     linkNode		    [179 187 189]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15718,8 +15747,8 @@ Stateflow {
   }
   data {
     id			    189
-    ssIdNumber		    10
-    name		    "SemiMajorConfidence"
+    ssIdNumber		    108
+    name		    "SituationMask"
     linkNode		    [179 188 190]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15740,8 +15769,8 @@ Stateflow {
   }
   data {
     id			    190
-    ssIdNumber		    11
-    name		    "SemiMinorConfidence"
+    ssIdNumber		    109
+    name		    "AlacarteMask"
     linkNode		    [179 189 191]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15762,8 +15791,8 @@ Stateflow {
   }
   data {
     id			    191
-    ssIdNumber		    12
-    name		    "SemiMajorOrientation"
+    ssIdNumber		    7
+    name		    "StationType"
     linkNode		    [179 190 192]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15784,8 +15813,8 @@ Stateflow {
   }
   data {
     id			    192
-    ssIdNumber		    13
-    name		    "Altitude"
+    ssIdNumber		    8
+    name		    "Latitude"
     linkNode		    [179 191 193]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15806,8 +15835,8 @@ Stateflow {
   }
   data {
     id			    193
-    ssIdNumber		    14
-    name		    "Heading"
+    ssIdNumber		    9
+    name		    "Longitude"
     linkNode		    [179 192 194]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15828,8 +15857,8 @@ Stateflow {
   }
   data {
     id			    194
-    ssIdNumber		    15
-    name		    "HeadingConfidence"
+    ssIdNumber		    10
+    name		    "SemiMajorConfidence"
     linkNode		    [179 193 195]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15850,8 +15879,8 @@ Stateflow {
   }
   data {
     id			    195
-    ssIdNumber		    16
-    name		    "Speed"
+    ssIdNumber		    11
+    name		    "SemiMinorConfidence"
     linkNode		    [179 194 196]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15872,8 +15901,8 @@ Stateflow {
   }
   data {
     id			    196
-    ssIdNumber		    17
-    name		    "SpeedConfidence"
+    ssIdNumber		    12
+    name		    "SemiMajorOrientation"
     linkNode		    [179 195 197]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15894,8 +15923,8 @@ Stateflow {
   }
   data {
     id			    197
-    ssIdNumber		    18
-    name		    "VehicleLength"
+    ssIdNumber		    13
+    name		    "Altitude"
     linkNode		    [179 196 198]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15916,8 +15945,8 @@ Stateflow {
   }
   data {
     id			    198
-    ssIdNumber		    19
-    name		    "VehicleWidth"
+    ssIdNumber		    14
+    name		    "Heading"
     linkNode		    [179 197 199]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15938,8 +15967,8 @@ Stateflow {
   }
   data {
     id			    199
-    ssIdNumber		    20
-    name		    "LongAcc"
+    ssIdNumber		    15
+    name		    "HeadingConfidence"
     linkNode		    [179 198 200]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15960,8 +15989,8 @@ Stateflow {
   }
   data {
     id			    200
-    ssIdNumber		    21
-    name		    "LongAccConfidence"
+    ssIdNumber		    16
+    name		    "Speed"
     linkNode		    [179 199 201]
     scope		    OUTPUT_DATA
     machine		    1
@@ -15982,8 +16011,8 @@ Stateflow {
   }
   data {
     id			    201
-    ssIdNumber		    22
-    name		    "YawRate"
+    ssIdNumber		    17
+    name		    "SpeedConfidence"
     linkNode		    [179 200 202]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16004,8 +16033,8 @@ Stateflow {
   }
   data {
     id			    202
-    ssIdNumber		    23
-    name		    "YawRateConfidence"
+    ssIdNumber		    18
+    name		    "VehicleLength"
     linkNode		    [179 201 203]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16026,8 +16055,8 @@ Stateflow {
   }
   data {
     id			    203
-    ssIdNumber		    24
-    name		    "VehicleRole"
+    ssIdNumber		    19
+    name		    "VehicleWidth"
     linkNode		    [179 202 204]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16048,8 +16077,8 @@ Stateflow {
   }
   data {
     id			    204
-    ssIdNumber		    25
-    name		    "ReferenceTime"
+    ssIdNumber		    20
+    name		    "LongAcc"
     linkNode		    [179 203 205]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16070,8 +16099,8 @@ Stateflow {
   }
   data {
     id			    205
-    ssIdNumber		    26
-    name		    "RearAxleLocation"
+    ssIdNumber		    21
+    name		    "LongAccConfidence"
     linkNode		    [179 204 206]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16092,8 +16121,8 @@ Stateflow {
   }
   data {
     id			    206
-    ssIdNumber		    27
-    name		    "ResponseTimeConstant"
+    ssIdNumber		    22
+    name		    "YawRate"
     linkNode		    [179 205 207]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16114,8 +16143,8 @@ Stateflow {
   }
   data {
     id			    207
-    ssIdNumber		    28
-    name		    "ResponseTimeDelay"
+    ssIdNumber		    23
+    name		    "YawRateConfidence"
     linkNode		    [179 206 208]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16136,8 +16165,8 @@ Stateflow {
   }
   data {
     id			    208
-    ssIdNumber		    29
-    name		    "DetectionTime"
+    ssIdNumber		    24
+    name		    "VehicleRole"
     linkNode		    [179 207 209]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16158,8 +16187,8 @@ Stateflow {
   }
   data {
     id			    209
-    ssIdNumber		    30
-    name		    "CauseCode"
+    ssIdNumber		    25
+    name		    "ReferenceTime"
     linkNode		    [179 208 210]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16180,8 +16209,8 @@ Stateflow {
   }
   data {
     id			    210
-    ssIdNumber		    31
-    name		    "SubCauseCode"
+    ssIdNumber		    26
+    name		    "RearAxleLocation"
     linkNode		    [179 209 211]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16202,8 +16231,8 @@ Stateflow {
   }
   data {
     id			    211
-    ssIdNumber		    32
-    name		    "ControllerType"
+    ssIdNumber		    27
+    name		    "ResponseTimeConstant"
     linkNode		    [179 210 212]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16224,8 +16253,8 @@ Stateflow {
   }
   data {
     id			    212
-    ssIdNumber		    33
-    name		    "TargetLongAcc"
+    ssIdNumber		    28
+    name		    "ResponseTimeDelay"
     linkNode		    [179 211 213]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16246,8 +16275,8 @@ Stateflow {
   }
   data {
     id			    213
-    ssIdNumber		    34
-    name		    "TimeHeadway"
+    ssIdNumber		    29
+    name		    "DetectionTime"
     linkNode		    [179 212 214]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16268,8 +16297,8 @@ Stateflow {
   }
   data {
     id			    214
-    ssIdNumber		    35
-    name		    "CruiseSpeed"
+    ssIdNumber		    30
+    name		    "CauseCode"
     linkNode		    [179 213 215]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16290,8 +16319,8 @@ Stateflow {
   }
   data {
     id			    215
-    ssIdNumber		    36
-    name		    "ParticipantsReady"
+    ssIdNumber		    31
+    name		    "SubCauseCode"
     linkNode		    [179 214 216]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16312,8 +16341,8 @@ Stateflow {
   }
   data {
     id			    216
-    ssIdNumber		    37
-    name		    "StartPlatoon"
+    ssIdNumber		    32
+    name		    "ControllerType"
     linkNode		    [179 215 217]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16334,8 +16363,8 @@ Stateflow {
   }
   data {
     id			    217
-    ssIdNumber		    38
-    name		    "EndOfScenario"
+    ssIdNumber		    33
+    name		    "TargetLongAcc"
     linkNode		    [179 216 218]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16356,8 +16385,8 @@ Stateflow {
   }
   data {
     id			    218
-    ssIdNumber		    39
-    name		    "MioID"
+    ssIdNumber		    34
+    name		    "TimeHeadway"
     linkNode		    [179 217 219]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16378,8 +16407,8 @@ Stateflow {
   }
   data {
     id			    219
-    ssIdNumber		    40
-    name		    "MioRange"
+    ssIdNumber		    35
+    name		    "CruiseSpeed"
     linkNode		    [179 218 220]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16400,8 +16429,8 @@ Stateflow {
   }
   data {
     id			    220
-    ssIdNumber		    41
-    name		    "MioBearing"
+    ssIdNumber		    36
+    name		    "ParticipantsReady"
     linkNode		    [179 219 221]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16422,8 +16451,8 @@ Stateflow {
   }
   data {
     id			    221
-    ssIdNumber		    42
-    name		    "MioRangeRate"
+    ssIdNumber		    37
+    name		    "StartPlatoon"
     linkNode		    [179 220 222]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16444,8 +16473,8 @@ Stateflow {
   }
   data {
     id			    222
-    ssIdNumber		    43
-    name		    "Lane"
+    ssIdNumber		    38
+    name		    "EndOfScenario"
     linkNode		    [179 221 223]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16466,8 +16495,8 @@ Stateflow {
   }
   data {
     id			    223
-    ssIdNumber		    44
-    name		    "ForwardID"
+    ssIdNumber		    39
+    name		    "MioID"
     linkNode		    [179 222 224]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16488,8 +16517,8 @@ Stateflow {
   }
   data {
     id			    224
-    ssIdNumber		    45
-    name		    "BackwardID"
+    ssIdNumber		    40
+    name		    "MioRange"
     linkNode		    [179 223 225]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16510,8 +16539,8 @@ Stateflow {
   }
   data {
     id			    225
-    ssIdNumber		    46
-    name		    "MergeRequest"
+    ssIdNumber		    41
+    name		    "MioBearing"
     linkNode		    [179 224 226]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16532,8 +16561,8 @@ Stateflow {
   }
   data {
     id			    226
-    ssIdNumber		    47
-    name		    "SafeToMerge"
+    ssIdNumber		    42
+    name		    "MioRangeRate"
     linkNode		    [179 225 227]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16554,8 +16583,8 @@ Stateflow {
   }
   data {
     id			    227
-    ssIdNumber		    48
-    name		    "Flag"
+    ssIdNumber		    43
+    name		    "Lane"
     linkNode		    [179 226 228]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16576,8 +16605,8 @@ Stateflow {
   }
   data {
     id			    228
-    ssIdNumber		    49
-    name		    "FlagTail"
+    ssIdNumber		    44
+    name		    "ForwardID"
     linkNode		    [179 227 229]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16598,8 +16627,8 @@ Stateflow {
   }
   data {
     id			    229
-    ssIdNumber		    50
-    name		    "FlagHead"
+    ssIdNumber		    45
+    name		    "BackwardID"
     linkNode		    [179 228 230]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16620,8 +16649,8 @@ Stateflow {
   }
   data {
     id			    230
-    ssIdNumber		    51
-    name		    "PlatoonID"
+    ssIdNumber		    46
+    name		    "MergeRequest"
     linkNode		    [179 229 231]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16642,8 +16671,8 @@ Stateflow {
   }
   data {
     id			    231
-    ssIdNumber		    52
-    name		    "DistanceTravelledCZ"
+    ssIdNumber		    47
+    name		    "SafeToMerge"
     linkNode		    [179 230 232]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16664,8 +16693,8 @@ Stateflow {
   }
   data {
     id			    232
-    ssIdNumber		    53
-    name		    "Intention"
+    ssIdNumber		    48
+    name		    "Flag"
     linkNode		    [179 231 233]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16686,8 +16715,8 @@ Stateflow {
   }
   data {
     id			    233
-    ssIdNumber		    54
-    name		    "Counter"
+    ssIdNumber		    49
+    name		    "FlagTail"
     linkNode		    [179 232 234]
     scope		    OUTPUT_DATA
     machine		    1
@@ -16708,10 +16737,10 @@ Stateflow {
   }
   data {
     id			    234
-    ssIdNumber		    55
-    name		    "GenerationDeltaTime1"
+    ssIdNumber		    50
+    name		    "FlagHead"
     linkNode		    [179 233 235]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -16730,10 +16759,10 @@ Stateflow {
   }
   data {
     id			    235
-    ssIdNumber		    56
-    name		    "StationType1"
+    ssIdNumber		    51
+    name		    "PlatoonID"
     linkNode		    [179 234 236]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -16752,10 +16781,10 @@ Stateflow {
   }
   data {
     id			    236
-    ssIdNumber		    57
-    name		    "Latitude1"
+    ssIdNumber		    52
+    name		    "DistanceTravelledCZ"
     linkNode		    [179 235 237]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -16774,10 +16803,10 @@ Stateflow {
   }
   data {
     id			    237
-    ssIdNumber		    58
-    name		    "Longitude1"
+    ssIdNumber		    53
+    name		    "Intention"
     linkNode		    [179 236 238]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -16796,10 +16825,10 @@ Stateflow {
   }
   data {
     id			    238
-    ssIdNumber		    59
-    name		    "SemiMajorConfidence1"
+    ssIdNumber		    54
+    name		    "Counter"
     linkNode		    [179 237 239]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -16818,8 +16847,8 @@ Stateflow {
   }
   data {
     id			    239
-    ssIdNumber		    60
-    name		    "SemiMinorConfidence1"
+    ssIdNumber		    55
+    name		    "GenerationDeltaTime1"
     linkNode		    [179 238 240]
     scope		    INPUT_DATA
     machine		    1
@@ -16840,8 +16869,8 @@ Stateflow {
   }
   data {
     id			    240
-    ssIdNumber		    61
-    name		    "SemiMajorOrientation1"
+    ssIdNumber		    56
+    name		    "StationType1"
     linkNode		    [179 239 241]
     scope		    INPUT_DATA
     machine		    1
@@ -16862,8 +16891,8 @@ Stateflow {
   }
   data {
     id			    241
-    ssIdNumber		    62
-    name		    "Altitude1"
+    ssIdNumber		    57
+    name		    "Latitude1"
     linkNode		    [179 240 242]
     scope		    INPUT_DATA
     machine		    1
@@ -16884,8 +16913,8 @@ Stateflow {
   }
   data {
     id			    242
-    ssIdNumber		    63
-    name		    "Heading1"
+    ssIdNumber		    58
+    name		    "Longitude1"
     linkNode		    [179 241 243]
     scope		    INPUT_DATA
     machine		    1
@@ -16906,8 +16935,8 @@ Stateflow {
   }
   data {
     id			    243
-    ssIdNumber		    64
-    name		    "HeadingConfidence1"
+    ssIdNumber		    59
+    name		    "SemiMajorConfidence1"
     linkNode		    [179 242 244]
     scope		    INPUT_DATA
     machine		    1
@@ -16928,8 +16957,8 @@ Stateflow {
   }
   data {
     id			    244
-    ssIdNumber		    65
-    name		    "Speed1"
+    ssIdNumber		    60
+    name		    "SemiMinorConfidence1"
     linkNode		    [179 243 245]
     scope		    INPUT_DATA
     machine		    1
@@ -16950,8 +16979,8 @@ Stateflow {
   }
   data {
     id			    245
-    ssIdNumber		    66
-    name		    "SpeedConfidence1"
+    ssIdNumber		    61
+    name		    "SemiMajorOrientation1"
     linkNode		    [179 244 246]
     scope		    INPUT_DATA
     machine		    1
@@ -16972,8 +17001,8 @@ Stateflow {
   }
   data {
     id			    246
-    ssIdNumber		    67
-    name		    "VehicleLength1"
+    ssIdNumber		    62
+    name		    "Altitude1"
     linkNode		    [179 245 247]
     scope		    INPUT_DATA
     machine		    1
@@ -16994,8 +17023,8 @@ Stateflow {
   }
   data {
     id			    247
-    ssIdNumber		    68
-    name		    "VehicleWidth1"
+    ssIdNumber		    63
+    name		    "Heading1"
     linkNode		    [179 246 248]
     scope		    INPUT_DATA
     machine		    1
@@ -17016,8 +17045,8 @@ Stateflow {
   }
   data {
     id			    248
-    ssIdNumber		    69
-    name		    "LongAcc1"
+    ssIdNumber		    64
+    name		    "HeadingConfidence1"
     linkNode		    [179 247 249]
     scope		    INPUT_DATA
     machine		    1
@@ -17038,8 +17067,8 @@ Stateflow {
   }
   data {
     id			    249
-    ssIdNumber		    70
-    name		    "LongAccConfidence1"
+    ssIdNumber		    65
+    name		    "Speed1"
     linkNode		    [179 248 250]
     scope		    INPUT_DATA
     machine		    1
@@ -17060,8 +17089,8 @@ Stateflow {
   }
   data {
     id			    250
-    ssIdNumber		    71
-    name		    "YawRate1"
+    ssIdNumber		    66
+    name		    "SpeedConfidence1"
     linkNode		    [179 249 251]
     scope		    INPUT_DATA
     machine		    1
@@ -17082,8 +17111,8 @@ Stateflow {
   }
   data {
     id			    251
-    ssIdNumber		    72
-    name		    "YawRateConfidence1"
+    ssIdNumber		    67
+    name		    "VehicleLength1"
     linkNode		    [179 250 252]
     scope		    INPUT_DATA
     machine		    1
@@ -17104,8 +17133,8 @@ Stateflow {
   }
   data {
     id			    252
-    ssIdNumber		    73
-    name		    "VehicleRole1"
+    ssIdNumber		    68
+    name		    "VehicleWidth1"
     linkNode		    [179 251 253]
     scope		    INPUT_DATA
     machine		    1
@@ -17126,8 +17155,8 @@ Stateflow {
   }
   data {
     id			    253
-    ssIdNumber		    74
-    name		    "ReferenceTime1"
+    ssIdNumber		    69
+    name		    "LongAcc1"
     linkNode		    [179 252 254]
     scope		    INPUT_DATA
     machine		    1
@@ -17148,8 +17177,8 @@ Stateflow {
   }
   data {
     id			    254
-    ssIdNumber		    75
-    name		    "RearAxleLocation1"
+    ssIdNumber		    70
+    name		    "LongAccConfidence1"
     linkNode		    [179 253 255]
     scope		    INPUT_DATA
     machine		    1
@@ -17170,8 +17199,8 @@ Stateflow {
   }
   data {
     id			    255
-    ssIdNumber		    76
-    name		    "ResponseTimeConstant1"
+    ssIdNumber		    71
+    name		    "YawRate1"
     linkNode		    [179 254 256]
     scope		    INPUT_DATA
     machine		    1
@@ -17192,8 +17221,8 @@ Stateflow {
   }
   data {
     id			    256
-    ssIdNumber		    77
-    name		    "ResponseTimeDelay1"
+    ssIdNumber		    72
+    name		    "YawRateConfidence1"
     linkNode		    [179 255 257]
     scope		    INPUT_DATA
     machine		    1
@@ -17214,8 +17243,8 @@ Stateflow {
   }
   data {
     id			    257
-    ssIdNumber		    78
-    name		    "DetectionTime1"
+    ssIdNumber		    73
+    name		    "VehicleRole1"
     linkNode		    [179 256 258]
     scope		    INPUT_DATA
     machine		    1
@@ -17236,8 +17265,8 @@ Stateflow {
   }
   data {
     id			    258
-    ssIdNumber		    79
-    name		    "CauseCode1"
+    ssIdNumber		    74
+    name		    "ReferenceTime1"
     linkNode		    [179 257 259]
     scope		    INPUT_DATA
     machine		    1
@@ -17258,8 +17287,8 @@ Stateflow {
   }
   data {
     id			    259
-    ssIdNumber		    80
-    name		    "SubCauseCode1"
+    ssIdNumber		    75
+    name		    "RearAxleLocation1"
     linkNode		    [179 258 260]
     scope		    INPUT_DATA
     machine		    1
@@ -17280,8 +17309,8 @@ Stateflow {
   }
   data {
     id			    260
-    ssIdNumber		    81
-    name		    "ControllerType1"
+    ssIdNumber		    76
+    name		    "ResponseTimeConstant1"
     linkNode		    [179 259 261]
     scope		    INPUT_DATA
     machine		    1
@@ -17302,8 +17331,8 @@ Stateflow {
   }
   data {
     id			    261
-    ssIdNumber		    82
-    name		    "TargetLongAcc1"
+    ssIdNumber		    77
+    name		    "ResponseTimeDelay1"
     linkNode		    [179 260 262]
     scope		    INPUT_DATA
     machine		    1
@@ -17324,8 +17353,8 @@ Stateflow {
   }
   data {
     id			    262
-    ssIdNumber		    83
-    name		    "TimeHeadway1"
+    ssIdNumber		    78
+    name		    "DetectionTime1"
     linkNode		    [179 261 263]
     scope		    INPUT_DATA
     machine		    1
@@ -17346,8 +17375,8 @@ Stateflow {
   }
   data {
     id			    263
-    ssIdNumber		    84
-    name		    "CruiseSpeed1"
+    ssIdNumber		    79
+    name		    "CauseCode1"
     linkNode		    [179 262 264]
     scope		    INPUT_DATA
     machine		    1
@@ -17368,8 +17397,8 @@ Stateflow {
   }
   data {
     id			    264
-    ssIdNumber		    85
-    name		    "ParticipantsReady1"
+    ssIdNumber		    80
+    name		    "SubCauseCode1"
     linkNode		    [179 263 265]
     scope		    INPUT_DATA
     machine		    1
@@ -17390,8 +17419,8 @@ Stateflow {
   }
   data {
     id			    265
-    ssIdNumber		    86
-    name		    "StartPlatoon1"
+    ssIdNumber		    81
+    name		    "ControllerType1"
     linkNode		    [179 264 266]
     scope		    INPUT_DATA
     machine		    1
@@ -17412,8 +17441,8 @@ Stateflow {
   }
   data {
     id			    266
-    ssIdNumber		    87
-    name		    "EndOfScenario1"
+    ssIdNumber		    82
+    name		    "TargetLongAcc1"
     linkNode		    [179 265 267]
     scope		    INPUT_DATA
     machine		    1
@@ -17434,8 +17463,8 @@ Stateflow {
   }
   data {
     id			    267
-    ssIdNumber		    88
-    name		    "MioID1"
+    ssIdNumber		    83
+    name		    "TimeHeadway1"
     linkNode		    [179 266 268]
     scope		    INPUT_DATA
     machine		    1
@@ -17456,8 +17485,8 @@ Stateflow {
   }
   data {
     id			    268
-    ssIdNumber		    89
-    name		    "MioRange1"
+    ssIdNumber		    84
+    name		    "CruiseSpeed1"
     linkNode		    [179 267 269]
     scope		    INPUT_DATA
     machine		    1
@@ -17478,8 +17507,8 @@ Stateflow {
   }
   data {
     id			    269
-    ssIdNumber		    90
-    name		    "MioBearing1"
+    ssIdNumber		    85
+    name		    "ParticipantsReady1"
     linkNode		    [179 268 270]
     scope		    INPUT_DATA
     machine		    1
@@ -17500,8 +17529,8 @@ Stateflow {
   }
   data {
     id			    270
-    ssIdNumber		    91
-    name		    "MioRangeRate1"
+    ssIdNumber		    86
+    name		    "StartPlatoon1"
     linkNode		    [179 269 271]
     scope		    INPUT_DATA
     machine		    1
@@ -17522,8 +17551,8 @@ Stateflow {
   }
   data {
     id			    271
-    ssIdNumber		    92
-    name		    "Lane1"
+    ssIdNumber		    87
+    name		    "EndOfScenario1"
     linkNode		    [179 270 272]
     scope		    INPUT_DATA
     machine		    1
@@ -17544,8 +17573,8 @@ Stateflow {
   }
   data {
     id			    272
-    ssIdNumber		    93
-    name		    "ForwardID1"
+    ssIdNumber		    88
+    name		    "MioID1"
     linkNode		    [179 271 273]
     scope		    INPUT_DATA
     machine		    1
@@ -17566,8 +17595,8 @@ Stateflow {
   }
   data {
     id			    273
-    ssIdNumber		    94
-    name		    "BackwardID1"
+    ssIdNumber		    89
+    name		    "MioRange1"
     linkNode		    [179 272 274]
     scope		    INPUT_DATA
     machine		    1
@@ -17588,8 +17617,8 @@ Stateflow {
   }
   data {
     id			    274
-    ssIdNumber		    95
-    name		    "MergeRequest1"
+    ssIdNumber		    90
+    name		    "MioBearing1"
     linkNode		    [179 273 275]
     scope		    INPUT_DATA
     machine		    1
@@ -17610,8 +17639,8 @@ Stateflow {
   }
   data {
     id			    275
-    ssIdNumber		    96
-    name		    "SafeToMerge1"
+    ssIdNumber		    91
+    name		    "MioRangeRate1"
     linkNode		    [179 274 276]
     scope		    INPUT_DATA
     machine		    1
@@ -17632,8 +17661,8 @@ Stateflow {
   }
   data {
     id			    276
-    ssIdNumber		    97
-    name		    "Flag1"
+    ssIdNumber		    92
+    name		    "Lane1"
     linkNode		    [179 275 277]
     scope		    INPUT_DATA
     machine		    1
@@ -17654,8 +17683,8 @@ Stateflow {
   }
   data {
     id			    277
-    ssIdNumber		    98
-    name		    "FlagTail1"
+    ssIdNumber		    93
+    name		    "ForwardID1"
     linkNode		    [179 276 278]
     scope		    INPUT_DATA
     machine		    1
@@ -17676,8 +17705,8 @@ Stateflow {
   }
   data {
     id			    278
-    ssIdNumber		    99
-    name		    "FlagHead1"
+    ssIdNumber		    94
+    name		    "BackwardID1"
     linkNode		    [179 277 279]
     scope		    INPUT_DATA
     machine		    1
@@ -17698,8 +17727,8 @@ Stateflow {
   }
   data {
     id			    279
-    ssIdNumber		    100
-    name		    "PlatoonID1"
+    ssIdNumber		    95
+    name		    "MergeRequest1"
     linkNode		    [179 278 280]
     scope		    INPUT_DATA
     machine		    1
@@ -17720,8 +17749,8 @@ Stateflow {
   }
   data {
     id			    280
-    ssIdNumber		    101
-    name		    "DistanceTravelledCZ1"
+    ssIdNumber		    96
+    name		    "SafeToMerge1"
     linkNode		    [179 279 281]
     scope		    INPUT_DATA
     machine		    1
@@ -17742,8 +17771,8 @@ Stateflow {
   }
   data {
     id			    281
-    ssIdNumber		    102
-    name		    "Intention1"
+    ssIdNumber		    97
+    name		    "Flag1"
     linkNode		    [179 280 282]
     scope		    INPUT_DATA
     machine		    1
@@ -17764,8 +17793,8 @@ Stateflow {
   }
   data {
     id			    282
-    ssIdNumber		    103
-    name		    "Counter1"
+    ssIdNumber		    98
+    name		    "FlagTail1"
     linkNode		    [179 281 283]
     scope		    INPUT_DATA
     machine		    1
@@ -17786,9 +17815,119 @@ Stateflow {
   }
   data {
     id			    283
+    ssIdNumber		    99
+    name		    "FlagHead1"
+    linkNode		    [179 282 284]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    284
+    ssIdNumber		    100
+    name		    "PlatoonID1"
+    linkNode		    [179 283 285]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    285
+    ssIdNumber		    101
+    name		    "DistanceTravelledCZ1"
+    linkNode		    [179 284 286]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    286
+    ssIdNumber		    102
+    name		    "Intention1"
+    linkNode		    [179 285 287]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    287
+    ssIdNumber		    103
+    name		    "Counter1"
+    linkNode		    [179 286 288]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    288
     ssIdNumber		    105
     name		    "MessageControl"
-    linkNode		    [179 282 0]
+    linkNode		    [179 287 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -17807,13 +17946,13 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    284
-    name		    "DataConverter/MATLAB Function"
+    id			    289
+    name		    "DataConverter/FormatMessage"
     machine		    1
     chart		    179
   }
   target {
-    id			    285
+    id			    290
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
