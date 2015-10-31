@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.229"
+    ComputedModelVersion    "1.252"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -27,9 +27,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "zev"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Oct 30 16:50:36 2015"
+  LastModifiedDate	  "Sat Oct 31 11:34:30 2015"
   RTWModifiedTimeStamp	  368112542
-  ModelVersionFormat	  "1.%<AutoIncrement:229>"
+  ModelVersionFormat	  "1.%<AutoIncrement:252>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -828,7 +828,7 @@ Model {
   }
   System {
     Name		    "simulink_interface"
-    Location		    [1, 78, 1599, 899]
+    Location		    [564, 452, 2162, 1273]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -842,13 +842,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "384"
+    SIDHighWatermark	    "391"
     Block {
       BlockType		      SubSystem
       Name		      "Application \n(app running the current scenario)"
       SID		      "214"
-      Ports		      [1, 3]
-      Position		      [175, 678, 310, 792]
+      Ports		      [1, 2]
+      Position		      [175, 680, 310, 795]
       ZOrder		      88
       ForegroundColor	      "blue"
       MinAlgLoopOccurrences   off
@@ -929,15 +929,6 @@ Model {
 	  Position		  [390, 398, 420, 412]
 	  ZOrder		  94
 	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "MessageControl"
-	  SID			  "241"
-	  Position		  [390, 538, 420, 552]
-	  ZOrder		  99
-	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -1147,7 +1138,7 @@ Model {
       BlockType		      SubSystem
       Name		      "DataConverter"
       SID		      "260"
-      Ports		      [2, 2]
+      Ports		      [2, 1]
       Position		      [520, 545, 670, 665]
       ZOrder		      105
       MinAlgLoopOccurrences   off
@@ -1159,7 +1150,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"DataConverter"
-	Location		[1, 78, 1599, 899]
+	Location		[427, 280, 2027, 1152]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1184,369 +1175,29 @@ Model {
 	  BlockType		  Inport
 	  Name			  "AppData"
 	  SID			  "292"
-	  Position		  [70, 398, 100, 412]
+	  Position		  [70, 263, 100, 277]
 	  ZOrder		  111
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  BusCreator
-	  Name			  "Bus\nCreator1"
-	  SID			  "293"
-	  Ports			  [26, 1]
-	  Position		  [840, 270, 845, 395]
-	  ZOrder		  110
+	  Name			  "Bus\nCreator"
+	  SID			  "391"
+	  Ports			  [50, 1]
+	  Position		  [260, 300, 265, 545]
+	  ZOrder		  -2
 	  ShowName		  off
-	  Inputs		  "26"
+	  Inputs		  "50"
 	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  BusCreator
-	  Name			  "Bus\nCreator3"
-	  SID			  "262"
-	  Ports			  [24, 1]
-	  Position		  [785, 25, 790, 285]
-	  ZOrder		  102
-	  ShowName		  off
-	  Inputs		  "24"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  BusSelector
-	  Name			  "Bus\nSelector"
-	  SID			  "384"
-	  Ports			  [1, 24]
-	  Position		  [240, 15, 245, 285]
-	  ZOrder		  -3
-	  ShowName		  off
-	  OutputSignals		  "StationID,GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinorConfide"
-	  "nce,SemiMajorOrientation,Altitude,Heading,HeadingConfidence,Speed,SpeedConfidence,VehicleLength,VehicleWidth,LongAc"
-	  "c,LongAccConf,YawRate,YawRateConf,VehicleRole,ReferenceTime,RearAxleLocation,ResponseTimeConstant,ResponseTimeDelay"
-	  Port {
-	    PortNumber		    1
-	    Name		    "<StationID>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "<GenerationDeltaTime>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "<StationType>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "<Latitude>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    5
-	    Name		    "<Longitude>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    6
-	    Name		    "<SemiMajorConfidence>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    7
-	    Name		    "<SemiMinorConfidence>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    8
-	    Name		    "<SemiMajorOrientation>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    9
-	    Name		    "<Altitude>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    10
-	    Name		    "<Heading>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    11
-	    Name		    "<HeadingConfidence>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    12
-	    Name		    "<Speed>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    13
-	    Name		    "<SpeedConfidence>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    14
-	    Name		    "<VehicleLength>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    15
-	    Name		    "<VehicleWidth>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    16
-	    Name		    "<LongAcc>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    17
-	    Name		    "<LongAccConf>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    18
-	    Name		    "<YawRate>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    19
-	    Name		    "<YawRateConf>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    20
-	    Name		    "<VehicleRole>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    21
-	    Name		    "<ReferenceTime>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    22
-	    Name		    "<RearAxleLocation>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    23
-	    Name		    "<ResponseTimeConstant>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    24
-	    Name		    "<ResponseTimeDelay>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  BusSelector
-	  Name			  "Bus\nSelector1"
-	  SID			  "294"
-	  Ports			  [1, 27]
-	  Position		  [210, 256, 215, 554]
-	  ZOrder		  109
-	  ShowName		  off
-	  OutputSignals		  "DetectionTime,CauseCode,SubCauseCode,ControllerType,TargetLongAcc,TimeHeadway,CruiseSpeed,Partici"
-	  "pantsReady,StartPlatoon,EndOfScenario,MioId,MioRange,MioBearing,MioRangeRate,Lane,ForwardId,BackwardId,MergeRequest"
-	  ",SafeToMerge,Flag,FlagTail,FlagHead,PlatoonId,DistanceTravelledCz,Intention,Counter,MessageControl"
-	  Port {
-	    PortNumber		    1
-	    Name		    "<DetectionTime>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "<CauseCode>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "<SubCauseCode>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "<ControllerType>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    5
-	    Name		    "<TargetLongAcc>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    6
-	    Name		    "<TimeHeadway>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    7
-	    Name		    "<CruiseSpeed>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    8
-	    Name		    "<ParticipantsReady>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    9
-	    Name		    "<StartPlatoon>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    10
-	    Name		    "<EndOfScenario>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    11
-	    Name		    "<MioId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    12
-	    Name		    "<MioRange>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    13
-	    Name		    "<MioBearing>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    14
-	    Name		    "<MioRangeRate>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    15
-	    Name		    "<Lane>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    16
-	    Name		    "<ForwardId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    17
-	    Name		    "<BackwardId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    18
-	    Name		    "<MergeRequest>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    19
-	    Name		    "<SafeToMerge>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    20
-	    Name		    "<Flag>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    21
-	    Name		    "<FlagTail>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    22
-	    Name		    "<FlagHead>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    23
-	    Name		    "<PlatoonId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    24
-	    Name		    "<DistanceTravelledCz>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    25
-	    Name		    "<Intention>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    26
-	    Name		    "<Counter>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    27
-	    Name		    "<MessageControl>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  OutDataTypeStr	  "Bus: MessageBus"
 	}
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "FormatMessage"
 	  SID			  "383"
-	  Ports			  [52, 54]
-	  Position		  [370, 13, 665, 557]
+	  Ports			  [3, 1]
+	  Position		  [425, 88, 625, 332]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -1585,7 +1236,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "222"
+	    SIDHighWatermark	    "228"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "SensorBus"
@@ -1595,7 +1246,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "StationID1"
+	      Name		      "AppBus"
 	      SID		      "383::116"
 	      Position		      [20, 136, 40, 154]
 	      Port		      "2"
@@ -1603,402 +1254,10 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "GenerationDeltaTime1"
-	      SID		      "383::117"
+	      Name		      "MessageBus"
+	      SID		      "383::227"
 	      Position		      [20, 171, 40, 189]
 	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "StationType1"
-	      SID		      "383::118"
-	      Position		      [20, 206, 40, 224]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Latitude1"
-	      SID		      "383::119"
-	      Position		      [20, 246, 40, 264]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Longitude1"
-	      SID		      "383::120"
-	      Position		      [20, 281, 40, 299]
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SemiMajorConfidence1"
-	      SID		      "383::121"
-	      Position		      [20, 316, 40, 334]
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SemiMinorConfidence1"
-	      SID		      "383::122"
-	      Position		      [20, 351, 40, 369]
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SemiMajorOrientation1"
-	      SID		      "383::123"
-	      Position		      [20, 386, 40, 404]
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Altitude1"
-	      SID		      "383::124"
-	      Position		      [20, 426, 40, 444]
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Heading1"
-	      SID		      "383::125"
-	      Position		      [20, 461, 40, 479]
-	      Port		      "11"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "HeadingConfidence1"
-	      SID		      "383::126"
-	      Position		      [20, 496, 40, 514]
-	      Port		      "12"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Speed1"
-	      SID		      "383::127"
-	      Position		      [20, 531, 40, 549]
-	      Port		      "13"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SpeedConfidence1"
-	      SID		      "383::128"
-	      Position		      [20, 566, 40, 584]
-	      Port		      "14"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "VehicleLength1"
-	      SID		      "383::129"
-	      Position		      [20, 606, 40, 624]
-	      Port		      "15"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "VehicleWidth1"
-	      SID		      "383::130"
-	      Position		      [20, 641, 40, 659]
-	      Port		      "16"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "LongAcc1"
-	      SID		      "383::131"
-	      Position		      [20, 676, 40, 694]
-	      Port		      "17"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "LongAccConfidence1"
-	      SID		      "383::132"
-	      Position		      [20, 711, 40, 729]
-	      Port		      "18"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "YawRate1"
-	      SID		      "383::133"
-	      Position		      [20, 746, 40, 764]
-	      Port		      "19"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "YawRateConfidence1"
-	      SID		      "383::134"
-	      Position		      [20, 786, 40, 804]
-	      Port		      "20"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "VehicleRole1"
-	      SID		      "383::135"
-	      Position		      [20, 821, 40, 839]
-	      Port		      "21"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ReferenceTime1"
-	      SID		      "383::136"
-	      Position		      [20, 856, 40, 874]
-	      Port		      "22"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "RearAxleLocation1"
-	      SID		      "383::137"
-	      Position		      [20, 891, 40, 909]
-	      Port		      "23"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ResponseTimeConstant1"
-	      SID		      "383::138"
-	      Position		      [20, 926, 40, 944]
-	      Port		      "24"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ResponseTimeDelay1"
-	      SID		      "383::139"
-	      Position		      [20, 966, 40, 984]
-	      Port		      "25"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "DetectionTime1"
-	      SID		      "383::140"
-	      Position		      [20, 1001, 40, 1019]
-	      Port		      "26"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "CauseCode1"
-	      SID		      "383::141"
-	      Position		      [20, 1036, 40, 1054]
-	      Port		      "27"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SubCauseCode1"
-	      SID		      "383::142"
-	      Position		      [20, 1071, 40, 1089]
-	      Port		      "28"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ControllerType1"
-	      SID		      "383::143"
-	      Position		      [20, 1106, 40, 1124]
-	      Port		      "29"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "TargetLongAcc1"
-	      SID		      "383::144"
-	      Position		      [20, 1146, 40, 1164]
-	      Port		      "30"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "TimeHeadway1"
-	      SID		      "383::145"
-	      Position		      [20, 1181, 40, 1199]
-	      Port		      "31"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "CruiseSpeed1"
-	      SID		      "383::146"
-	      Position		      [20, 1216, 40, 1234]
-	      Port		      "32"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ParticipantsReady1"
-	      SID		      "383::147"
-	      Position		      [20, 1251, 40, 1269]
-	      Port		      "33"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "StartPlatoon1"
-	      SID		      "383::148"
-	      Position		      [20, 1286, 40, 1304]
-	      Port		      "34"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "EndOfScenario1"
-	      SID		      "383::149"
-	      Position		      [20, 1326, 40, 1344]
-	      Port		      "35"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MioID1"
-	      SID		      "383::150"
-	      Position		      [20, 1361, 40, 1379]
-	      Port		      "36"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MioRange1"
-	      SID		      "383::151"
-	      Position		      [20, 1396, 40, 1414]
-	      Port		      "37"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MioBearing1"
-	      SID		      "383::152"
-	      Position		      [20, 1431, 40, 1449]
-	      Port		      "38"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MioRangeRate1"
-	      SID		      "383::153"
-	      Position		      [20, 1466, 40, 1484]
-	      Port		      "39"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Lane1"
-	      SID		      "383::154"
-	      Position		      [20, 1506, 40, 1524]
-	      Port		      "40"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ForwardID1"
-	      SID		      "383::155"
-	      Position		      [20, 1541, 40, 1559]
-	      Port		      "41"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "BackwardID1"
-	      SID		      "383::156"
-	      Position		      [20, 1576, 40, 1594]
-	      Port		      "42"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MergeRequest1"
-	      SID		      "383::157"
-	      Position		      [20, 1611, 40, 1629]
-	      Port		      "43"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "SafeToMerge1"
-	      SID		      "383::158"
-	      Position		      [20, 1646, 40, 1664]
-	      Port		      "44"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Flag1"
-	      SID		      "383::159"
-	      Position		      [20, 1686, 40, 1704]
-	      Port		      "45"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "FlagTail1"
-	      SID		      "383::160"
-	      Position		      [20, 1721, 40, 1739]
-	      Port		      "46"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "FlagHead1"
-	      SID		      "383::161"
-	      Position		      [20, 1756, 40, 1774]
-	      Port		      "47"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "PlatoonID1"
-	      SID		      "383::162"
-	      Position		      [20, 1791, 40, 1809]
-	      Port		      "48"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "DistanceTravelledCZ1"
-	      SID		      "383::163"
-	      Position		      [20, 1826, 40, 1844]
-	      Port		      "49"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Intention1"
-	      SID		      "383::164"
-	      Position		      [20, 1866, 40, 1884]
-	      Port		      "50"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Counter1"
-	      SID		      "383::165"
-	      Position		      [20, 1901, 40, 1919]
-	      Port		      "51"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "MessageControl"
-	      SID		      "383::217"
-	      Position		      [20, 1936, 40, 1954]
-	      Port		      "52"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -2006,7 +1265,7 @@ Model {
 	      Name		      " Demux "
 	      SID		      "383::15"
 	      Ports		      [1, 1]
-	      Position		      [270, 2205, 320, 2245]
+	      Position		      [270, 2305, 320, 2345]
 	      Outputs		      "1"
 	    }
 	    Block {
@@ -2014,332 +1273,14 @@ Model {
 	      Name		      " SFunction "
 	      SID		      "383::14"
 	      Tag		      "Stateflow S-Function simulink_interface 4"
-	      Ports		      [52, 55]
-	      Position		      [180, 164, 230, 2206]
+	      Ports		      [3, 2]
+	      Position		      [180, 227, 230, 2303]
 	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[52 55]"
+	      PortCounts	      "[3 2]"
 	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
-		Name			"StationID"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"GenerationDeltaTime"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"ContainerMask"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"ManagementMask"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"SituationMask"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"AlacarteMask"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"StationType"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		9
-		Name			"Latitude"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		10
-		Name			"Longitude"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		11
-		Name			"SemiMajorConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		12
-		Name			"SemiMinorConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		13
-		Name			"SemiMajorOrientation"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		14
-		Name			"Altitude"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		15
-		Name			"Heading"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		16
-		Name			"HeadingConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		17
-		Name			"Speed"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		18
-		Name			"SpeedConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		19
-		Name			"VehicleLength"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		20
-		Name			"VehicleWidth"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		21
-		Name			"LongAcc"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		22
-		Name			"LongAccConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		23
-		Name			"YawRate"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		24
-		Name			"YawRateConfidence"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		25
-		Name			"VehicleRole"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		26
-		Name			"ReferenceTime"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		27
-		Name			"RearAxleLocation"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		28
-		Name			"ResponseTimeConstant"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		29
-		Name			"ResponseTimeDelay"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		30
-		Name			"DetectionTime"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		31
-		Name			"CauseCode"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		32
-		Name			"SubCauseCode"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		33
-		Name			"ControllerType"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		34
-		Name			"TargetLongAcc"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		35
-		Name			"TimeHeadway"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		36
-		Name			"CruiseSpeed"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		37
-		Name			"ParticipantsReady"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		38
-		Name			"StartPlatoon"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		39
-		Name			"EndOfScenario"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		40
-		Name			"MioID"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		41
-		Name			"MioRange"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		42
-		Name			"MioBearing"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		43
-		Name			"MioRangeRate"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		44
-		Name			"Lane"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		45
-		Name			"ForwardID"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		46
-		Name			"BackwardID"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		47
-		Name			"MergeRequest"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		48
-		Name			"SafeToMerge"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		49
-		Name			"Flag"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		50
-		Name			"FlagTail"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		51
-		Name			"FlagHead"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		52
-		Name			"PlatoonID"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		53
-		Name			"DistanceTravelledCZ"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		54
-		Name			"Intention"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		55
-		Name			"Counter"
+		Name			"MessageBusOut"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
@@ -2348,437 +1289,13 @@ Model {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
 	      SID		      "383::17"
-	      Position		      [460, 2216, 480, 2234]
+	      Position		      [460, 2316, 480, 2334]
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "StationID"
-	      SID		      "383::166"
+	      Name		      "MessageBusOut"
+	      SID		      "383::228"
 	      Position		      [460, 101, 480, 119]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "GenerationDeltaTime"
-	      SID		      "383::167"
-	      Position		      [460, 136, 480, 154]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ContainerMask"
-	      SID		      "383::218"
-	      Position		      [460, 171, 480, 189]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ManagementMask"
-	      SID		      "383::219"
-	      Position		      [460, 206, 480, 224]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SituationMask"
-	      SID		      "383::220"
-	      Position		      [460, 246, 480, 264]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "AlacarteMask"
-	      SID		      "383::221"
-	      Position		      [460, 281, 480, 299]
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "StationType"
-	      SID		      "383::168"
-	      Position		      [460, 316, 480, 334]
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Latitude"
-	      SID		      "383::169"
-	      Position		      [460, 351, 480, 369]
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Longitude"
-	      SID		      "383::170"
-	      Position		      [460, 386, 480, 404]
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SemiMajorConfidence"
-	      SID		      "383::171"
-	      Position		      [460, 426, 480, 444]
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SemiMinorConfidence"
-	      SID		      "383::172"
-	      Position		      [460, 461, 480, 479]
-	      Port		      "11"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SemiMajorOrientation"
-	      SID		      "383::173"
-	      Position		      [460, 496, 480, 514]
-	      Port		      "12"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Altitude"
-	      SID		      "383::174"
-	      Position		      [460, 531, 480, 549]
-	      Port		      "13"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Heading"
-	      SID		      "383::175"
-	      Position		      [460, 566, 480, 584]
-	      Port		      "14"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "HeadingConfidence"
-	      SID		      "383::176"
-	      Position		      [460, 606, 480, 624]
-	      Port		      "15"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Speed"
-	      SID		      "383::177"
-	      Position		      [460, 641, 480, 659]
-	      Port		      "16"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SpeedConfidence"
-	      SID		      "383::178"
-	      Position		      [460, 676, 480, 694]
-	      Port		      "17"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "VehicleLength"
-	      SID		      "383::179"
-	      Position		      [460, 711, 480, 729]
-	      Port		      "18"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "VehicleWidth"
-	      SID		      "383::180"
-	      Position		      [460, 746, 480, 764]
-	      Port		      "19"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "LongAcc"
-	      SID		      "383::181"
-	      Position		      [460, 786, 480, 804]
-	      Port		      "20"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "LongAccConfidence"
-	      SID		      "383::182"
-	      Position		      [460, 821, 480, 839]
-	      Port		      "21"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "YawRate"
-	      SID		      "383::183"
-	      Position		      [460, 856, 480, 874]
-	      Port		      "22"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "YawRateConfidence"
-	      SID		      "383::184"
-	      Position		      [460, 891, 480, 909]
-	      Port		      "23"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "VehicleRole"
-	      SID		      "383::185"
-	      Position		      [460, 926, 480, 944]
-	      Port		      "24"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ReferenceTime"
-	      SID		      "383::186"
-	      Position		      [460, 966, 480, 984]
-	      Port		      "25"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "RearAxleLocation"
-	      SID		      "383::187"
-	      Position		      [460, 1001, 480, 1019]
-	      Port		      "26"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ResponseTimeConstant"
-	      SID		      "383::188"
-	      Position		      [460, 1036, 480, 1054]
-	      Port		      "27"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ResponseTimeDelay"
-	      SID		      "383::189"
-	      Position		      [460, 1071, 480, 1089]
-	      Port		      "28"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "DetectionTime"
-	      SID		      "383::190"
-	      Position		      [460, 1106, 480, 1124]
-	      Port		      "29"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "CauseCode"
-	      SID		      "383::191"
-	      Position		      [460, 1146, 480, 1164]
-	      Port		      "30"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SubCauseCode"
-	      SID		      "383::192"
-	      Position		      [460, 1181, 480, 1199]
-	      Port		      "31"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ControllerType"
-	      SID		      "383::193"
-	      Position		      [460, 1216, 480, 1234]
-	      Port		      "32"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "TargetLongAcc"
-	      SID		      "383::194"
-	      Position		      [460, 1251, 480, 1269]
-	      Port		      "33"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "TimeHeadway"
-	      SID		      "383::195"
-	      Position		      [460, 1286, 480, 1304]
-	      Port		      "34"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "CruiseSpeed"
-	      SID		      "383::196"
-	      Position		      [460, 1326, 480, 1344]
-	      Port		      "35"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ParticipantsReady"
-	      SID		      "383::197"
-	      Position		      [460, 1361, 480, 1379]
-	      Port		      "36"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "StartPlatoon"
-	      SID		      "383::198"
-	      Position		      [460, 1396, 480, 1414]
-	      Port		      "37"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "EndOfScenario"
-	      SID		      "383::199"
-	      Position		      [460, 1431, 480, 1449]
-	      Port		      "38"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "MioID"
-	      SID		      "383::200"
-	      Position		      [460, 1466, 480, 1484]
-	      Port		      "39"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "MioRange"
-	      SID		      "383::201"
-	      Position		      [460, 1506, 480, 1524]
-	      Port		      "40"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "MioBearing"
-	      SID		      "383::202"
-	      Position		      [460, 1541, 480, 1559]
-	      Port		      "41"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "MioRangeRate"
-	      SID		      "383::203"
-	      Position		      [460, 1576, 480, 1594]
-	      Port		      "42"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Lane"
-	      SID		      "383::204"
-	      Position		      [460, 1611, 480, 1629]
-	      Port		      "43"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "ForwardID"
-	      SID		      "383::205"
-	      Position		      [460, 1646, 480, 1664]
-	      Port		      "44"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "BackwardID"
-	      SID		      "383::206"
-	      Position		      [460, 1686, 480, 1704]
-	      Port		      "45"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "MergeRequest"
-	      SID		      "383::207"
-	      Position		      [460, 1721, 480, 1739]
-	      Port		      "46"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "SafeToMerge"
-	      SID		      "383::208"
-	      Position		      [460, 1756, 480, 1774]
-	      Port		      "47"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Flag"
-	      SID		      "383::209"
-	      Position		      [460, 1791, 480, 1809]
-	      Port		      "48"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "FlagTail"
-	      SID		      "383::210"
-	      Position		      [460, 1826, 480, 1844]
-	      Port		      "49"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "FlagHead"
-	      SID		      "383::211"
-	      Position		      [460, 1866, 480, 1884]
-	      Port		      "50"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "PlatoonID"
-	      SID		      "383::212"
-	      Position		      [460, 1901, 480, 1919]
-	      Port		      "51"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "DistanceTravelledCZ"
-	      SID		      "383::213"
-	      Position		      [460, 1936, 480, 1954]
-	      Port		      "52"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Intention"
-	      SID		      "383::214"
-	      Position		      [460, 1971, 480, 1989]
-	      Port		      "53"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Counter"
-	      SID		      "383::215"
-	      Position		      [460, 2006, 480, 2024]
-	      Port		      "54"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -2788,741 +1305,23 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "StationID1"
+	      SrcBlock		      "AppBus"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "GenerationDeltaTime1"
+	      SrcBlock		      "MessageBus"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      3
 	    }
 	    Line {
-	      SrcBlock		      "StationType1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      4
-	    }
-	    Line {
-	      SrcBlock		      "Latitude1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      5
-	    }
-	    Line {
-	      SrcBlock		      "Longitude1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      6
-	    }
-	    Line {
-	      SrcBlock		      "SemiMajorConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      7
-	    }
-	    Line {
-	      SrcBlock		      "SemiMinorConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      8
-	    }
-	    Line {
-	      SrcBlock		      "SemiMajorOrientation1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      9
-	    }
-	    Line {
-	      SrcBlock		      "Altitude1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      10
-	    }
-	    Line {
-	      SrcBlock		      "Heading1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      11
-	    }
-	    Line {
-	      SrcBlock		      "HeadingConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      12
-	    }
-	    Line {
-	      SrcBlock		      "Speed1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      13
-	    }
-	    Line {
-	      SrcBlock		      "SpeedConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      14
-	    }
-	    Line {
-	      SrcBlock		      "VehicleLength1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      15
-	    }
-	    Line {
-	      SrcBlock		      "VehicleWidth1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      16
-	    }
-	    Line {
-	      SrcBlock		      "LongAcc1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      17
-	    }
-	    Line {
-	      SrcBlock		      "LongAccConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      18
-	    }
-	    Line {
-	      SrcBlock		      "YawRate1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      19
-	    }
-	    Line {
-	      SrcBlock		      "YawRateConfidence1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      20
-	    }
-	    Line {
-	      SrcBlock		      "VehicleRole1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      21
-	    }
-	    Line {
-	      SrcBlock		      "ReferenceTime1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      22
-	    }
-	    Line {
-	      SrcBlock		      "RearAxleLocation1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      23
-	    }
-	    Line {
-	      SrcBlock		      "ResponseTimeConstant1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      24
-	    }
-	    Line {
-	      SrcBlock		      "ResponseTimeDelay1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      25
-	    }
-	    Line {
-	      SrcBlock		      "DetectionTime1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      26
-	    }
-	    Line {
-	      SrcBlock		      "CauseCode1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      27
-	    }
-	    Line {
-	      SrcBlock		      "SubCauseCode1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      28
-	    }
-	    Line {
-	      SrcBlock		      "ControllerType1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      29
-	    }
-	    Line {
-	      SrcBlock		      "TargetLongAcc1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      30
-	    }
-	    Line {
-	      SrcBlock		      "TimeHeadway1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      31
-	    }
-	    Line {
-	      SrcBlock		      "CruiseSpeed1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      32
-	    }
-	    Line {
-	      SrcBlock		      "ParticipantsReady1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      33
-	    }
-	    Line {
-	      SrcBlock		      "StartPlatoon1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      34
-	    }
-	    Line {
-	      SrcBlock		      "EndOfScenario1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      35
-	    }
-	    Line {
-	      SrcBlock		      "MioID1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      36
-	    }
-	    Line {
-	      SrcBlock		      "MioRange1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      37
-	    }
-	    Line {
-	      SrcBlock		      "MioBearing1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      38
-	    }
-	    Line {
-	      SrcBlock		      "MioRangeRate1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      39
-	    }
-	    Line {
-	      SrcBlock		      "Lane1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      40
-	    }
-	    Line {
-	      SrcBlock		      "ForwardID1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      41
-	    }
-	    Line {
-	      SrcBlock		      "BackwardID1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      42
-	    }
-	    Line {
-	      SrcBlock		      "MergeRequest1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      43
-	    }
-	    Line {
-	      SrcBlock		      "SafeToMerge1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      44
-	    }
-	    Line {
-	      SrcBlock		      "Flag1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      45
-	    }
-	    Line {
-	      SrcBlock		      "FlagTail1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      46
-	    }
-	    Line {
-	      SrcBlock		      "FlagHead1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      47
-	    }
-	    Line {
-	      SrcBlock		      "PlatoonID1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      48
-	    }
-	    Line {
-	      SrcBlock		      "DistanceTravelledCZ1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      49
-	    }
-	    Line {
-	      SrcBlock		      "Intention1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      50
-	    }
-	    Line {
-	      SrcBlock		      "Counter1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      51
-	    }
-	    Line {
-	      SrcBlock		      "MessageControl"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      52
-	    }
-	    Line {
-	      Name		      "StationID"
+	      Name		      "MessageBusOut"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
-	      DstBlock		      "StationID"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "GenerationDeltaTime"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "GenerationDeltaTime"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ContainerMask"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      4
-	      DstBlock		      "ContainerMask"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ManagementMask"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      5
-	      DstBlock		      "ManagementMask"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SituationMask"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      6
-	      DstBlock		      "SituationMask"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "AlacarteMask"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      7
-	      DstBlock		      "AlacarteMask"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "StationType"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      8
-	      DstBlock		      "StationType"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Latitude"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      9
-	      DstBlock		      "Latitude"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Longitude"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      10
-	      DstBlock		      "Longitude"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SemiMajorConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      11
-	      DstBlock		      "SemiMajorConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SemiMinorConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      12
-	      DstBlock		      "SemiMinorConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SemiMajorOrientation"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      13
-	      DstBlock		      "SemiMajorOrientation"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Altitude"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      14
-	      DstBlock		      "Altitude"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Heading"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      15
-	      DstBlock		      "Heading"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "HeadingConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      16
-	      DstBlock		      "HeadingConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Speed"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      17
-	      DstBlock		      "Speed"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SpeedConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      18
-	      DstBlock		      "SpeedConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "VehicleLength"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      19
-	      DstBlock		      "VehicleLength"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "VehicleWidth"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      20
-	      DstBlock		      "VehicleWidth"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "LongAcc"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      21
-	      DstBlock		      "LongAcc"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "LongAccConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      22
-	      DstBlock		      "LongAccConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "YawRate"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      23
-	      DstBlock		      "YawRate"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "YawRateConfidence"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      24
-	      DstBlock		      "YawRateConfidence"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "VehicleRole"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      25
-	      DstBlock		      "VehicleRole"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ReferenceTime"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      26
-	      DstBlock		      "ReferenceTime"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "RearAxleLocation"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      27
-	      DstBlock		      "RearAxleLocation"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ResponseTimeConstant"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      28
-	      DstBlock		      "ResponseTimeConstant"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ResponseTimeDelay"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      29
-	      DstBlock		      "ResponseTimeDelay"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "DetectionTime"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      30
-	      DstBlock		      "DetectionTime"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "CauseCode"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      31
-	      DstBlock		      "CauseCode"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SubCauseCode"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      32
-	      DstBlock		      "SubCauseCode"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ControllerType"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      33
-	      DstBlock		      "ControllerType"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "TargetLongAcc"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      34
-	      DstBlock		      "TargetLongAcc"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "TimeHeadway"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      35
-	      DstBlock		      "TimeHeadway"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "CruiseSpeed"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      36
-	      DstBlock		      "CruiseSpeed"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ParticipantsReady"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      37
-	      DstBlock		      "ParticipantsReady"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "StartPlatoon"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      38
-	      DstBlock		      "StartPlatoon"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "EndOfScenario"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      39
-	      DstBlock		      "EndOfScenario"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "MioID"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      40
-	      DstBlock		      "MioID"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "MioRange"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      41
-	      DstBlock		      "MioRange"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "MioBearing"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      42
-	      DstBlock		      "MioBearing"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "MioRangeRate"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      43
-	      DstBlock		      "MioRangeRate"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Lane"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      44
-	      DstBlock		      "Lane"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "ForwardID"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      45
-	      DstBlock		      "ForwardID"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "BackwardID"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      46
-	      DstBlock		      "BackwardID"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "MergeRequest"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      47
-	      DstBlock		      "MergeRequest"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "SafeToMerge"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      48
-	      DstBlock		      "SafeToMerge"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Flag"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      49
-	      DstBlock		      "Flag"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "FlagTail"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      50
-	      DstBlock		      "FlagTail"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "FlagHead"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      51
-	      DstBlock		      "FlagHead"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "PlatoonID"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      52
-	      DstBlock		      "PlatoonID"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "DistanceTravelledCZ"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      53
-	      DstBlock		      "DistanceTravelledCZ"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Intention"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      54
-	      DstBlock		      "Intention"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "Counter"
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      55
-	      DstBlock		      "Counter"
+	      DstBlock		      "MessageBusOut"
 	      DstPort		      1
 	    }
 	    Line {
@@ -3541,512 +1340,38 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "SensorDataConverted"
+	  Name			  "MessageBus"
 	  SID			  "264"
-	  Position		  [935, 148, 965, 162]
+	  Position		  [770, 203, 800, 217]
 	  ZOrder		  107
 	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "AppDataConverted"
-	  SID			  "295"
-	  Position		  [935, 223, 965, 237]
-	  ZOrder		  112
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Bus\nCreator3"
-	  SrcPort		  1
-	  DstBlock		  "SensorDataConverted"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Bus\nCreator1"
-	  SrcPort		  1
-	  Points		  [70, 0]
-	  DstBlock		  "AppDataConverted"
-	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "AppData"
 	  SrcPort		  1
-	  DstBlock		  "Bus\nSelector1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "SensorData"
-	  SrcPort		  1
-	  Points		  [35, 0]
-	  Branch {
-	    DstBlock		    "Bus\nSelector"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -120]
-	    DstBlock		    "FormatMessage"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  Name			  "<StationID>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  1
-	  Points		  [105, 0]
+	  Points		  [305, 0]
 	  DstBlock		  "FormatMessage"
 	  DstPort		  2
 	}
 	Line {
-	  Name			  "<GenerationDeltaTime>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  2
-	  Points		  [105, 0]
+	  SrcBlock		  "SensorData"
+	  SrcPort		  1
+	  Points		  [305, 0]
+	  DstBlock		  "FormatMessage"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  Points		  [70, 0; 0, -135]
 	  DstBlock		  "FormatMessage"
 	  DstPort		  3
 	}
 	Line {
-	  Name			  "<StationType>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  3
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  4
-	}
-	Line {
-	  Name			  "<Latitude>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  4
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  5
-	}
-	Line {
-	  Name			  "<Longitude>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  5
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  6
-	}
-	Line {
-	  Name			  "<SemiMajorConfidence>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  6
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  7
-	}
-	Line {
-	  Name			  "<SemiMinorConfidence>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  7
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  8
-	}
-	Line {
-	  Name			  "<SemiMajorOrientation>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  8
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  9
-	}
-	Line {
-	  Name			  "<Altitude>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  9
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  10
-	}
-	Line {
-	  Name			  "<Heading>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  10
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  11
-	}
-	Line {
-	  Name			  "<HeadingConfidence>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  11
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  12
-	}
-	Line {
-	  Name			  "<Speed>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  12
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  13
-	}
-	Line {
-	  Name			  "<SpeedConfidence>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  13
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  14
-	}
-	Line {
-	  Name			  "<VehicleLength>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  14
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  15
-	}
-	Line {
-	  Name			  "<VehicleWidth>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  15
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  16
-	}
-	Line {
-	  Name			  "<LongAcc>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  16
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  17
-	}
-	Line {
-	  Name			  "<LongAccConf>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  17
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  18
-	}
-	Line {
-	  Name			  "<YawRate>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  18
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  19
-	}
-	Line {
-	  Name			  "<YawRateConf>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  19
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  20
-	}
-	Line {
-	  Name			  "<VehicleRole>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  20
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  21
-	}
-	Line {
-	  Name			  "<ReferenceTime>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  21
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  22
-	}
-	Line {
-	  Name			  "<RearAxleLocation>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  22
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  23
-	}
-	Line {
-	  Name			  "<ResponseTimeConstant>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  23
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  24
-	}
-	Line {
-	  Name			  "<ResponseTimeDelay>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  24
-	  Points		  [105, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  25
-	}
-	Line {
-	  Name			  "<DetectionTime>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
+	  SrcBlock		  "FormatMessage"
 	  SrcPort		  1
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  26
-	}
-	Line {
-	  Name			  "<CauseCode>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  2
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  27
-	}
-	Line {
-	  Name			  "<SubCauseCode>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  3
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  28
-	}
-	Line {
-	  Name			  "<ControllerType>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  4
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  29
-	}
-	Line {
-	  Name			  "<TargetLongAcc>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  5
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  30
-	}
-	Line {
-	  Name			  "<TimeHeadway>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  6
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  31
-	}
-	Line {
-	  Name			  "<CruiseSpeed>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  7
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  32
-	}
-	Line {
-	  Name			  "<ParticipantsReady>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  8
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  33
-	}
-	Line {
-	  Name			  "<StartPlatoon>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  9
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  34
-	}
-	Line {
-	  Name			  "<EndOfScenario>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  10
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  35
-	}
-	Line {
-	  Name			  "<MioId>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  11
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  36
-	}
-	Line {
-	  Name			  "<MioRange>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  12
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  37
-	}
-	Line {
-	  Name			  "<MioBearing>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  13
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  38
-	}
-	Line {
-	  Name			  "<MioRangeRate>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  14
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  39
-	}
-	Line {
-	  Name			  "<Lane>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  15
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  40
-	}
-	Line {
-	  Name			  "<ForwardId>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  16
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  41
-	}
-	Line {
-	  Name			  "<BackwardId>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  17
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  42
-	}
-	Line {
-	  Name			  "<MergeRequest>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  18
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  43
-	}
-	Line {
-	  Name			  "<SafeToMerge>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  19
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  44
-	}
-	Line {
-	  Name			  "<Flag>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  20
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  45
-	}
-	Line {
-	  Name			  "<FlagTail>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  21
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  46
-	}
-	Line {
-	  Name			  "<FlagHead>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  22
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  47
-	}
-	Line {
-	  Name			  "<PlatoonId>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  23
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  48
-	}
-	Line {
-	  Name			  "<DistanceTravelledCz>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  24
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  49
-	}
-	Line {
-	  Name			  "<Intention>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  25
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  50
-	}
-	Line {
-	  Name			  "<Counter>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  26
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  51
-	}
-	Line {
-	  Name			  "<MessageControl>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector1"
-	  SrcPort		  27
-	  Points		  [135, 0]
-	  DstBlock		  "FormatMessage"
-	  DstPort		  52
+	  DstBlock		  "MessageBus"
+	  DstPort		  1
 	}
       }
     }
@@ -4066,7 +1391,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"MessageConstructor"
-	Location		[0, 53, 1598, 874]
+	Location		[0, 28, 1598, 849]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4109,129 +1434,123 @@ Model {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector"
 	  SID			  "170"
-	  Ports			  [1, 20]
-	  Position		  [295, 160, 300, 255]
+	  Ports			  [1, 19]
+	  Position		  [295, 162, 300, 258]
 	  ZOrder		  62
 	  ShowName		  off
-	  OutputSignals		  "StationId,GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinorConfide"
-	  "nce,SemiMajorOrientation,Altitude,Heading,HeadingConfidence,Speed,SpeedConfidence,VehicleLength,VehicleWidth,LongAc"
-	  "c,LongAccConf,YawRate,YawRateConf,VehicleRole"
+	  OutputSignals		  "GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinorConfidence,SemiMa"
+	  "jorOrientation,Altitude,Heading,HeadingConfidence,Speed,SpeedConfidence,VehicleLength,VehicleWidth,LongAcc,LongAccC"
+	  "onf,YawRate,YawRateConf,VehicleRole"
 	  Port {
 	    PortNumber		    1
-	    Name		    "<StationId>"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
 	    Name		    "<GenerationDeltaTime>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    3
+	    PortNumber		    2
 	    Name		    "<StationType>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    4
+	    PortNumber		    3
 	    Name		    "<Latitude>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    5
+	    PortNumber		    4
 	    Name		    "<Longitude>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    6
+	    PortNumber		    5
 	    Name		    "<SemiMajorConfidence>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    7
+	    PortNumber		    6
 	    Name		    "<SemiMinorConfidence>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    8
+	    PortNumber		    7
 	    Name		    "<SemiMajorOrientation>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    9
+	    PortNumber		    8
 	    Name		    "<Altitude>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    10
+	    PortNumber		    9
 	    Name		    "<Heading>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    11
+	    PortNumber		    10
 	    Name		    "<HeadingConfidence>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    12
+	    PortNumber		    11
 	    Name		    "<Speed>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    13
+	    PortNumber		    12
 	    Name		    "<SpeedConfidence>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    14
+	    PortNumber		    13
 	    Name		    "<VehicleLength>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    15
+	    PortNumber		    14
 	    Name		    "<VehicleWidth>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    16
+	    PortNumber		    15
 	    Name		    "<LongAcc>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    17
+	    PortNumber		    16
 	    Name		    "<LongAccConf>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    18
+	    PortNumber		    17
 	    Name		    "<YawRate>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    19
+	    PortNumber		    18
 	    Name		    "<YawRateConf>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    20
+	    PortNumber		    19
 	    Name		    "<VehicleRole>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
@@ -4375,8 +1694,8 @@ Model {
 	  Name			  "<SemiMajorOrientation>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  8
-	  Points		  [10, 0; 0, 5]
+	  SrcPort		  7
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  10
 	}
@@ -4384,8 +1703,8 @@ Model {
 	  Name			  "<Latitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  4
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  3
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  6
 	}
@@ -4393,7 +1712,7 @@ Model {
 	  Name			  "<GenerationDeltaTime>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  2
+	  SrcPort		  1
 	  DstBlock		  "PackCAM"
 	  DstPort		  3
 	}
@@ -4401,8 +1720,8 @@ Model {
 	  Name			  "<Altitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  9
-	  Points		  [3, 0; 0, 5]
+	  SrcPort		  8
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  11
 	}
@@ -4410,8 +1729,8 @@ Model {
 	  Name			  "<SemiMajorConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  6
-	  Points		  [3, 0; 0, 5]
+	  SrcPort		  5
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  8
 	}
@@ -4419,16 +1738,15 @@ Model {
 	  Name			  "<SemiMinorConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  7
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  6
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  9
 	}
 	Line {
 	  Name			  "<StationId>"
 	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  1
+	  Points		  [305, 165; 0, -5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  2
 	}
@@ -4442,8 +1760,8 @@ Model {
 	  Name			  "<StationType>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  3
-	  Points		  [2, 0; 0, 5]
+	  SrcPort		  2
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  5
 	}
@@ -4464,8 +1782,8 @@ Model {
 	  Name			  "<Longitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  5
-	  Points		  [10, 0; 0, 5]
+	  SrcPort		  4
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  7
 	}
@@ -4473,8 +1791,8 @@ Model {
 	  Name			  "<VehicleWidth>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  15
-	  Points		  [3, 0; 0, 5]
+	  SrcPort		  14
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  17
 	}
@@ -4482,8 +1800,8 @@ Model {
 	  Name			  "<Heading>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  10
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  9
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  12
 	}
@@ -4491,8 +1809,8 @@ Model {
 	  Name			  "<LongAcc>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  16
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  15
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  18
 	}
@@ -4500,7 +1818,7 @@ Model {
 	  Name			  "<Speed>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  12
+	  SrcPort		  11
 	  Points		  [0, 0]
 	  Branch {
 	    Points		    [0, -2; 17, 0; 0, 82; -91, 0; 0, -40]
@@ -4517,8 +1835,8 @@ Model {
 	  Name			  "<LongAccConf>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  17
-	  Points		  [10, 0; 0, 5]
+	  SrcPort		  16
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  19
 	}
@@ -4526,8 +1844,8 @@ Model {
 	  Name			  "<HeadingConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  11
-	  Points		  [10, 0; 0, 5]
+	  SrcPort		  10
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  13
 	}
@@ -4535,8 +1853,8 @@ Model {
 	  Name			  "<VehicleLength>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  14
-	  Points		  [10, 0; 0, 5]
+	  SrcPort		  13
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  16
 	}
@@ -4544,14 +1862,15 @@ Model {
 	  Name			  "<SpeedConfidence>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  13
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  12
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  15
 	}
 	Line {
 	  SrcBlock		  "SensorDataConverted"
 	  SrcPort		  1
+	  Points		  [225, 0]
 	  DstBlock		  "Bus\nSelector"
 	  DstPort		  1
 	}
@@ -4566,8 +1885,8 @@ Model {
 	  Name			  "<YawRateConf>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  19
-	  Points		  [24, 0; 0, 5]
+	  SrcPort		  18
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  21
 	}
@@ -4575,7 +1894,7 @@ Model {
 	  Name			  "<VehicleRole>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  20
+	  SrcPort		  19
 	  Points		  [10, 0; 0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  22
@@ -4590,8 +1909,8 @@ Model {
 	  Name			  "<YawRate>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
-	  SrcPort		  18
-	  Points		  [3, 0; 0, 5]
+	  SrcPort		  17
+	  Points		  [0, 5]
 	  DstBlock		  "PackCAM"
 	  DstPort		  20
 	}
@@ -4963,8 +2282,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"MessageUnpack"
-	Location		[-470, -230, 2070, 1131]
-	Open			on
+	Location		[1, 108, 1599, 929]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -9955,7 +7274,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"SensorFusion"
-	Location		[8, 8, 2548, 1380]
+	Location		[7, -17, 2547, 1355]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11497,14 +8816,8 @@ Model {
     Line {
       SrcBlock		      "Application \n(app running the current scenario)"
       SrcPort		      1
-      Points		      [2, 0; 0, -60]
+      Points		      [2, 0; 0, -75]
       DstBlock		      "DataConverter"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "DataConverter"
-      SrcPort		      2
-      DstBlock		      "MessageConstructor"
       DstPort		      2
     }
     Line {
@@ -11517,6 +8830,7 @@ Model {
     Line {
       SrcBlock		      "DataConverter"
       SrcPort		      1
+      Points		      [0, -30]
       DstBlock		      "MessageConstructor"
       DstPort		      1
     }
@@ -11539,13 +8853,6 @@ Model {
       SrcPort		      3
       Points		      [500, 0]
       DstBlock		      "Transmit"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Application \n(app running the current scenario)"
-      SrcPort		      3
-      Points		      [413, 0; 0, -80]
-      DstBlock		      "MessageConstructor"
       DstPort		      3
     }
     Line {
@@ -11610,7 +8917,7 @@ Model {
     Line {
       SrcBlock		      "MessageConverter"
       SrcPort		      2
-      Points		      [-585, 0; 0, -1130]
+      Points		      [-585, 0; 0, -1125]
       DstBlock		      "Application \n(app running the current scenario)"
       DstPort		      1
     }
@@ -11646,7 +8953,7 @@ Stateflow {
     name		    "simulink_interface"
     created		    "29-Oct-2015 11:53:54"
     isLibrary		    0
-    firstTarget		    290
+    firstTarget		    188
     sfVersion		    76014001.0002
   }
   chart {
@@ -15513,7 +12820,7 @@ Stateflow {
     viewObj		    179
     machine		    1
     toolbarMode		    LIBRARY_TOOLBAR
-    ssIdHighWaterMark	    110
+    ssIdHighWaterMark	    113
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    183
@@ -15537,53 +12844,49 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [StationID, GenerationDeltaTime, ContainerMask, ManagementMask, SituationMask, AlacarteM"
-      "ask, StationType, Latitude, Longitude, SemiMajorConfidence, SemiMinorConfidence, SemiMajorOrientation, Altitude,"
-      " Heading, HeadingConfidence, Speed, SpeedConfidence, VehicleLength, VehicleWidth, LongAcc, LongAccConfidence, Ya"
-      "wRate, YawRateConfidence, VehicleRole, ReferenceTime, RearAxleLocation, ResponseTimeConstant, ResponseTimeDelay,"
-      " DetectionTime, CauseCode, SubCauseCode, ControllerType, TargetLongAcc, TimeHeadway, CruiseSpeed, ParticipantsRe"
-      "ady, StartPlatoon, EndOfScenario, MioID, MioRange, MioBearing, MioRangeRate, Lane, ForwardID, BackwardID, MergeR"
-      "equest, SafeToMerge, Flag, FlagTail, FlagHead, PlatoonID, DistanceTravelledCZ, Intention, Counter] = formatMessa"
-      "ge(SensorBus, StationID1, GenerationDeltaTime1, StationType1, Latitude1, Longitude1, SemiMajorConfidence1, SemiM"
-      "inorConfidence1, SemiMajorOrientation1, Altitude1, Heading1, HeadingConfidence1, Speed1, SpeedConfidence1, Vehic"
-      "leLength1, VehicleWidth1, LongAcc1, LongAccConfidence1, YawRate1, YawRateConfidence1, VehicleRole1, ReferenceTim"
-      "e1, RearAxleLocation1, ResponseTimeConstant1, ResponseTimeDelay1, DetectionTime1, CauseCode1, SubCauseCode1, Con"
-      "trollerType1, TargetLongAcc1, TimeHeadway1, CruiseSpeed1, ParticipantsReady1, StartPlatoon1, EndOfScenario1, Mio"
-      "ID1, MioRange1, MioBearing1, MioRangeRate1, Lane1, ForwardID1, BackwardID1, MergeRequest1, SafeToMerge1, Flag1, "
-      "FlagTail1, FlagHead1, PlatoonID1, DistanceTravelledCZ1, Intention1, Counter1, MessageControl)\n%formatMessage - "
-      "Take values from sensor fusion and the running app, and\n%convert into data compliant with the communication.\n\n"
-      "\n%CommunicationBus.StationID = SensorBus.StationID;\n\n%%%% Sensor Fusion Values\nStationID = SensorBus.Station"
-      "ID; %Constant\nGenerationDeltaTime = GenerationDeltaTime1; %SF Value OK\nStationType = StationType1; %Constant\n"
-      "Latitude = int32(round(Latitude1)); %SF value OK\nLongitude = int32(round(Longitude1)); %SF value OK\nSemiMajorC"
-      "onfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\nSemiMinorConfidence = int32(ceil"
-      "(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation = int32(ceil(SemiMajorOrientation"
-      "1 * 100)); % Conversion from m to cm\nAltitude = Altitude1; %Using unknown value in spec.\nHeading = int32(round"
-      "(Heading1)); %SF value OK\n\nif Speed1 < 0 % If speed is negative we need to rotate the heading 180 degrees\n   "
-      "Heading = Heading + 1800;\n   if Heading > 3600\n      Heading = Heading - 3600;\n   end\nend\n\nHeadingConfiden"
-      "ce = int32(ceil(min(HeadingConfidence1 * 10, 126))); %Values above 126 need to be rounded down to 126\nSpeed = i"
-      "nt32(round(abs(Speed1 * 100))); %Need to multiply by 100, and take absolute value since SF speed can be negative"
-      ". Compensate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfidence1 * 100), 126)); % Multiply "
-      "by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 100); % Convert from m to cm\nVehicleWidth = "
-      "int32(VehicleWidth1 * 100); % Convert from m to cm\nLongAcc = int32(max(min(round(LongAcc1 * 10), 160), -160)); "
-      "% Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(min(ceil(LongAccConfidence1 * 10), 1"
-      "01)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(YawRate1 * 100, 32767), -32767)); % "
-      "Need to multiply by 100 and truncate to +/- 32767\n\nYawRateConfidence = 7;\nswitch YawRateConfidence1 % SF valu"
-      "e is in degrees. Need to use a switch to determine closest standard value.\n    case  YawRateConfidence <= 0.01\n"
-      "        YawRateConfidence = 0;\n    case YawRateConfidence <= 0.05\n        YawRateConfidence = 1;        \n    "
-      "case YawRateConfidence <= 0.1\n        YawRateConfidence = 2;        \n    case YawRateConfidence <= 1\n        "
-      "YawRateConfidence = 3;        \n    case YawRateConfidence <= 5\n        YawRateConfidence = 4;        \n    cas"
-      "e YawRateConfidence <= 10\n        YawRateConfidence = 5;\n    case YawRateConfidence <= 100\n        YawRateCon"
-      "fidence = 6;        \n    otherwise\n        YawRateConfidence = 7;\nend\n\nVehicleRole = VehicleRole1; % Consta"
-      "nt\nReferenceTime = int32(round(ReferenceTime1)); % SF value OK\nRearAxleLocation = int32(min(round(RearAxleLoca"
-      "tion1 * 100), 4095)); % Convert from m to cm and truncate to 4095\nResponseTimeConstant = ResponseTimeConstant1;"
-      " % Use unknown value\nResponseTimeDelay = ResponseTimeDelay1; % Use unknown value\n\n%%%% Application Values\nDe"
-      "tectionTime = DetectionTime1;\nCauseCode = CauseCode1;\nSubCauseCode = SubCauseCode1;\nControllerType = Controll"
-      "erType1;\nTargetLongAcc = TargetLongAcc1;\nTimeHeadway = TimeHeadway1;\nCruiseSpeed = CruiseSpeed1;\nParticipant"
-      "sReady = ParticipantsReady1;\nStartPlatoon = StartPlatoon1;\nEndOfScenario = EndOfScenario1;\nMioID = MioID1;\nM"
-      "ioRange = MioRange1;\nMioBearing = MioBearing1;\nMioRangeRate = MioRangeRate1;\nLane = Lane1;\nForwardID = Forwa"
-      "rdID1;\nBackwardID = BackwardID1;\nMergeRequest = MergeRequest1;\nSafeToMerge = SafeToMerge1;\nFlag = Flag1;\nFl"
-      "agTail = FlagTail1;\nFlagHead = FlagHead1;\nPlatoonID = PlatoonID1;\nDistanceTravelledCZ = DistanceTravelledCZ1;"
-      "\nIntention = Intention1;\nCounter = Counter1;\n\n%%%% Use the MessageControl value to set the bit masks\n\n"
+      script		      "function MessageBusOut = formatMessage(SensorBus, AppBus, MessageBus)\n%formatMessage - Take valu"
+      "es from sensor fusion and the running app, and\n%convert into data compliant with the communication.\n\n\n%Commu"
+      "nicationBus.StationID = SensorBus.StationID;\n\n%%%% Sensor Fusion Values\nMessageBus.StationID = SensorBus.Stat"
+      "ionID; %Constant\nMessageBus.GenerationDeltaTime = SensorBus.GenerationDeltaTime; %SF Value OK\nMessageBus.Stati"
+      "onType = SensorBus.StationType; %Constant\nMessageBus.Latitude = int32(round(SensorBus.Latitude)); %SF value OK\n"
+      "MessageBus.Longitude = int32(round(SensorBus.Longitude)); %SF value OK\nMessageBus.SemiMajorConfidence = int32(c"
+      "eil(SensorBus.SemiMajorConfidence * 100)); % Conversion from m to cm\nMessageBus.SemiMinorConfidence = int32(cei"
+      "l(SensorBus.SemiMinorConfidence * 100)); % Conversion from m to cm\nMessageBus.SemiMajorOrientation = int32(ceil"
+      "(SensorBus.SemiMajorOrientation * 100)); % Conversion from m to cm\nMessageBus.Altitude = SensorBus.Altitude; %U"
+      "sing unknown value in spec.\nMessageBus.Heading = int32(round(SensorBus.Heading)); %SF value OK\n\nif SensorBus."
+      "Speed < 0 % If speed is negative we need to rotate the heading 180 degrees\n   MessageBus.Heading = MessageBus.H"
+      "eading + 1800;\n   if MessageBus.Heading > 3600\n      MessageBus.Heading = MessageBus.Heading - 3600;\n   end\n"
+      "end\n\nMessageBus.HeadingConfidence = int32(ceil(min(SensorBus.HeadingConfidence * 10, 126))); %Values above 126"
+      " need to be rounded down to 126\nMessageBus.Speed = int32(round(abs(SensorBus.Speed * 100))); %Need to multiply "
+      "by 100, and take absolute value since SF speed can be negative. Compensate by rotating heading.\nMessageBus.Spee"
+      "dConfidence = int32(min(round(SensorBus.SpeedConfidence * 100), 126)); % Multiply by 100 and truncate to 126\nMe"
+      "ssageBus.VehicleLength = int32(SensorBus.VehicleLength * 100); % Convert from m to cm\nMessageBus.VehicleWidth ="
+      " int32(SensorBus.VehicleWidth * 100); % Convert from m to cm\nMessageBus.LongAcc = int32(max(min(round(SensorBus"
+      ".LongAcc * 10), 160), -160)); % Convert from m to 0.1m and truncate to +/- 160\nMessageBus.LongAccConfidence = i"
+      "nt32(min(ceil(SensorBus.LongAccConfidence * 10), 101)); % Convert from m to 0.1m and truncate to 101\nMessageBus"
+      ".YawRate = int32(max(min(SensorBus.YawRate * 100, 32767), -32767)); % Need to multiply by 100 and truncate to +/"
+      "- 32767\n\nMessageBus.YawRateConfidence = 7;\n% SF value is in degrees. Need to use a switch to determine closes"
+      "t standard value.\nif  SensorBus.YawRateConfidence <= 0.01\n    MessageBus.YawRateConfidence = 0;\nelseif Sensor"
+      "Bus.YawRateConfidence <= 0.05\n    MessageBus.YawRateConfidence = 1;\nelseif SensorBus.YawRateConfidence <= 0.1\n"
+      "    MessageBus.YawRateConfidence = 2;\nelseif SensorBus.YawRateConfidence <= 1\n    MessageBus.YawRateConfidence"
+      " = 3;\nelseif SensorBus.YawRateConfidence <= 5\n    MessageBus.YawRateConfidence = 4;\nelseif SensorBus.YawRateC"
+      "onfidence <= 10\n    MessageBus.YawRateConfidence = 5;\nelseif SensorBus.YawRateConfidence <= 100\n    MessageBu"
+      "s.YawRateConfidence = 6;\nelse\n    MessageBus.YawRateConfidence = 7;\nend\n\n\nMessageBus.VehicleRole = SensorB"
+      "us.VehicleRole; % Constant\nMessageBus.ReferenceTime = int32(round(SensorBus.ReferenceTime)); % SF value OK\nMes"
+      "sageBus.RearAxleLocation = int32(min(round(SensorBus.RearAxleLocation * 100), 4095)); % Convert from m to cm and"
+      " truncate to 4095\nMessageBus.ResponseTimeConstant = SensorBus.ResponseTimeConstant; % Use unknown value\nMessag"
+      "eBus.ResponseTimeDelay = SensorBus.ResponseTimeDelay; % Use unknown value\n\n%%%% Application Values\nMessageBus"
+      ".DetectionTime = AppBus.DetectionTime;\nMessageBus.CauseCode = AppBus.CauseCode;\nMessageBus.SubCauseCode = AppB"
+      "us.SubCauseCode;\nMessageBus.ControllerType = AppBus.ControllerType;\nMessageBus.TargetLongAcc = AppBus.TargetLo"
+      "ngAcc;\nMessageBus.TimeHeadway = AppBus.TimeHeadway;\nMessageBus.CruiseSpeed = AppBus.CruiseSpeed;\nMessageBus.P"
+      "articipantsReady = AppBus.ParticipantsReady;\nMessageBus.StartPlatoon = AppBus.StartPlatoon;\nMessageBus.EndOfSc"
+      "enario = AppBus.EndOfScenario;\nMessageBus.MioID = AppBus.MioID;\nMessageBus.MioRange = AppBus.MioRange;\nMessag"
+      "eBus.MioBearing = AppBus.MioBearing;\nMessageBus.MioRangeRate = AppBus.MioRangeRate;\nMessageBus.Lane = AppBus.L"
+      "ane;\nMessageBus.ForwardID = AppBus.ForwardID;\nMessageBus.BackwardID = AppBus.BackwardID;\nMessageBus.MergeRequ"
+      "est = AppBus.MergeRequest;\nMessageBus.SafeToMerge = AppBus.SafeToMerge;\nMessageBus.Flag = AppBus.Flag;\nMessag"
+      "eBus.FlagTail = AppBus.FlagTail;\nMessageBus.FlagHead = AppBus.FlagHead;\nMessageBus.PlatoonID = AppBus.PlatoonI"
+      "D;\nMessageBus.DistanceTravelledCZ = AppBus.DistanceTravelledCZ;\nMessageBus.Intention = AppBus.Intention;\nMess"
+      "ageBus.Counter = AppBus.Counter;\n\n%%%% Use the MessageControl value to set the bit masks\n\n\n"
       editorLayout	      "100 M4x1[205 227 1080 733]"
     }
   }
@@ -15641,10 +12944,10 @@ Stateflow {
   }
   data {
     id			    184
-    ssIdNumber		    4
-    name		    "StationID"
+    ssIdNumber		    5
+    name		    "AppBus"
     linkNode		    [179 183 185]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -15661,8 +12964,8 @@ Stateflow {
   }
   data {
     id			    185
-    ssIdNumber		    5
-    name		    "StationID1"
+    ssIdNumber		    111
+    name		    "MessageBus"
     linkNode		    [179 184 186]
     scope		    INPUT_DATA
     machine		    1
@@ -15673,6 +12976,8 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
@@ -15681,9 +12986,9 @@ Stateflow {
   }
   data {
     id			    186
-    ssIdNumber		    6
-    name		    "GenerationDeltaTime"
-    linkNode		    [179 185 187]
+    ssIdNumber		    113
+    name		    "MessageBusOut"
+    linkNode		    [179 185 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -15698,2261 +13003,17 @@ Stateflow {
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    187
-    ssIdNumber		    106
-    name		    "ContainerMask"
-    linkNode		    [179 186 188]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    188
-    ssIdNumber		    107
-    name		    "ManagementMask"
-    linkNode		    [179 187 189]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    189
-    ssIdNumber		    108
-    name		    "SituationMask"
-    linkNode		    [179 188 190]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    190
-    ssIdNumber		    109
-    name		    "AlacarteMask"
-    linkNode		    [179 189 191]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    191
-    ssIdNumber		    7
-    name		    "StationType"
-    linkNode		    [179 190 192]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    192
-    ssIdNumber		    8
-    name		    "Latitude"
-    linkNode		    [179 191 193]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    193
-    ssIdNumber		    9
-    name		    "Longitude"
-    linkNode		    [179 192 194]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    194
-    ssIdNumber		    10
-    name		    "SemiMajorConfidence"
-    linkNode		    [179 193 195]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    195
-    ssIdNumber		    11
-    name		    "SemiMinorConfidence"
-    linkNode		    [179 194 196]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    196
-    ssIdNumber		    12
-    name		    "SemiMajorOrientation"
-    linkNode		    [179 195 197]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    197
-    ssIdNumber		    13
-    name		    "Altitude"
-    linkNode		    [179 196 198]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    198
-    ssIdNumber		    14
-    name		    "Heading"
-    linkNode		    [179 197 199]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    199
-    ssIdNumber		    15
-    name		    "HeadingConfidence"
-    linkNode		    [179 198 200]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    200
-    ssIdNumber		    16
-    name		    "Speed"
-    linkNode		    [179 199 201]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    201
-    ssIdNumber		    17
-    name		    "SpeedConfidence"
-    linkNode		    [179 200 202]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    202
-    ssIdNumber		    18
-    name		    "VehicleLength"
-    linkNode		    [179 201 203]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    203
-    ssIdNumber		    19
-    name		    "VehicleWidth"
-    linkNode		    [179 202 204]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    204
-    ssIdNumber		    20
-    name		    "LongAcc"
-    linkNode		    [179 203 205]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    205
-    ssIdNumber		    21
-    name		    "LongAccConfidence"
-    linkNode		    [179 204 206]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    206
-    ssIdNumber		    22
-    name		    "YawRate"
-    linkNode		    [179 205 207]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    207
-    ssIdNumber		    23
-    name		    "YawRateConfidence"
-    linkNode		    [179 206 208]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    208
-    ssIdNumber		    24
-    name		    "VehicleRole"
-    linkNode		    [179 207 209]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    209
-    ssIdNumber		    25
-    name		    "ReferenceTime"
-    linkNode		    [179 208 210]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    210
-    ssIdNumber		    26
-    name		    "RearAxleLocation"
-    linkNode		    [179 209 211]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    211
-    ssIdNumber		    27
-    name		    "ResponseTimeConstant"
-    linkNode		    [179 210 212]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    212
-    ssIdNumber		    28
-    name		    "ResponseTimeDelay"
-    linkNode		    [179 211 213]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    213
-    ssIdNumber		    29
-    name		    "DetectionTime"
-    linkNode		    [179 212 214]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    214
-    ssIdNumber		    30
-    name		    "CauseCode"
-    linkNode		    [179 213 215]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    215
-    ssIdNumber		    31
-    name		    "SubCauseCode"
-    linkNode		    [179 214 216]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    216
-    ssIdNumber		    32
-    name		    "ControllerType"
-    linkNode		    [179 215 217]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    217
-    ssIdNumber		    33
-    name		    "TargetLongAcc"
-    linkNode		    [179 216 218]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    218
-    ssIdNumber		    34
-    name		    "TimeHeadway"
-    linkNode		    [179 217 219]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    219
-    ssIdNumber		    35
-    name		    "CruiseSpeed"
-    linkNode		    [179 218 220]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    220
-    ssIdNumber		    36
-    name		    "ParticipantsReady"
-    linkNode		    [179 219 221]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    221
-    ssIdNumber		    37
-    name		    "StartPlatoon"
-    linkNode		    [179 220 222]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    222
-    ssIdNumber		    38
-    name		    "EndOfScenario"
-    linkNode		    [179 221 223]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    223
-    ssIdNumber		    39
-    name		    "MioID"
-    linkNode		    [179 222 224]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    224
-    ssIdNumber		    40
-    name		    "MioRange"
-    linkNode		    [179 223 225]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    225
-    ssIdNumber		    41
-    name		    "MioBearing"
-    linkNode		    [179 224 226]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    226
-    ssIdNumber		    42
-    name		    "MioRangeRate"
-    linkNode		    [179 225 227]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    227
-    ssIdNumber		    43
-    name		    "Lane"
-    linkNode		    [179 226 228]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    228
-    ssIdNumber		    44
-    name		    "ForwardID"
-    linkNode		    [179 227 229]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    229
-    ssIdNumber		    45
-    name		    "BackwardID"
-    linkNode		    [179 228 230]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    230
-    ssIdNumber		    46
-    name		    "MergeRequest"
-    linkNode		    [179 229 231]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    231
-    ssIdNumber		    47
-    name		    "SafeToMerge"
-    linkNode		    [179 230 232]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    232
-    ssIdNumber		    48
-    name		    "Flag"
-    linkNode		    [179 231 233]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    233
-    ssIdNumber		    49
-    name		    "FlagTail"
-    linkNode		    [179 232 234]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    234
-    ssIdNumber		    50
-    name		    "FlagHead"
-    linkNode		    [179 233 235]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    235
-    ssIdNumber		    51
-    name		    "PlatoonID"
-    linkNode		    [179 234 236]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    236
-    ssIdNumber		    52
-    name		    "DistanceTravelledCZ"
-    linkNode		    [179 235 237]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    237
-    ssIdNumber		    53
-    name		    "Intention"
-    linkNode		    [179 236 238]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    238
-    ssIdNumber		    54
-    name		    "Counter"
-    linkNode		    [179 237 239]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    239
-    ssIdNumber		    55
-    name		    "GenerationDeltaTime1"
-    linkNode		    [179 238 240]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    240
-    ssIdNumber		    56
-    name		    "StationType1"
-    linkNode		    [179 239 241]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    241
-    ssIdNumber		    57
-    name		    "Latitude1"
-    linkNode		    [179 240 242]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    242
-    ssIdNumber		    58
-    name		    "Longitude1"
-    linkNode		    [179 241 243]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    243
-    ssIdNumber		    59
-    name		    "SemiMajorConfidence1"
-    linkNode		    [179 242 244]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    244
-    ssIdNumber		    60
-    name		    "SemiMinorConfidence1"
-    linkNode		    [179 243 245]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    245
-    ssIdNumber		    61
-    name		    "SemiMajorOrientation1"
-    linkNode		    [179 244 246]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    246
-    ssIdNumber		    62
-    name		    "Altitude1"
-    linkNode		    [179 245 247]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    247
-    ssIdNumber		    63
-    name		    "Heading1"
-    linkNode		    [179 246 248]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    248
-    ssIdNumber		    64
-    name		    "HeadingConfidence1"
-    linkNode		    [179 247 249]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    249
-    ssIdNumber		    65
-    name		    "Speed1"
-    linkNode		    [179 248 250]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    250
-    ssIdNumber		    66
-    name		    "SpeedConfidence1"
-    linkNode		    [179 249 251]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    251
-    ssIdNumber		    67
-    name		    "VehicleLength1"
-    linkNode		    [179 250 252]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    252
-    ssIdNumber		    68
-    name		    "VehicleWidth1"
-    linkNode		    [179 251 253]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    253
-    ssIdNumber		    69
-    name		    "LongAcc1"
-    linkNode		    [179 252 254]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    254
-    ssIdNumber		    70
-    name		    "LongAccConfidence1"
-    linkNode		    [179 253 255]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    255
-    ssIdNumber		    71
-    name		    "YawRate1"
-    linkNode		    [179 254 256]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    256
-    ssIdNumber		    72
-    name		    "YawRateConfidence1"
-    linkNode		    [179 255 257]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    257
-    ssIdNumber		    73
-    name		    "VehicleRole1"
-    linkNode		    [179 256 258]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    258
-    ssIdNumber		    74
-    name		    "ReferenceTime1"
-    linkNode		    [179 257 259]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    259
-    ssIdNumber		    75
-    name		    "RearAxleLocation1"
-    linkNode		    [179 258 260]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    260
-    ssIdNumber		    76
-    name		    "ResponseTimeConstant1"
-    linkNode		    [179 259 261]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    261
-    ssIdNumber		    77
-    name		    "ResponseTimeDelay1"
-    linkNode		    [179 260 262]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    262
-    ssIdNumber		    78
-    name		    "DetectionTime1"
-    linkNode		    [179 261 263]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    263
-    ssIdNumber		    79
-    name		    "CauseCode1"
-    linkNode		    [179 262 264]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    264
-    ssIdNumber		    80
-    name		    "SubCauseCode1"
-    linkNode		    [179 263 265]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    265
-    ssIdNumber		    81
-    name		    "ControllerType1"
-    linkNode		    [179 264 266]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    266
-    ssIdNumber		    82
-    name		    "TargetLongAcc1"
-    linkNode		    [179 265 267]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    267
-    ssIdNumber		    83
-    name		    "TimeHeadway1"
-    linkNode		    [179 266 268]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    268
-    ssIdNumber		    84
-    name		    "CruiseSpeed1"
-    linkNode		    [179 267 269]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    269
-    ssIdNumber		    85
-    name		    "ParticipantsReady1"
-    linkNode		    [179 268 270]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    270
-    ssIdNumber		    86
-    name		    "StartPlatoon1"
-    linkNode		    [179 269 271]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    271
-    ssIdNumber		    87
-    name		    "EndOfScenario1"
-    linkNode		    [179 270 272]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    272
-    ssIdNumber		    88
-    name		    "MioID1"
-    linkNode		    [179 271 273]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    273
-    ssIdNumber		    89
-    name		    "MioRange1"
-    linkNode		    [179 272 274]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    274
-    ssIdNumber		    90
-    name		    "MioBearing1"
-    linkNode		    [179 273 275]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    275
-    ssIdNumber		    91
-    name		    "MioRangeRate1"
-    linkNode		    [179 274 276]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    276
-    ssIdNumber		    92
-    name		    "Lane1"
-    linkNode		    [179 275 277]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    277
-    ssIdNumber		    93
-    name		    "ForwardID1"
-    linkNode		    [179 276 278]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    278
-    ssIdNumber		    94
-    name		    "BackwardID1"
-    linkNode		    [179 277 279]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    279
-    ssIdNumber		    95
-    name		    "MergeRequest1"
-    linkNode		    [179 278 280]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    280
-    ssIdNumber		    96
-    name		    "SafeToMerge1"
-    linkNode		    [179 279 281]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    281
-    ssIdNumber		    97
-    name		    "Flag1"
-    linkNode		    [179 280 282]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    282
-    ssIdNumber		    98
-    name		    "FlagTail1"
-    linkNode		    [179 281 283]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    283
-    ssIdNumber		    99
-    name		    "FlagHead1"
-    linkNode		    [179 282 284]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    284
-    ssIdNumber		    100
-    name		    "PlatoonID1"
-    linkNode		    [179 283 285]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    285
-    ssIdNumber		    101
-    name		    "DistanceTravelledCZ1"
-    linkNode		    [179 284 286]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    286
-    ssIdNumber		    102
-    name		    "Intention1"
-    linkNode		    [179 285 287]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    287
-    ssIdNumber		    103
-    name		    "Counter1"
-    linkNode		    [179 286 288]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    288
-    ssIdNumber		    105
-    name		    "MessageControl"
-    linkNode		    [179 287 0]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    289
+    id			    187
     name		    "DataConverter/FormatMessage"
     machine		    1
     chart		    179
   }
   target {
-    id			    290
+    id			    188
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
