@@ -1,13 +1,14 @@
 #+author: Albin Severinson
 #+title: GCDC16 Local Message Set
 
-| Version: | 0.1 | First draft                     |
-|          | 0.2 | Revised CAM and added DENM      |
-|          | 0.3 | Added iCLCM                     |
-|          | 0.4 | Rewrote introduction            |
-|          | 0.5 | Revised CAM                     |
-|          | 0.6 | Added stationID to all messages |
-|          |     |                                 |
+| Version: | 0.1 | First draft                                             |
+|          | 0.2 | Revised CAM and added DENM                              |
+|          | 0.3 | Added iCLCM                                             |
+|          | 0.4 | Rewrote introduction                                    |
+|          | 0.5 | Revised CAM                                             |
+|          | 0.6 | Added stationID to all messages                         |
+|          | 0.7 | Revised reference time spec. for Simulink compatibility |
+|          |     |                                                         |
 
 \newpage
 * Introduction
@@ -85,51 +86,52 @@ DENM message has the same size, making it easier to use in Simulink.
 
 The fields marked as not implemented should be ignored.
 
-| Message part:            | Bytes: | Data:                            | Notes:            |
-|--------------------------+--------+----------------------------------+-------------------|
-| Header                   |      1 | MessageID                        | $=1$ for DENM     |
-|                          |      4 | StationID                        | Unique station ID |
-|--------------------------+--------+----------------------------------+-------------------|
-| Container Mask           |      1 | ContainerMask                    |                   |
-|--------------------------+--------+----------------------------------+-------------------|
-| Management Container     |      1 | ManagementMask                   |                   |
-|                          |      8 | DetectionTime                    |                   |
-|                          |      8 | ReferenceTime                    |                   |
-|                          |      4 | (opt) Termination                |                   |
-|                          |      4 | Latitude                         | See D3.2          |
-|                          |      4 | Longitude                        | See D3.2          |
-|                          |      4 | SemiMajorConfidence              | See D3.2          |
-|                          |      4 | SemiMinorConfidence              | See D3.2          |
-|                          |      4 | SemiMajorOrientation             | See D3.2          |
-|                          |      4 | Altitude                         | Not in D3.2?      |
-|                          |      4 | (opt) RelevanceDistance          |                   |
-|                          |      4 | (opt) RelevanceTrafficDirection  |                   |
-|                          |      4 | (opt) ValidityDuration           |                   |
-|                          |      4 | (opt) TransmissionIntervall      |                   |
-|                          |      4 | StationType                      |                   |
-|--------------------------+--------+----------------------------------+-------------------|
-| (opt)Situation Container |      1 | SituationMask                    |                   |
-|                          |      4 | InformationQuality               |                   |
-|                          |      4 | CauseCode                        |                   |
-|                          |      4 | SubCauseCode                     |                   |
-|                          |      4 | (opt) LinkedCauseCode            |                   |
-|                          |      4 | (opt) LinkedSubCauseCode         |                   |
-|                          |      0 | (opt) EventHistory               | Not implemented   |
-|--------------------------+--------+----------------------------------+-------------------|
-| (opt) Location Container |      0 | LocationMask                     | Not implemented   |
-|                          |      0 | (opt) EventSpeed                 | Not implemented   |
-|                          |      0 | (opt) EventPositionheading       | Not implemented   |
-|                          |      0 | Traces                           | Not implemented   |
-|                          |      0 | (opt) RoadType                   | Not implemented   |
-|--------------------------+--------+----------------------------------+-------------------|
-| (opt) Alacarte Container |      1 | AlacarteMask                     |                   |
-|                          |      4 | (opt) LanePosition               | See D3.2          |
-|                          |      0 | (opt) ImpactReducationContainer  | Not implemented   |
-|                          |      4 | (opt) ExternalTemperature        |                   |
-|                          |      0 | (opt) RoadWorksContainerExtended | Not implemented   |
-|                          |      4 | (opt) PositioningSolution        |                   |
-|                          |      0 | (opt) StationaryVehicleContainer | Not implemented   |
-|                          |        |                                  |                   |
+| Message part:            | Bytes: | Data:                            | Notes:                             |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| Header                   |      1 | MessageID                        | $=1$ for DENM                      |
+|                          |      4 | StationID                        | Unique station ID                  |
+|                          |      4 | GenerationDeltaTime              |                                    |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| Container Mask           |      1 | ContainerMask                    |                                    |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| Management Container     |      1 | ManagementMask                   |                                    |
+|                          |      4 | DetectionTime                    | Increments of 65 536 ms since 2004 |
+|                          |      4 | ReferenceTime                    | Increments of 65 536 ms since 2004 |
+|                          |      4 | (opt) Termination                |                                    |
+|                          |      4 | Latitude                         | See D3.2                           |
+|                          |      4 | Longitude                        | See D3.2                           |
+|                          |      4 | SemiMajorConfidence              | See D3.2                           |
+|                          |      4 | SemiMinorConfidence              | See D3.2                           |
+|                          |      4 | SemiMajorOrientation             | See D3.2                           |
+|                          |      4 | Altitude                         | Not in D3.2?                       |
+|                          |      4 | (opt) RelevanceDistance          |                                    |
+|                          |      4 | (opt) RelevanceTrafficDirection  |                                    |
+|                          |      4 | (opt) ValidityDuration           |                                    |
+|                          |      4 | (opt) TransmissionIntervall      |                                    |
+|                          |      4 | StationType                      |                                    |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| (opt)Situation Container |      1 | SituationMask                    |                                    |
+|                          |      4 | InformationQuality               |                                    |
+|                          |      4 | CauseCode                        |                                    |
+|                          |      4 | SubCauseCode                     |                                    |
+|                          |      4 | (opt) LinkedCauseCode            |                                    |
+|                          |      4 | (opt) LinkedSubCauseCode         |                                    |
+|                          |      0 | (opt) EventHistory               | Not implemented                    |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| (opt) Location Container |      0 | LocationMask                     | Not implemented                    |
+|                          |      0 | (opt) EventSpeed                 | Not implemented                    |
+|                          |      0 | (opt) EventPositionheading       | Not implemented                    |
+|                          |      0 | Traces                           | Not implemented                    |
+|                          |      0 | (opt) RoadType                   | Not implemented                    |
+|--------------------------+--------+----------------------------------+------------------------------------|
+| (opt) Alacarte Container |      1 | AlacarteMask                     |                                    |
+|                          |      4 | (opt) LanePosition               | See D3.2                           |
+|                          |      0 | (opt) ImpactReducationContainer  | Not implemented                    |
+|                          |      4 | (opt) ExternalTemperature        |                                    |
+|                          |      0 | (opt) RoadWorksContainerExtended | Not implemented                    |
+|                          |      4 | (opt) PositioningSolution        |                                    |
+|                          |      0 | (opt) StationaryVehicleContainer | Not implemented                    |
+|                          |        |                                  |                                    |
 \newpage
 
 * iCLCM

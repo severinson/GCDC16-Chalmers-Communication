@@ -1,4 +1,4 @@
-% Created 2015-10-20 Tue 11:09
+% Created 2015-10-30 Fri 15:30
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,6 +37,7 @@ Version: & 0.1 & First draft\\
  & 0.4 & Rewrote introduction\\
  & 0.5 & Revised CAM\\
  & 0.6 & Added stationID to all messages\\
+ & 0.7 & Revised reference time spec. for Simulink compatibility\\
  &  & \\
 \end{tabular}
 \end{center}
@@ -130,12 +131,13 @@ Message part: & Bytes: & Data: & Notes:\\
 \hline
 Header & 1 & MessageID & \(=1\) for DENM\\
  & 4 & StationID & Unique station ID\\
+ & 4 & GenerationDeltaTime & \\
 \hline
 Container Mask & 1 & ContainerMask & \\
 \hline
 Management Container & 1 & ManagementMask & \\
- & 8 & DetectionTime & \\
- & 8 & ReferenceTime & \\
+ & 4 & DetectionTime & Increments of 65 536 ms since 2004\\
+ & 4 & ReferenceTime & Increments of 65 536 ms since 2004\\
  & 4 & (opt) Termination & \\
  & 4 & Latitude & See D3.2\\
  & 4 & Longitude & See D3.2\\

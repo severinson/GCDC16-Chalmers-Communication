@@ -1,4 +1,4 @@
-% Created 2015-10-21 Wed 20:27
+% Created 2015-10-22 Thu 16:41
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -16,10 +16,10 @@
 \usepackage{hyperref}
 \author{Albin Severinson}
 \date{\today}
-\title{GCDC16 Local Message Set}
+\title{GCDC16 Communication Bus}
 \hypersetup{
  pdfauthor={Albin Severinson},
- pdftitle={GCDC16 Local Message Set},
+ pdftitle={GCDC16 Communication Bus},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 24.4.1 (Org mode 8.3.1)}, 
@@ -32,7 +32,8 @@
 \begin{center}
 \begin{tabular}{lrl}
 Version & 0.1 & First draft\\
- & 0.2 & \\
+ & 0.2 & Added App bus\\
+ &  & \\
 \end{tabular}
 \end{center}
 
@@ -41,6 +42,9 @@ Version & 0.1 & First draft\\
 This document specifies the busses that connect to the communication
 subsystem in the Simulink model. 4 bytes correspond to a Java integer,
 and 8 bytes to a Java long.
+
+For incoming messages, data elements not present in the message will
+correspond to a NaN value on the bus.
 
 
 \section{Sensor Fusion Bus}

@@ -1,13 +1,17 @@
 #+author: Albin Severinson
-#+title: GCDC16 Local Message Set
+#+title: GCDC16 Communication Bus
 
-| Version | 0.1 | First draft |
-|         | 0.2 |             |
+| Version | 0.1 | First draft   |
+|         | 0.2 | Added App bus |
+|         |     |               |
 
 * Introduction
 This document specifies the busses that connect to the communication
 subsystem in the Simulink model. 4 bytes correspond to a Java integer,
 and 8 bytes to a Java long.
+
+For incoming messages, data elements not present in the message will
+correspond to a NaN value on the bus.
 
 
 * Sensor Fusion Bus

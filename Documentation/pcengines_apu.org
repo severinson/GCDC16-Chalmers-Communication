@@ -1,4 +1,4 @@
-* Operating System
+* Setup
 The pcengines APU boards run Debian. To create the Debian live
 installation USB, follow these instructions:
 https://github.com/ssinyagin/pcengines-apu-debian-cd
@@ -6,6 +6,76 @@ https://github.com/ssinyagin/pcengines-apu-debian-cd
 Note that you need a DB9 cable to connect to the serial port present
 on the board for installation. More details on the serial connector
 are provided here: http://www.pcengines.ch/pdf/apu1.pdf
+
+Stuff you need to install:
+- Java Runtime Environment (JRE)
+- Python (for the link layer)
+- Some additional python libraries for the link layer.
+- Install ath9k drivers with ITS-G5 support.
+
+** Drivers
+An overview can be found here:
+https://github.com/alexvoronov/geonetworking/blob/master/HARDWARE.md
+
+Install instructions are provided here:
+https://gist.github.com/lisovy/80dde5a792e774a706a9
+
+Required packets:
+- python-dev
+- python-pip
+- pkg-config
+- default-jre-headless
+
+Make sure to set the following options are included in the menuconfig
+(they're marked with a "*" when they're included):
+- Device Drivers -> Network device support -> Wireless LAN -> Atheros
+  Wireless Cards
+- Also select all sub options for the previous option.
+- Device Drivers -> Network device drivers -> Ethernet driver support
+  -> Realtek 8169 gigabit ethernet support
+
+When trying to compile "iw" on Debian it couldn't link with the
+libnl3 library for some reason. I fixed that by replacing 
+$(Q)$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o iw
+with
+$(Q)$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -I /usr/include/libnl3 -o iw
+
+If you get the error "command failed: Invalid argument (-22)" when
+trying to to ocb join, you need to power toggle the board.
+
+** Prerequisites
+You need to install the following packages to get everything to run on
+the APU.
+- build-essential
+- pkg-config
+- libnl-3-dev
+- libnl-genl-3-dev
+- python-m2crypto
+- python-dev
+- python-pip
+- libgcrypt11-dev
+- libpcap-dev
+- openssl
+- openjdk-7-jre-headless
+
+** Automatic startup
+To make things start automatically on boot, add the commands you want
+to run to /etc/rc.local
+
+# Configure wireless for ITS-G5
+iw reg set SV
+ip link set wlan0 down
+iw dev wlan0 set type ocb
+ip link set wlan0 up
+iw dev wlan0 ocb join 5890 10MHZ
+
+# Start the link layer
+/root/utoepy-master/run.sh
+
+# Start the Geonetworking stack
+/root/geonetworking/vehicle-adapter/run.sh
+
+
 
 * Services
 The services running on the board:
