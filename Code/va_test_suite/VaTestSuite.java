@@ -4,6 +4,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Hashtable;
 
 import java.net.UnknownHostException;
 
@@ -15,10 +16,10 @@ public class VaTestSuite{
     static int VEHICLE_ADAPTER_UDP_PORT = 5003;
     static int RECEIVE_PORT = 5000;
     static int MAX_UDP_SIZE = 2000;
-    static int CAM_RATE = 10;
+    static int CAM_RATE = 25;
     static int DENM_RATE = 25;
     static int ICLCM_RATE = 25;
-    static int verbosity = 1;
+    static int verbosity = 2;
     
     /* Data for sending */
     static byte[] camData;
@@ -121,9 +122,20 @@ public class VaTestSuite{
         }
     }
 
+    
     private static class ReceiveService implements Runnable{
         public void run(){
             System.out.println("[RECEIVE] Starting service!");
+            ByteBuffer packetData;
+            int stationId;
+            int numMessages;
+            long messageRate;
+            long startTime = System.currentTimeMillis();
+
+            Hashtable<Integer, Integer> denmTable= new Hashtable<Integer, Integer>();
+            Hashtable<Integer, Integer> camTable= new Hashtable<Integer, Integer>();
+            Hashtable<Integer, Integer> iclcmTable= new Hashtable<Integer, Integer>();
+            
             while(true){
                 DatagramPacket packet =
                     new DatagramPacket(new byte[MAX_UDP_SIZE], MAX_UDP_SIZE);
@@ -133,22 +145,64 @@ public class VaTestSuite{
                 }catch(IOException e){
                     System.out.println("ERROR: Failed to received packet!");
                 }
+
+                packetData = ByteBuffer.wrap(packet.getData());
+                stationId = packetData.getInt(1);
+                if(!denmTable.containsKey(stationId)) denmTable.put(stationId, 0);
+                if(!camTable.containsKey(stationId)) camTable.put(stationId, 0);
+                if(!iclcmTable.containsKey(stationId)) iclcmTable.put(stationId, 0);
                 
                 switch(packet.getData()[0]){
                 case 1:
+                    //Get packet data
                     denmRecData = packet.getData();
+
+                    //Count number of messages from that station
+                    numMessages = denmTable.get(stationId);
+                    numMessages++;
+                    denmTable.put(stationId, numMessages);
+
+                    //Calculate average message rate
+                    messageRate = numMessages * 1000000 /
+                        (System.currentTimeMillis() - startTime);
+                    
                     if(verbosity > 1)
-                        System.out.println("Received DENM: " + packet.getData());
+                        System.out.println("[Received] DENM  \t ID: " + stationId
+                                           + "\t #messages: " + numMessages
+                                           + "\t Rate: " + messageRate
+                                           + "\t Data: " + packet.getData());
                     break;
                 case 2:
                     camRecData = packet.getData();
+                    
+                    numMessages = camTable.get(stationId);
+                    numMessages++;
+                    camTable.put(stationId, numMessages);
+
+                    messageRate = numMessages * 1000000 /
+                        (System.currentTimeMillis() - startTime);
+                    
                     if(verbosity > 1)
-                        System.out.println("Received CAM: " + packet.getData());
+                        System.out.println("[Received] CAM  \t ID: " + stationId
+                                           + "\t #messages: " + numMessages
+                                           + "\t Rate: " + messageRate
+                                           + "\t Data: " + packet.getData());                    
                     break;
                 case 10:
                     iclcmRecData = packet.getData();
+                    
+                    numMessages = iclcmTable.get(stationId);
+                    numMessages++;
+                    iclcmTable.put(stationId, numMessages);
+
+                    messageRate = numMessages * 1000000 /
+                        (System.currentTimeMillis() - startTime);
+                    
                     if(verbosity > 1)                    
-                        System.out.println("Received iCLCM: " + packet.getData());
+                        System.out.println("[Received] iCLCM\t ID: " + stationId
+                                           + "\t #messages: " + numMessages
+                                           + "\t Rate: " + messageRate
+                                           + "\t Data: " + packet.getData());                    
                     break;
                 default:
                     System.out.println("WARN: Received packet with unknown message ID.");
@@ -326,7 +380,7 @@ public class VaTestSuite{
         byteBuffer.putInt(254); //platoonID
         byteBuffer.putInt(100); //distanceTravelledCz
         byteBuffer.putInt(2); //intention
-        byteBuffer.putInt(6); //counter
+        byteBuffer.putInt(2); //counter
 
         iclcmData = buffer;
         iclcmRecData = new byte[buffer.length];
@@ -347,10 +401,19 @@ public class VaTestSuite{
         cs.setPriority(10);
         cs.start();
         
+        Thread ds = new Thread(new DenmService());
+        ds.setPriority(10);
+        ds.start();
+
+        Thread is = new Thread(new IclcmService());
+        is.setPriority(10);
+        is.start();        
+        
         Thread rs = new Thread(new ReceiveService());
         rs.setPriority(10);
         rs.start();
-        
+
+        /*
         Thread dts = new Thread(new DelayTestService());
         dts.setPriority(9);
         dts.start();
@@ -358,6 +421,7 @@ public class VaTestSuite{
         Thread plts = new Thread(new PacketLossTestService());
         plts.setPriority(9);
         plts.start();
+        */
 
     }
 }
