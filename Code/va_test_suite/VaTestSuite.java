@@ -16,7 +16,7 @@ public class VaTestSuite{
     static int VEHICLE_ADAPTER_UDP_PORT = 5003;
     static int RECEIVE_PORT = 5000;
     static int MAX_UDP_SIZE = 2000;
-    static int CAM_RATE = 10;
+    static int CAM_RATE = 25;
     static int DENM_RATE = 25;
     static int ICLCM_RATE = 25;
     static int verbosity = 2;
@@ -399,7 +399,7 @@ public class VaTestSuite{
         byteBuffer.putInt(0); //longitudinalAcc
         byteBuffer.putInt(1); //longitudinalAccConf
         byteBuffer.putInt(2); //yawRateValue
-        byteBuffer.putInt(1); //yawRateConfidence        
+        byteBuffer.putInt(1); //yawRateConfidence
         byteBuffer.putInt(5); //vehicleRole
 
         camData = buffer;
@@ -502,9 +502,7 @@ public class VaTestSuite{
         Thread ds = new Thread(new DenmService());
         ds.setPriority(10);
         ds.start();
-        */
-
-        /*
+        
         Thread is = new Thread(new IclcmService());
         is.setPriority(10);
         is.start();        
