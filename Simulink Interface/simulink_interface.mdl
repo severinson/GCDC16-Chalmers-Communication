@@ -1,13 +1,13 @@
 Model {
   Name			  "simulink_interface"
-  Version		  8.5
+  Version		  8.6
   MdlSubVersion		  0
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "US-ASCII"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.376"
+    ComputedModelVersion    "1.387"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1.0, 50.0, 1598.0, 849.0]
+      Location		      [0.0, 23.0, 1680.0, 974.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -51,11 +51,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1562.0, 713.0]
-	ZoomFactor		[1.25]
-	Offset			[0.0, 312.08000000000004]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"351"
+	Extents			[1646.0, 801.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -63,11 +63,11 @@ Model {
   Creator		  "zev"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "zev"
+  LastModifiedBy	  "albin"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 17 13:42:47 2015"
-  RTWModifiedTimeStamp	  369668359
-  ModelVersionFormat	  "1.%<AutoIncrement:376>"
+  LastModifiedDate	  "Thu Jan 14 15:15:45 2016"
+  RTWModifiedTimeStamp	  374685344
+  ModelVersionFormat	  "1.%<AutoIncrement:387>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -85,6 +85,7 @@ Model {
   SortedOrder		  off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
   ShowMarkup		  on
   BlockNameDataTip	  off
   BlockParametersDataTip  off
@@ -126,27 +127,6 @@ Model {
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
-  RecordCoverage	  off
-  CovPath		  "/"
-  CovSaveName		  "covdata"
-  CovMetricSettings	  "dw"
-  CovNameIncrementing	  off
-  CovHtmlReporting	  on
-  CovForceBlockReductionOff on
-  CovEnableCumulative	  on
-  covSaveCumulativeToWorkspaceVar on
-  CovSaveSingleToWorkspaceVar on
-  CovCumulativeVarName	  "covCumulativeData"
-  CovCumulativeReport	  off
-  CovReportOnPause	  on
-  CovModelRefEnable	  "Off"
-  CovExternalEMLEnable	  off
-  CovSFcnEnable		  on
-  CovBoundaryAbsTol	  0.000010
-  CovBoundaryRelTol	  0.010000
-  CovUseTimeInterval	  off
-  CovStartTime		  0
-  CovStopTime		  0
   ExtModeBatchMode	  off
   ExtModeEnableFloating	  on
   ExtModeTrigType	  "manual"
@@ -175,13 +155,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.15.0"
+      Version		      "1.15.1"
       Array {
 	Type			"Handle"
-	Dimension		8
+	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -208,6 +188,8 @@ Model {
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
 	  AutoInsertRateTranBlk	  off
@@ -216,7 +198,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -235,6 +217,8 @@ Model {
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
 	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
 	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
@@ -246,10 +230,11 @@ Model {
 	  OutputTimes		  "[]"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
+	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -266,7 +251,7 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  off
+	  DefaultParameterBehavior "Tunable"
 	  UseDivisionForNetSlopeComputation "off"
 	  UseFloatMulNetSlope	  off
 	  DefaultUnderspecifiedDataType	"double"
@@ -306,7 +291,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -333,7 +318,6 @@ Model {
 	  IgnoredZcDiagnostic	  "warning"
 	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
-	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
@@ -366,6 +350,7 @@ Model {
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
 	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  off
 	  ModelReferenceIOMsg	  "none"
 	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
 	  ModelReferenceVersionMismatchMessage "none"
@@ -381,6 +366,7 @@ Model {
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
 	  BlockIODiagnostic	  "none"
 	  SFUnusedDataAndEventsDiag "warning"
 	  SFUnexpectedBacktrackingDiag "warning"
@@ -395,7 +381,7 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -435,8 +421,9 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
 	  ParallelModelReferenceErrorOnInvalidPool on
@@ -450,8 +437,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.15.0"
-	  SFSimOverflowDetection  on
+	  Version		  "1.15.1"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
 	  SimIntegrity		  on
@@ -463,7 +449,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.15.0"
+	  Version		  "1.15.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    16
@@ -491,7 +477,6 @@ Model {
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
-	  PackageName		  ""
 	  TemplateMakefile	  "grt_default_tmf"
 	  PostCodeGenCommand	  ""
 	  Description		  ""
@@ -505,13 +490,6 @@ Model {
 	  TLCAssert		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
-	  CustomSourceCode	  ""
-	  CustomHeaderCode	  ""
-	  CustomInclude		  ""
-	  CustomSource		  ""
-	  CustomLibrary		  ""
-	  CustomInitializer	  ""
-	  CustomTerminator	  ""
 	  Toolchain		  "Automatically locate an installed toolchain"
 	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
@@ -543,7 +521,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.15.0"
+	      Version		      "1.15.1"
 	      Array {
 		Type			"Cell"
 		Dimension		24
@@ -615,7 +593,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.15.0"
+	      Version		      "1.15.1"
 	      Array {
 		Type			"Cell"
 		Dimension		13
@@ -679,6 +657,7 @@ Model {
 	      AutosarCompliant	      off
 	      GRTInterface	      on
 	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
 	      GenerateSharedConstants on
 	      UseMalloc		      off
 	      ExtMode		      off
@@ -698,6 +677,33 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  18
+	  Version		  "1.15.1"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "Off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
 	PropName		"Components"
       }
       Name		      "Configuration"
@@ -712,7 +718,7 @@ Model {
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -774,11 +780,9 @@ Model {
   BlockParameterDefaults {
     Block {
       BlockType		      BusCreator
-      Inputs		      "4"
       DisplayOption	      "none"
       OutDataTypeStr	      "Inherit: auto"
       NonVirtualBus	      off
-      InheritFromInputs	      on
     }
     Block {
       BlockType		      BusSelector
@@ -866,28 +870,12 @@ Model {
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
-      SFunctionDeploymentMode off
-      EnableBusSupport	      off
     }
     Block {
       BlockType		      Scope
-      ModelBased	      off
-      TickLabels	      "OneTimeTick"
-      ZoomMode		      "on"
-      Grid		      "on"
-      ShowLegends	      off
-      TimeRange		      "auto"
-      YMin		      "-5"
-      YMax		      "5"
-      SaveToWorkspace	      off
-      SaveName		      "ScopeData"
-      DataFormat	      "Array"
-      LimitDataPoints	      on
-      MaxDataPoints	      "5000"
-      Decimation	      "1"
-      SampleInput	      off
-      SampleTime	      "-1"
-      ScrollMode	      off
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      NumInputPorts	      "1"
+      Floating		      off
     }
     Block {
       BlockType		      Sin
@@ -929,7 +917,6 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
-      Variant		      off
       GeneratePreprocessorConditionals off
       ContentPreviewEnabled   off
       IsWebBlock	      off
@@ -948,6 +935,7 @@ Model {
       SampleTimeType	      "triggered"
       SampleTime	      "1"
       ZeroCross		      on
+      DisallowConstTsAndPrmTs off
       PortDimensions	      "-1"
       TriggerSignalSampleTime "-1"
       OutMin		      "[]"
@@ -958,8 +946,8 @@ Model {
   }
   System {
     Name		    "simulink_interface"
-    Location		    [1, 50, 1599, 899]
-    Open		    on
+    Location		    [0, 23, 1680, 997]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -982,6 +970,7 @@ Model {
       ZOrder		      88
       ForegroundColor	      "blue"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Application \n(app running the current scenario)"
 	Location		[1, 50, 1599, 899]
@@ -1033,6 +1022,7 @@ Model {
 	  ShowName		  off
 	  Inputs		  "38"
 	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
 	}
 	Block {
 	  BlockType		  BusSelector
@@ -1223,6 +1213,7 @@ Model {
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
 	  System {
 	    Name		    "MATLAB Function"
 	    Location		    [189, 219, 840, 949]
@@ -1238,7 +1229,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "61"
+	    SIDHighWatermark	    "64"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "seed"
@@ -1259,23 +1250,24 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "411::59"
+	      SID		      "411::63"
 	      Ports		      [1, 1]
 	      Position		      [270, 1505, 320, 1545]
-	      ZOrder		      5
+	      ZOrder		      9
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "411::58"
+	      SID		      "411::62"
 	      Tag		      "Stateflow S-Function simulink_interface 5"
 	      Ports		      [2, 39]
 	      Position		      [180, 25, 230, 825]
-	      ZOrder		      4
+	      ZOrder		      8
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[2 39]"
-	      EnableBusSupport	      on
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
 	      Port {
 		PortNumber		2
 		Name			"DetectionTime"
@@ -1508,9 +1500,9 @@ Model {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "411::60"
+	      SID		      "411::64"
 	      Position		      [460, 1516, 480, 1534]
-	      ZOrder		      6
+	      ZOrder		      10
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -1854,14 +1846,15 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      83
+	      ZOrder		      125
 	      SrcBlock		      "seed"
 	      SrcPort		      1
+	      Points		      [120, 0]
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      84
+	      ZOrder		      126
 	      SrcBlock		      "CruiseSpeedIn"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
@@ -1869,7 +1862,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "DetectionTime"
-	      ZOrder		      85
+	      ZOrder		      127
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -1878,7 +1871,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Termination"
-	      ZOrder		      86
+	      ZOrder		      128
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      3
@@ -1887,7 +1880,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "RelevanceDistance"
-	      ZOrder		      87
+	      ZOrder		      129
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
@@ -1896,7 +1889,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "RelevanceTrafficDirection"
-	      ZOrder		      88
+	      ZOrder		      130
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      5
@@ -1905,7 +1898,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ValidityDuration"
-	      ZOrder		      89
+	      ZOrder		      131
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      6
@@ -1914,7 +1907,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "TransmissionIntervall"
-	      ZOrder		      90
+	      ZOrder		      132
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      7
@@ -1923,7 +1916,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "InformationQuality"
-	      ZOrder		      91
+	      ZOrder		      133
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      8
@@ -1932,7 +1925,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "CauseCode"
-	      ZOrder		      92
+	      ZOrder		      134
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      9
@@ -1941,7 +1934,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SubCauseCode"
-	      ZOrder		      93
+	      ZOrder		      135
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      10
@@ -1950,7 +1943,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "LinkedCauseCode"
-	      ZOrder		      94
+	      ZOrder		      136
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      11
@@ -1959,7 +1952,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "LinkedSubCauseCode"
-	      ZOrder		      95
+	      ZOrder		      137
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      12
@@ -1968,7 +1961,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "LanePosition"
-	      ZOrder		      96
+	      ZOrder		      138
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      13
@@ -1977,7 +1970,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ExternalTemperature"
-	      ZOrder		      97
+	      ZOrder		      139
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      14
@@ -1986,7 +1979,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "PositioningSolution"
-	      ZOrder		      98
+	      ZOrder		      140
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      15
@@ -1995,7 +1988,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ControllerType"
-	      ZOrder		      99
+	      ZOrder		      141
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      16
@@ -2004,7 +1997,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "TargetLongAcc"
-	      ZOrder		      100
+	      ZOrder		      142
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      17
@@ -2013,7 +2006,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "TimeHeadway"
-	      ZOrder		      101
+	      ZOrder		      143
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      18
@@ -2022,7 +2015,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "CruiseSpeed"
-	      ZOrder		      102
+	      ZOrder		      144
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      19
@@ -2031,7 +2024,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ParticipantsReady"
-	      ZOrder		      103
+	      ZOrder		      145
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      20
@@ -2040,7 +2033,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "StartPlatoon"
-	      ZOrder		      104
+	      ZOrder		      146
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      21
@@ -2049,7 +2042,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "EndOfScenario"
-	      ZOrder		      105
+	      ZOrder		      147
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      22
@@ -2058,7 +2051,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MioID"
-	      ZOrder		      106
+	      ZOrder		      148
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      23
@@ -2067,7 +2060,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MioRange"
-	      ZOrder		      107
+	      ZOrder		      149
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      24
@@ -2076,7 +2069,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MioBearing"
-	      ZOrder		      108
+	      ZOrder		      150
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      25
@@ -2085,7 +2078,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MioRangeRate"
-	      ZOrder		      109
+	      ZOrder		      151
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      26
@@ -2094,7 +2087,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Lane"
-	      ZOrder		      110
+	      ZOrder		      152
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      27
@@ -2103,7 +2096,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ForwardID"
-	      ZOrder		      111
+	      ZOrder		      153
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      28
@@ -2112,7 +2105,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "BackwardID"
-	      ZOrder		      112
+	      ZOrder		      154
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      29
@@ -2121,7 +2114,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MergeRequest"
-	      ZOrder		      113
+	      ZOrder		      155
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      30
@@ -2130,7 +2123,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SafeToMerge"
-	      ZOrder		      114
+	      ZOrder		      156
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      31
@@ -2139,7 +2132,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Flag"
-	      ZOrder		      115
+	      ZOrder		      157
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      32
@@ -2148,7 +2141,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "FlagTail"
-	      ZOrder		      116
+	      ZOrder		      158
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      33
@@ -2157,7 +2150,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "FlagHead"
-	      ZOrder		      117
+	      ZOrder		      159
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      34
@@ -2166,7 +2159,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "PlatoonID"
-	      ZOrder		      118
+	      ZOrder		      160
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      35
@@ -2175,7 +2168,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "DistanceTravelledCZ"
-	      ZOrder		      119
+	      ZOrder		      161
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      36
@@ -2184,7 +2177,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Intention"
-	      ZOrder		      120
+	      ZOrder		      162
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      37
@@ -2193,7 +2186,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Counter"
-	      ZOrder		      121
+	      ZOrder		      163
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      38
@@ -2202,7 +2195,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "MessageControl"
-	      ZOrder		      122
+	      ZOrder		      164
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      39
@@ -2210,14 +2203,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      123
+	      ZOrder		      165
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      124
+	      ZOrder		      166
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -2232,26 +2225,12 @@ Model {
 	  Ports			  [1]
 	  Position		  [460, 374, 490, 406]
 	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [486, 464, 941, 813]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  DataFormat		  "StructureWithTime"
-	  SampleTime		  "0"
+	  ScopeSpecificationString "C++SS(StrPVP('Location','[486, 464, 941, 813]'),StrPVP('Open','off'),MxPVP('AxesTitles',2"
+	  "4,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.5 0.5 0.5]'',''Axes"
+	  "Color'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineSt"
+	  "yles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|non"
+	  "e'')'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),StrPVP('LimitDataPoints','on'),S"
+	  "trPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
 	}
 	Block {
 	  BlockType		  Scope
@@ -2260,27 +2239,12 @@ Model {
 	  Ports			  [1]
 	  Position		  [340, 399, 370, 431]
 	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [332, 373, 811, 733]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  SaveName		  "ScopeData1"
-	  DataFormat		  "StructureWithTime"
-	  SampleTime		  "0"
+	  ScopeSpecificationString "C++SS(StrPVP('Location','[332, 373, 811, 733]'),StrPVP('Open','off'),MxPVP('AxesTitles',2"
+	  "4,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.5 0.5 0.5]'',''Axes"
+	  "Color'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineSt"
+	  "yles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|non"
+	  "e'')'),StrPVP('SaveName','ScopeData1'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),"
+	  "StrPVP('LimitDataPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
 	}
 	Block {
 	  BlockType		  Scope
@@ -2289,27 +2253,12 @@ Model {
 	  Ports			  [1]
 	  Position		  [285, 429, 315, 461]
 	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [457, 494, 928, 850]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  SaveName		  "ScopeData2"
-	  DataFormat		  "StructureWithTime"
-	  SampleTime		  "0"
+	  ScopeSpecificationString "C++SS(StrPVP('Location','[457, 494, 928, 850]'),StrPVP('Open','off'),MxPVP('AxesTitles',2"
+	  "4,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.5 0.5 0.5]'',''Axes"
+	  "Color'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineSt"
+	  "yles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|non"
+	  "e'')'),StrPVP('SaveName','ScopeData2'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),"
+	  "StrPVP('LimitDataPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
 	}
 	Block {
 	  BlockType		  Sin
@@ -2700,9 +2649,10 @@ Model {
       ForegroundColor	      "lightBlue"
       BackgroundColor	      "lightBlue"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Communication"
-	Location		[1, 50, 1599, 899]
+	Location		[0, 23, 1680, 997]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2714,7 +2664,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"47"
 	Block {
 	  BlockType		  Inport
 	  Name			  "SensorBus"
@@ -2751,9 +2701,10 @@ Model {
 	  Position		  [80, 245, 230, 365]
 	  ZOrder		  105
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "DataConverter"
-	    Location		    [1, 50, 1599, 899]
+	    Location		    [0, 23, 1680, 997]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2765,7 +2716,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "139"
+	    ZoomFactor		    "89"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "SensorData"
@@ -2793,6 +2744,7 @@ Model {
 	      ShowName		      off
 	      Inputs		      "67"
 	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      BusSelector
@@ -3138,6 +3090,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"FormatMessage"
 		Location		[189, 219, 840, 949]
@@ -3153,12 +3106,12 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"256"
+		SIDHighWatermark	"259"
 		Block {
 		  BlockType		  Inport
 		  Name			  "StationID1"
 		  SID			  "383::116"
-		  Position		  [20, 166, 40, 184]
+		  Position		  [20, 101, 40, 119]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
 		}
@@ -3166,7 +3119,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "GenerationDeltaTime1"
 		  SID			  "383::117"
-		  Position		  [20, 201, 40, 219]
+		  Position		  [20, 136, 40, 154]
 		  ZOrder		  -2
 		  Port			  "2"
 		  IconDisplay		  "Port number"
@@ -3175,7 +3128,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "StationType1"
 		  SID			  "383::118"
-		  Position		  [20, 236, 40, 254]
+		  Position		  [20, 171, 40, 189]
 		  ZOrder		  -3
 		  Port			  "3"
 		  IconDisplay		  "Port number"
@@ -3184,7 +3137,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Latitude1"
 		  SID			  "383::119"
-		  Position		  [20, 271, 40, 289]
+		  Position		  [20, 206, 40, 224]
 		  ZOrder		  -4
 		  Port			  "4"
 		  IconDisplay		  "Port number"
@@ -3193,7 +3146,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Longitude1"
 		  SID			  "383::120"
-		  Position		  [20, 311, 40, 329]
+		  Position		  [20, 246, 40, 264]
 		  ZOrder		  -5
 		  Port			  "5"
 		  IconDisplay		  "Port number"
@@ -3202,7 +3155,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SemiMajorConfidence1"
 		  SID			  "383::121"
-		  Position		  [20, 346, 40, 364]
+		  Position		  [20, 281, 40, 299]
 		  ZOrder		  -6
 		  Port			  "6"
 		  IconDisplay		  "Port number"
@@ -3211,7 +3164,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SemiMinorConfidence1"
 		  SID			  "383::122"
-		  Position		  [20, 381, 40, 399]
+		  Position		  [20, 316, 40, 334]
 		  ZOrder		  -7
 		  Port			  "7"
 		  IconDisplay		  "Port number"
@@ -3220,7 +3173,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SemiMajorOrientation1"
 		  SID			  "383::123"
-		  Position		  [20, 416, 40, 434]
+		  Position		  [20, 351, 40, 369]
 		  ZOrder		  -8
 		  Port			  "8"
 		  IconDisplay		  "Port number"
@@ -3229,7 +3182,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Altitude1"
 		  SID			  "383::124"
-		  Position		  [20, 451, 40, 469]
+		  Position		  [20, 386, 40, 404]
 		  ZOrder		  -9
 		  Port			  "9"
 		  IconDisplay		  "Port number"
@@ -3238,7 +3191,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Heading1"
 		  SID			  "383::125"
-		  Position		  [20, 491, 40, 509]
+		  Position		  [20, 426, 40, 444]
 		  ZOrder		  -10
 		  Port			  "10"
 		  IconDisplay		  "Port number"
@@ -3247,7 +3200,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "HeadingConfidence1"
 		  SID			  "383::126"
-		  Position		  [20, 526, 40, 544]
+		  Position		  [20, 461, 40, 479]
 		  ZOrder		  -11
 		  Port			  "11"
 		  IconDisplay		  "Port number"
@@ -3256,7 +3209,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Speed1"
 		  SID			  "383::127"
-		  Position		  [20, 561, 40, 579]
+		  Position		  [20, 496, 40, 514]
 		  ZOrder		  -12
 		  Port			  "12"
 		  IconDisplay		  "Port number"
@@ -3265,7 +3218,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SpeedConfidence1"
 		  SID			  "383::128"
-		  Position		  [20, 596, 40, 614]
+		  Position		  [20, 531, 40, 549]
 		  ZOrder		  -13
 		  Port			  "13"
 		  IconDisplay		  "Port number"
@@ -3274,7 +3227,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "VehicleLength1"
 		  SID			  "383::129"
-		  Position		  [20, 631, 40, 649]
+		  Position		  [20, 566, 40, 584]
 		  ZOrder		  -14
 		  Port			  "14"
 		  IconDisplay		  "Port number"
@@ -3283,7 +3236,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "VehicleWidth1"
 		  SID			  "383::130"
-		  Position		  [20, 671, 40, 689]
+		  Position		  [20, 606, 40, 624]
 		  ZOrder		  -15
 		  Port			  "15"
 		  IconDisplay		  "Port number"
@@ -3292,7 +3245,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "LongAcc1"
 		  SID			  "383::131"
-		  Position		  [20, 706, 40, 724]
+		  Position		  [20, 641, 40, 659]
 		  ZOrder		  -16
 		  Port			  "16"
 		  IconDisplay		  "Port number"
@@ -3301,7 +3254,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "LongAccConfidence1"
 		  SID			  "383::132"
-		  Position		  [20, 741, 40, 759]
+		  Position		  [20, 676, 40, 694]
 		  ZOrder		  -17
 		  Port			  "17"
 		  IconDisplay		  "Port number"
@@ -3310,7 +3263,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "YawRate1"
 		  SID			  "383::133"
-		  Position		  [20, 776, 40, 794]
+		  Position		  [20, 711, 40, 729]
 		  ZOrder		  -18
 		  Port			  "18"
 		  IconDisplay		  "Port number"
@@ -3319,7 +3272,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "YawRateConfidence1"
 		  SID			  "383::134"
-		  Position		  [20, 811, 40, 829]
+		  Position		  [20, 746, 40, 764]
 		  ZOrder		  -19
 		  Port			  "19"
 		  IconDisplay		  "Port number"
@@ -3328,7 +3281,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "VehicleRole1"
 		  SID			  "383::135"
-		  Position		  [20, 851, 40, 869]
+		  Position		  [20, 786, 40, 804]
 		  ZOrder		  -20
 		  Port			  "20"
 		  IconDisplay		  "Port number"
@@ -3337,7 +3290,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ReferenceTime1"
 		  SID			  "383::136"
-		  Position		  [20, 886, 40, 904]
+		  Position		  [20, 821, 40, 839]
 		  ZOrder		  -21
 		  Port			  "21"
 		  IconDisplay		  "Port number"
@@ -3346,7 +3299,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "RearAxleLocation1"
 		  SID			  "383::137"
-		  Position		  [20, 921, 40, 939]
+		  Position		  [20, 856, 40, 874]
 		  ZOrder		  -22
 		  Port			  "22"
 		  IconDisplay		  "Port number"
@@ -3355,7 +3308,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ResponseTimeConstant1"
 		  SID			  "383::138"
-		  Position		  [20, 956, 40, 974]
+		  Position		  [20, 891, 40, 909]
 		  ZOrder		  -23
 		  Port			  "23"
 		  IconDisplay		  "Port number"
@@ -3364,7 +3317,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ResponseTimeDelay1"
 		  SID			  "383::139"
-		  Position		  [20, 991, 40, 1009]
+		  Position		  [20, 926, 40, 944]
 		  ZOrder		  -24
 		  Port			  "24"
 		  IconDisplay		  "Port number"
@@ -3373,7 +3326,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "DetectionTime1"
 		  SID			  "383::140"
-		  Position		  [20, 1031, 40, 1049]
+		  Position		  [20, 966, 40, 984]
 		  ZOrder		  -25
 		  Port			  "25"
 		  IconDisplay		  "Port number"
@@ -3382,7 +3335,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "CauseCode1"
 		  SID			  "383::141"
-		  Position		  [20, 1066, 40, 1084]
+		  Position		  [20, 1001, 40, 1019]
 		  ZOrder		  -26
 		  Port			  "26"
 		  IconDisplay		  "Port number"
@@ -3391,7 +3344,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SubCauseCode1"
 		  SID			  "383::142"
-		  Position		  [20, 1101, 40, 1119]
+		  Position		  [20, 1036, 40, 1054]
 		  ZOrder		  -27
 		  Port			  "27"
 		  IconDisplay		  "Port number"
@@ -3400,7 +3353,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ControllerType1"
 		  SID			  "383::143"
-		  Position		  [20, 1136, 40, 1154]
+		  Position		  [20, 1071, 40, 1089]
 		  ZOrder		  -28
 		  Port			  "28"
 		  IconDisplay		  "Port number"
@@ -3409,7 +3362,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "TargetLongAcc1"
 		  SID			  "383::144"
-		  Position		  [20, 1171, 40, 1189]
+		  Position		  [20, 1106, 40, 1124]
 		  ZOrder		  -29
 		  Port			  "29"
 		  IconDisplay		  "Port number"
@@ -3418,7 +3371,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "TimeHeadway1"
 		  SID			  "383::145"
-		  Position		  [20, 1211, 40, 1229]
+		  Position		  [20, 1146, 40, 1164]
 		  ZOrder		  -30
 		  Port			  "30"
 		  IconDisplay		  "Port number"
@@ -3427,7 +3380,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "CruiseSpeed1"
 		  SID			  "383::146"
-		  Position		  [20, 1246, 40, 1264]
+		  Position		  [20, 1181, 40, 1199]
 		  ZOrder		  -31
 		  Port			  "31"
 		  IconDisplay		  "Port number"
@@ -3436,7 +3389,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ParticipantsReady1"
 		  SID			  "383::147"
-		  Position		  [20, 1281, 40, 1299]
+		  Position		  [20, 1216, 40, 1234]
 		  ZOrder		  -32
 		  Port			  "32"
 		  IconDisplay		  "Port number"
@@ -3445,7 +3398,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "StartPlatoon1"
 		  SID			  "383::148"
-		  Position		  [20, 1316, 40, 1334]
+		  Position		  [20, 1251, 40, 1269]
 		  ZOrder		  -33
 		  Port			  "33"
 		  IconDisplay		  "Port number"
@@ -3454,7 +3407,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "EndOfScenario1"
 		  SID			  "383::149"
-		  Position		  [20, 1351, 40, 1369]
+		  Position		  [20, 1286, 40, 1304]
 		  ZOrder		  -34
 		  Port			  "34"
 		  IconDisplay		  "Port number"
@@ -3463,7 +3416,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MioID1"
 		  SID			  "383::150"
-		  Position		  [20, 1391, 40, 1409]
+		  Position		  [20, 1326, 40, 1344]
 		  ZOrder		  -35
 		  Port			  "35"
 		  IconDisplay		  "Port number"
@@ -3472,7 +3425,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MioRange1"
 		  SID			  "383::151"
-		  Position		  [20, 1426, 40, 1444]
+		  Position		  [20, 1361, 40, 1379]
 		  ZOrder		  -36
 		  Port			  "36"
 		  IconDisplay		  "Port number"
@@ -3481,7 +3434,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MioBearing1"
 		  SID			  "383::152"
-		  Position		  [20, 1461, 40, 1479]
+		  Position		  [20, 1396, 40, 1414]
 		  ZOrder		  -37
 		  Port			  "37"
 		  IconDisplay		  "Port number"
@@ -3490,7 +3443,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MioRangeRate1"
 		  SID			  "383::153"
-		  Position		  [20, 1496, 40, 1514]
+		  Position		  [20, 1431, 40, 1449]
 		  ZOrder		  -38
 		  Port			  "38"
 		  IconDisplay		  "Port number"
@@ -3499,7 +3452,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Lane1"
 		  SID			  "383::154"
-		  Position		  [20, 1531, 40, 1549]
+		  Position		  [20, 1466, 40, 1484]
 		  ZOrder		  -39
 		  Port			  "39"
 		  IconDisplay		  "Port number"
@@ -3508,7 +3461,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "ForwardID1"
 		  SID			  "383::155"
-		  Position		  [20, 1571, 40, 1589]
+		  Position		  [20, 1506, 40, 1524]
 		  ZOrder		  -40
 		  Port			  "40"
 		  IconDisplay		  "Port number"
@@ -3517,7 +3470,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "BackwardID1"
 		  SID			  "383::156"
-		  Position		  [20, 1606, 40, 1624]
+		  Position		  [20, 1541, 40, 1559]
 		  ZOrder		  -41
 		  Port			  "41"
 		  IconDisplay		  "Port number"
@@ -3526,7 +3479,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MergeRequest1"
 		  SID			  "383::157"
-		  Position		  [20, 1641, 40, 1659]
+		  Position		  [20, 1576, 40, 1594]
 		  ZOrder		  -42
 		  Port			  "42"
 		  IconDisplay		  "Port number"
@@ -3535,7 +3488,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "SafeToMerge1"
 		  SID			  "383::158"
-		  Position		  [20, 1676, 40, 1694]
+		  Position		  [20, 1611, 40, 1629]
 		  ZOrder		  -43
 		  Port			  "43"
 		  IconDisplay		  "Port number"
@@ -3544,7 +3497,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Flag1"
 		  SID			  "383::159"
-		  Position		  [20, 1711, 40, 1729]
+		  Position		  [20, 1646, 40, 1664]
 		  ZOrder		  -44
 		  Port			  "44"
 		  IconDisplay		  "Port number"
@@ -3553,7 +3506,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "FlagTail1"
 		  SID			  "383::160"
-		  Position		  [20, 1751, 40, 1769]
+		  Position		  [20, 1686, 40, 1704]
 		  ZOrder		  -45
 		  Port			  "45"
 		  IconDisplay		  "Port number"
@@ -3562,7 +3515,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "FlagHead1"
 		  SID			  "383::161"
-		  Position		  [20, 1786, 40, 1804]
+		  Position		  [20, 1721, 40, 1739]
 		  ZOrder		  -46
 		  Port			  "46"
 		  IconDisplay		  "Port number"
@@ -3571,7 +3524,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "PlatoonID1"
 		  SID			  "383::162"
-		  Position		  [20, 1821, 40, 1839]
+		  Position		  [20, 1756, 40, 1774]
 		  ZOrder		  -47
 		  Port			  "47"
 		  IconDisplay		  "Port number"
@@ -3580,7 +3533,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "DistanceTravelledCZ1"
 		  SID			  "383::163"
-		  Position		  [20, 1856, 40, 1874]
+		  Position		  [20, 1791, 40, 1809]
 		  ZOrder		  -48
 		  Port			  "48"
 		  IconDisplay		  "Port number"
@@ -3589,7 +3542,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Intention1"
 		  SID			  "383::164"
-		  Position		  [20, 1891, 40, 1909]
+		  Position		  [20, 1826, 40, 1844]
 		  ZOrder		  -49
 		  Port			  "49"
 		  IconDisplay		  "Port number"
@@ -3598,7 +3551,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Counter1"
 		  SID			  "383::165"
-		  Position		  [20, 1931, 40, 1949]
+		  Position		  [20, 1866, 40, 1884]
 		  ZOrder		  -50
 		  Port			  "50"
 		  IconDisplay		  "Port number"
@@ -3607,7 +3560,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "MessageControl"
 		  SID			  "383::217"
-		  Position		  [20, 1966, 40, 1984]
+		  Position		  [20, 1901, 40, 1919]
 		  ZOrder		  -51
 		  Port			  "51"
 		  IconDisplay		  "Port number"
@@ -3615,23 +3568,24 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "383::255"
+		  SID			  "383::258"
 		  Ports			  [1, 1]
-		  Position		  [270, 2615, 320, 2655]
-		  ZOrder		  5
+		  Position		  [270, 2550, 320, 2590]
+		  ZOrder		  8
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "383::254"
+		  SID			  "383::257"
 		  Tag			  "Stateflow S-Function simulink_interface 4"
 		  Ports			  [51, 68]
-		  Position		  [180, 20, 230, 1400]
-		  ZOrder		  4
+		  Position		  [180, -45, 230, 1335]
+		  ZOrder		  7
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[51 68]"
-		  EnableBusSupport	  on
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
 		  Port {
 		    PortNumber		    2
 		    Name		    "StationID"
@@ -4038,15 +3992,15 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "383::256"
-		  Position		  [460, 2626, 480, 2644]
-		  ZOrder		  6
+		  SID			  "383::259"
+		  Position		  [460, 2561, 480, 2579]
+		  ZOrder		  9
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "StationID"
 		  SID			  "383::166"
-		  Position		  [460, 166, 480, 184]
+		  Position		  [460, 101, 480, 119]
 		  ZOrder		  -55
 		  IconDisplay		  "Port number"
 		}
@@ -4054,7 +4008,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "GenerationDeltaTime"
 		  SID			  "383::167"
-		  Position		  [460, 201, 480, 219]
+		  Position		  [460, 136, 480, 154]
 		  ZOrder		  -56
 		  Port			  "2"
 		  IconDisplay		  "Port number"
@@ -4063,7 +4017,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "StationType"
 		  SID			  "383::168"
-		  Position		  [460, 236, 480, 254]
+		  Position		  [460, 171, 480, 189]
 		  ZOrder		  -57
 		  Port			  "3"
 		  IconDisplay		  "Port number"
@@ -4072,7 +4026,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Latitude"
 		  SID			  "383::169"
-		  Position		  [460, 271, 480, 289]
+		  Position		  [460, 206, 480, 224]
 		  ZOrder		  -58
 		  Port			  "4"
 		  IconDisplay		  "Port number"
@@ -4081,7 +4035,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Longitude"
 		  SID			  "383::170"
-		  Position		  [460, 311, 480, 329]
+		  Position		  [460, 246, 480, 264]
 		  ZOrder		  -59
 		  Port			  "5"
 		  IconDisplay		  "Port number"
@@ -4090,7 +4044,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SemiMajorConfidence"
 		  SID			  "383::171"
-		  Position		  [460, 346, 480, 364]
+		  Position		  [460, 281, 480, 299]
 		  ZOrder		  -60
 		  Port			  "6"
 		  IconDisplay		  "Port number"
@@ -4099,7 +4053,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SemiMinorConfidence"
 		  SID			  "383::172"
-		  Position		  [460, 381, 480, 399]
+		  Position		  [460, 316, 480, 334]
 		  ZOrder		  -61
 		  Port			  "7"
 		  IconDisplay		  "Port number"
@@ -4108,7 +4062,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SemiMajorOrientation"
 		  SID			  "383::173"
-		  Position		  [460, 416, 480, 434]
+		  Position		  [460, 351, 480, 369]
 		  ZOrder		  -62
 		  Port			  "8"
 		  IconDisplay		  "Port number"
@@ -4117,7 +4071,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Altitude"
 		  SID			  "383::174"
-		  Position		  [460, 451, 480, 469]
+		  Position		  [460, 386, 480, 404]
 		  ZOrder		  -63
 		  Port			  "9"
 		  IconDisplay		  "Port number"
@@ -4126,7 +4080,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Heading"
 		  SID			  "383::175"
-		  Position		  [460, 491, 480, 509]
+		  Position		  [460, 426, 480, 444]
 		  ZOrder		  -64
 		  Port			  "10"
 		  IconDisplay		  "Port number"
@@ -4135,7 +4089,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "HeadingConfidence"
 		  SID			  "383::176"
-		  Position		  [460, 526, 480, 544]
+		  Position		  [460, 461, 480, 479]
 		  ZOrder		  -65
 		  Port			  "11"
 		  IconDisplay		  "Port number"
@@ -4144,7 +4098,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Speed"
 		  SID			  "383::177"
-		  Position		  [460, 561, 480, 579]
+		  Position		  [460, 496, 480, 514]
 		  ZOrder		  -66
 		  Port			  "12"
 		  IconDisplay		  "Port number"
@@ -4153,7 +4107,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SpeedConfidence"
 		  SID			  "383::178"
-		  Position		  [460, 596, 480, 614]
+		  Position		  [460, 531, 480, 549]
 		  ZOrder		  -67
 		  Port			  "13"
 		  IconDisplay		  "Port number"
@@ -4162,7 +4116,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "VehicleLength"
 		  SID			  "383::179"
-		  Position		  [460, 631, 480, 649]
+		  Position		  [460, 566, 480, 584]
 		  ZOrder		  -68
 		  Port			  "14"
 		  IconDisplay		  "Port number"
@@ -4171,7 +4125,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "VehicleWidth"
 		  SID			  "383::180"
-		  Position		  [460, 671, 480, 689]
+		  Position		  [460, 606, 480, 624]
 		  ZOrder		  -69
 		  Port			  "15"
 		  IconDisplay		  "Port number"
@@ -4180,7 +4134,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LongAcc"
 		  SID			  "383::181"
-		  Position		  [460, 706, 480, 724]
+		  Position		  [460, 641, 480, 659]
 		  ZOrder		  -70
 		  Port			  "16"
 		  IconDisplay		  "Port number"
@@ -4189,7 +4143,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LongAccConfidence"
 		  SID			  "383::182"
-		  Position		  [460, 741, 480, 759]
+		  Position		  [460, 676, 480, 694]
 		  ZOrder		  -71
 		  Port			  "17"
 		  IconDisplay		  "Port number"
@@ -4198,7 +4152,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "YawRate"
 		  SID			  "383::183"
-		  Position		  [460, 776, 480, 794]
+		  Position		  [460, 711, 480, 729]
 		  ZOrder		  -72
 		  Port			  "18"
 		  IconDisplay		  "Port number"
@@ -4207,7 +4161,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "YawRateConfidence"
 		  SID			  "383::184"
-		  Position		  [460, 811, 480, 829]
+		  Position		  [460, 746, 480, 764]
 		  ZOrder		  -73
 		  Port			  "19"
 		  IconDisplay		  "Port number"
@@ -4216,7 +4170,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "VehicleRole"
 		  SID			  "383::185"
-		  Position		  [460, 851, 480, 869]
+		  Position		  [460, 786, 480, 804]
 		  ZOrder		  -74
 		  Port			  "20"
 		  IconDisplay		  "Port number"
@@ -4225,7 +4179,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ReferenceTime"
 		  SID			  "383::186"
-		  Position		  [460, 886, 480, 904]
+		  Position		  [460, 821, 480, 839]
 		  ZOrder		  -75
 		  Port			  "21"
 		  IconDisplay		  "Port number"
@@ -4234,7 +4188,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "RearAxleLocation"
 		  SID			  "383::187"
-		  Position		  [460, 921, 480, 939]
+		  Position		  [460, 856, 480, 874]
 		  ZOrder		  -76
 		  Port			  "22"
 		  IconDisplay		  "Port number"
@@ -4243,7 +4197,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ResponseTimeConstant"
 		  SID			  "383::188"
-		  Position		  [460, 956, 480, 974]
+		  Position		  [460, 891, 480, 909]
 		  ZOrder		  -77
 		  Port			  "23"
 		  IconDisplay		  "Port number"
@@ -4252,7 +4206,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ResponseTimeDelay"
 		  SID			  "383::189"
-		  Position		  [460, 991, 480, 1009]
+		  Position		  [460, 926, 480, 944]
 		  ZOrder		  -78
 		  Port			  "24"
 		  IconDisplay		  "Port number"
@@ -4261,7 +4215,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "DetectionTime"
 		  SID			  "383::190"
-		  Position		  [460, 1031, 480, 1049]
+		  Position		  [460, 966, 480, 984]
 		  ZOrder		  -79
 		  Port			  "25"
 		  IconDisplay		  "Port number"
@@ -4270,7 +4224,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Termination"
 		  SID			  "383::244"
-		  Position		  [460, 1066, 480, 1084]
+		  Position		  [460, 1001, 480, 1019]
 		  ZOrder		  -80
 		  Port			  "26"
 		  IconDisplay		  "Port number"
@@ -4279,7 +4233,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "RelevanceDistance"
 		  SID			  "383::245"
-		  Position		  [460, 1101, 480, 1119]
+		  Position		  [460, 1036, 480, 1054]
 		  ZOrder		  -81
 		  Port			  "27"
 		  IconDisplay		  "Port number"
@@ -4288,7 +4242,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "RelevanceTrafficDirection"
 		  SID			  "383::246"
-		  Position		  [460, 1136, 480, 1154]
+		  Position		  [460, 1071, 480, 1089]
 		  ZOrder		  -82
 		  Port			  "28"
 		  IconDisplay		  "Port number"
@@ -4297,7 +4251,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ValidityDuration"
 		  SID			  "383::247"
-		  Position		  [460, 1171, 480, 1189]
+		  Position		  [460, 1106, 480, 1124]
 		  ZOrder		  -83
 		  Port			  "29"
 		  IconDisplay		  "Port number"
@@ -4306,7 +4260,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "TransmissionIntervall"
 		  SID			  "383::248"
-		  Position		  [460, 1211, 480, 1229]
+		  Position		  [460, 1146, 480, 1164]
 		  ZOrder		  -84
 		  Port			  "30"
 		  IconDisplay		  "Port number"
@@ -4315,7 +4269,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "InformationQuality"
 		  SID			  "383::249"
-		  Position		  [460, 1246, 480, 1264]
+		  Position		  [460, 1181, 480, 1199]
 		  ZOrder		  -85
 		  Port			  "31"
 		  IconDisplay		  "Port number"
@@ -4324,7 +4278,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "CauseCode"
 		  SID			  "383::191"
-		  Position		  [460, 1281, 480, 1299]
+		  Position		  [460, 1216, 480, 1234]
 		  ZOrder		  -86
 		  Port			  "32"
 		  IconDisplay		  "Port number"
@@ -4333,7 +4287,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SubCauseCode"
 		  SID			  "383::192"
-		  Position		  [460, 1316, 480, 1334]
+		  Position		  [460, 1251, 480, 1269]
 		  ZOrder		  -87
 		  Port			  "33"
 		  IconDisplay		  "Port number"
@@ -4342,7 +4296,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LinkedCauseCode"
 		  SID			  "383::250"
-		  Position		  [460, 1351, 480, 1369]
+		  Position		  [460, 1286, 480, 1304]
 		  ZOrder		  -88
 		  Port			  "34"
 		  IconDisplay		  "Port number"
@@ -4351,7 +4305,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LinkedSubCauseCode"
 		  SID			  "383::251"
-		  Position		  [460, 1391, 480, 1409]
+		  Position		  [460, 1326, 480, 1344]
 		  ZOrder		  -89
 		  Port			  "35"
 		  IconDisplay		  "Port number"
@@ -4360,7 +4314,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LanePosition"
 		  SID			  "383::236"
-		  Position		  [460, 1426, 480, 1444]
+		  Position		  [460, 1361, 480, 1379]
 		  ZOrder		  -90
 		  Port			  "36"
 		  IconDisplay		  "Port number"
@@ -4369,7 +4323,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ExternalTemperature"
 		  SID			  "383::252"
-		  Position		  [460, 1461, 480, 1479]
+		  Position		  [460, 1396, 480, 1414]
 		  ZOrder		  -91
 		  Port			  "37"
 		  IconDisplay		  "Port number"
@@ -4378,7 +4332,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "PositioningSolution"
 		  SID			  "383::253"
-		  Position		  [460, 1496, 480, 1514]
+		  Position		  [460, 1431, 480, 1449]
 		  ZOrder		  -92
 		  Port			  "38"
 		  IconDisplay		  "Port number"
@@ -4387,7 +4341,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ControllerType"
 		  SID			  "383::193"
-		  Position		  [460, 1531, 480, 1549]
+		  Position		  [460, 1466, 480, 1484]
 		  ZOrder		  -93
 		  Port			  "39"
 		  IconDisplay		  "Port number"
@@ -4396,7 +4350,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "TargetLongAcc"
 		  SID			  "383::194"
-		  Position		  [460, 1571, 480, 1589]
+		  Position		  [460, 1506, 480, 1524]
 		  ZOrder		  -94
 		  Port			  "40"
 		  IconDisplay		  "Port number"
@@ -4405,7 +4359,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "TimeHeadway"
 		  SID			  "383::195"
-		  Position		  [460, 1606, 480, 1624]
+		  Position		  [460, 1541, 480, 1559]
 		  ZOrder		  -95
 		  Port			  "41"
 		  IconDisplay		  "Port number"
@@ -4414,7 +4368,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "CruiseSpeed"
 		  SID			  "383::196"
-		  Position		  [460, 1641, 480, 1659]
+		  Position		  [460, 1576, 480, 1594]
 		  ZOrder		  -96
 		  Port			  "42"
 		  IconDisplay		  "Port number"
@@ -4423,7 +4377,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ParticipantsReady"
 		  SID			  "383::197"
-		  Position		  [460, 1676, 480, 1694]
+		  Position		  [460, 1611, 480, 1629]
 		  ZOrder		  -97
 		  Port			  "43"
 		  IconDisplay		  "Port number"
@@ -4432,7 +4386,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "StartPlatoon"
 		  SID			  "383::198"
-		  Position		  [460, 1711, 480, 1729]
+		  Position		  [460, 1646, 480, 1664]
 		  ZOrder		  -98
 		  Port			  "44"
 		  IconDisplay		  "Port number"
@@ -4441,7 +4395,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "EndOfScenario"
 		  SID			  "383::199"
-		  Position		  [460, 1751, 480, 1769]
+		  Position		  [460, 1686, 480, 1704]
 		  ZOrder		  -99
 		  Port			  "45"
 		  IconDisplay		  "Port number"
@@ -4450,7 +4404,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "MioID"
 		  SID			  "383::200"
-		  Position		  [460, 1786, 480, 1804]
+		  Position		  [460, 1721, 480, 1739]
 		  ZOrder		  -100
 		  Port			  "46"
 		  IconDisplay		  "Port number"
@@ -4459,7 +4413,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "MioRange"
 		  SID			  "383::201"
-		  Position		  [460, 1821, 480, 1839]
+		  Position		  [460, 1756, 480, 1774]
 		  ZOrder		  -101
 		  Port			  "47"
 		  IconDisplay		  "Port number"
@@ -4468,7 +4422,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "MioBearing"
 		  SID			  "383::202"
-		  Position		  [460, 1856, 480, 1874]
+		  Position		  [460, 1791, 480, 1809]
 		  ZOrder		  -102
 		  Port			  "48"
 		  IconDisplay		  "Port number"
@@ -4477,7 +4431,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "MioRangeRate"
 		  SID			  "383::203"
-		  Position		  [460, 1891, 480, 1909]
+		  Position		  [460, 1826, 480, 1844]
 		  ZOrder		  -103
 		  Port			  "49"
 		  IconDisplay		  "Port number"
@@ -4486,7 +4440,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Lane"
 		  SID			  "383::204"
-		  Position		  [460, 1931, 480, 1949]
+		  Position		  [460, 1866, 480, 1884]
 		  ZOrder		  -104
 		  Port			  "50"
 		  IconDisplay		  "Port number"
@@ -4495,7 +4449,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ForwardID"
 		  SID			  "383::205"
-		  Position		  [460, 1966, 480, 1984]
+		  Position		  [460, 1901, 480, 1919]
 		  ZOrder		  -105
 		  Port			  "51"
 		  IconDisplay		  "Port number"
@@ -4504,7 +4458,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "BackwardID"
 		  SID			  "383::206"
-		  Position		  [460, 2001, 480, 2019]
+		  Position		  [460, 1936, 480, 1954]
 		  ZOrder		  -106
 		  Port			  "52"
 		  IconDisplay		  "Port number"
@@ -4513,7 +4467,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "MergeRequest"
 		  SID			  "383::207"
-		  Position		  [460, 2036, 480, 2054]
+		  Position		  [460, 1971, 480, 1989]
 		  ZOrder		  -107
 		  Port			  "53"
 		  IconDisplay		  "Port number"
@@ -4522,7 +4476,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SafeToMerge"
 		  SID			  "383::208"
-		  Position		  [460, 2071, 480, 2089]
+		  Position		  [460, 2006, 480, 2024]
 		  ZOrder		  -108
 		  Port			  "54"
 		  IconDisplay		  "Port number"
@@ -4531,7 +4485,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Flag"
 		  SID			  "383::209"
-		  Position		  [460, 2111, 480, 2129]
+		  Position		  [460, 2046, 480, 2064]
 		  ZOrder		  -109
 		  Port			  "55"
 		  IconDisplay		  "Port number"
@@ -4540,7 +4494,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "FlagTail"
 		  SID			  "383::210"
-		  Position		  [460, 2146, 480, 2164]
+		  Position		  [460, 2081, 480, 2099]
 		  ZOrder		  -110
 		  Port			  "56"
 		  IconDisplay		  "Port number"
@@ -4549,7 +4503,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "FlagHead"
 		  SID			  "383::211"
-		  Position		  [460, 2181, 480, 2199]
+		  Position		  [460, 2116, 480, 2134]
 		  ZOrder		  -111
 		  Port			  "57"
 		  IconDisplay		  "Port number"
@@ -4558,7 +4512,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "PlatoonID"
 		  SID			  "383::212"
-		  Position		  [460, 2216, 480, 2234]
+		  Position		  [460, 2151, 480, 2169]
 		  ZOrder		  -112
 		  Port			  "58"
 		  IconDisplay		  "Port number"
@@ -4567,7 +4521,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "DistanceTravelledCZ"
 		  SID			  "383::213"
-		  Position		  [460, 2251, 480, 2269]
+		  Position		  [460, 2186, 480, 2204]
 		  ZOrder		  -113
 		  Port			  "59"
 		  IconDisplay		  "Port number"
@@ -4576,7 +4530,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Intention"
 		  SID			  "383::214"
-		  Position		  [460, 2291, 480, 2309]
+		  Position		  [460, 2226, 480, 2244]
 		  ZOrder		  -114
 		  Port			  "60"
 		  IconDisplay		  "Port number"
@@ -4585,7 +4539,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "Counter"
 		  SID			  "383::215"
-		  Position		  [460, 2326, 480, 2344]
+		  Position		  [460, 2261, 480, 2279]
 		  ZOrder		  -115
 		  Port			  "61"
 		  IconDisplay		  "Port number"
@@ -4594,7 +4548,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ContainerMaskDENM"
 		  SID			  "383::223"
-		  Position		  [460, 2361, 480, 2379]
+		  Position		  [460, 2296, 480, 2314]
 		  ZOrder		  -116
 		  Port			  "62"
 		  IconDisplay		  "Port number"
@@ -4603,7 +4557,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ManagementMaskDENM"
 		  SID			  "383::218"
-		  Position		  [460, 2396, 480, 2414]
+		  Position		  [460, 2331, 480, 2349]
 		  ZOrder		  -117
 		  Port			  "63"
 		  IconDisplay		  "Port number"
@@ -4612,7 +4566,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "SituationMaskDENM"
 		  SID			  "383::224"
-		  Position		  [460, 2431, 480, 2449]
+		  Position		  [460, 2366, 480, 2384]
 		  ZOrder		  -118
 		  Port			  "64"
 		  IconDisplay		  "Port number"
@@ -4621,7 +4575,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "AlacarteMaskDENM"
 		  SID			  "383::225"
-		  Position		  [460, 2471, 480, 2489]
+		  Position		  [460, 2406, 480, 2424]
 		  ZOrder		  -119
 		  Port			  "65"
 		  IconDisplay		  "Port number"
@@ -4630,7 +4584,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ContainerMaskICLCM"
 		  SID			  "383::226"
-		  Position		  [460, 2506, 480, 2524]
+		  Position		  [460, 2441, 480, 2459]
 		  ZOrder		  -120
 		  Port			  "66"
 		  IconDisplay		  "Port number"
@@ -4639,363 +4593,363 @@ Model {
 		  BlockType		  Outport
 		  Name			  "LowFrequencyMaskICLCM"
 		  SID			  "383::227"
-		  Position		  [460, 2541, 480, 2559]
+		  Position		  [460, 2476, 480, 2494]
 		  ZOrder		  -121
 		  Port			  "67"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  121
+		  ZOrder		  241
 		  SrcBlock		  "StationID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  122
+		  ZOrder		  242
 		  SrcBlock		  "GenerationDeltaTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  123
+		  ZOrder		  243
 		  SrcBlock		  "StationType1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  ZOrder		  124
+		  ZOrder		  244
 		  SrcBlock		  "Latitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
-		  ZOrder		  125
+		  ZOrder		  245
 		  SrcBlock		  "Longitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
-		  ZOrder		  126
+		  ZOrder		  246
 		  SrcBlock		  "SemiMajorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
-		  ZOrder		  127
+		  ZOrder		  247
 		  SrcBlock		  "SemiMinorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
 		}
 		Line {
-		  ZOrder		  128
+		  ZOrder		  248
 		  SrcBlock		  "SemiMajorOrientation1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  8
 		}
 		Line {
-		  ZOrder		  129
+		  ZOrder		  249
 		  SrcBlock		  "Altitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  9
 		}
 		Line {
-		  ZOrder		  130
+		  ZOrder		  250
 		  SrcBlock		  "Heading1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  10
 		}
 		Line {
-		  ZOrder		  131
+		  ZOrder		  251
 		  SrcBlock		  "HeadingConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  11
 		}
 		Line {
-		  ZOrder		  132
+		  ZOrder		  252
 		  SrcBlock		  "Speed1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  12
 		}
 		Line {
-		  ZOrder		  133
+		  ZOrder		  253
 		  SrcBlock		  "SpeedConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  13
 		}
 		Line {
-		  ZOrder		  134
+		  ZOrder		  254
 		  SrcBlock		  "VehicleLength1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  14
 		}
 		Line {
-		  ZOrder		  135
+		  ZOrder		  255
 		  SrcBlock		  "VehicleWidth1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  15
 		}
 		Line {
-		  ZOrder		  136
+		  ZOrder		  256
 		  SrcBlock		  "LongAcc1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  16
 		}
 		Line {
-		  ZOrder		  137
+		  ZOrder		  257
 		  SrcBlock		  "LongAccConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  17
 		}
 		Line {
-		  ZOrder		  138
+		  ZOrder		  258
 		  SrcBlock		  "YawRate1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  18
 		}
 		Line {
-		  ZOrder		  139
+		  ZOrder		  259
 		  SrcBlock		  "YawRateConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  19
 		}
 		Line {
-		  ZOrder		  140
+		  ZOrder		  260
 		  SrcBlock		  "VehicleRole1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  20
 		}
 		Line {
-		  ZOrder		  141
+		  ZOrder		  261
 		  SrcBlock		  "ReferenceTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  21
 		}
 		Line {
-		  ZOrder		  142
+		  ZOrder		  262
 		  SrcBlock		  "RearAxleLocation1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  22
 		}
 		Line {
-		  ZOrder		  143
+		  ZOrder		  263
 		  SrcBlock		  "ResponseTimeConstant1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  23
 		}
 		Line {
-		  ZOrder		  144
+		  ZOrder		  264
 		  SrcBlock		  "ResponseTimeDelay1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  24
 		}
 		Line {
-		  ZOrder		  145
+		  ZOrder		  265
 		  SrcBlock		  "DetectionTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  25
 		}
 		Line {
-		  ZOrder		  146
+		  ZOrder		  266
 		  SrcBlock		  "CauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  26
 		}
 		Line {
-		  ZOrder		  147
+		  ZOrder		  267
 		  SrcBlock		  "SubCauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  27
 		}
 		Line {
-		  ZOrder		  148
+		  ZOrder		  268
 		  SrcBlock		  "ControllerType1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  28
 		}
 		Line {
-		  ZOrder		  149
+		  ZOrder		  269
 		  SrcBlock		  "TargetLongAcc1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  29
 		}
 		Line {
-		  ZOrder		  150
+		  ZOrder		  270
 		  SrcBlock		  "TimeHeadway1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  30
 		}
 		Line {
-		  ZOrder		  151
+		  ZOrder		  271
 		  SrcBlock		  "CruiseSpeed1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  31
 		}
 		Line {
-		  ZOrder		  152
+		  ZOrder		  272
 		  SrcBlock		  "ParticipantsReady1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  32
 		}
 		Line {
-		  ZOrder		  153
+		  ZOrder		  273
 		  SrcBlock		  "StartPlatoon1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  33
 		}
 		Line {
-		  ZOrder		  154
+		  ZOrder		  274
 		  SrcBlock		  "EndOfScenario1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  34
 		}
 		Line {
-		  ZOrder		  155
+		  ZOrder		  275
 		  SrcBlock		  "MioID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  35
 		}
 		Line {
-		  ZOrder		  156
+		  ZOrder		  276
 		  SrcBlock		  "MioRange1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  36
 		}
 		Line {
-		  ZOrder		  157
+		  ZOrder		  277
 		  SrcBlock		  "MioBearing1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  37
 		}
 		Line {
-		  ZOrder		  158
+		  ZOrder		  278
 		  SrcBlock		  "MioRangeRate1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  38
 		}
 		Line {
-		  ZOrder		  159
+		  ZOrder		  279
 		  SrcBlock		  "Lane1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  39
 		}
 		Line {
-		  ZOrder		  160
+		  ZOrder		  280
 		  SrcBlock		  "ForwardID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  40
 		}
 		Line {
-		  ZOrder		  161
+		  ZOrder		  281
 		  SrcBlock		  "BackwardID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  41
 		}
 		Line {
-		  ZOrder		  162
+		  ZOrder		  282
 		  SrcBlock		  "MergeRequest1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  42
 		}
 		Line {
-		  ZOrder		  163
+		  ZOrder		  283
 		  SrcBlock		  "SafeToMerge1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  43
 		}
 		Line {
-		  ZOrder		  164
+		  ZOrder		  284
 		  SrcBlock		  "Flag1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  44
 		}
 		Line {
-		  ZOrder		  165
+		  ZOrder		  285
 		  SrcBlock		  "FlagTail1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  45
 		}
 		Line {
-		  ZOrder		  166
+		  ZOrder		  286
 		  SrcBlock		  "FlagHead1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  46
 		}
 		Line {
-		  ZOrder		  167
+		  ZOrder		  287
 		  SrcBlock		  "PlatoonID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  47
 		}
 		Line {
-		  ZOrder		  168
+		  ZOrder		  288
 		  SrcBlock		  "DistanceTravelledCZ1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  48
 		}
 		Line {
-		  ZOrder		  169
+		  ZOrder		  289
 		  SrcBlock		  "Intention1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  49
 		}
 		Line {
-		  ZOrder		  170
+		  ZOrder		  290
 		  SrcBlock		  "Counter1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  50
 		}
 		Line {
-		  ZOrder		  171
+		  ZOrder		  291
 		  SrcBlock		  "MessageControl"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -5003,7 +4957,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationID"
-		  ZOrder		  172
+		  ZOrder		  292
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -5012,7 +4966,7 @@ Model {
 		}
 		Line {
 		  Name			  "GenerationDeltaTime"
-		  ZOrder		  173
+		  ZOrder		  293
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  3
@@ -5021,7 +4975,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationType"
-		  ZOrder		  174
+		  ZOrder		  294
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  4
@@ -5030,7 +4984,7 @@ Model {
 		}
 		Line {
 		  Name			  "Latitude"
-		  ZOrder		  175
+		  ZOrder		  295
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  5
@@ -5039,7 +4993,7 @@ Model {
 		}
 		Line {
 		  Name			  "Longitude"
-		  ZOrder		  176
+		  ZOrder		  296
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  6
@@ -5048,7 +5002,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorConfidence"
-		  ZOrder		  177
+		  ZOrder		  297
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  7
@@ -5057,7 +5011,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMinorConfidence"
-		  ZOrder		  178
+		  ZOrder		  298
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  8
@@ -5066,7 +5020,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorOrientation"
-		  ZOrder		  179
+		  ZOrder		  299
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  9
@@ -5075,7 +5029,7 @@ Model {
 		}
 		Line {
 		  Name			  "Altitude"
-		  ZOrder		  180
+		  ZOrder		  300
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  10
@@ -5084,7 +5038,7 @@ Model {
 		}
 		Line {
 		  Name			  "Heading"
-		  ZOrder		  181
+		  ZOrder		  301
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  11
@@ -5093,7 +5047,7 @@ Model {
 		}
 		Line {
 		  Name			  "HeadingConfidence"
-		  ZOrder		  182
+		  ZOrder		  302
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  12
@@ -5102,7 +5056,7 @@ Model {
 		}
 		Line {
 		  Name			  "Speed"
-		  ZOrder		  183
+		  ZOrder		  303
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  13
@@ -5111,7 +5065,7 @@ Model {
 		}
 		Line {
 		  Name			  "SpeedConfidence"
-		  ZOrder		  184
+		  ZOrder		  304
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  14
@@ -5120,7 +5074,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleLength"
-		  ZOrder		  185
+		  ZOrder		  305
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  15
@@ -5129,7 +5083,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleWidth"
-		  ZOrder		  186
+		  ZOrder		  306
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  16
@@ -5138,7 +5092,7 @@ Model {
 		}
 		Line {
 		  Name			  "LongAcc"
-		  ZOrder		  187
+		  ZOrder		  307
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  17
@@ -5147,7 +5101,7 @@ Model {
 		}
 		Line {
 		  Name			  "LongAccConfidence"
-		  ZOrder		  188
+		  ZOrder		  308
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  18
@@ -5156,7 +5110,7 @@ Model {
 		}
 		Line {
 		  Name			  "YawRate"
-		  ZOrder		  189
+		  ZOrder		  309
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  19
@@ -5165,7 +5119,7 @@ Model {
 		}
 		Line {
 		  Name			  "YawRateConfidence"
-		  ZOrder		  190
+		  ZOrder		  310
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  20
@@ -5174,7 +5128,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleRole"
-		  ZOrder		  191
+		  ZOrder		  311
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  21
@@ -5183,7 +5137,7 @@ Model {
 		}
 		Line {
 		  Name			  "ReferenceTime"
-		  ZOrder		  192
+		  ZOrder		  312
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  22
@@ -5192,7 +5146,7 @@ Model {
 		}
 		Line {
 		  Name			  "RearAxleLocation"
-		  ZOrder		  193
+		  ZOrder		  313
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  23
@@ -5201,7 +5155,7 @@ Model {
 		}
 		Line {
 		  Name			  "ResponseTimeConstant"
-		  ZOrder		  194
+		  ZOrder		  314
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  24
@@ -5210,7 +5164,7 @@ Model {
 		}
 		Line {
 		  Name			  "ResponseTimeDelay"
-		  ZOrder		  195
+		  ZOrder		  315
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  25
@@ -5219,7 +5173,7 @@ Model {
 		}
 		Line {
 		  Name			  "DetectionTime"
-		  ZOrder		  196
+		  ZOrder		  316
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  26
@@ -5228,7 +5182,7 @@ Model {
 		}
 		Line {
 		  Name			  "Termination"
-		  ZOrder		  197
+		  ZOrder		  317
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  27
@@ -5237,7 +5191,7 @@ Model {
 		}
 		Line {
 		  Name			  "RelevanceDistance"
-		  ZOrder		  198
+		  ZOrder		  318
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  28
@@ -5246,7 +5200,7 @@ Model {
 		}
 		Line {
 		  Name			  "RelevanceTrafficDirection"
-		  ZOrder		  199
+		  ZOrder		  319
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  29
@@ -5255,7 +5209,7 @@ Model {
 		}
 		Line {
 		  Name			  "ValidityDuration"
-		  ZOrder		  200
+		  ZOrder		  320
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  30
@@ -5264,7 +5218,7 @@ Model {
 		}
 		Line {
 		  Name			  "TransmissionIntervall"
-		  ZOrder		  201
+		  ZOrder		  321
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  31
@@ -5273,7 +5227,7 @@ Model {
 		}
 		Line {
 		  Name			  "InformationQuality"
-		  ZOrder		  202
+		  ZOrder		  322
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  32
@@ -5282,7 +5236,7 @@ Model {
 		}
 		Line {
 		  Name			  "CauseCode"
-		  ZOrder		  203
+		  ZOrder		  323
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  33
@@ -5291,7 +5245,7 @@ Model {
 		}
 		Line {
 		  Name			  "SubCauseCode"
-		  ZOrder		  204
+		  ZOrder		  324
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  34
@@ -5300,7 +5254,7 @@ Model {
 		}
 		Line {
 		  Name			  "LinkedCauseCode"
-		  ZOrder		  205
+		  ZOrder		  325
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  35
@@ -5309,7 +5263,7 @@ Model {
 		}
 		Line {
 		  Name			  "LinkedSubCauseCode"
-		  ZOrder		  206
+		  ZOrder		  326
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  36
@@ -5318,7 +5272,7 @@ Model {
 		}
 		Line {
 		  Name			  "LanePosition"
-		  ZOrder		  207
+		  ZOrder		  327
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  37
@@ -5327,7 +5281,7 @@ Model {
 		}
 		Line {
 		  Name			  "ExternalTemperature"
-		  ZOrder		  208
+		  ZOrder		  328
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  38
@@ -5336,7 +5290,7 @@ Model {
 		}
 		Line {
 		  Name			  "PositioningSolution"
-		  ZOrder		  209
+		  ZOrder		  329
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  39
@@ -5345,7 +5299,7 @@ Model {
 		}
 		Line {
 		  Name			  "ControllerType"
-		  ZOrder		  210
+		  ZOrder		  330
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  40
@@ -5354,7 +5308,7 @@ Model {
 		}
 		Line {
 		  Name			  "TargetLongAcc"
-		  ZOrder		  211
+		  ZOrder		  331
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  41
@@ -5363,7 +5317,7 @@ Model {
 		}
 		Line {
 		  Name			  "TimeHeadway"
-		  ZOrder		  212
+		  ZOrder		  332
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  42
@@ -5372,7 +5326,7 @@ Model {
 		}
 		Line {
 		  Name			  "CruiseSpeed"
-		  ZOrder		  213
+		  ZOrder		  333
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  43
@@ -5381,7 +5335,7 @@ Model {
 		}
 		Line {
 		  Name			  "ParticipantsReady"
-		  ZOrder		  214
+		  ZOrder		  334
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  44
@@ -5390,7 +5344,7 @@ Model {
 		}
 		Line {
 		  Name			  "StartPlatoon"
-		  ZOrder		  215
+		  ZOrder		  335
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  45
@@ -5399,7 +5353,7 @@ Model {
 		}
 		Line {
 		  Name			  "EndOfScenario"
-		  ZOrder		  216
+		  ZOrder		  336
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  46
@@ -5408,7 +5362,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioID"
-		  ZOrder		  217
+		  ZOrder		  337
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  47
@@ -5417,7 +5371,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioRange"
-		  ZOrder		  218
+		  ZOrder		  338
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  48
@@ -5426,7 +5380,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioBearing"
-		  ZOrder		  219
+		  ZOrder		  339
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  49
@@ -5435,7 +5389,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioRangeRate"
-		  ZOrder		  220
+		  ZOrder		  340
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  50
@@ -5444,7 +5398,7 @@ Model {
 		}
 		Line {
 		  Name			  "Lane"
-		  ZOrder		  221
+		  ZOrder		  341
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  51
@@ -5453,7 +5407,7 @@ Model {
 		}
 		Line {
 		  Name			  "ForwardID"
-		  ZOrder		  222
+		  ZOrder		  342
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  52
@@ -5462,7 +5416,7 @@ Model {
 		}
 		Line {
 		  Name			  "BackwardID"
-		  ZOrder		  223
+		  ZOrder		  343
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  53
@@ -5471,7 +5425,7 @@ Model {
 		}
 		Line {
 		  Name			  "MergeRequest"
-		  ZOrder		  224
+		  ZOrder		  344
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  54
@@ -5480,7 +5434,7 @@ Model {
 		}
 		Line {
 		  Name			  "SafeToMerge"
-		  ZOrder		  225
+		  ZOrder		  345
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  55
@@ -5489,7 +5443,7 @@ Model {
 		}
 		Line {
 		  Name			  "Flag"
-		  ZOrder		  226
+		  ZOrder		  346
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  56
@@ -5498,7 +5452,7 @@ Model {
 		}
 		Line {
 		  Name			  "FlagTail"
-		  ZOrder		  227
+		  ZOrder		  347
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  57
@@ -5507,7 +5461,7 @@ Model {
 		}
 		Line {
 		  Name			  "FlagHead"
-		  ZOrder		  228
+		  ZOrder		  348
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  58
@@ -5516,7 +5470,7 @@ Model {
 		}
 		Line {
 		  Name			  "PlatoonID"
-		  ZOrder		  229
+		  ZOrder		  349
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  59
@@ -5525,7 +5479,7 @@ Model {
 		}
 		Line {
 		  Name			  "DistanceTravelledCZ"
-		  ZOrder		  230
+		  ZOrder		  350
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  60
@@ -5534,7 +5488,7 @@ Model {
 		}
 		Line {
 		  Name			  "Intention"
-		  ZOrder		  231
+		  ZOrder		  351
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  61
@@ -5543,7 +5497,7 @@ Model {
 		}
 		Line {
 		  Name			  "Counter"
-		  ZOrder		  232
+		  ZOrder		  352
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  62
@@ -5552,7 +5506,7 @@ Model {
 		}
 		Line {
 		  Name			  "ContainerMaskDENM"
-		  ZOrder		  233
+		  ZOrder		  353
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  63
@@ -5561,7 +5515,7 @@ Model {
 		}
 		Line {
 		  Name			  "ManagementMaskDENM"
-		  ZOrder		  234
+		  ZOrder		  354
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  64
@@ -5570,7 +5524,7 @@ Model {
 		}
 		Line {
 		  Name			  "SituationMaskDENM"
-		  ZOrder		  235
+		  ZOrder		  355
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  65
@@ -5579,7 +5533,7 @@ Model {
 		}
 		Line {
 		  Name			  "AlacarteMaskDENM"
-		  ZOrder		  236
+		  ZOrder		  356
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  66
@@ -5588,7 +5542,7 @@ Model {
 		}
 		Line {
 		  Name			  "ContainerMaskICLCM"
-		  ZOrder		  237
+		  ZOrder		  357
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  67
@@ -5597,7 +5551,7 @@ Model {
 		}
 		Line {
 		  Name			  "LowFrequencyMaskICLCM"
-		  ZOrder		  238
+		  ZOrder		  358
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  68
@@ -5605,14 +5559,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  239
+		  ZOrder		  359
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  240
+		  ZOrder		  360
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -6581,7 +6535,7 @@ Model {
 	      SID		      "434"
 	      Name		      "TODO: Would be more elegant to feed buses directly into and out of the formatMessage block. But I "
 	      "haven't been able to figure it out."
-	      Position		      [554, 926, 1143, 941]
+	      Position		      [554, 926, 1143, 938]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -6608,6 +6562,7 @@ Model {
 	  Position		  [340, 213, 550, 397]
 	  ZOrder		  106
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "MessageConstructor"
 	    Location		    [12, 45, 2666, 1876]
@@ -8723,6 +8678,7 @@ Model {
 	  ZOrder		  227
 	  BlockMirror		  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "MessageConverter"
 	    Location		    [654, 200, 2350, 1542]
@@ -8849,10 +8805,11 @@ Model {
 	  ZOrder		  228
 	  BlockMirror		  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "MessageUnpack"
-	    Location		    [161, 45, 2493, 1641]
-	    Open		    off
+	    Location		    [0, 23, 1680, 997]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -8863,7 +8820,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "156"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MessageCAM"
@@ -8904,6 +8861,7 @@ Model {
 	      ShowName		      off
 	      Inputs		      "22"
 	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      BusCreator
@@ -8916,6 +8874,7 @@ Model {
 	      ShowName		      off
 	      Inputs		      "29"
 	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      BusCreator
@@ -8928,6 +8887,7 @@ Model {
 	      ShowName		      off
 	      Inputs		      "30"
 	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -8982,6 +8942,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"ParseCAM"
 		Location		[189, 219, 840, 949]
@@ -8997,7 +8958,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"109"
+		SIDHighWatermark	"112"
 		Block {
 		  BlockType		  Inport
 		  Name			  "MessageID1"
@@ -9198,23 +9159,24 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "379::108"
+		  SID			  "379::111"
 		  Ports			  [1, 1]
 		  Position		  [270, 930, 320, 970]
-		  ZOrder		  5
+		  ZOrder		  8
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "379::107"
+		  SID			  "379::110"
 		  Tag			  "Stateflow S-Function simulink_interface 2"
 		  Ports			  [22, 23]
 		  Position		  [180, 70, 230, 550]
-		  ZOrder		  4
+		  ZOrder		  7
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[22 23]"
-		  EnableBusSupport	  on
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -9351,9 +9313,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "379::109"
+		  SID			  "379::112"
 		  Position		  [460, 941, 480, 959]
-		  ZOrder		  6
+		  ZOrder		  9
 		}
 		Block {
 		  BlockType		  Outport
@@ -9553,154 +9515,154 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  47
+		  ZOrder		  93
 		  SrcBlock		  "MessageID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  48
+		  ZOrder		  94
 		  SrcBlock		  "StationID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  49
+		  ZOrder		  95
 		  SrcBlock		  "GenerationDeltaTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  ZOrder		  50
+		  ZOrder		  96
 		  SrcBlock		  "ContainerMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
-		  ZOrder		  51
+		  ZOrder		  97
 		  SrcBlock		  "StationType1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
-		  ZOrder		  52
+		  ZOrder		  98
 		  SrcBlock		  "Latitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
-		  ZOrder		  53
+		  ZOrder		  99
 		  SrcBlock		  "Longitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
 		}
 		Line {
-		  ZOrder		  54
+		  ZOrder		  100
 		  SrcBlock		  "SemiMajorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  8
 		}
 		Line {
-		  ZOrder		  55
+		  ZOrder		  101
 		  SrcBlock		  "SemiMinorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  9
 		}
 		Line {
-		  ZOrder		  56
+		  ZOrder		  102
 		  SrcBlock		  "SemiMajorOrientation1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  10
 		}
 		Line {
-		  ZOrder		  57
+		  ZOrder		  103
 		  SrcBlock		  "Altitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  11
 		}
 		Line {
-		  ZOrder		  58
+		  ZOrder		  104
 		  SrcBlock		  "Heading1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  12
 		}
 		Line {
-		  ZOrder		  59
+		  ZOrder		  105
 		  SrcBlock		  "HeadingConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  13
 		}
 		Line {
-		  ZOrder		  60
+		  ZOrder		  106
 		  SrcBlock		  "Speed1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  14
 		}
 		Line {
-		  ZOrder		  61
+		  ZOrder		  107
 		  SrcBlock		  "SpeedConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  15
 		}
 		Line {
-		  ZOrder		  62
+		  ZOrder		  108
 		  SrcBlock		  "VehicleLength1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  16
 		}
 		Line {
-		  ZOrder		  63
+		  ZOrder		  109
 		  SrcBlock		  "VehicleWidth1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  17
 		}
 		Line {
-		  ZOrder		  64
+		  ZOrder		  110
 		  SrcBlock		  "LongAcceleration1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  18
 		}
 		Line {
-		  ZOrder		  65
+		  ZOrder		  111
 		  SrcBlock		  "LongAccelerationConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  19
 		}
 		Line {
-		  ZOrder		  66
+		  ZOrder		  112
 		  SrcBlock		  "YawRate1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  20
 		}
 		Line {
-		  ZOrder		  67
+		  ZOrder		  113
 		  SrcBlock		  "YawRateConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  21
 		}
 		Line {
-		  ZOrder		  68
+		  ZOrder		  114
 		  SrcBlock		  "VehicleRole1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -9708,7 +9670,7 @@ Model {
 		}
 		Line {
 		  Name			  "MessageID"
-		  ZOrder		  69
+		  ZOrder		  115
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -9717,7 +9679,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationID"
-		  ZOrder		  70
+		  ZOrder		  116
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  3
@@ -9726,7 +9688,7 @@ Model {
 		}
 		Line {
 		  Name			  "GenerationDeltaTime"
-		  ZOrder		  71
+		  ZOrder		  117
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  4
@@ -9735,7 +9697,7 @@ Model {
 		}
 		Line {
 		  Name			  "ContainerMask"
-		  ZOrder		  72
+		  ZOrder		  118
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  5
@@ -9744,7 +9706,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationType"
-		  ZOrder		  73
+		  ZOrder		  119
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  6
@@ -9753,7 +9715,7 @@ Model {
 		}
 		Line {
 		  Name			  "Latitude"
-		  ZOrder		  74
+		  ZOrder		  120
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  7
@@ -9762,7 +9724,7 @@ Model {
 		}
 		Line {
 		  Name			  "Longitude"
-		  ZOrder		  75
+		  ZOrder		  121
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  8
@@ -9771,7 +9733,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorConfidence"
-		  ZOrder		  76
+		  ZOrder		  122
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  9
@@ -9780,7 +9742,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMinorConfidence"
-		  ZOrder		  77
+		  ZOrder		  123
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  10
@@ -9789,7 +9751,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorOrientation"
-		  ZOrder		  78
+		  ZOrder		  124
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  11
@@ -9798,7 +9760,7 @@ Model {
 		}
 		Line {
 		  Name			  "Altitude"
-		  ZOrder		  79
+		  ZOrder		  125
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  12
@@ -9807,7 +9769,7 @@ Model {
 		}
 		Line {
 		  Name			  "Heading"
-		  ZOrder		  80
+		  ZOrder		  126
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  13
@@ -9816,7 +9778,7 @@ Model {
 		}
 		Line {
 		  Name			  "HeadingConfidence"
-		  ZOrder		  81
+		  ZOrder		  127
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  14
@@ -9825,7 +9787,7 @@ Model {
 		}
 		Line {
 		  Name			  "Speed"
-		  ZOrder		  82
+		  ZOrder		  128
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  15
@@ -9834,7 +9796,7 @@ Model {
 		}
 		Line {
 		  Name			  "SpeedConfidence"
-		  ZOrder		  83
+		  ZOrder		  129
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  16
@@ -9843,7 +9805,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleLength"
-		  ZOrder		  84
+		  ZOrder		  130
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  17
@@ -9852,7 +9814,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleWidth"
-		  ZOrder		  85
+		  ZOrder		  131
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  18
@@ -9861,7 +9823,7 @@ Model {
 		}
 		Line {
 		  Name			  "LongAcceleration"
-		  ZOrder		  86
+		  ZOrder		  132
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  19
@@ -9870,7 +9832,7 @@ Model {
 		}
 		Line {
 		  Name			  "LongAccelerationConfidence"
-		  ZOrder		  87
+		  ZOrder		  133
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  20
@@ -9879,7 +9841,7 @@ Model {
 		}
 		Line {
 		  Name			  "YawRate"
-		  ZOrder		  88
+		  ZOrder		  134
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  21
@@ -9888,7 +9850,7 @@ Model {
 		}
 		Line {
 		  Name			  "YawRateConfidence"
-		  ZOrder		  89
+		  ZOrder		  135
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  22
@@ -9897,7 +9859,7 @@ Model {
 		}
 		Line {
 		  Name			  "VehicleRole"
-		  ZOrder		  90
+		  ZOrder		  136
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  23
@@ -9905,14 +9867,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  91
+		  ZOrder		  137
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  92
+		  ZOrder		  138
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -9934,6 +9896,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"ParseDENM"
 		Location		[189, 219, 840, 949]
@@ -9949,7 +9912,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"79"
+		SIDHighWatermark	"82"
 		Block {
 		  BlockType		  Inport
 		  Name			  "MessageID1"
@@ -10213,23 +10176,24 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "381::78"
+		  SID			  "381::81"
 		  Ports			  [1, 1]
 		  Position		  [270, 1180, 320, 1220]
-		  ZOrder		  5
+		  ZOrder		  8
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "381::77"
+		  SID			  "381::80"
 		  Tag			  "Stateflow S-Function simulink_interface 1"
 		  Ports			  [29, 30]
 		  Position		  [180, 50, 230, 670]
-		  ZOrder		  4
+		  ZOrder		  7
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[29 30]"
-		  EnableBusSupport	  on
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -10408,9 +10372,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "381::79"
+		  SID			  "381::82"
 		  Position		  [460, 1191, 480, 1209]
-		  ZOrder		  6
+		  ZOrder		  9
 		}
 		Block {
 		  BlockType		  Outport
@@ -10673,203 +10637,203 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  61
+		  ZOrder		  121
 		  SrcBlock		  "MessageID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  62
+		  ZOrder		  122
 		  SrcBlock		  "StationID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  63
+		  ZOrder		  123
 		  SrcBlock		  "GenerationDeltaTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  ZOrder		  64
+		  ZOrder		  124
 		  SrcBlock		  "ContainerMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
-		  ZOrder		  65
+		  ZOrder		  125
 		  SrcBlock		  "ManagementMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
-		  ZOrder		  66
+		  ZOrder		  126
 		  SrcBlock		  "DetectionTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
-		  ZOrder		  67
+		  ZOrder		  127
 		  SrcBlock		  "ReferenceTime1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
 		}
 		Line {
-		  ZOrder		  68
+		  ZOrder		  128
 		  SrcBlock		  "Termination1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  8
 		}
 		Line {
-		  ZOrder		  69
+		  ZOrder		  129
 		  SrcBlock		  "Latitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  9
 		}
 		Line {
-		  ZOrder		  70
+		  ZOrder		  130
 		  SrcBlock		  "Longitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  10
 		}
 		Line {
-		  ZOrder		  71
+		  ZOrder		  131
 		  SrcBlock		  "SemiMajorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  11
 		}
 		Line {
-		  ZOrder		  72
+		  ZOrder		  132
 		  SrcBlock		  "SemiMinorConfidence1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  12
 		}
 		Line {
-		  ZOrder		  73
+		  ZOrder		  133
 		  SrcBlock		  "SemiMajorOrientation1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  13
 		}
 		Line {
-		  ZOrder		  74
+		  ZOrder		  134
 		  SrcBlock		  "Altitude1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  14
 		}
 		Line {
-		  ZOrder		  75
+		  ZOrder		  135
 		  SrcBlock		  "RelevanceDistance1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  15
 		}
 		Line {
-		  ZOrder		  76
+		  ZOrder		  136
 		  SrcBlock		  "RelevanceTrafficDirection1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  16
 		}
 		Line {
-		  ZOrder		  77
+		  ZOrder		  137
 		  SrcBlock		  "ValidityDuration1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  17
 		}
 		Line {
-		  ZOrder		  78
+		  ZOrder		  138
 		  SrcBlock		  "TransmissionIntervall1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  18
 		}
 		Line {
-		  ZOrder		  79
+		  ZOrder		  139
 		  SrcBlock		  "StationType1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  19
 		}
 		Line {
-		  ZOrder		  80
+		  ZOrder		  140
 		  SrcBlock		  "SituationMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  20
 		}
 		Line {
-		  ZOrder		  81
+		  ZOrder		  141
 		  SrcBlock		  "InformationQuality1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  21
 		}
 		Line {
-		  ZOrder		  82
+		  ZOrder		  142
 		  SrcBlock		  "CauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  22
 		}
 		Line {
-		  ZOrder		  83
+		  ZOrder		  143
 		  SrcBlock		  "SubCauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  23
 		}
 		Line {
-		  ZOrder		  84
+		  ZOrder		  144
 		  SrcBlock		  "LinkedCauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  24
 		}
 		Line {
-		  ZOrder		  85
+		  ZOrder		  145
 		  SrcBlock		  "LinkedSubCauseCode1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  25
 		}
 		Line {
-		  ZOrder		  86
+		  ZOrder		  146
 		  SrcBlock		  "AlacarteMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  26
 		}
 		Line {
-		  ZOrder		  87
+		  ZOrder		  147
 		  SrcBlock		  "LanePosition1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  27
 		}
 		Line {
-		  ZOrder		  88
+		  ZOrder		  148
 		  SrcBlock		  "ExternalTemperature1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  28
 		}
 		Line {
-		  ZOrder		  89
+		  ZOrder		  149
 		  SrcBlock		  "PositioningSolution1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -10877,7 +10841,7 @@ Model {
 		}
 		Line {
 		  Name			  "MessageID"
-		  ZOrder		  90
+		  ZOrder		  150
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -10886,7 +10850,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationID"
-		  ZOrder		  91
+		  ZOrder		  151
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  3
@@ -10895,7 +10859,7 @@ Model {
 		}
 		Line {
 		  Name			  "GenerationDeltaTime"
-		  ZOrder		  92
+		  ZOrder		  152
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  4
@@ -10904,7 +10868,7 @@ Model {
 		}
 		Line {
 		  Name			  "ContainerMask"
-		  ZOrder		  93
+		  ZOrder		  153
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  5
@@ -10913,7 +10877,7 @@ Model {
 		}
 		Line {
 		  Name			  "ManagementMask"
-		  ZOrder		  94
+		  ZOrder		  154
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  6
@@ -10922,7 +10886,7 @@ Model {
 		}
 		Line {
 		  Name			  "DetectionTime"
-		  ZOrder		  95
+		  ZOrder		  155
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  7
@@ -10931,7 +10895,7 @@ Model {
 		}
 		Line {
 		  Name			  "ReferenceTime"
-		  ZOrder		  96
+		  ZOrder		  156
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  8
@@ -10940,7 +10904,7 @@ Model {
 		}
 		Line {
 		  Name			  "Termination"
-		  ZOrder		  97
+		  ZOrder		  157
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  9
@@ -10949,7 +10913,7 @@ Model {
 		}
 		Line {
 		  Name			  "Latitude"
-		  ZOrder		  98
+		  ZOrder		  158
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  10
@@ -10958,7 +10922,7 @@ Model {
 		}
 		Line {
 		  Name			  "Longitude"
-		  ZOrder		  99
+		  ZOrder		  159
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  11
@@ -10967,7 +10931,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorConfidence"
-		  ZOrder		  100
+		  ZOrder		  160
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  12
@@ -10976,7 +10940,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMinorConfidence"
-		  ZOrder		  101
+		  ZOrder		  161
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  13
@@ -10985,7 +10949,7 @@ Model {
 		}
 		Line {
 		  Name			  "SemiMajorOrientation"
-		  ZOrder		  102
+		  ZOrder		  162
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  14
@@ -10994,7 +10958,7 @@ Model {
 		}
 		Line {
 		  Name			  "Altitude"
-		  ZOrder		  103
+		  ZOrder		  163
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  15
@@ -11003,7 +10967,7 @@ Model {
 		}
 		Line {
 		  Name			  "RelevanceDistance"
-		  ZOrder		  104
+		  ZOrder		  164
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  16
@@ -11012,7 +10976,7 @@ Model {
 		}
 		Line {
 		  Name			  "RelevanceTrafficDirection"
-		  ZOrder		  105
+		  ZOrder		  165
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  17
@@ -11021,7 +10985,7 @@ Model {
 		}
 		Line {
 		  Name			  "ValidityDuration"
-		  ZOrder		  106
+		  ZOrder		  166
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  18
@@ -11030,7 +10994,7 @@ Model {
 		}
 		Line {
 		  Name			  "TransmissionIntervall"
-		  ZOrder		  107
+		  ZOrder		  167
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  19
@@ -11039,7 +11003,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationType"
-		  ZOrder		  108
+		  ZOrder		  168
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  20
@@ -11048,7 +11012,7 @@ Model {
 		}
 		Line {
 		  Name			  "SituationMask"
-		  ZOrder		  109
+		  ZOrder		  169
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  21
@@ -11057,7 +11021,7 @@ Model {
 		}
 		Line {
 		  Name			  "InformationQuality"
-		  ZOrder		  110
+		  ZOrder		  170
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  22
@@ -11066,7 +11030,7 @@ Model {
 		}
 		Line {
 		  Name			  "CauseCode"
-		  ZOrder		  111
+		  ZOrder		  171
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  23
@@ -11075,7 +11039,7 @@ Model {
 		}
 		Line {
 		  Name			  "SubCauseCode"
-		  ZOrder		  112
+		  ZOrder		  172
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  24
@@ -11084,7 +11048,7 @@ Model {
 		}
 		Line {
 		  Name			  "LinkedCauseCode"
-		  ZOrder		  113
+		  ZOrder		  173
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  25
@@ -11093,7 +11057,7 @@ Model {
 		}
 		Line {
 		  Name			  "LinkedSubCauseCode"
-		  ZOrder		  114
+		  ZOrder		  174
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  26
@@ -11102,7 +11066,7 @@ Model {
 		}
 		Line {
 		  Name			  "AlacarteMask"
-		  ZOrder		  115
+		  ZOrder		  175
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  27
@@ -11111,7 +11075,7 @@ Model {
 		}
 		Line {
 		  Name			  "LanePosition"
-		  ZOrder		  116
+		  ZOrder		  176
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  28
@@ -11120,7 +11084,7 @@ Model {
 		}
 		Line {
 		  Name			  "ExternalTemperature"
-		  ZOrder		  117
+		  ZOrder		  177
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  29
@@ -11129,7 +11093,7 @@ Model {
 		}
 		Line {
 		  Name			  "PositioningSolution"
-		  ZOrder		  118
+		  ZOrder		  178
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  30
@@ -11137,14 +11101,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  119
+		  ZOrder		  179
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  120
+		  ZOrder		  180
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -11166,6 +11130,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"ParseICLCM"
 		Location		[189, 219, 840, 949]
@@ -11181,7 +11146,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"145"
+		SIDHighWatermark	"148"
 		Block {
 		  BlockType		  Inport
 		  Name			  "MessageID1"
@@ -11454,23 +11419,24 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "382::144"
+		  SID			  "382::147"
 		  Ports			  [1, 1]
 		  Position		  [270, 1215, 320, 1255]
-		  ZOrder		  5
+		  ZOrder		  8
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "382::143"
+		  SID			  "382::146"
 		  Tag			  "Stateflow S-Function simulink_interface 3"
 		  Ports			  [30, 31]
 		  Position		  [180, 50, 230, 690]
-		  ZOrder		  4
+		  ZOrder		  7
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[30 31]"
-		  EnableBusSupport	  on
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -11655,9 +11621,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "382::145"
+		  SID			  "382::148"
 		  Position		  [460, 1226, 480, 1244]
-		  ZOrder		  6
+		  ZOrder		  9
 		}
 		Block {
 		  BlockType		  Outport
@@ -11929,210 +11895,210 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  63
+		  ZOrder		  125
 		  SrcBlock		  "MessageID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  64
+		  ZOrder		  126
 		  SrcBlock		  "StationID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  65
+		  ZOrder		  127
 		  SrcBlock		  "ContainerMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  ZOrder		  66
+		  ZOrder		  128
 		  SrcBlock		  "RearAxleLocation1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
-		  ZOrder		  67
+		  ZOrder		  129
 		  SrcBlock		  "ControllerType1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
-		  ZOrder		  68
+		  ZOrder		  130
 		  SrcBlock		  "ResponseTimeConstant1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
-		  ZOrder		  69
+		  ZOrder		  131
 		  SrcBlock		  "ResponseTimeDelay1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
 		}
 		Line {
-		  ZOrder		  70
+		  ZOrder		  132
 		  SrcBlock		  "TargetLongAcceleration1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  8
 		}
 		Line {
-		  ZOrder		  71
+		  ZOrder		  133
 		  SrcBlock		  "TimeHeadway1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  9
 		}
 		Line {
-		  ZOrder		  72
+		  ZOrder		  134
 		  SrcBlock		  "CruiseSpeed1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  10
 		}
 		Line {
-		  ZOrder		  73
+		  ZOrder		  135
 		  SrcBlock		  "LowFrequencyMask1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  11
 		}
 		Line {
-		  ZOrder		  74
+		  ZOrder		  136
 		  SrcBlock		  "ParticipantsReady1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  12
 		}
 		Line {
-		  ZOrder		  75
+		  ZOrder		  137
 		  SrcBlock		  "StartPlatoon1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  13
 		}
 		Line {
-		  ZOrder		  76
+		  ZOrder		  138
 		  SrcBlock		  "EndOfScenario1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  14
 		}
 		Line {
-		  ZOrder		  77
+		  ZOrder		  139
 		  SrcBlock		  "MioID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  15
 		}
 		Line {
-		  ZOrder		  78
+		  ZOrder		  140
 		  SrcBlock		  "MioRange1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  16
 		}
 		Line {
-		  ZOrder		  79
+		  ZOrder		  141
 		  SrcBlock		  "MioBearing1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  17
 		}
 		Line {
-		  ZOrder		  80
+		  ZOrder		  142
 		  SrcBlock		  "MioRangeRate1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  18
 		}
 		Line {
-		  ZOrder		  81
+		  ZOrder		  143
 		  SrcBlock		  "Lane1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  19
 		}
 		Line {
-		  ZOrder		  82
+		  ZOrder		  144
 		  SrcBlock		  "ForwardID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  20
 		}
 		Line {
-		  ZOrder		  83
+		  ZOrder		  145
 		  SrcBlock		  "BackwardID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  21
 		}
 		Line {
-		  ZOrder		  84
+		  ZOrder		  146
 		  SrcBlock		  "MergeRequest1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  22
 		}
 		Line {
-		  ZOrder		  85
+		  ZOrder		  147
 		  SrcBlock		  "SafeToMerge1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  23
 		}
 		Line {
-		  ZOrder		  86
+		  ZOrder		  148
 		  SrcBlock		  "Flag1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  24
 		}
 		Line {
-		  ZOrder		  87
+		  ZOrder		  149
 		  SrcBlock		  "FlagTail1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  25
 		}
 		Line {
-		  ZOrder		  88
+		  ZOrder		  150
 		  SrcBlock		  "FlagHead1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  26
 		}
 		Line {
-		  ZOrder		  89
+		  ZOrder		  151
 		  SrcBlock		  "PlatoonID1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  27
 		}
 		Line {
-		  ZOrder		  90
+		  ZOrder		  152
 		  SrcBlock		  "DistanceTravelledInCz1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  28
 		}
 		Line {
-		  ZOrder		  91
+		  ZOrder		  153
 		  SrcBlock		  "Intention1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  29
 		}
 		Line {
-		  ZOrder		  92
+		  ZOrder		  154
 		  SrcBlock		  "Counter1"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -12140,7 +12106,7 @@ Model {
 		}
 		Line {
 		  Name			  "MessageID"
-		  ZOrder		  93
+		  ZOrder		  155
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -12149,7 +12115,7 @@ Model {
 		}
 		Line {
 		  Name			  "StationID"
-		  ZOrder		  94
+		  ZOrder		  156
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  3
@@ -12158,7 +12124,7 @@ Model {
 		}
 		Line {
 		  Name			  "ContainerMask"
-		  ZOrder		  95
+		  ZOrder		  157
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  4
@@ -12167,7 +12133,7 @@ Model {
 		}
 		Line {
 		  Name			  "RearAxleLocation"
-		  ZOrder		  96
+		  ZOrder		  158
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  5
@@ -12176,7 +12142,7 @@ Model {
 		}
 		Line {
 		  Name			  "ControllerType"
-		  ZOrder		  97
+		  ZOrder		  159
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  6
@@ -12185,7 +12151,7 @@ Model {
 		}
 		Line {
 		  Name			  "ResponseTimeConstant"
-		  ZOrder		  98
+		  ZOrder		  160
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  7
@@ -12194,7 +12160,7 @@ Model {
 		}
 		Line {
 		  Name			  "ResponseTimeDelay"
-		  ZOrder		  99
+		  ZOrder		  161
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  8
@@ -12203,7 +12169,7 @@ Model {
 		}
 		Line {
 		  Name			  "TargetLongAcceleration"
-		  ZOrder		  100
+		  ZOrder		  162
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  9
@@ -12212,7 +12178,7 @@ Model {
 		}
 		Line {
 		  Name			  "TimeHeadway"
-		  ZOrder		  101
+		  ZOrder		  163
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  10
@@ -12221,7 +12187,7 @@ Model {
 		}
 		Line {
 		  Name			  "CruiseSpeed"
-		  ZOrder		  102
+		  ZOrder		  164
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  11
@@ -12230,7 +12196,7 @@ Model {
 		}
 		Line {
 		  Name			  "LowFrequencyMask"
-		  ZOrder		  103
+		  ZOrder		  165
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  12
@@ -12239,7 +12205,7 @@ Model {
 		}
 		Line {
 		  Name			  "ParticipantsReady"
-		  ZOrder		  104
+		  ZOrder		  166
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  13
@@ -12248,7 +12214,7 @@ Model {
 		}
 		Line {
 		  Name			  "StartPlatoon"
-		  ZOrder		  105
+		  ZOrder		  167
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  14
@@ -12257,7 +12223,7 @@ Model {
 		}
 		Line {
 		  Name			  "EndOfScenario"
-		  ZOrder		  106
+		  ZOrder		  168
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  15
@@ -12266,7 +12232,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioID"
-		  ZOrder		  107
+		  ZOrder		  169
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  16
@@ -12275,7 +12241,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioRange"
-		  ZOrder		  108
+		  ZOrder		  170
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  17
@@ -12284,7 +12250,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioBearing"
-		  ZOrder		  109
+		  ZOrder		  171
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  18
@@ -12293,7 +12259,7 @@ Model {
 		}
 		Line {
 		  Name			  "MioRangeRate"
-		  ZOrder		  110
+		  ZOrder		  172
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  19
@@ -12302,7 +12268,7 @@ Model {
 		}
 		Line {
 		  Name			  "Lane"
-		  ZOrder		  111
+		  ZOrder		  173
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  20
@@ -12311,7 +12277,7 @@ Model {
 		}
 		Line {
 		  Name			  "ForwardID"
-		  ZOrder		  112
+		  ZOrder		  174
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  21
@@ -12320,7 +12286,7 @@ Model {
 		}
 		Line {
 		  Name			  "BackwardID"
-		  ZOrder		  113
+		  ZOrder		  175
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  22
@@ -12329,7 +12295,7 @@ Model {
 		}
 		Line {
 		  Name			  "MergeRequest"
-		  ZOrder		  114
+		  ZOrder		  176
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  23
@@ -12338,7 +12304,7 @@ Model {
 		}
 		Line {
 		  Name			  "SafeToMerge"
-		  ZOrder		  115
+		  ZOrder		  177
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  24
@@ -12347,7 +12313,7 @@ Model {
 		}
 		Line {
 		  Name			  "Flag"
-		  ZOrder		  116
+		  ZOrder		  178
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  25
@@ -12356,7 +12322,7 @@ Model {
 		}
 		Line {
 		  Name			  "FlagTail"
-		  ZOrder		  117
+		  ZOrder		  179
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  26
@@ -12365,7 +12331,7 @@ Model {
 		}
 		Line {
 		  Name			  "FlagHead"
-		  ZOrder		  118
+		  ZOrder		  180
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  27
@@ -12374,7 +12340,7 @@ Model {
 		}
 		Line {
 		  Name			  "PlatoonID"
-		  ZOrder		  119
+		  ZOrder		  181
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  28
@@ -12383,7 +12349,7 @@ Model {
 		}
 		Line {
 		  Name			  "DistanceTravelledInCz"
-		  ZOrder		  120
+		  ZOrder		  182
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  29
@@ -12392,7 +12358,7 @@ Model {
 		}
 		Line {
 		  Name			  "Intention"
-		  ZOrder		  121
+		  ZOrder		  183
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  30
@@ -12401,7 +12367,7 @@ Model {
 		}
 		Line {
 		  Name			  "Counter"
-		  ZOrder		  122
+		  ZOrder		  184
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  31
@@ -12409,14 +12375,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  123
+		  ZOrder		  185
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  124
+		  ZOrder		  186
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -14612,7 +14578,7 @@ Model {
 	      SID		      "435"
 	      Name		      "TODO: We want some input validation here to avoid feeding unrelated packets\ninto the sensor fusio"
 	      "n or application!"
-	      Position		      [1103, 42, 1453, 70]
+	      Position		      [1103, 42, 1451, 64]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -14631,6 +14597,7 @@ Model {
 	  ZOrder		  109
 	  BlockMirror		  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Receive"
 	    Location		    [1, 50, 1599, 899]
@@ -14892,6 +14859,7 @@ Model {
 	  Position		  [1070, 104, 1245, 626]
 	  ZOrder		  108
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Transmit"
 	    Location		    [1, 50, 1599, 899]
@@ -14970,6 +14938,7 @@ Model {
 	      Position		      [1115, 82, 1315, 208]
 	      ZOrder		      4
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"SendCAM"
 		Location		[1, 50, 1599, 899]
@@ -15038,6 +15007,7 @@ Model {
 	      Position		      [1115, 332, 1315, 458]
 	      ZOrder		      83
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"SendDENM"
 		Location		[1, 50, 1599, 899]
@@ -15106,6 +15076,7 @@ Model {
 	      Position		      [1115, 572, 1315, 698]
 	      ZOrder		      82
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"SendICLCM"
 		Location		[1, 50, 1599, 899]
@@ -15392,7 +15363,7 @@ Model {
 	Annotation {
 	  SID			  "436"
 	  Name			  "TODO: Replace with actual  message frequencies."
-	  Position		  [906, 546, 1132, 561]
+	  Position		  [906, 546, 1131, 558]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -15409,6 +15380,7 @@ Model {
       ZOrder		      6
       ForegroundColor	      "red"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"SensorFusion"
 	Location		[1, 50, 1599, 899]
@@ -15443,6 +15415,7 @@ Model {
 	  ShowName		  off
 	  Inputs		  "24"
 	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
 	}
 	Block {
 	  BlockType		  BusSelector
@@ -15474,6 +15447,7 @@ Model {
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
 	  System {
 	    Name		    "MATLAB Function"
 	    Location		    [189, 219, 840, 949]
@@ -15489,7 +15463,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "46"
+	    SIDHighWatermark	    "49"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "seed"
@@ -15501,23 +15475,24 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "418::45"
+	      SID		      "418::48"
 	      Ports		      [1, 1]
 	      Position		      [270, 1000, 320, 1040]
-	      ZOrder		      5
+	      ZOrder		      8
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "418::44"
+	      SID		      "418::47"
 	      Tag		      "Stateflow S-Function simulink_interface 6"
 	      Ports		      [1, 25]
 	      Position		      [180, 60, 230, 580]
-	      ZOrder		      4
+	      ZOrder		      7
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[1 25]"
-	      EnableBusSupport	      on
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
 	      Port {
 		PortNumber		2
 		Name			"StationID"
@@ -15666,9 +15641,9 @@ Model {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "418::46"
+	      SID		      "418::49"
 	      Position		      [460, 1011, 480, 1029]
-	      ZOrder		      6
+	      ZOrder		      9
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -15886,7 +15861,7 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      28
+	      ZOrder		      55
 	      SrcBlock		      "seed"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
@@ -15894,7 +15869,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "StationID"
-	      ZOrder		      29
+	      ZOrder		      56
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -15903,7 +15878,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "GenerationDeltaTime"
-	      ZOrder		      30
+	      ZOrder		      57
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      3
@@ -15912,7 +15887,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "StationType"
-	      ZOrder		      31
+	      ZOrder		      58
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
@@ -15921,7 +15896,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Latitude"
-	      ZOrder		      32
+	      ZOrder		      59
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      5
@@ -15930,7 +15905,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Longitude"
-	      ZOrder		      33
+	      ZOrder		      60
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      6
@@ -15939,7 +15914,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SemiMajorConfidence"
-	      ZOrder		      34
+	      ZOrder		      61
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      7
@@ -15948,7 +15923,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SemiMinorConfidence"
-	      ZOrder		      35
+	      ZOrder		      62
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      8
@@ -15957,7 +15932,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SemiMajorOrientation"
-	      ZOrder		      36
+	      ZOrder		      63
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      9
@@ -15966,7 +15941,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Altitude"
-	      ZOrder		      37
+	      ZOrder		      64
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      10
@@ -15975,7 +15950,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Heading"
-	      ZOrder		      38
+	      ZOrder		      65
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      11
@@ -15984,7 +15959,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "HeadingConfidence"
-	      ZOrder		      39
+	      ZOrder		      66
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      12
@@ -15993,7 +15968,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "Speed"
-	      ZOrder		      40
+	      ZOrder		      67
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      13
@@ -16002,7 +15977,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SpeedConfidence"
-	      ZOrder		      41
+	      ZOrder		      68
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      14
@@ -16011,7 +15986,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "VehicleLength"
-	      ZOrder		      42
+	      ZOrder		      69
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      15
@@ -16020,7 +15995,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "VehicleWidth"
-	      ZOrder		      43
+	      ZOrder		      70
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      16
@@ -16029,7 +16004,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "LongAcc"
-	      ZOrder		      44
+	      ZOrder		      71
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      17
@@ -16038,7 +16013,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "LongAccConfidence"
-	      ZOrder		      45
+	      ZOrder		      72
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      18
@@ -16047,7 +16022,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "YawRate"
-	      ZOrder		      46
+	      ZOrder		      73
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      19
@@ -16056,7 +16031,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "YawRateConfidence"
-	      ZOrder		      47
+	      ZOrder		      74
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      20
@@ -16065,7 +16040,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "VehicleRole"
-	      ZOrder		      48
+	      ZOrder		      75
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      21
@@ -16074,7 +16049,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ReferenceTime"
-	      ZOrder		      49
+	      ZOrder		      76
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      22
@@ -16083,7 +16058,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "RearAxleLocation"
-	      ZOrder		      50
+	      ZOrder		      77
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      23
@@ -16092,7 +16067,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ResponseTimeConstant"
-	      ZOrder		      51
+	      ZOrder		      78
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      24
@@ -16101,7 +16076,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ResponseTimeDelay"
-	      ZOrder		      52
+	      ZOrder		      79
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      25
@@ -16109,14 +16084,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      53
+	      ZOrder		      80
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      54
+	      ZOrder		      81
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -16142,27 +16117,12 @@ Model {
 	  Ports			  [1]
 	  Position		  [865, 1019, 895, 1051]
 	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [674, 462, 998, 701]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  SaveName		  "ScopeData5"
-	  DataFormat		  "StructureWithTime"
-	  SampleTime		  "0"
+	  ScopeSpecificationString "C++SS(StrPVP('Location','[674, 462, 998, 701]'),StrPVP('Open','off'),MxPVP('AxesTitles',2"
+	  "4,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.5 0.5 0.5]'',''Axes"
+	  "Color'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineSt"
+	  "yles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|non"
+	  "e'')'),StrPVP('SaveName','ScopeData5'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),"
+	  "StrPVP('LimitDataPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
 	}
 	Block {
 	  BlockType		  Sin
@@ -16454,7 +16414,7 @@ Model {
 }
 #Finite State Machines
 #
-#   Stateflow 80000005
+#   Stateflow 80000006
 #
 #
 Stateflow {
@@ -16464,7 +16424,7 @@ Stateflow {
     created		    "29-Oct-2015 11:53:54"
     isLibrary		    0
     firstTarget		    377
-    sfVersion		    80000005
+    sfVersion		    80000006
   }
   chart {
     id			    2
@@ -17854,7 +17814,10 @@ Stateflow {
     firstTransition	    112
     firstJunction	    111
     viewObj		    65
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    47
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -17888,21 +17851,21 @@ Stateflow {
       "fidence1, YawRate1, YawRateConfidence1, VehicleRole1)\n%parseCAM - Parses a local CAM message. Used to do some c"
       "onversion in order\n%to make the values compatible with the Simulink model.\n\nMessageID = MessageID1;\nStationI"
       "D = double(StationID1);\nGenerationDeltaTime = double(GenerationDeltaTime1);\nContainerMask = ContainerMask1;\nS"
-      "tationType = StationType1;\nLatitude = double(Latitude1);\nLongitude = double(Longitude1);\nSemiMajorConfidence "
-      "= double(SemiMajorConfidence1) / 100; % From cm to m\nSemiMinorConfidence = double(SemiMinorConfidence1) / 100; "
-      "% From cm to m\nSemiMajorOrientation = double(SemiMajorOrientation1) / 100; % From cm to m\nAltitude = double(Al"
-      "titude1);\nHeading = double(Heading1);\nHeadingConfidence = double(HeadingConfidence1) / 10; % From 0.1m to m\nS"
-      "peed = double(Speed1) / 100; % From cm to m\nSpeedConfidence = double(SpeedConfidence1) / 100;  % From cm to m\n"
-      "VehicleLength = double(VehicleLength1) / 10; % From 0.1m to m\nVehicleWidth = double(VehicleWidth1) / 10; % From"
-      " 0.1 to m\nLongAcceleration = double(LongAcceleration1) / 10; % From 0.1m to m\nLongAccelerationConfidence = dou"
-      "ble(LongAccelerationConfidence1) / 10;  % From 0.1m to m\nYawRate = double(YawRate1) / 100;\nYawRateConfidence ="
-      " 0;\nswitch YawRateConfidence1\n    case 0\n        YawRateConfidence = 0.01;\n    case 1\n        YawRateConfid"
-      "ence = 0.05;\n    case 2\n        YawRateConfidence = 0.1;\n    case 3\n        YawRateConfidence = 1;\n    case"
-      " 4\n        YawRateConfidence = 5;\n    case 5\n        YawRateConfidence = 10;\n    case 6\n        YawRateConf"
-      "idence = 100;\n    otherwise\n        YawRateConfidence = 200; % TODO: Is this correct?\nend\n\nVehicleRole = do"
-      "uble(VehicleRole1);\n\n% Use ContainerMask to insert NaNs for unused values\nif bitget(ContainerMask1, 8) == 1\n"
-      "   VehicleRole = NaN;\nend\n\n\n\n"
-      editorLayout	      "100 M4x1[205 227 1080 733]"
+      "tationType = StationType1;\nLatitude = double(Latitude1)/1e7; % From 0.1 microdegrees to degrees\nLongitude = do"
+      "uble(Longitude1)/1e7; % From 0.1 microdegrees to degrees\nSemiMajorConfidence = double(SemiMajorConfidence1) / 1"
+      "00; % From cm to m\nSemiMinorConfidence = double(SemiMinorConfidence1) / 100; % From cm to m\nSemiMajorOrientati"
+      "on = double(SemiMajorOrientation1) / 100; % From cm to m\nAltitude = double(Altitude1);\nHeading = double(Headin"
+      "g1);\nHeadingConfidence = double(HeadingConfidence1) / 10; % From 0.1m to m\nSpeed = double(Speed1) / 100; % Fro"
+      "m cm to m\nSpeedConfidence = double(SpeedConfidence1) / 100;  % From cm to m\nVehicleLength = double(VehicleLeng"
+      "th1) / 10; % From 0.1m to m\nVehicleWidth = double(VehicleWidth1) / 10; % From 0.1 to m\nLongAcceleration = doub"
+      "le(LongAcceleration1) / 10; % From 0.1m to m\nLongAccelerationConfidence = double(LongAccelerationConfidence1) /"
+      " 10;  % From 0.1m to m\nYawRate = double(YawRate1) / 100;\nYawRateConfidence = 0;\nswitch YawRateConfidence1\n  "
+      "  case 0\n        YawRateConfidence = 0.01;\n    case 1\n        YawRateConfidence = 0.05;\n    case 2\n        "
+      "YawRateConfidence = 0.1;\n    case 3\n        YawRateConfidence = 1;\n    case 4\n        YawRateConfidence = 5;"
+      "\n    case 5\n        YawRateConfidence = 10;\n    case 6\n        YawRateConfidence = 100;\n    otherwise\n    "
+      "    YawRateConfidence = 200; % TODO: Is this correct?\nend\n\nVehicleRole = double(VehicleRole1);\n\n% Use Conta"
+      "inerMask to insert NaNs for unused values\nif bitget(ContainerMask1, 8) == 1\n   VehicleRole = NaN;\nend\n\n\n\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
@@ -18893,7 +18856,7 @@ Stateflow {
     midPoint		    [23.5747 24.9468]
     chart		    65
     linkNode		    [65 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
+    dataLimits		    [21.175 25.975 14.625 42.575]
     subviewer		    65
     drawStyle		    SMART
     slide {
@@ -20378,53 +20341,55 @@ Stateflow {
       "Time1, CauseCode1, SubCauseCode1, ControllerType1, TargetLongAcc1, TimeHeadway1, CruiseSpeed1, ParticipantsReady"
       "1, StartPlatoon1, EndOfScenario1, MioID1, MioRange1, MioBearing1, MioRangeRate1, Lane1, ForwardID1, BackwardID1,"
       " MergeRequest1, SafeToMerge1, Flag1, FlagTail1, FlagHead1, PlatoonID1, DistanceTravelledCZ1, Intention1, Counter"
-      "1, MessageControl)\ncoder.extrinsic('tic');\ncoder.extrinsic('toc');\n%formatMessage - Take values from sensor f"
-      "usion and the running app, and\n%convert into data compliant with the communication.\n\n% TODO: Connect buses di"
-      "rectly to this function block instead of having a\n% ridiculus amount of inputs and outputs.\n\n% TODO: Use Mess"
-      "ageControl signal to set the bit masks (and probably also\n% the transmission frequencies).\n\n\n%%%% Sensor Fus"
-      "ion Values\nStationID = StationID1; %Constant\nGenerationDeltaTime = GenerationDeltaTime1; %SF Value OK\nStation"
-      "Type = StationType1; %Constant\nLatitude = int32(round(Latitude1)); %SF value OK\nLongitude = int32(round(Longit"
-      "ude1)); %SF value OK\nSemiMajorConfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\n"
-      "SemiMinorConfidence = int32(ceil(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation ="
-      " int32(ceil(SemiMajorOrientation1 * 100)); % Conversion from m to cm\nAltitude = Altitude1; %Using unknown value"
-      " in spec.\nHeading = int32(round(Heading1)); %SF value OK\n\nif Speed1 < 0 % If speed is negative we need to rot"
-      "ate the heading 180 degrees\n   Heading = Heading + 1800;\n   if Heading > 3600\n      Heading = Heading - 3600;"
-      "\n   end\nend\n\nHeadingConfidence = int32(ceil(min(HeadingConfidence1 * 10, 126))); %Values above 126 need to b"
-      "e rounded down to 126\nSpeed = int32(round(abs(Speed1 * 100))); %Need to multiply by 100, and take absolute valu"
-      "e since SF speed can be negative. Compensate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfid"
-      "ence1 * 100), 126)); % Multiply by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 10); % Conver"
-      "t from m to 0.1m\nVehicleWidth = int32(VehicleWidth1 * 10); % Convert from m to 0.1m\nLongAcc = int32(max(min(ro"
-      "und(LongAcc1 * 10), 160), -160)); % Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(mi"
-      "n(ceil(LongAccConfidence1 * 10), 101)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(Ya"
-      "wRate1 * 100, 32767), -32767)); % Need to multiply by 100 and truncate to +/- 32767\n\n% SF value is in degrees."
-      " Need to use a switch to determine closest standard value.\nif  YawRateConfidence1 <= 0.01\n    YawRateConfidenc"
-      "e = int32(0);\nelseif YawRateConfidence1 <= 0.05\n    YawRateConfidence = int32(1);\nelseif YawRateConfidence1 <"
-      "= 0.1\n    YawRateConfidence = int32(2);\nelseif YawRateConfidence1 <= 1\n    YawRateConfidence = int32(3);\nels"
-      "eif YawRateConfidence1 <= 5\n    YawRateConfidence = int32(4);\nelseif YawRateConfidence1 <= 10\n    YawRateConf"
-      "idence = int32(5);\nelseif YawRateConfidence1 <= 100\n    YawRateConfidence = int32(6);\nelse\n    YawRateConfid"
-      "ence = int32(7);\nend\n\nVehicleRole = VehicleRole1; % Constant\nReferenceTime = int32(round(ReferenceTime1)); %"
-      " SF value OK\nRearAxleLocation = int32(min(round(RearAxleLocation1 * 100), 4095)); % Convert from m to cm and tr"
-      "uncate to 4095\nResponseTimeConstant = int32(ResponseTimeConstant1); % Use unknown value\nResponseTimeDelay = in"
-      "t32(ResponseTimeDelay1); % Use unknown value\n\n%%%% Application Values\nDetectionTime = int32(DetectionTime1);\n"
-      "Termination = int32(0); % Unused\nCauseCode = int32(CauseCode1);\nSubCauseCode = int32(SubCauseCode1);\n\n% Some"
-      " unsed values\nRelevanceDistance = int32(0);\nRelevanceTrafficDirection = int32(0);\nValidityDuration = int32(0)"
-      ";\nTransmissionIntervall = int32(0);\nInformationQuality = int32(0);\nLinkedCauseCode = int32(0);\nLinkedSubCaus"
-      "eCode = int32(0);\nLanePosition = int32(0);\nExternalTemperature = int32(0);\nPositioningSolution = int32(0);\n\n"
-      "ControllerType = int32(ControllerType1);\nTargetLongAcc = int32(TargetLongAcc1);\nTimeHeadway = int32(TimeHeadwa"
-      "y1);\nCruiseSpeed = int32(CruiseSpeed1);\nParticipantsReady = int32(ParticipantsReady1);\nStartPlatoon = int32(S"
-      "tartPlatoon1);\nEndOfScenario = int32(EndOfScenario1);\nMioID = int32(MioID1);\nMioRange = int32(MioRange1);\nMi"
-      "oBearing = int32(MioBearing1);\nMioRangeRate = int32(MioRangeRate1);\nLane = int32(Lane1);\nForwardID = int32(Fo"
-      "rwardID1);\nBackwardID = int32(BackwardID1);\nMergeRequest = int32(MergeRequest1);\nSafeToMerge = int32(SafeToMe"
-      "rge1);\nFlag = int32(Flag1);\nFlagTail = int32(FlagTail1);\nFlagHead = int32(FlagHead1);\nPlatoonID = int32(Plat"
-      "oonID1);\nDistanceTravelledCZ = int32(round(DistanceTravelledCZ1 * 10)); % From m to 0.1m\nIntention = int32(Int"
-      "ention1);\nCounter = int32(Counter1);\n\n%%%% Use the MessageControl value to set the bit masks\nif MessageContr"
-      "ol == 0 % Platooning scenario\n    ContainerMaskDENM = uint8(0);\n    ManagementMaskDENM = uint8(0);\n    Situat"
-      "ionMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    ContainerMaskICLCM = uint8(0);\n    LowFrequencyM"
-      "askICLCM = uint8(1);\nelseif MessageControl == 10 % Intersection scenario\n    ContainerMaskDENM = uint8(0);\n  "
-      "  ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    Conta"
-      "inerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);\nelse\n    ContainerMaskDENM = uint8(0);\n    M"
-      "anagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    Containe"
-      "rMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);    \nend\n\n"
+      "1, MessageControl)\n%formatMessage - Take values from sensor fusion and the running app, and\n%convert into data"
+      " compliant with the communication.\n\n% TODO: Connect buses directly to this function block instead of having a\n"
+      "% ridiculus amount of inputs and outputs.\n\n% TODO: Use MessageControl signal to set message frequencies.\n\n\n"
+      "%%%% Sensor Fusion Values\nStationID = StationID1; %Constant\nGenerationDeltaTime = GenerationDeltaTime1; %SF Va"
+      "lue OK\n%StationType = StationType1; %Constant\nStationType = 5; %PassengerCar value\nLatitude = int32(round(1e7"
+      "*Latitude1)); %Degrees to 0.1 microdegrees \nLongitude = int32(round(1e7*Longitude1)); %Degrees to 0.1 microdegr"
+      "ees\nSemiMajorConfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\nSemiMinorConfiden"
+      "ce = int32(ceil(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation = int32(ceil(SemiM"
+      "ajorOrientation1 * 100)); % Conversion from m to cm\n% TODO: CHange to spec. unknown value.\nAltitude = int32(ro"
+      "und(Altitude1)); %Using unknown value in spec.\nHeading = int32(round(Heading1)); %SF value OK\n\nif Speed1 < 0 "
+      "% If speed is negative we need to rotate the heading 180 degrees\n   Heading = Heading + 1800;\n   if Heading > "
+      "3600\n      Heading = Heading - 3600;\n   end\nend\n\nHeadingConfidence = int32(ceil(min(HeadingConfidence1 * 10"
+      ", 126))); %Degrees to 0.1 degrees. Values above 126 need to be rounded down to 126.\nSpeed = int32(round(abs(Spe"
+      "ed1 * 100))); %m to cm. Need to multiply by 100, and take absolute value since SF speed can be negative. Compens"
+      "ate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfidence1 * 100), 126)); % m to cm. Multiply "
+      "by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 10); % Convert from m to 0.1m\nVehicleWidth ="
+      " int32(VehicleWidth1 * 10); % Convert from m to 0.1m\nLongAcc = int32(max(min(round(LongAcc1 * 10), 160), -160))"
+      "; % Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(min(ceil(LongAccConfidence1 * 10),"
+      " 101)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(YawRate1 * 100, 32767), -32767)); "
+      "% m to cm and truncate to +/- 32767\n\n% SF value is in degrees. Need to use a switch to determine closest stand"
+      "ard value.\nif  YawRateConfidence1 <= 0.01\n    YawRateConfidence = int32(0);\nelseif YawRateConfidence1 <= 0.05"
+      "\n    YawRateConfidence = int32(1);\nelseif YawRateConfidence1 <= 0.1\n    YawRateConfidence = int32(2);\nelseif"
+      " YawRateConfidence1 <= 1\n    YawRateConfidence = int32(3);\nelseif YawRateConfidence1 <= 5\n    YawRateConfiden"
+      "ce = int32(4);\nelseif YawRateConfidence1 <= 10\n    YawRateConfidence = int32(5);\nelseif YawRateConfidence1 <="
+      " 100\n    YawRateConfidence = int32(6);\nelse\n    YawRateConfidence = int32(7);\nend\n\n%VehicleRole = VehicleR"
+      "ole1; % Constant\nVehicleRole = 0; % Default value\nReferenceTime = int32(round(ReferenceTime1)); % Number of in"
+      "cremnts of 65536ms since 2004-01-01T00:00:00:000Z\nRearAxleLocation = int32(min(round(RearAxleLocation1 * 100), "
+      "4095)); % Convert from m to cm and truncate to 4095\n\n% TODO: Hardcode unknown values\nResponseTimeConstant = i"
+      "nt32(ResponseTimeConstant1); % Use unknown value\nResponseTimeDelay = int32(ResponseTimeDelay1); % Use unknown v"
+      "alue\n\n%%%% Application Values\nDetectionTime = int32(DetectionTime1);\nTermination = int32(0); % Unused\nCause"
+      "Code = int32(CauseCode1);\nSubCauseCode = int32(SubCauseCode1);\n\n% Some unsed values\nRelevanceDistance = int3"
+      "2(0);\nRelevanceTrafficDirection = int32(0);\nValidityDuration = int32(0);\nTransmissionIntervall = int32(0);\nI"
+      "nformationQuality = int32(0);\nLinkedCauseCode = int32(0);\nLinkedSubCauseCode = int32(0);\nLanePosition = int32"
+      "(0);\nExternalTemperature = int32(0);\nPositioningSolution = int32(0);\n\nControllerType = int32(ControllerType1"
+      ");\nTargetLongAcc = int32(TargetLongAcc1);\nTimeHeadway = int32(TimeHeadway1);\nCruiseSpeed = int32(CruiseSpeed1"
+      ");\nParticipantsReady = int32(ParticipantsReady1);\nStartPlatoon = int32(StartPlatoon1);\nEndOfScenario = int32("
+      "EndOfScenario1);\nMioID = int32(MioID1);\nMioRange = int32(MioRange1);\nMioBearing = int32(MioBearing1);\nMioRan"
+      "geRate = int32(MioRangeRate1);\nLane = int32(Lane1); % App values OK\nForwardID = int32(ForwardID1);\nBackwardID"
+      " = int32(BackwardID1);\nMergeRequest = int32(MergeRequest1);\nSafeToMerge = int32(SafeToMerge1);\nFlag = int32(F"
+      "lag1);\nFlagTail = int32(FlagTail1);\nFlagHead = int32(FlagHead1);\nPlatoonID = int32(PlatoonID1);\n\nDistanceTr"
+      "avelledCZ = int32(round(DistanceTravelledCZ1 * 10)); % From m to 0.1m\nIntention = int32(Intention1); % App valu"
+      "es OK\nCounter = int32(Counter1); % App values OK\n\n%%%% Use the MessageControl value to set the bit masks\nif "
+      "MessageControl == 0 % Platooning scenario\n    ContainerMaskDENM = uint8(0);\n    ManagementMaskDENM = uint8(0);"
+      "\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    ContainerMaskICLCM = uint8(0);\n    L"
+      "owFrequencyMaskICLCM = uint8(1);\nelseif MessageControl == 10 % Intersection scenario\n    ContainerMaskDENM = u"
+      "int8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0)"
+      ";\n    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);\nelse\n    ContainerMaskDENM = uint"
+      "8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n"
+      "    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);    \nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -23069,10 +23034,7 @@ Stateflow {
     firstTransition	    345
     firstJunction	    344
     viewObj		    302
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    43
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
