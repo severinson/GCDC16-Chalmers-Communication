@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.387"
+    ComputedModelVersion    "1.391"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -46,16 +46,46 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"351"
-	Extents			[1646.0, 801.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		4
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "260"
+	  Extents		  [1646.0, 801.0]
+	  ZoomFactor		  [0.892609699769053]
+	  Offset		  [-353.26161768272971, 50.315653298835684]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1646.0, 801.0]
+	  ZoomFactor		  [1.4589720468890892]
+	  Offset		  [101.40420271940661, 331.99165636588378]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "265"
+	  Extents		  [1646.0, 801.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-387.03125, 140.0]
+	}
+	Object {
+	  $ObjectID		  8
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "277"
+	  Extents		  [1646.0, 801.0]
+	  ZoomFactor		  [1.5]
+	  Offset		  [0.0, -2.3333333333333144]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -65,9 +95,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "albin"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 14 15:15:45 2016"
-  RTWModifiedTimeStamp	  374685344
-  ModelVersionFormat	  "1.%<AutoIncrement:387>"
+  LastModifiedDate	  "Wed Jan 27 22:54:06 2016"
+  RTWModifiedTimeStamp	  375836023
+  ModelVersionFormat	  "1.%<AutoIncrement:391>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -109,7 +139,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    9
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simulink_interface"
     signals_		    []
@@ -154,13 +184,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      10
       Version		      "1.15.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  11
 	  Version		  "1.15.1"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
@@ -197,7 +227,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  12
 	  Version		  "1.15.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -233,7 +263,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  13
 	  Version		  "1.15.1"
 	  Array {
 	    Type		    "Cell"
@@ -290,7 +320,7 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  14
 	  Version		  "1.15.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -380,7 +410,7 @@ Model {
 	  IntegerSaturationMsg	  "warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  15
 	  Version		  "1.15.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -420,7 +450,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  16
 	  Version		  "1.15.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  EnableRefExpFcnMdlSchedulingChecks on
@@ -436,7 +466,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  17
 	  Version		  "1.15.1"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
@@ -448,7 +478,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  18
 	  Version		  "1.15.1"
 	  Array {
 	    Type		    "Cell"
@@ -520,7 +550,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      19
 	      Version		      "1.15.1"
 	      Array {
 		Type			"Cell"
@@ -592,7 +622,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      20
 	      Version		      "1.15.1"
 	      Array {
 		Type			"Cell"
@@ -678,7 +708,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  18
+	  $ObjectID		  21
 	  Version		  "1.15.1"
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -714,11 +744,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    10
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    22
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -947,7 +977,7 @@ Model {
   System {
     Name		    "simulink_interface"
     Location		    [0, 23, 1680, 997]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -958,9 +988,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "146"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "436"
+    SIDHighWatermark	    "437"
     Block {
       BlockType		      SubSystem
       Name		      "Application \n(app running the current scenario)"
@@ -1267,7 +1297,7 @@ Model {
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[2 39]"
 	      SFunctionDeploymentMode off
-	      EnableBusSupport	      off
+	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
 		Name			"DetectionTime"
@@ -2705,7 +2735,7 @@ Model {
 	  System {
 	    Name		    "DataConverter"
 	    Location		    [0, 23, 1680, 997]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3585,7 +3615,7 @@ Model {
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[51 68]"
 		  SFunctionDeploymentMode off
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "StationID"
@@ -6565,8 +6595,8 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "MessageConstructor"
-	    Location		    [12, 45, 2666, 1876]
-	    Open		    off
+	    Location		    [0, 23, 1680, 997]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6577,7 +6607,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "193"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MessageBus"
@@ -6591,7 +6621,7 @@ Model {
 	      Name		      "Bus\nSelector"
 	      SID		      "170"
 	      Ports		      [1, 20]
-	      Position		      [340, 175, 350, 425]
+	      Position		      [310, 175, 320, 425]
 	      ZOrder		      62
 	      ShowName		      off
 	      OutputSignals	      "StationID,GenerationDeltaTime,StationType,Latitude,Longitude,SemiMajorConfidence,SemiMinor"
@@ -7311,7 +7341,7 @@ Model {
 	      Points		      [45, 0]
 	      Branch {
 		ZOrder			4
-		Points			[210, 0]
+		Points			[177, 0; 0, 85]
 		DstBlock		"Bus\nSelector"
 		DstPort			1
 	      }
@@ -7543,7 +7573,7 @@ Model {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [25, 0; 0, -5]
+	      Points		      [55, 0; 0, -5]
 	      DstBlock		      "Byte Reversal"
 	      DstPort		      2
 	    }
@@ -7553,7 +7583,7 @@ Model {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [35, 0; 0, -5]
+	      Points		      [65, 0; 0, -5]
 	      DstBlock		      "Byte Reversal"
 	      DstPort		      3
 	    }
@@ -8809,7 +8839,7 @@ Model {
 	  System {
 	    Name		    "MessageUnpack"
 	    Location		    [0, 23, 1680, 997]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -9176,7 +9206,7 @@ Model {
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[22 23]"
 		  SFunctionDeploymentMode off
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -10193,7 +10223,7 @@ Model {
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[29 30]"
 		  SFunctionDeploymentMode off
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -11436,7 +11466,7 @@ Model {
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[30 31]"
 		  SFunctionDeploymentMode off
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "MessageID"
@@ -14600,8 +14630,8 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Receive"
-	    Location		    [1, 50, 1599, 899]
-	    Open		    off
+	    Location		    [0, 23, 1680, 997]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -14621,7 +14651,7 @@ Model {
 	      Position		      [220, 21, 420, 94]
 	      ZOrder		      75
 	      BlockMirror	      on
-	      LibraryVersion	      "1.85"
+	      LibraryVersion	      "1.87"
 	      SourceBlock	      "instrumentlib/UDP Receive"
 	      SourceType	      "UDP Receive"
 	      Host		      "127.0.0.1"
@@ -14642,7 +14672,7 @@ Model {
 	      Position		      [225, 171, 425, 244]
 	      ZOrder		      85
 	      BlockMirror	      on
-	      LibraryVersion	      "1.85"
+	      LibraryVersion	      "1.87"
 	      SourceBlock	      "instrumentlib/UDP Receive"
 	      SourceType	      "UDP Receive"
 	      Host		      "0.0.0.0"
@@ -14663,7 +14693,7 @@ Model {
 	      Position		      [225, 316, 425, 389]
 	      ZOrder		      84
 	      BlockMirror	      on
-	      LibraryVersion	      "1.85"
+	      LibraryVersion	      "1.87"
 	      SourceBlock	      "instrumentlib/UDP Receive"
 	      SourceType	      "UDP Receive"
 	      Host		      "0.0.0.0"
@@ -15383,7 +15413,7 @@ Model {
       Variant		      off
       System {
 	Name			"SensorFusion"
-	Location		[1, 50, 1599, 899]
+	Location		[0, 23, 1680, 997]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -15492,7 +15522,7 @@ Model {
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[1 25]"
 	      SFunctionDeploymentMode off
-	      EnableBusSupport	      off
+	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
 		Name			"StationID"
@@ -17814,10 +17844,7 @@ Stateflow {
     firstTransition	    112
     firstJunction	    111
     viewObj		    65
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    47
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -20344,52 +20371,52 @@ Stateflow {
       "1, MessageControl)\n%formatMessage - Take values from sensor fusion and the running app, and\n%convert into data"
       " compliant with the communication.\n\n% TODO: Connect buses directly to this function block instead of having a\n"
       "% ridiculus amount of inputs and outputs.\n\n% TODO: Use MessageControl signal to set message frequencies.\n\n\n"
-      "%%%% Sensor Fusion Values\nStationID = StationID1; %Constant\nGenerationDeltaTime = GenerationDeltaTime1; %SF Va"
-      "lue OK\n%StationType = StationType1; %Constant\nStationType = 5; %PassengerCar value\nLatitude = int32(round(1e7"
-      "*Latitude1)); %Degrees to 0.1 microdegrees \nLongitude = int32(round(1e7*Longitude1)); %Degrees to 0.1 microdegr"
-      "ees\nSemiMajorConfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\nSemiMinorConfiden"
-      "ce = int32(ceil(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation = int32(ceil(SemiM"
-      "ajorOrientation1 * 100)); % Conversion from m to cm\n% TODO: CHange to spec. unknown value.\nAltitude = int32(ro"
-      "und(Altitude1)); %Using unknown value in spec.\nHeading = int32(round(Heading1)); %SF value OK\n\nif Speed1 < 0 "
-      "% If speed is negative we need to rotate the heading 180 degrees\n   Heading = Heading + 1800;\n   if Heading > "
-      "3600\n      Heading = Heading - 3600;\n   end\nend\n\nHeadingConfidence = int32(ceil(min(HeadingConfidence1 * 10"
-      ", 126))); %Degrees to 0.1 degrees. Values above 126 need to be rounded down to 126.\nSpeed = int32(round(abs(Spe"
-      "ed1 * 100))); %m to cm. Need to multiply by 100, and take absolute value since SF speed can be negative. Compens"
-      "ate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfidence1 * 100), 126)); % m to cm. Multiply "
-      "by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 10); % Convert from m to 0.1m\nVehicleWidth ="
-      " int32(VehicleWidth1 * 10); % Convert from m to 0.1m\nLongAcc = int32(max(min(round(LongAcc1 * 10), 160), -160))"
-      "; % Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(min(ceil(LongAccConfidence1 * 10),"
-      " 101)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(YawRate1 * 100, 32767), -32767)); "
-      "% m to cm and truncate to +/- 32767\n\n% SF value is in degrees. Need to use a switch to determine closest stand"
-      "ard value.\nif  YawRateConfidence1 <= 0.01\n    YawRateConfidence = int32(0);\nelseif YawRateConfidence1 <= 0.05"
-      "\n    YawRateConfidence = int32(1);\nelseif YawRateConfidence1 <= 0.1\n    YawRateConfidence = int32(2);\nelseif"
-      " YawRateConfidence1 <= 1\n    YawRateConfidence = int32(3);\nelseif YawRateConfidence1 <= 5\n    YawRateConfiden"
-      "ce = int32(4);\nelseif YawRateConfidence1 <= 10\n    YawRateConfidence = int32(5);\nelseif YawRateConfidence1 <="
-      " 100\n    YawRateConfidence = int32(6);\nelse\n    YawRateConfidence = int32(7);\nend\n\n%VehicleRole = VehicleR"
-      "ole1; % Constant\nVehicleRole = 0; % Default value\nReferenceTime = int32(round(ReferenceTime1)); % Number of in"
-      "cremnts of 65536ms since 2004-01-01T00:00:00:000Z\nRearAxleLocation = int32(min(round(RearAxleLocation1 * 100), "
-      "4095)); % Convert from m to cm and truncate to 4095\n\n% TODO: Hardcode unknown values\nResponseTimeConstant = i"
-      "nt32(ResponseTimeConstant1); % Use unknown value\nResponseTimeDelay = int32(ResponseTimeDelay1); % Use unknown v"
-      "alue\n\n%%%% Application Values\nDetectionTime = int32(DetectionTime1);\nTermination = int32(0); % Unused\nCause"
-      "Code = int32(CauseCode1);\nSubCauseCode = int32(SubCauseCode1);\n\n% Some unsed values\nRelevanceDistance = int3"
-      "2(0);\nRelevanceTrafficDirection = int32(0);\nValidityDuration = int32(0);\nTransmissionIntervall = int32(0);\nI"
-      "nformationQuality = int32(0);\nLinkedCauseCode = int32(0);\nLinkedSubCauseCode = int32(0);\nLanePosition = int32"
-      "(0);\nExternalTemperature = int32(0);\nPositioningSolution = int32(0);\n\nControllerType = int32(ControllerType1"
-      ");\nTargetLongAcc = int32(TargetLongAcc1);\nTimeHeadway = int32(TimeHeadway1);\nCruiseSpeed = int32(CruiseSpeed1"
-      ");\nParticipantsReady = int32(ParticipantsReady1);\nStartPlatoon = int32(StartPlatoon1);\nEndOfScenario = int32("
-      "EndOfScenario1);\nMioID = int32(MioID1);\nMioRange = int32(MioRange1);\nMioBearing = int32(MioBearing1);\nMioRan"
-      "geRate = int32(MioRangeRate1);\nLane = int32(Lane1); % App values OK\nForwardID = int32(ForwardID1);\nBackwardID"
-      " = int32(BackwardID1);\nMergeRequest = int32(MergeRequest1);\nSafeToMerge = int32(SafeToMerge1);\nFlag = int32(F"
-      "lag1);\nFlagTail = int32(FlagTail1);\nFlagHead = int32(FlagHead1);\nPlatoonID = int32(PlatoonID1);\n\nDistanceTr"
-      "avelledCZ = int32(round(DistanceTravelledCZ1 * 10)); % From m to 0.1m\nIntention = int32(Intention1); % App valu"
-      "es OK\nCounter = int32(Counter1); % App values OK\n\n%%%% Use the MessageControl value to set the bit masks\nif "
-      "MessageControl == 0 % Platooning scenario\n    ContainerMaskDENM = uint8(0);\n    ManagementMaskDENM = uint8(0);"
-      "\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    ContainerMaskICLCM = uint8(0);\n    L"
-      "owFrequencyMaskICLCM = uint8(1);\nelseif MessageControl == 10 % Intersection scenario\n    ContainerMaskDENM = u"
-      "int8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0)"
-      ";\n    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);\nelse\n    ContainerMaskDENM = uint"
-      "8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n"
-      "    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);    \nend\n\n"
+      "%%%% Sensor Fusion Values\nStationID = StationID1; %Constant\nGenerationDeltaTime = int32(GenerationDeltaTime1);"
+      " %SF Value OK\n%StationType = StationType1; %Constant\nStationType = int32(5); %PassengerCar value\nLatitude = i"
+      "nt32(round(1e7*Latitude1)); %Degrees to 0.1 microdegrees \nLongitude = int32(round(1e7*Longitude1)); %Degrees to"
+      " 0.1 microdegrees\nSemiMajorConfidence = int32(ceil(SemiMajorConfidence1 * 100)); % Conversion from m to cm\nSem"
+      "iMinorConfidence = int32(ceil(SemiMinorConfidence1 * 100)); % Conversion from m to cm\nSemiMajorOrientation = in"
+      "t32(ceil(SemiMajorOrientation1 * 100)); % Conversion from m to cm\n% TODO: CHange to spec. unknown value.\nAltit"
+      "ude = int32(round(Altitude1)); %Using unknown value in spec.\nHeading = int32(round(Heading1)); %SF value OK\n\n"
+      "if Speed1 < 0 % If speed is negative we need to rotate the heading 180 degrees\n   Heading = Heading + 1800;\n  "
+      " if Heading > 3600\n      Heading = Heading - 3600;\n   end\nend\n\nHeadingConfidence = int32(ceil(min(HeadingCo"
+      "nfidence1 * 10, 126))); %Degrees to 0.1 degrees. Values above 126 need to be rounded down to 126.\nSpeed = int32"
+      "(round(abs(Speed1 * 100))); %m to cm. Need to multiply by 100, and take absolute value since SF speed can be neg"
+      "ative. Compensate by rotating heading.\nSpeedConfidence = int32(min(round(SpeedConfidence1 * 100), 126)); % m to"
+      " cm. Multiply by 100 and truncate to 126\nVehicleLength = int32(VehicleLength1 * 10); % Convert from m to 0.1m\n"
+      "VehicleWidth = int32(VehicleWidth1 * 10); % Convert from m to 0.1m\nLongAcc = int32(max(min(round(LongAcc1 * 10)"
+      ", 160), -160)); % Convert from m to 0.1m and truncate to +/- 160\nLongAccConfidence = int32(min(ceil(LongAccConf"
+      "idence1 * 10), 101)); % Convert from m to 0.1m and truncate to 101\nYawRate = int32(max(min(YawRate1 * 100, 3276"
+      "7), -32767)); % m to cm and truncate to +/- 32767\n\n% SF value is in degrees. Need to use a switch to determine"
+      " closest standard value.\nif  YawRateConfidence1 <= 0.01\n    YawRateConfidence = int32(0);\nelseif YawRateConfi"
+      "dence1 <= 0.05\n    YawRateConfidence = int32(1);\nelseif YawRateConfidence1 <= 0.1\n    YawRateConfidence = int"
+      "32(2);\nelseif YawRateConfidence1 <= 1\n    YawRateConfidence = int32(3);\nelseif YawRateConfidence1 <= 5\n    Y"
+      "awRateConfidence = int32(4);\nelseif YawRateConfidence1 <= 10\n    YawRateConfidence = int32(5);\nelseif YawRate"
+      "Confidence1 <= 100\n    YawRateConfidence = int32(6);\nelse\n    YawRateConfidence = int32(7);\nend\n\n%VehicleR"
+      "ole = VehicleRole1; % Constant\nVehicleRole = int32(0); % Default value\nReferenceTime = int32(round(ReferenceTi"
+      "me1)); % Number of incremnts of 65536ms since 2004-01-01T00:00:00:000Z\nRearAxleLocation = int32(min(round(RearA"
+      "xleLocation1 * 100), 4095)); % Convert from m to cm and truncate to 4095\n\n% TODO: Hardcode unknown values\nRes"
+      "ponseTimeConstant = int32(ResponseTimeConstant1); % Use unknown value\nResponseTimeDelay = int32(ResponseTimeDel"
+      "ay1); % Use unknown value\n\n%%%% Application Values\nDetectionTime = int32(DetectionTime1);\nTermination = int3"
+      "2(0); % Unused\nCauseCode = int32(CauseCode1);\nSubCauseCode = int32(SubCauseCode1);\n\n% Some unsed values\nRel"
+      "evanceDistance = int32(0);\nRelevanceTrafficDirection = int32(0);\nValidityDuration = int32(0);\nTransmissionInt"
+      "ervall = int32(0);\nInformationQuality = int32(0);\nLinkedCauseCode = int32(0);\nLinkedSubCauseCode = int32(0);\n"
+      "LanePosition = int32(0);\nExternalTemperature = int32(0);\nPositioningSolution = int32(0);\n\nControllerType = i"
+      "nt32(ControllerType1);\nTargetLongAcc = int32(TargetLongAcc1);\nTimeHeadway = int32(TimeHeadway1);\nCruiseSpeed "
+      "= int32(CruiseSpeed1);\nParticipantsReady = int32(ParticipantsReady1);\nStartPlatoon = int32(StartPlatoon1);\nEn"
+      "dOfScenario = int32(EndOfScenario1);\nMioID = int32(MioID1);\nMioRange = int32(MioRange1);\nMioBearing = int32(M"
+      "ioBearing1);\nMioRangeRate = int32(MioRangeRate1);\nLane = int32(Lane1); % App values OK\nForwardID = int32(Forw"
+      "ardID1);\nBackwardID = int32(BackwardID1);\nMergeRequest = int32(MergeRequest1);\nSafeToMerge = int32(SafeToMerg"
+      "e1);\nFlag = int32(Flag1);\nFlagTail = int32(FlagTail1);\nFlagHead = int32(FlagHead1);\nPlatoonID = int32(Platoo"
+      "nID1);\n\nDistanceTravelledCZ = int32(round(DistanceTravelledCZ1 * 10)); % From m to 0.1m\nIntention = int32(Int"
+      "ention1); % App values OK\nCounter = int32(Counter1); % App values OK\n\n%%%% Use the MessageControl value to se"
+      "t the bit masks\nif MessageControl == 0 % Platooning scenario\n    ContainerMaskDENM = uint8(0);\n    Management"
+      "MaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMaskDENM = uint8(0);\n    ContainerMaskICLC"
+      "M = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);\nelseif MessageControl == 10 % Intersection scenario\n    C"
+      "ontainerMaskDENM = uint8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    Alacart"
+      "eMaskDENM = uint8(0);\n    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);\nelse\n    Cont"
+      "ainerMaskDENM = uint8(0);\n    ManagementMaskDENM = uint8(0);\n    SituationMaskDENM = uint8(0);\n    AlacarteMa"
+      "skDENM = uint8(0);\n    ContainerMaskICLCM = uint8(0);\n    LowFrequencyMaskICLCM = uint8(1);    \nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
