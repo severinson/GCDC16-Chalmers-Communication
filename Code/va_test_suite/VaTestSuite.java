@@ -11,15 +11,18 @@ import java.net.UnknownHostException;
 public class VaTestSuite{
     private static DatagramSocket send;
     private static DatagramSocket receive;
-
+    
+    //static String VEHICLE_ADAPTER_IP = "192.168.188.136";
     static String VEHICLE_ADAPTER_IP = "127.0.0.1";
-    static int VEHICLE_ADAPTER_UDP_PORT = 5003;
+    static int VEHICLE_ADAPTER_UDP_PORT = 5000;
     static int RECEIVE_PORT = 5000;
     static int MAX_UDP_SIZE = 2000;
     static int CAM_RATE = 25;
-    static int DENM_RATE = 25;
+    static int DENM_RATE = 10;
     static int ICLCM_RATE = 25;
     static int verbosity = 2;
+    static int STATION_ID = 100;
+    static int NUM_VEHICLES = 1;
     
     /* Data for sending */
     static byte[] camData;
@@ -33,11 +36,13 @@ public class VaTestSuite{
 
     private static class CamService implements Runnable{
         public void run(){
-            System.out.println("[CAM] Starting service!");
+            System.out.println("[CAM] Starting service at " + CAM_RATE + "Hz!");
             ByteBuffer camBuffer = ByteBuffer.wrap(camData);
             int generationDeltaTime = camBuffer.getInt(5);
+            int station_id_offset = 0;
             while(camData != null){
                 camBuffer.putInt(5,generationDeltaTime);
+                camBuffer.putInt(1,STATION_ID+station_id_offset);
                 DatagramPacket packet;
                 camData = camBuffer.array();
                 try{
@@ -58,12 +63,16 @@ public class VaTestSuite{
                 try{
                     send.send(packet);
                 }catch(IOException e){
-                    System.out.println("[ERROR] Failed to send CAM!");
+                    System.out.println("[ERROR] Failed to send CAM: " + e);
                 }
 
                 //Enumerate message
                 generationDeltaTime = (generationDeltaTime+1);
                 if(generationDeltaTime > 65536) generationDeltaTime = 0;
+
+                //Emulate several vehicles
+                station_id_offset++;
+                if(station_id_offset > NUM_VEHICLES-1) station_id_offset = 0;
             }
             System.out.println("[CAM] Stopping service!");
         }
@@ -71,9 +80,13 @@ public class VaTestSuite{
 
     private static class DenmService implements Runnable{
         public void run(){
-            System.out.println("[DENM] Starting service!");
+            System.out.println("[DENM] Starting service at " + DENM_RATE + "Hz!");
+            ByteBuffer denmBuffer = ByteBuffer.wrap(denmData);            
+            int station_id_offset = 0;
             while(camData != null){
+                denmBuffer.putInt(1,STATION_ID+station_id_offset);
                 DatagramPacket packet;
+                denmData = denmBuffer.array();                
                 try{
                     packet =
                         new DatagramPacket(denmData, denmData.length,
@@ -94,6 +107,10 @@ public class VaTestSuite{
                 }catch(IOException e){
                     System.out.println("[ERROR] Failed to send DENM!");
                 }
+
+                //Emulate several vehicles
+                station_id_offset++;
+                if(station_id_offset > NUM_VEHICLES-1) station_id_offset = 0;                
             }
             System.out.println("[DENM] Stopping service!");
         }
@@ -102,9 +119,13 @@ public class VaTestSuite{
 
     private static class IclcmService implements Runnable{
         public void run(){
-            System.out.println("[iCLCM] Starting service!");
+            System.out.println("[iCLCM] Starting service at " + ICLCM_RATE + "Hz!");
+            ByteBuffer iclcmBuffer = ByteBuffer.wrap(iclcmData);
+            int station_id_offset = 0;
             while(camData != null){
+                iclcmBuffer.putInt(1,STATION_ID+station_id_offset);                
                 DatagramPacket packet;
+                iclcmData = iclcmBuffer.array();
                 try{
                     packet =
                         new DatagramPacket(iclcmData, iclcmData.length,
@@ -125,6 +146,10 @@ public class VaTestSuite{
                 }catch(IOException e){
                     System.out.println("[ERROR] Failed to send iCLCM!");
                 }
+
+                //Emulate several vehicles
+                station_id_offset++;
+                if(station_id_offset > NUM_VEHICLES-1) station_id_offset = 0;                
             }
             System.out.println("[iCLCM] Stopping service!");
         }
@@ -211,7 +236,7 @@ public class VaTestSuite{
                                    + "\t Data: " + packet.getData());                    
             break;
         default:
-            System.out.println("WARN: Received packet with unknown message ID.");
+            System.out.println("WARN: Received packet with unknown message ID " + packet.getData()[0]);
         }
         return packet;
     }
@@ -223,7 +248,7 @@ public class VaTestSuite{
     
     private static class ReceiveService implements Runnable{        
         public void run(){
-            System.out.println("[RECEIVE] Starting service!");
+            System.out.println("[RECEIVE] Starting service on port " + RECEIVE_PORT + "!");
             startTime = System.currentTimeMillis();
             
             while(true){
@@ -380,27 +405,27 @@ public class VaTestSuite{
         ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
 
         byteBuffer.put((byte) 2); //messageID
-        byteBuffer.putInt(1337); //stationID
-        byteBuffer.putInt(1); //generationDeltaTime
+        byteBuffer.putInt(STATION_ID); //stationID
+        byteBuffer.putInt(234); //generationDeltaTime
         byteBuffer.put((byte) 128); //containerMask
         byteBuffer.putInt(5); //stationType                
-        byteBuffer.putInt(900000001); //latitude
-        byteBuffer.putInt(1800000001); //longitude
+        byteBuffer.putInt(2); //latitude
+        byteBuffer.putInt(48); //longitude
         byteBuffer.putInt(0); //semiMajorConfidence
         byteBuffer.putInt(0); //semiMinorConfidence
         byteBuffer.putInt(0); //semiMajorOrientation
-        byteBuffer.putInt(0); //altitude
+        byteBuffer.putInt(400); //altitude
         byteBuffer.putInt(1); //heading value
         byteBuffer.putInt(1); //headingConfidence
         byteBuffer.putInt(0); //speedValue
         byteBuffer.putInt(1); //speedConfidence        
         byteBuffer.putInt(40); //vehicleLength
         byteBuffer.putInt(20); //vehicleWidth
-        byteBuffer.putInt(0); //longitudinalAcc
+        byteBuffer.putInt(234); //longitudinalAcc
         byteBuffer.putInt(1); //longitudinalAccConf
         byteBuffer.putInt(2); //yawRateValue
         byteBuffer.putInt(1); //yawRateConfidence
-        byteBuffer.putInt(5); //vehicleRole
+        byteBuffer.putInt(0); //vehicleRole
 
         camData = buffer;
         camRecData = new byte[buffer.length];
@@ -411,7 +436,7 @@ public class VaTestSuite{
         ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
 
         byteBuffer.put((byte) 1); //messageId
-        byteBuffer.putInt(1337); //stationID
+        byteBuffer.putInt(STATION_ID); //stationID
         byteBuffer.putInt(1000); //generationDeltaTime
         byteBuffer.put((byte) 160); //containerMask
         byteBuffer.put((byte) 64); //managementMask
@@ -427,7 +452,7 @@ public class VaTestSuite{
         byteBuffer.putInt(0); //relevanceDistance
         byteBuffer.putInt(0); //relevanceTrafficDirection
         byteBuffer.putInt(0); //validityDuration
-        byteBuffer.putInt(0); //transmissionIntervall
+        byteBuffer.putInt(1); //transmissionIntervall
         byteBuffer.putInt(5); //stationType
         byteBuffer.put((byte) 128);    //situationMask
         byteBuffer.putInt(4); //informationQuality
@@ -449,7 +474,7 @@ public class VaTestSuite{
         ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
 
         byteBuffer.put((byte) 10); //messageID
-        byteBuffer.putInt(1337); //stationID
+        byteBuffer.putInt(STATION_ID); //stationID
         byteBuffer.put((byte) 128); //containerMask
         byteBuffer.putInt(100); //rearAxleLocation
         byteBuffer.putInt(0); //controllerType
@@ -461,7 +486,7 @@ public class VaTestSuite{
         byteBuffer.put((byte) 128); //lowFrequencyMask
         byteBuffer.putInt(1); //participantsReady
         byteBuffer.putInt(0); //startPlatoon
-        byteBuffer.putInt(0); //endOfScenario
+        byteBuffer.putInt(1); //endOfScenario
         byteBuffer.putInt(255); //mioID
         byteBuffer.putInt( 10); //mioRange
         byteBuffer.putInt(11); //mioBearing
@@ -484,29 +509,136 @@ public class VaTestSuite{
     }
 
     public static void main(String args[]) throws IOException{
-        /* Set up sockets */
-        send = new DatagramSocket();
-        receive = new DatagramSocket(RECEIVE_PORT);
+        System.out.println("VA test suite. A small application for evaluating the open source Geonetworking Vehicle Adapter. Author: Albin Severinson.\n" +
+                           "Usage: 'java VaTestSuite' followed by any of these arguments:\n" +
+                           "--withoutcam\n" +
+                           "--withoutdenm\n" +
+                           "--withouticlcm\n" +
+                           "--camrate <rate in Hz>\n" +
+                           "--denmrate <rate in Hz>\n" +
+                           "--iclcmrate <rate in Hz>\n" +
+                           "--receiveport <port>\n" +
+                           "--vehicleaddress <ip:port>\n" +
+                           "--stationid <id>\tStation ID this application will use.\n" +
+                           "--numvehicles <num>\tNumber of vehicles to emulate. StationID of the other vehicles will be set as increments of 1 from the ID defined by the --stationid argument. The messages are transmitted in series. Increase the rate of CAM/DENM/iCLCM using the respective arguments to preserve the per-vehicle message rate.\n" +
+                           "\nIf an option is not present, default values will be used.\n" +
+                           "Examples:\n" +
+                           "Start the VA test suit with default options: 'java VaTestSuite'\n" +
+                           "Without iCLCM: 'java VaTestSuite --withouticlcm'\n" +
+                           "Without DENM and custom CAM rate: 'java VaTestSuite --withoutdenm --camrate 17'\n" +
+                           "With a custom vehicle IP: 'java VaTestSuite --vehicleaddress 192.168.1.19:5000'\n"+
+                           "Emulating several vehicles: 'java VaTestSuite --numvehicles 2 --camrate 50 --denmrate 20 --iclcmrate 50'\n");
+
+
+        /* Parse command line arguments */
+        boolean withCam = true;
+        boolean withDenm = true;
+        boolean withIclcm = true;
+        for(int i = 0;i < args.length;i++){
+            String s = args[i];
+            if(s.equals("--nocam")) withCam = false; 
+            else if(s.equals("--nodenm")) withDenm = false;
+            else if(s.equals("--noiclcm")) withIclcm = false;
+            else if(s.equals("--camrate")){
+                try{
+                    i++;
+                    CAM_RATE = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--denmrate")){
+                try{
+                    i++;
+                    DENM_RATE = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--iclcmrate")){
+                try{
+                    i++;
+                    ICLCM_RATE = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--receiveport")){
+                try{
+                    i++;
+                    RECEIVE_PORT = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--vehicleaddress")){
+                try{
+                    i++;
+                    String[] address_split = args[i].split(":");
+                    VEHICLE_ADAPTER_IP = address_split[0];
+                    VEHICLE_ADAPTER_UDP_PORT = Integer.parseInt(address_split[1]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] +
+                                       " must be followed by an address on the format ip:port.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--stationid")){
+                try{
+                    i++;
+                    STATION_ID = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }
+            else if(s.equals("--numvehicles")){
+                try{
+                    i++;
+                    NUM_VEHICLES = Integer.parseInt(args[i]);
+                }catch(NumberFormatException|ArrayIndexOutOfBoundsException e){
+                    System.err.println("Argument " + args[i-1] + " must be followed by an integer.");
+                    System.exit(1);
+                }
+            }                
+        }
 
         /* Set up data */
         setupCam();
         setupDenm();
         setupIclcm();
-
-        /* Start services */
-        Thread cs = new Thread(new CamService());
-        cs.setPriority(10);
-        cs.start();
-
-        /*
-        Thread ds = new Thread(new DenmService());
-        ds.setPriority(10);
-        ds.start();
         
-        Thread is = new Thread(new IclcmService());
-        is.setPriority(10);
-        is.start();        
-        */
+        /* Set up sockets */
+        send = new DatagramSocket();
+        receive = new DatagramSocket(RECEIVE_PORT);
+        
+        /* Start services */
+        System.out.println("** STARTING **");
+        System.out.println("[MAIN] Sending to: " +
+                           VEHICLE_ADAPTER_IP + ":" +
+                           VEHICLE_ADAPTER_UDP_PORT);
+        if(withCam){
+            Thread cs = new Thread(new CamService());
+            cs.setPriority(10);
+            cs.start();
+        }
+
+        if(withDenm){
+            Thread ds = new Thread(new DenmService());
+            ds.setPriority(10);
+            ds.start();
+        }
+
+        if(withIclcm){
+            Thread is = new Thread(new IclcmService());
+            is.setPriority(10);
+            is.start();
+        }
+
         
         Thread rs = new Thread(new ReceiveService());
         rs.setPriority(10);
