@@ -15,7 +15,7 @@ public class VaTestSuite{
     //static String VEHICLE_ADAPTER_IP = "192.168.188.136";
     static String VEHICLE_ADAPTER_IP = "127.0.0.1";
     static int VEHICLE_ADAPTER_UDP_PORT = 5000;
-    static int RECEIVE_PORT = 5000;
+    static int RECEIVE_PORT = 5001;
     static int MAX_UDP_SIZE = 2000;
     static int CAM_RATE = 25;
     static int DENM_RATE = 10;
@@ -511,9 +511,9 @@ public class VaTestSuite{
     public static void main(String args[]) throws IOException{
         System.out.println("VA test suite. A small application for evaluating the open source Geonetworking Vehicle Adapter. Author: Albin Severinson.\n" +
                            "Usage: 'java VaTestSuite' followed by any of these arguments:\n" +
-                           "--withoutcam\n" +
-                           "--withoutdenm\n" +
-                           "--withouticlcm\n" +
+                           "--nocam\n" +
+                           "--nodenm\n" +
+                           "--noiclcm\n" +
                            "--camrate <rate in Hz>\n" +
                            "--denmrate <rate in Hz>\n" +
                            "--iclcmrate <rate in Hz>\n" +
